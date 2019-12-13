@@ -2,7 +2,7 @@ package by.market.services.implementation.product
 
 import by.market.domain.product.ProductBlind
 import by.market.repository.product.ProductBlindRepository
-import by.market.services.implementation.BaseProductService
+import by.market.services.BaseProductService
 import org.springframework.stereotype.Service
 
 @Service

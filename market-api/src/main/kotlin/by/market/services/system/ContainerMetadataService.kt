@@ -1,8 +1,8 @@
-package by.market.services.implementation.system
+package by.market.services.system
 
 import by.market.domain.system.ContainerMetadata
 import by.market.repository.system.ContainerMetadataRepository
-import by.market.services.implementation.BaseService
+import by.market.services.BaseService
 import org.springframework.stereotype.Service
 
 @Service

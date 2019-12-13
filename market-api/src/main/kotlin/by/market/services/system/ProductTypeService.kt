@@ -1,8 +1,8 @@
-package by.market.services.implementation.system
+package by.market.services.system
 
 import by.market.domain.system.ProductType
 import by.market.repository.product.ProductTypeRepository
-import by.market.services.implementation.BaseService
+import by.market.services.BaseService
 import org.springframework.stereotype.Service
 
 @Service

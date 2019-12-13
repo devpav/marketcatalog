@@ -1,4 +1,4 @@
-package by.market.services.implementation.system
+package by.market.services.system
 
 import org.junit.Test
 import org.junit.jupiter.api.AfterEach

@@ -2,7 +2,7 @@ package by.market.services.system
 
 import by.market.domain.system.DataType
 import by.market.repository.system.DataTypeRepository
-import by.market.services.implementation.BaseService
+import by.market.services.BaseService
 import org.springframework.stereotype.Service
 
 @Service

@@ -1,4 +1,4 @@
-package by.market.services.implementation
+package by.market.services
 
 import by.market.domain.BaseEntity
 import by.market.repository.BaseRepository

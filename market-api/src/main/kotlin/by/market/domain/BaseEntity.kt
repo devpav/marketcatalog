@@ -13,7 +13,7 @@ import javax.persistence.MappedSuperclass
 open class BaseEntity {
 
     @Id
-    @GenericGenerator(name = "useIdOrGenerate", strategy = "by.vitebsk.market.domain.generator.GeneratorID")
+    @GenericGenerator(name = "useIdOrGenerate", strategy = "by.market.domain.generator.GeneratorID")
     @GeneratedValue(generator = "useIdOrGenerate")
     @Column(name = "id", nullable = false, unique = true)
     @JsonDeserialize(using = DeserializerUUID::class)
