@@ -49,7 +49,7 @@ fun main() {
 }
 
 fun parse(context: AsforosProductContext): List<AsforosProduct> {
-  val saveListener = SaveProductListener("json/${context.productName}", "${context.productName}.json")
+  val saveListener = SaveProductListener<AsforosProduct>("json/${context.productName}", "${context.productName}.json")
   val printListener = PrintProductListener(saveListener)
   val errorListener = ErrorHandlerListener(printListener)
 
