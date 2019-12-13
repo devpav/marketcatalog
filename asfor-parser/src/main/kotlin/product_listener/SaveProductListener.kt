@@ -10,7 +10,7 @@ import java.io.File
 import java.nio.charset.Charset
 import java.nio.file.Paths
 
-class SaveProductListener(private val dir: String, private val savePath: String, private val charset: Charset = Charset.forName("UTF-8")) : IProductListener {
+class SaveProductListener<TItem>(private val dir: String, private val savePath: String, private val charset: Charset = Charset.forName("UTF-8")) : IProductListener<TItem> {
   private val serializer = ObjectMapper()
 
   init {
@@ -24,7 +24,7 @@ class SaveProductListener(private val dir: String, private val savePath: String,
   override fun onLoadDocument(doc: Document, pageNumber: UInt) {
   }
 
-  override fun <TItem> onLoadPageItems(doc: Document, items: List<TItem>, pageNumber: UInt) {
+  override fun onLoadPageItems(doc: Document, items: List<TItem>, pageNumber: UInt) {
     val path = Paths.get(dir, pageNumber.toString() + savePath)
     val file = path.toFile()
     file.createNewFile()

@@ -1,42 +1,54 @@
 package enums
 
 import abstraction.IParserContext
+import dal.ProductCategory
 
-enum class AsforosProductContext : IParserContext {
-  Cornice {
+enum class AsforosProductContext(val categoriesArray: Array<ProductCategory>) : IParserContext {
+  Cornice(arrayOf(
+          ProductCategory("https://asforos.by/metallicheskie-karnizy/", "metallic"),
+          ProductCategory("https://asforos.by/potolochnye-karnizy/", "plastic_ceilings"),
+          ProductCategory("https://asforos.by/metalloplastikovye-karnizy/", "wall_metal_plastic"),
+          ProductCategory("https://asforos.by/komplektuyushhie-dlya-potolochnih-karnizov/", "accessories_for_ceiling"),
+          ProductCategory("https://asforos.by/komplektuyush%D1%81hie-dlya-metallicheskih-karnizov/", "accessories_for_metal"),
+          ProductCategory("https://asforos.by/gibkie-karnizy/", "flexible"),
+          ProductCategory("https://asforos.by/metalloplastikovaya-furnitura/", "metal_plastic_accessories"))) {
     override val productName: String
       get() = "cornice"
     override val pageUri: String
       get() = "https://asforos.by/karnizy"
+    override val categories: Array<ProductCategory>
+      get() = categoriesArray
   },
-  Jalosie {
+  Jalosie(arrayOf(
+          ProductCategory("https://asforos.by/rolshtory-rulonnye-shtory-den-noch/", "day_night"),
+          ProductCategory("https://asforos.by/rolshtory-rulonnye-shtory-standart/", "standard"),
+          ProductCategory("https://asforos.by/rolshtory-rulonnye-shtory-v-korobe/", "in_box"),
+          ProductCategory("https://asforos.by/rolshtory-rulonnye-shtory-premium/", "premium"),
+          ProductCategory("https://asforos.by/rolshtory-rulonnye-shtory-blackout/", "blackout"))) {
     override val productName: String
       get() = "jalousie"
     override val pageUri: String
       get() = "https://asforos.by/zhalyuzi"
+    override val categories: Array<ProductCategory>
+      get() = categoriesArray
   },
-  Rolstor {
+  Rolstor(arrayOf(ProductCategory("https://asforos.by/rolshtory-rulonnye-shtory", "rolstor"))) {
     override val productName: String
       get() = "rolstor"
     override val pageUri: String
       get() = "https://asforos.by/rolshtory-rulonnye-shtory"
+    override val categories: Array<ProductCategory>
+      get() = categoriesArray
   },
-  MagneticClips {
+  Accessories(arrayOf(
+          ProductCategory("https://asforos.by/lyuversy/", "luversa"),
+          ProductCategory("https://asforos.by/podhvaty-derzhateli-kryuchki/", "grips_holders_hooks"),
+          ProductCategory("https://asforos.by/klipsy-magnitnye/", "magnetic_clips"))) {
     override val productName: String
-      get() = "magnetic_clips"
+      get() = "accessories"
     override val pageUri: String
-      get() = "https://asforos.by/klipsy-magnitnye"
-  },
-  Luversa {
-    override val productName: String
-      get() = "luversa"
-    override val pageUri: String
-      get() = "https://asforos.by/lyuversy"
-  },
-  GripsAndHoldersAndHooks {
-    override val productName: String
-      get() = "grips_holders_hooks"
-    override val pageUri: String
-      get() = "https://asforos.by/podhvaty-derzhateli-kryuchki"
-  },
+      get() = "https://asforos.by/aksessuary/"
+    override val categories: Array<ProductCategory>
+      get() = categoriesArray
+  }
 }

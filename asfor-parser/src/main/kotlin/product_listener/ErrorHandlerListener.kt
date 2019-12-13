@@ -5,7 +5,7 @@ package product_listener
 import abstraction.IProductListener
 import org.jsoup.nodes.Document
 
-class ErrorHandlerListener(private val listener: IProductListener) : IProductListener {
+class ErrorHandlerListener<TItem>(private val listener: IProductListener<TItem>) : IProductListener<TItem> {
   override fun onLoadDocument(doc: Document, pageNumber: UInt) {
     try {
       listener.onLoadDocument(doc, pageNumber)
@@ -14,7 +14,7 @@ class ErrorHandlerListener(private val listener: IProductListener) : IProductLis
     }
   }
 
-  override fun <TItem> onLoadPageItems(doc: Document, items: List<TItem>, pageNumber: UInt) {
+  override fun onLoadPageItems(doc: Document, items: List<TItem>, pageNumber: UInt) {
     try {
       listener.onLoadPageItems(doc, items, pageNumber)
     } catch (e: Exception){

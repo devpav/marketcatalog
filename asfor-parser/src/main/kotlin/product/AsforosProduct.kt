@@ -5,10 +5,11 @@ class AsforosProduct(
   var title: String,
   var price: String,
   var moreDetailsUrl: String,
+  var category: String,
   var properties: MutableMap<String, String>,
   var propertiesFromDetailPage: MutableMap<String, List<String>>
 ) {
 
   override fun toString(): String
-   = "ImgUrl: ${imgUrl}, Title: ${title}, Price: ${price}, MoreDetailsUrl: ${moreDetailsUrl}"
+   = "ImgUrl: $imgUrl, Title: $title, Price: $price, MoreDetailsUrl: $moreDetailsUrl, Category: $category"
 }

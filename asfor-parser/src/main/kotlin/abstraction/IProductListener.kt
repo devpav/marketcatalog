@@ -4,7 +4,7 @@ package abstraction
 
 import org.jsoup.nodes.Document
 
-interface IProductListener {
+interface IProductListener<TItem> {
   fun onLoadDocument(doc: Document, pageNumber: UInt)
-  fun <TItem>onLoadPageItems(doc: Document, items: List<TItem>, pageNumber: UInt)
+  fun onLoadPageItems(doc: Document, items: List<TItem>, pageNumber: UInt)
 }
