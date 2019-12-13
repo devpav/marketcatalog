@@ -1,4 +1,4 @@
-package by.market.services.system.implementation.system
+package by.market.services.system
 
 import by.market.domain.system.EntityMetadata
 import by.market.repository.system.EntityMetadataRepository
