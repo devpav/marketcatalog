@@ -14,8 +14,6 @@ enum class AsforosProductContext(val categoriesArray: Array<ProductCategory>) : 
           ProductCategory("https://asforos.by/metalloplastikovaya-furnitura/", "metal_plastic_accessories"))) {
     override val productName: String
       get() = "cornice"
-    override val pageUri: String
-      get() = "https://asforos.by/karnizy"
     override val categories: Array<ProductCategory>
       get() = categoriesArray
   },
@@ -27,16 +25,12 @@ enum class AsforosProductContext(val categoriesArray: Array<ProductCategory>) : 
           ProductCategory("https://asforos.by/rolshtory-rulonnye-shtory-blackout/", "blackout"))) {
     override val productName: String
       get() = "jalousie"
-    override val pageUri: String
-      get() = "https://asforos.by/zhalyuzi"
     override val categories: Array<ProductCategory>
       get() = categoriesArray
   },
   Rolstor(arrayOf(ProductCategory("https://asforos.by/rolshtory-rulonnye-shtory", "rolstor"))) {
     override val productName: String
       get() = "rolstor"
-    override val pageUri: String
-      get() = "https://asforos.by/rolshtory-rulonnye-shtory"
     override val categories: Array<ProductCategory>
       get() = categoriesArray
   },
@@ -46,8 +40,6 @@ enum class AsforosProductContext(val categoriesArray: Array<ProductCategory>) : 
           ProductCategory("https://asforos.by/klipsy-magnitnye/", "magnetic_clips"))) {
     override val productName: String
       get() = "accessories"
-    override val pageUri: String
-      get() = "https://asforos.by/aksessuary/"
     override val categories: Array<ProductCategory>
       get() = categoriesArray
   }
