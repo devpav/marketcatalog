@@ -1,11 +1,8 @@
 package by.market.parser.mapper
 
 import by.market.domain.product.ProductBlind
+import by.market.repository.product.ProductBlindRepository
 
-class ProductBlindMapper : BaseParserMapper<ProductBlind>() {
-    override fun makeEmptyProduct(): ProductBlind = ProductBlind()
-
-    override fun insertOrUpdateInDatabase(product: ProductBlind) {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
-    }
+class ProductBlindMapper(rep: ProductBlindRepository) : BaseParserMapper<ProductBlind>(rep) {
+    override fun getDatabaseProductOrMakeEmptyProduct(title: String): ProductBlind = TODO()
 }

@@ -3,14 +3,15 @@ package by.market.parser.mapper
 import by.market.core.IMapper
 import by.market.domain.AbstractProduct
 import by.market.domain.system.Category
+import by.market.repository.BaseRepository
 import product.AsforosProduct
 
-abstract class BaseParserMapper<TProduct: AbstractProduct> : IMapper<AsforosProduct, TProduct> {
+abstract class BaseParserMapper<TProduct: AbstractProduct>(protected val rep: BaseRepository<TProduct>) : IMapper<AsforosProduct, TProduct> {
     private val categoryMap: HashMap<String, Category?> = createCategoryMap()
     private val characteristicMapperHandler: CharacteristicMapperHandler = CharacteristicMapperHandler()
 
     override suspend fun map(value: AsforosProduct): TProduct {
-        val product = makeEmptyProduct()
+        val product = getDatabaseProductOrMakeEmptyProduct(value.title)
         product.category = categoryMap.getOrDefault(value.category, null)
         product.img = value.imgUrl
         product.title = value.title
@@ -21,10 +22,11 @@ abstract class BaseParserMapper<TProduct: AbstractProduct> : IMapper<AsforosProd
         return product
     }
 
-    abstract fun makeEmptyProduct(): TProduct
+    abstract fun getDatabaseProductOrMakeEmptyProduct(title: String): TProduct
 
-    // TODO реализовать вставку или обновление в БД для каждой реализации
-    abstract fun insertOrUpdateInDatabase(product: TProduct)
+    private fun insertOrUpdateInDatabase(product: TProduct){
+        product.id = rep.saveAndFlush(product).id
+    }
 
     private fun createCategoryMap(): HashMap<String, Category?> {
         fun findCategory(parserCategory: String): Category? {

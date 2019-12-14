@@ -1,11 +1,8 @@
 package by.market.parser.mapper
 
 import by.market.domain.product.ProductCurtain
+import by.market.repository.product.ProductCurtainRepository
 
-class ProductCurtainMapper : BaseParserMapper<ProductCurtain>() {
-    override fun makeEmptyProduct(): ProductCurtain = ProductCurtain()
-
-    override fun insertOrUpdateInDatabase(product: ProductCurtain) {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
-    }
+class ProductCurtainMapper(rep: ProductCurtainRepository) : BaseParserMapper<ProductCurtain>(rep) {
+    override fun getDatabaseProductOrMakeEmptyProduct(title: String): ProductCurtain = TODO("not implemented")
 }
