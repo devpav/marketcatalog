@@ -9,7 +9,7 @@ abstract class BaseParserMapper<TProduct: AbstractProduct> : IMapper<AsforosProd
     private val categoryMap: HashMap<String, Category?> = createCategoryMap()
     private val characteristicMapperHandler: CharacteristicMapperHandler = CharacteristicMapperHandler()
 
-    override fun map(value: AsforosProduct): TProduct {
+    override suspend fun map(value: AsforosProduct): TProduct {
         val product = makeEmptyProduct()
         product.category = categoryMap.getOrDefault(value.category, null)
         product.img = value.imgUrl
