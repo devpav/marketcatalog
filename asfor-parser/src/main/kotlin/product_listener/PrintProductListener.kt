@@ -15,4 +15,7 @@ class PrintProductListener<TItem>(private val listener: IProductListener<TItem>)
     println("********************************** On Load Page[${pageNumber}] **********************************")
     listener.onLoadPageItems(doc, items, pageNumber)
   }
+
+  override fun onLoadItem(doc: Document, item: TItem, pageNumber: UInt) {
+  }
 }

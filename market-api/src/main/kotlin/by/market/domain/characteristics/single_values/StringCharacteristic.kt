@@ -1,5 +1,6 @@
-package by.market.domain.characteristics
+package by.market.domain.characteristics.single_values
 
+import by.market.domain.characteristics.AbstractCharacteristic
 import javax.persistence.Entity
 import javax.persistence.Table
 

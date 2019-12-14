@@ -5,7 +5,7 @@ import javax.persistence.Entity
 import javax.persistence.Table
 
 @Entity
-@Table(name = "tbx_s_product_types")
+@Table(name = "tbx_s_product_type")
 class ProductType : BaseEntity() {
 
     private var title: String? = null;

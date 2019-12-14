@@ -51,10 +51,9 @@ fun main() {
 fun parse(context: AsforosProductContext): List<AsforosProduct> {
   val saveListener = SaveProductListener<AsforosProduct>("json/${context.productName}", "${context.productName}.json")
   val printListener = PrintProductListener(saveListener)
-  val errorListener = ErrorHandlerListener(printListener)
 
   val parser = AsforosProductParser(Option.just(2500u))
-  return parser.parse(context, errorListener)
+  return parser.parse(context, printListener)
 }
 
 fun printInfoAboutInput(items: Array<AsforosProductContext>) {

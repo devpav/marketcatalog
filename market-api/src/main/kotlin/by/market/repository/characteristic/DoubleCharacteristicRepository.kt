@@ -1,6 +1,6 @@
 package by.market.repository.characteristic
 
-import by.market.domain.characteristics.DoubleCharacteristic
+import by.market.domain.characteristics.single_values.DoubleCharacteristic
 import by.market.repository.AbstractCharacteristicRepository
 import org.springframework.stereotype.Repository
 

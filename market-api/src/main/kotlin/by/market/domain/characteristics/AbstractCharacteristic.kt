@@ -1,7 +1,9 @@
 package by.market.domain.characteristics
 
+import by.market.domain.AbstractProduct
 import by.market.domain.BaseEntity
 import by.market.domain.system.EntityMetadata
+import java.util.*
 import javax.persistence.Column
 import javax.persistence.JoinColumn
 import javax.persistence.ManyToOne
@@ -21,4 +23,6 @@ abstract class AbstractCharacteristic<T> : BaseEntity() {
     @JoinColumn(name = "id_entity_metadata")
     var entityMetadata: EntityMetadata? = null
 
+    @Column(name = "id_product_row")
+    var productRowId: UUID? = null
 }

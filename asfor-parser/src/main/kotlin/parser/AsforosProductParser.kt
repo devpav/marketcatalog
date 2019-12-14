@@ -189,7 +189,7 @@ class AsforosProductParser(storeCapacity: Option<UInt> = Option.empty()) : IProd
                 if (divProductItemText != null) {
                   val txt = divProductItemText.text()
 
-                  if(!txt.isEmpty())
+                  if(txt.isNotEmpty())
                     detailItems.add(txt)
                 }
               }

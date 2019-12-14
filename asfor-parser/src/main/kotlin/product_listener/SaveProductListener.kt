@@ -32,4 +32,7 @@ class SaveProductListener<TItem>(private val dir: String, private val savePath: 
     val writer = file.writer(charset)
     serializer.writeValue(writer, items)
   }
+
+  override fun onLoadItem(doc: Document, item: TItem, pageNumber: UInt) {
+  }
 }
