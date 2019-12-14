@@ -1,4 +1,4 @@
-package by.market.domain.characteristics.list_values
+package by.market.domain.characteristics.list
 
 import by.market.domain.characteristics.AbstractListCharacteristic
 import javax.persistence.Entity

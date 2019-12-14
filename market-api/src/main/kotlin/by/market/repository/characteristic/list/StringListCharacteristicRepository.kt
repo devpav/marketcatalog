@@ -1,0 +1,8 @@
+package by.market.repository.characteristic.list
+
+import by.market.domain.characteristics.list.StringListCharacteristic
+import by.market.repository.characteristic.AbstractListCharacteristicRepository
+import org.springframework.stereotype.Repository
+
+@Repository
+interface StringListCharacteristicRepository : AbstractListCharacteristicRepository<StringListCharacteristic, String>
