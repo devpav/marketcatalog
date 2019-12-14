@@ -87,7 +87,7 @@ class AsforosProductParser(storeCapacity: Option<UInt> = Option.empty()) : IProd
     val productPreviewItems = doc.select("div.product-preview")
     val result = ArrayList<AsforosProduct>(productPreviewItems.count())
     productPreviewItems.forEach { s ->
-      val product = createDefaultProduct()
+      val product = AsforosProduct()
       s.children().forEach { argChild ->
         when(argChild.className()){
           "product-preview__img" -> {
@@ -206,8 +206,6 @@ class AsforosProductParser(storeCapacity: Option<UInt> = Option.empty()) : IProd
     listener.onLoadPageItems(doc, firstPageItems, pageNumber)
     return firstPageItems
   }
-
-  private fun createDefaultProduct() = AsforosProduct("", "", "", "", "", mutableMapOf(), mutableMapOf())
 
   companion object{
     private const val Site = "https://asforos.by"
