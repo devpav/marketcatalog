@@ -1,47 +1,9 @@
 [ {
-  "imgUrl" : "https://asforos.by/upload/resize_cache/iblock/49a/500_500_17236f3bb137eb253405d06e58cacf26c/49a037b9d932dcf5aed9ff1957fba8d2.JPG",
-  "title" : "Карниз 2-рядный «Верди» D16 Риф / Риф Сатин",
+  "imgUrl" : "https://asforos.by/upload/resize_cache/iblock/401/500_500_17236f3bb137eb253405d06e58cacf26c/401e4215d9e96aae3da41c8aa026882e.JPG",
+  "title" : "Карниз 2-рядный «Корона» D25 Риф / Риф Антик",
   "price" : "",
-  "moreDetailsUrl" : "https://asforos.by/karnizy/karniz-2-ryadnyy-verdi-d16-rif-rif-satin/",
-  "category" : "flexible",
-  "properties" : {
-    "Цвет" : "Сатин",
-    "Диаметр (мм)" : "16",
-    "Тип трубы" : "Рифлёная",
-    "Количество рядов" : "2"
-  },
-  "propertiesFromDetailPage" : {
-    "Цвет" : [ "src='https://asforos.by/upload/uf/5b6/5b653c44b641d9ef83145d79cb2ebed1.jpg' alt='Сатин'" ],
-    "Количество рядов" : [ "2", "-" ],
-    "Тип трубы" : [ "Рифлёная / Рифлёная", "-" ],
-    "Длина (м)" : [ "1,6", "1,8", "2,0", "2,4", "3,0", "-" ],
-    "Тип колец" : [ "Простое", "Простое с крючком", "Простое с зажимом", "Бесшумное", "Бесшумное с крючком", "Бесшумное с зажимом", "-" ]
-  }
-}, {
-  "imgUrl" : "https://asforos.by/upload/resize_cache/iblock/b8b/500_500_17236f3bb137eb253405d06e58cacf26c/b8bd37742eb41345ed5bdd569db31121.JPG",
-  "title" : "Карниз 2-рядный «Ампир» D16 Риф / Риф Сатин",
-  "price" : "",
-  "moreDetailsUrl" : "https://asforos.by/karnizy/karniz-2-ryadnyy-ampir-d16-rif-rif-satin/",
-  "category" : "flexible",
-  "properties" : {
-    "Цвет" : "Сатин",
-    "Диаметр (мм)" : "16",
-    "Тип трубы" : "Рифлёная",
-    "Количество рядов" : "2"
-  },
-  "propertiesFromDetailPage" : {
-    "Цвет" : [ "src='https://asforos.by/upload/uf/5b6/5b653c44b641d9ef83145d79cb2ebed1.jpg' alt='Сатин'" ],
-    "Количество рядов" : [ "2", "-" ],
-    "Тип трубы" : [ "Рифлёная / Рифлёная", "-" ],
-    "Длина (м)" : [ "1,6", "1,8", "2,0", "2,4", "3,0", "-" ],
-    "Тип колец" : [ "Простое", "Простое с крючком", "Простое с зажимом", "Бесшумное", "Бесшумное с крючком", "Бесшумное с зажимом", "-" ]
-  }
-}, {
-  "imgUrl" : "https://asforos.by/upload/resize_cache/iblock/dd5/500_500_17236f3bb137eb253405d06e58cacf26c/dd5647c322e3738cf14029c25c53a42d.JPG",
-  "title" : "Карниз 2-рядный «Ромилда» D25 Риф / Риф Антик",
-  "price" : "",
-  "moreDetailsUrl" : "https://asforos.by/karnizy/karniz-2-ryadnyy-romilda-d25-rif-rif-antik/",
-  "category" : "flexible",
+  "moreDetailsUrl" : "https://asforos.by/metallicheskie-karnizy/karniz-2-ryadnyy-korona-d25-rif-rif-antik/",
+  "category" : "metallic",
   "properties" : {
     "Цвет" : "Антик",
     "Диаметр (мм)" : "25",
@@ -56,106 +18,11 @@
     "Тип колец" : [ "Простое", "Простое с крючком", "Простое с зажимом", "Бесшумное", "Бесшумное с крючком", "Бесшумное с зажимом", "-" ]
   }
 }, {
-  "imgUrl" : "https://asforos.by/upload/resize_cache/iblock/054/500_500_17236f3bb137eb253405d06e58cacf26c/054417057d41868925deb7e8fe080d3d.JPG",
-  "title" : "Карниз 2-рядный «Эмпория» D25 Риф / Риф Сатин",
+  "imgUrl" : "https://asforos.by/upload/resize_cache/iblock/04d/500_500_17236f3bb137eb253405d06e58cacf26c/04d979e0ba9e0c575af9c0f4ec380b01.JPG",
+  "title" : "Карниз 2-рядный «Лист большой» D25 Риф / Риф Антик",
   "price" : "",
-  "moreDetailsUrl" : "https://asforos.by/karnizy/karniz-2-ryadnyy-emporiya-d25-rif-rif-satin/",
-  "category" : "flexible",
-  "properties" : {
-    "Цвет" : "Сатин",
-    "Диаметр (мм)" : "25",
-    "Тип трубы" : "Рифлёная",
-    "Количество рядов" : "2"
-  },
-  "propertiesFromDetailPage" : {
-    "Цвет" : [ "src='https://asforos.by/upload/uf/5b6/5b653c44b641d9ef83145d79cb2ebed1.jpg' alt='Сатин'" ],
-    "Количество рядов" : [ "2", "-" ],
-    "Тип трубы" : [ "Рифлёная / Рифлёная", "-" ],
-    "Длина (м)" : [ "1,6", "1,8", "2,0", "2,4", "3,0", "-" ],
-    "Тип колец" : [ "Простое", "Простое с крючком", "Простое с зажимом", "Бесшумное", "Бесшумное с крючком", "Бесшумное с зажимом", "-" ]
-  }
-}, {
-  "imgUrl" : "https://asforos.by/upload/resize_cache/iblock/242/500_500_17236f3bb137eb253405d06e58cacf26c/2422cbdc1637b2816877eae8a4d87eb5.JPG",
-  "title" : "Карниз 2-рядный «Тристан» D16 Кр / Гл Сатин / Чёрный",
-  "price" : "",
-  "moreDetailsUrl" : "https://asforos.by/karnizy/karniz-2-ryadnyy-tristan-d16-kr-gl-satin-chyernyy/",
-  "category" : "flexible",
-  "properties" : {
-    "Цвет" : "Сатин",
-    "Диаметр (мм)" : "16",
-    "Тип трубы" : "Крученая",
-    "Количество рядов" : "2"
-  },
-  "propertiesFromDetailPage" : {
-    "Цвет" : [ "src='https://asforos.by/upload/uf/4f1/4f18149888a2f87fce166173fac8ab49.jpg' alt='Сатин / Чёрный'" ],
-    "Количество рядов" : [ "2", "-" ],
-    "Тип трубы" : [ "Крученая / Гладкая", "-" ],
-    "Длина (м)" : [ "1,4", "1,6", "1,8", "2,0", "2,4", "3,0", "-" ],
-    "Тип колец" : [ "Простое", "Простое с крючком", "Простое с зажимом", "Бесшумное", "Бесшумное с крючком", "Бесшумное с зажимом", "-" ]
-  }
-}, {
-  "imgUrl" : "https://asforos.by/upload/resize_cache/iblock/2fd/500_500_17236f3bb137eb253405d06e58cacf26c/2fddc65b80fa956e82fc860d6bbab2b5.JPG",
-  "title" : "Карниз 2-рядный «Заглушка плоская» D25 Кр / Гл Сатин",
-  "price" : "",
-  "moreDetailsUrl" : "https://asforos.by/karnizy/karniz-2-ryadnyy-zaglushka-ploskaya-d25-kr-gl-satin/",
-  "category" : "flexible",
-  "properties" : {
-    "Цвет" : "Сатин",
-    "Диаметр (мм)" : "25",
-    "Тип трубы" : "Крученая",
-    "Количество рядов" : "2"
-  },
-  "propertiesFromDetailPage" : {
-    "Цвет" : [ "src='https://asforos.by/upload/uf/5b6/5b653c44b641d9ef83145d79cb2ebed1.jpg' alt='Сатин'" ],
-    "Количество рядов" : [ "2", "-" ],
-    "Тип трубы" : [ "Крученая / Гладкая", "-" ],
-    "Длина (м)" : [ "1,4", "1,6", "1,8", "2,0", "2,4", "3,0", "-" ],
-    "Тип колец" : [ "Простое", "Простое с крючком", "Простое с зажимом", "Бесшумное", "Бесшумное с крючком", "Бесшумное с зажимом", "-" ]
-  }
-}, {
-  "imgUrl" : "https://asforos.by/upload/resize_cache/iblock/afe/500_500_17236f3bb137eb253405d06e58cacf26c/afe3430794cd8d197e30a403950a8b15.JPG",
-  "title" : "Карниз 2-рядный «Жемчужина» D25 Кр / Гл Сатин / Хром",
-  "price" : "",
-  "moreDetailsUrl" : "https://asforos.by/karnizy/karniz-2-ryadnyy-zhemchuzhina-d25-kr-gl-satin/",
-  "category" : "flexible",
-  "properties" : {
-    "Цвет" : "Сатин",
-    "Диаметр (мм)" : "25",
-    "Тип трубы" : "Крученая",
-    "Количество рядов" : "2"
-  },
-  "propertiesFromDetailPage" : {
-    "Цвет" : [ "src='https://asforos.by/upload/uf/e5a/e5aa1b2d2c8cfa46baebb58075bd82a7.jpg' alt='Сатин / Хром'" ],
-    "Количество рядов" : [ "2", "-" ],
-    "Тип трубы" : [ "Крученая / Гладкая", "-" ],
-    "Длина (м)" : [ "1,4", "1,6", "1,8", "2,0", "2,4", "3,0", "-" ],
-    "Тип колец" : [ "Простое", "Простое с крючком", "Простое с зажимом", "Бесшумное", "Бесшумное с крючком", "Бесшумное с зажимом", "-" ]
-  }
-}, {
-  "imgUrl" : "https://asforos.by/upload/resize_cache/iblock/5f4/500_500_17236f3bb137eb253405d06e58cacf26c/5f4534016cf5bd1b1cdef56a11798e9a.JPG",
-  "title" : "Карниз 2-рядный «Милано» D16 Риф / Риф Сатин",
-  "price" : "",
-  "moreDetailsUrl" : "https://asforos.by/karnizy/karniz-2-ryadnyy-milano-d16-rif-rif-satin/",
-  "category" : "flexible",
-  "properties" : {
-    "Цвет" : "Сатин",
-    "Диаметр (мм)" : "16",
-    "Тип трубы" : "Рифлёная",
-    "Количество рядов" : "2"
-  },
-  "propertiesFromDetailPage" : {
-    "Цвет" : [ "src='https://asforos.by/upload/uf/5b6/5b653c44b641d9ef83145d79cb2ebed1.jpg' alt='Сатин'" ],
-    "Количество рядов" : [ "2", "-" ],
-    "Тип трубы" : [ "Рифлёная / Рифлёная", "-" ],
-    "Длина (м)" : [ "1,6", "1,8", "2,0", "2,4", "3,0", "-" ],
-    "Тип колец" : [ "Простое", "Простое с крючком", "Простое с зажимом", "Бесшумное", "Бесшумное с крючком", "Бесшумное с зажимом", "-" ]
-  }
-}, {
-  "imgUrl" : "https://asforos.by/upload/resize_cache/iblock/bf0/500_500_17236f3bb137eb253405d06e58cacf26c/bf0ac965fc6f5d1e8e97432962cff81b.JPG",
-  "title" : "Карниз 2-рядный «Спираль» D25 Риф / Риф Антик",
-  "price" : "",
-  "moreDetailsUrl" : "https://asforos.by/karnizy/karniz-2-ryadnyy-spiral-d25-rif-rif-antik/",
-  "category" : "flexible",
+  "moreDetailsUrl" : "https://asforos.by/metallicheskie-karnizy/karniz-2-ryadnyy-list-bolshoy-d25-rif-rif-antik/",
+  "category" : "metallic",
   "properties" : {
     "Цвет" : "Антик",
     "Диаметр (мм)" : "25",
@@ -170,11 +37,11 @@
     "Тип колец" : [ "Простое", "Простое с крючком", "Простое с зажимом", "Бесшумное", "Бесшумное с крючком", "Бесшумное с зажимом", "-" ]
   }
 }, {
-  "imgUrl" : "https://asforos.by/upload/resize_cache/iblock/436/500_500_17236f3bb137eb253405d06e58cacf26c/4368e632a193afd82940d31a1c5eb3cd.JPG",
-  "title" : "Карниз 2-рядный «Аванти» D25 Риф / Риф Сатин",
+  "imgUrl" : "https://asforos.by/upload/resize_cache/iblock/c8a/500_500_17236f3bb137eb253405d06e58cacf26c/c8a51baac6dcda8bdfda950d9f44a6bf.JPG",
+  "title" : "Карниз 2-рядный «Заглушка закругленная» D25 Риф / Риф Сатин",
   "price" : "",
-  "moreDetailsUrl" : "https://asforos.by/karnizy/karniz-2-ryadnyy-avanti-d25-rif-rif-satin/",
-  "category" : "flexible",
+  "moreDetailsUrl" : "https://asforos.by/metallicheskie-karnizy/karniz-2-ryadnyy-zaglushka-zakruglennaya-d25-rif-rif-satin/",
+  "category" : "metallic",
   "properties" : {
     "Цвет" : "Сатин",
     "Диаметр (мм)" : "25",
@@ -189,14 +56,52 @@
     "Тип колец" : [ "Простое", "Простое с крючком", "Простое с зажимом", "Бесшумное", "Бесшумное с крючком", "Бесшумное с зажимом", "-" ]
   }
 }, {
-  "imgUrl" : "https://asforos.by/upload/resize_cache/iblock/eca/500_500_17236f3bb137eb253405d06e58cacf26c/eca07b5611570ab6576bab30d2f60430.JPG",
-  "title" : "Карниз 2-рядный «Изольда» D16 Кр / Гл Сатин / Чёрный",
+  "imgUrl" : "https://asforos.by/upload/resize_cache/iblock/c95/500_500_17236f3bb137eb253405d06e58cacf26c/c95eebd509887dafc02cd49e63032d8c.jpg",
+  "title" : "Карниз 2-рядный «Колокол» D25 Риф / Риф Сатин",
   "price" : "",
-  "moreDetailsUrl" : "https://asforos.by/karnizy/karniz-2-ryadnyy-izolda-d16-kr-gl-satin-chyernyy/",
-  "category" : "flexible",
+  "moreDetailsUrl" : "https://asforos.by/metallicheskie-karnizy/karniz-2-ryadnyy-kolokol-d25-rif-rif-satin/",
+  "category" : "metallic",
   "properties" : {
     "Цвет" : "Сатин",
-    "Диаметр (мм)" : "16",
+    "Диаметр (мм)" : "25",
+    "Тип трубы" : "Рифлёная",
+    "Количество рядов" : "2"
+  },
+  "propertiesFromDetailPage" : {
+    "Цвет" : [ "src='https://asforos.by/upload/uf/5b6/5b653c44b641d9ef83145d79cb2ebed1.jpg' alt='Сатин'" ],
+    "Количество рядов" : [ "2", "-" ],
+    "Тип трубы" : [ "Рифлёная / Рифлёная", "-" ],
+    "Длина (м)" : [ "1,6", "1,8", "2,0", "2,4", "3,0", "-" ],
+    "Тип колец" : [ "Простое", "Простое с крючком", "Простое с зажимом", "Бесшумное", "Бесшумное с крючком", "Бесшумное с зажимом", "-" ]
+  }
+}, {
+  "imgUrl" : "https://asforos.by/upload/resize_cache/iblock/695/500_500_17236f3bb137eb253405d06e58cacf26c/6957f179f957b0cac284fc2df9752015.JPG",
+  "title" : "Карниз 2-рядный «Лист розы» D25 Риф / Риф Сатин",
+  "price" : "",
+  "moreDetailsUrl" : "https://asforos.by/metallicheskie-karnizy/karniz-2-ryadnyy-list-rozy-d25-rif-rif-satin/",
+  "category" : "metallic",
+  "properties" : {
+    "Цвет" : "Сатин",
+    "Диаметр (мм)" : "25",
+    "Тип трубы" : "Рифлёная",
+    "Количество рядов" : "2"
+  },
+  "propertiesFromDetailPage" : {
+    "Цвет" : [ "src='https://asforos.by/upload/uf/5b6/5b653c44b641d9ef83145d79cb2ebed1.jpg' alt='Сатин'" ],
+    "Количество рядов" : [ "2", "-" ],
+    "Тип трубы" : [ "Рифлёная / Рифлёная", "-" ],
+    "Длина (м)" : [ "1,6", "1,8", "2,0", "2,4", "3,0", "-" ],
+    "Тип колец" : [ "Простое", "Простое с крючком", "Простое с зажимом", "Бесшумное", "Бесшумное с крючком", "Бесшумное с зажимом", "-" ]
+  }
+}, {
+  "imgUrl" : "https://asforos.by/upload/resize_cache/iblock/cf1/500_500_17236f3bb137eb253405d06e58cacf26c/cf13fac6fbe600201685f8a65c519c44.JPG",
+  "title" : "Карниз 2-рядный «Изольда» D25 Кр / Гл Сатин / Чёрный",
+  "price" : "",
+  "moreDetailsUrl" : "https://asforos.by/metallicheskie-karnizy/karniz-2-ryadnyy-izolda-d25-kr-gl-satin-chyernyy/",
+  "category" : "metallic",
+  "properties" : {
+    "Цвет" : "Сатин",
+    "Диаметр (мм)" : "25",
     "Тип трубы" : "Крученая",
     "Количество рядов" : "2"
   },
@@ -208,49 +113,30 @@
     "Тип колец" : [ "Простое", "Простое с крючком", "Простое с зажимом", "Бесшумное", "Бесшумное с крючком", "Бесшумное с зажимом", "-" ]
   }
 }, {
-  "imgUrl" : "https://asforos.by/upload/resize_cache/iblock/1c5/500_500_17236f3bb137eb253405d06e58cacf26c/1c578cbd88cf74e5dc0ce8381bab4ee1.JPG",
-  "title" : "Карниз 2-рядный «Мираж» D25 Кр / Гл Хром",
+  "imgUrl" : "https://asforos.by/upload/resize_cache/iblock/cd5/500_500_17236f3bb137eb253405d06e58cacf26c/cd5bdfbe04aaea7f8223c296d5cc0d4f.JPG",
+  "title" : "Карниз 2-рядный «Авея» D25 Риф / Риф Антик",
   "price" : "",
-  "moreDetailsUrl" : "https://asforos.by/karnizy/karniz-2-ryadnyy-mirazh-d25-kr-gl-khrom/",
-  "category" : "flexible",
+  "moreDetailsUrl" : "https://asforos.by/metallicheskie-karnizy/karniz-2-ryadnyy-aveya-d25-rif-rif-antik/",
+  "category" : "metallic",
   "properties" : {
-    "Цвет" : "Хром",
+    "Цвет" : "Антик",
     "Диаметр (мм)" : "25",
-    "Тип трубы" : "Крученая",
-    "Количество рядов" : "2"
-  },
-  "propertiesFromDetailPage" : {
-    "Цвет" : [ "src='https://asforos.by/upload/uf/6a8/6a8ef800940aecfbfba9efe93ff23a52.jpg' alt='Хром'" ],
-    "Количество рядов" : [ "2", "-" ],
-    "Тип трубы" : [ "Крученая / Гладкая", "-" ],
-    "Длина (м)" : [ "1,6", "1,8", "2,0", "2,4", "3,0", "-" ],
-    "Тип колец" : [ "Простое", "Простое с крючком", "Простое с зажимом", "Бесшумное", "Бесшумное с крючком", "Бесшумное с зажимом", "-" ]
-  }
-}, {
-  "imgUrl" : "https://asforos.by/upload/resize_cache/iblock/55c/500_500_17236f3bb137eb253405d06e58cacf26c/55c2ccfdc1f844bb5bd5be69100324c0.JPG",
-  "title" : "Карниз 2-рядный «Магнолия» D16 Риф / Риф Сатин",
-  "price" : "",
-  "moreDetailsUrl" : "https://asforos.by/karnizy/karniz-2-ryadnyy-magnoliya-d16-rif-rif-satin/",
-  "category" : "flexible",
-  "properties" : {
-    "Цвет" : "Сатин",
-    "Диаметр (мм)" : "16",
     "Тип трубы" : "Рифлёная",
     "Количество рядов" : "2"
   },
   "propertiesFromDetailPage" : {
-    "Цвет" : [ "src='https://asforos.by/upload/uf/5b6/5b653c44b641d9ef83145d79cb2ebed1.jpg' alt='Сатин'" ],
+    "Цвет" : [ "src='https://asforos.by/upload/uf/592/592a69ae3e9295aa9fbc8c087824694f.jpg' alt='Антик'" ],
     "Количество рядов" : [ "2", "-" ],
     "Тип трубы" : [ "Рифлёная / Рифлёная", "-" ],
     "Длина (м)" : [ "1,6", "1,8", "2,0", "2,4", "3,0", "-" ],
     "Тип колец" : [ "Простое", "Простое с крючком", "Простое с зажимом", "Бесшумное", "Бесшумное с крючком", "Бесшумное с зажимом", "-" ]
   }
 }, {
-  "imgUrl" : "https://asforos.by/upload/resize_cache/iblock/bc6/500_500_17236f3bb137eb253405d06e58cacf26c/bc6cb6a6d8551820f6dda6f99d264624.JPG",
-  "title" : "Карниз 2-рядный «Буэнос» D25 Риф / Риф Сатин",
+  "imgUrl" : "https://asforos.by/upload/resize_cache/iblock/4e0/500_500_17236f3bb137eb253405d06e58cacf26c/4e065553c9243f8d4b28571f708e202a.JPG",
+  "title" : "Карниз 2-рядный «Милано» D25 Риф / Риф Сатин",
   "price" : "",
-  "moreDetailsUrl" : "https://asforos.by/karnizy/karniz-2-ryadnyy-buenos-d25-rif-rif-satin/",
-  "category" : "flexible",
+  "moreDetailsUrl" : "https://asforos.by/metallicheskie-karnizy/karniz-2-ryadnyy-milano-d25-rif-rif-satin/",
+  "category" : "metallic",
   "properties" : {
     "Цвет" : "Сатин",
     "Диаметр (мм)" : "25",
@@ -265,14 +151,128 @@
     "Тип колец" : [ "Простое", "Простое с крючком", "Простое с зажимом", "Бесшумное", "Бесшумное с крючком", "Бесшумное с зажимом", "-" ]
   }
 }, {
-  "imgUrl" : "https://asforos.by/upload/resize_cache/iblock/c4e/500_500_17236f3bb137eb253405d06e58cacf26c/c4e00b89e919e694981eb04b3eac06cc.jpg",
-  "title" : "Карниз 2-рядный «Заглушка плоская» D16 Риф / Риф Сатин",
+  "imgUrl" : "https://asforos.by/upload/resize_cache/iblock/539/500_500_17236f3bb137eb253405d06e58cacf26c/5398dcee23d554e42216022936bd754f.JPG",
+  "title" : "Карниз 2-рядный «Фантазия» D25 Риф / Риф Сатин",
   "price" : "",
-  "moreDetailsUrl" : "https://asforos.by/karnizy/karniz-2-ryadnyy-zaglushka-ploskaya-d16-rif-rif-satin/",
-  "category" : "flexible",
+  "moreDetailsUrl" : "https://asforos.by/metallicheskie-karnizy/karniz-2-ryadnyy-fantaziya-d25-rif-rif-satin/",
+  "category" : "metallic",
   "properties" : {
     "Цвет" : "Сатин",
-    "Диаметр (мм)" : "16",
+    "Диаметр (мм)" : "25",
+    "Тип трубы" : "Рифлёная",
+    "Количество рядов" : "2"
+  },
+  "propertiesFromDetailPage" : {
+    "Цвет" : [ "src='https://asforos.by/upload/uf/5b6/5b653c44b641d9ef83145d79cb2ebed1.jpg' alt='Сатин'" ],
+    "Количество рядов" : [ "2", "-" ],
+    "Тип трубы" : [ "Рифлёная / Рифлёная", "-" ],
+    "Длина (м)" : [ "1,6", "1,8", "2,0", "2,4", "3,0", "-" ],
+    "Тип колец" : [ "Простое", "Простое с крючком", "Простое с зажимом", "Бесшумное", "Бесшумное с крючком", "Бесшумное с зажимом", "-" ]
+  }
+}, {
+  "imgUrl" : "https://asforos.by/upload/resize_cache/iblock/58d/500_500_17236f3bb137eb253405d06e58cacf26c/58dce660d59fc1f1fb5361e45503a0d1.JPG",
+  "title" : "Карниз 2-рядный «Заглушка плоская» D25 Риф / Риф Антик",
+  "price" : "",
+  "moreDetailsUrl" : "https://asforos.by/metallicheskie-karnizy/karniz-2-ryadnyy-zaglushka-ploskaya-d25-rif-rif-antik/",
+  "category" : "metallic",
+  "properties" : {
+    "Цвет" : "Антик",
+    "Диаметр (мм)" : "25",
+    "Тип трубы" : "Рифлёная",
+    "Количество рядов" : "2"
+  },
+  "propertiesFromDetailPage" : {
+    "Цвет" : [ "src='https://asforos.by/upload/uf/592/592a69ae3e9295aa9fbc8c087824694f.jpg' alt='Антик'" ],
+    "Количество рядов" : [ "2", "-" ],
+    "Тип трубы" : [ "Рифлёная / Рифлёная", "-" ],
+    "Длина (м)" : [ "1,6", "1,8", "2,0", "2,4", "3,0", "-" ],
+    "Тип колец" : [ "Простое", "Простое с крючком", "Простое с зажимом", "Бесшумное", "Бесшумное с крючком", "Бесшумное с зажимом", "-" ]
+  }
+}, {
+  "imgUrl" : "https://asforos.by/upload/resize_cache/iblock/ae4/500_500_17236f3bb137eb253405d06e58cacf26c/ae4c283c1e3a9ac4332bae1c65dac54b.JPG",
+  "title" : "Карниз 2-рядный «Жемчужина» D25 Риф / Риф Антик",
+  "price" : "",
+  "moreDetailsUrl" : "https://asforos.by/metallicheskie-karnizy/karniz-2-ryadnyy-zhemchuzhina-d25-rif-rif-antik/",
+  "category" : "metallic",
+  "properties" : {
+    "Цвет" : "Антик",
+    "Диаметр (мм)" : "25",
+    "Тип трубы" : "Рифлёная",
+    "Количество рядов" : "2"
+  },
+  "propertiesFromDetailPage" : {
+    "Цвет" : [ "src='https://asforos.by/upload/uf/a61/a61f9596148a05bb7ed48d04886cbe12.jpg' alt='Антик / Золото'" ],
+    "Количество рядов" : [ "2", "-" ],
+    "Тип трубы" : [ "Рифлёная / Рифлёная", "-" ],
+    "Длина (м)" : [ "1,6", "1,8", "2,0", "2,4", "3,0", "-" ],
+    "Тип колец" : [ "Простое", "Простое с крючком", "Простое с зажимом", "Бесшумное", "Бесшумное с крючком", "Бесшумное с зажимом", "-" ]
+  }
+}, {
+  "imgUrl" : "https://asforos.by/upload/resize_cache/iblock/661/500_500_17236f3bb137eb253405d06e58cacf26c/661466ecabf56f56da24d7a02f88a952.JPG",
+  "title" : "Карниз 2-рядный «Сатурн» D25 Риф / Риф Сатин",
+  "price" : "",
+  "moreDetailsUrl" : "https://asforos.by/metallicheskie-karnizy/karniz-2-ryadnyy-saturn-d25-rif-rif-satin/",
+  "category" : "metallic",
+  "properties" : {
+    "Цвет" : "Сатин",
+    "Диаметр (мм)" : "25",
+    "Тип трубы" : "Рифлёная",
+    "Количество рядов" : "2"
+  },
+  "propertiesFromDetailPage" : {
+    "Цвет" : [ "src='https://asforos.by/upload/uf/5b6/5b653c44b641d9ef83145d79cb2ebed1.jpg' alt='Сатин'" ],
+    "Количество рядов" : [ "2", "-" ],
+    "Тип трубы" : [ "Рифлёная / Рифлёная", "-" ],
+    "Длина (м)" : [ "1,6", "1,8", "2,0", "2,4", "3,0", "-" ],
+    "Тип колец" : [ "Простое", "Простое с крючком", "Простое с зажимом", "Бесшумное", "Бесшумное с крючком", "Бесшумное с зажимом", "-" ]
+  }
+}, {
+  "imgUrl" : "https://asforos.by/upload/resize_cache/iblock/1c8/500_500_17236f3bb137eb253405d06e58cacf26c/1c83202d405d469e87bbe5d0664b3936.JPG",
+  "title" : "Карниз 2-рядный «Мираж» D25 Риф / Риф Сатин",
+  "price" : "",
+  "moreDetailsUrl" : "https://asforos.by/metallicheskie-karnizy/karniz-2-ryadnyy-mirazh-d25-rif-rif-satin/",
+  "category" : "metallic",
+  "properties" : {
+    "Цвет" : "Сатин",
+    "Диаметр (мм)" : "25",
+    "Тип трубы" : "Рифлёная",
+    "Количество рядов" : "2"
+  },
+  "propertiesFromDetailPage" : {
+    "Цвет" : [ "src='https://asforos.by/upload/uf/5b6/5b653c44b641d9ef83145d79cb2ebed1.jpg' alt='Сатин'" ],
+    "Количество рядов" : [ "2", "-" ],
+    "Тип трубы" : [ "Рифлёная / Рифлёная", "-" ],
+    "Длина (м)" : [ "1,6", "1,8", "2,0", "2,4", "3,0", "-" ],
+    "Тип колец" : [ "Простое", "Простое с крючком", "Простое с зажимом", "Бесшумное", "Бесшумное с крючком", "Бесшумное с зажимом", "-" ]
+  }
+}, {
+  "imgUrl" : "https://asforos.by/upload/resize_cache/iblock/ea2/500_500_17236f3bb137eb253405d06e58cacf26c/ea2d50a98316b56223af87bfccdadca9.JPG",
+  "title" : "Карниз 2-рядный «Ампир» D25 Риф / Риф Сатин",
+  "price" : "",
+  "moreDetailsUrl" : "https://asforos.by/metallicheskie-karnizy/karniz-2-ryadnyy-ampir-d25-rif-rif-satin/",
+  "category" : "metallic",
+  "properties" : {
+    "Цвет" : "Сатин",
+    "Диаметр (мм)" : "25",
+    "Тип трубы" : "Рифлёная",
+    "Количество рядов" : "2"
+  },
+  "propertiesFromDetailPage" : {
+    "Цвет" : [ "src='https://asforos.by/upload/uf/5b6/5b653c44b641d9ef83145d79cb2ebed1.jpg' alt='Сатин'" ],
+    "Количество рядов" : [ "2", "-" ],
+    "Тип трубы" : [ "Рифлёная / Рифлёная", "-" ],
+    "Длина (м)" : [ "1,6", "1,8", "2,0", "2,4", "3,0", "-" ],
+    "Тип колец" : [ "Простое", "Простое с крючком", "Простое с зажимом", "Бесшумное", "Бесшумное с крючком", "Бесшумное с зажимом", "-" ]
+  }
+}, {
+  "imgUrl" : "https://asforos.by/upload/resize_cache/iblock/b24/500_500_17236f3bb137eb253405d06e58cacf26c/b24a9ce80752cad030b98cb35b39e4e4.JPG",
+  "title" : "Карниз 2-рядный «Кристалл» D25 Риф / Риф Сатин",
+  "price" : "",
+  "moreDetailsUrl" : "https://asforos.by/metallicheskie-karnizy/karniz-2-ryadnyy-kristall-d25-rif-rif-satin/",
+  "category" : "metallic",
+  "properties" : {
+    "Цвет" : "Сатин",
+    "Диаметр (мм)" : "25",
     "Тип трубы" : "Рифлёная",
     "Количество рядов" : "2"
   },

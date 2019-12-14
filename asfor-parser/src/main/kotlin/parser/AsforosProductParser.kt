@@ -8,7 +8,6 @@ import abstraction.IProductParser
 import arrow.core.Option
 import arrow.core.getOrElse
 import dal.ProductCategory
-import kotlinx.coroutines.Deferred
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.async
 import org.jsoup.Jsoup
@@ -23,44 +22,44 @@ class AsforosProductParser(storeCapacity: Option<UInt> = Option.empty()) : IProd
   private val builderStore: ThreadLocal<StringBuilder> = ThreadLocal()
 
   override fun parseAsync(context: IParserContext, listener: IProductListener<AsforosProduct>) = GlobalScope.async {
-    val pageUri = context.pageUri
-    fun buildPageUri(pageNumber: UInt) =  pageUri + PageIdStr + pageNumber.toString()
+    context.categories.map { category ->
+      val pageUri = category.uri
+      fun buildPageUri(pageNumber: UInt) =  pageUri + PageIdStr + pageNumber.toString()
 
-    val doc = openDocByUri(pageUri)
+      val doc = openDocByUri(pageUri)
 
-    listener.onLoadDocument(doc, 1u)
+      listener.onLoadDocument(doc, 1u)
 
-    val firstPageTaskItems = loadAsyncByCategories(doc, listener, 1u, context)
+      val firstPageTaskItems = loadAsyncByCategories(doc, listener, 1u, category)
 
-    val pageCount = getPageNumber(doc)
+      val pageCount = getPageNumber(doc)
 
-    if (pageCount <= 1)
-    {
-      return@async firstPageTaskItems
-              .flatMap { s -> s.await() }
+      if (pageCount <= 1)
+        return@async firstPageTaskItems
+
+      val loadItems = (2u..pageCount.toUInt())
+              .map { pageId ->
+                async {
+                  val curPageUri = buildPageUri(pageId)
+                  val curPageDoc = openDocByUri(curPageUri)
+
+                  listener.onLoadDocument(curPageDoc, pageId)
+
+                  loadAsyncByCategories(curPageDoc, listener, pageId, category)
+                }
+              }
               .toList()
+
+      val allItems = ArrayList<AsforosProduct>(capacity.or(0u).toInt())
+      allItems.addAll(firstPageTaskItems)
+
+      val res = mutableListOf<AsforosProduct>()
+      res.addAll(allItems)
+      res.addAll(loadItems.flatMap { it.await() })
+      res
     }
-
-    val loadItems = (2u..pageCount.toUInt())
-      .map { pageId ->
-        async {
-          val curPageUri = buildPageUri(pageId)
-          val curPageDoc = openDocByUri(curPageUri)
-
-          listener.onLoadDocument(curPageDoc, pageId)
-
-          loadAsyncByCategories(curPageDoc, listener, pageId, context)
-        }
-      }
+      .flatten()
       .toList()
-
-    val allItems = ArrayList<AsforosProduct>(capacity.or(0u).toInt())
-    allItems.addAll(firstPageTaskItems.flatMap { s -> s.await() })
-
-    val res = mutableListOf<AsforosProduct>()
-    res.addAll(allItems)
-    res.addAll(loadItems.flatMap { it.await() }.flatMap { it.await() })
-    res
   }
 
   private fun openDocByUri(uri: String): Document
@@ -202,16 +201,10 @@ class AsforosProductParser(storeCapacity: Option<UInt> = Option.empty()) : IProd
     }
   }
 
-  private suspend fun loadAsyncByCategories(doc: Document, listener: IProductListener<AsforosProduct>, pageNumber: UInt, context: IParserContext): List<Deferred<List<AsforosProduct>>> {
-    return GlobalScope.async {
-      return@async context.categories.map { category ->
-        async {
-          val firstPageItems = extract(doc, listener, pageNumber, category)
-          listener.onLoadPageItems(doc, firstPageItems, pageNumber)
-          firstPageItems
-        }
-      }.toList()
-    }.await()
+  private fun loadAsyncByCategories(doc: Document, listener: IProductListener<AsforosProduct>, pageNumber: UInt, category: ProductCategory): List<AsforosProduct> {
+    val firstPageItems = extract(doc, listener, pageNumber, category)
+    listener.onLoadPageItems(doc, firstPageItems, pageNumber)
+    return firstPageItems
   }
 
   private fun createDefaultProduct() = AsforosProduct("", "", "", "", "", mutableMapOf(), mutableMapOf())

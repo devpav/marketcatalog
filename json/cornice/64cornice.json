@@ -1,25 +1,9 @@
 [ {
-  "imgUrl" : "https://asforos.by/upload/resize_cache/iblock/b09/500_500_17236f3bb137eb253405d06e58cacf26c/b09bf0388b4c396fcf0267131c3bda87.JPG",
-  "title" : "Карниз с лентой 7см «Греция» Бук",
+  "imgUrl" : "https://asforos.by/upload/resize_cache/iblock/502/500_500_17236f3bb137eb253405d06e58cacf26c/50268d279f3c552d912face64c63ab55.JPG",
+  "title" : "Карниз 2-рядный «Корона» D16 Кр / Гл Антик",
   "price" : "",
-  "moreDetailsUrl" : "https://asforos.by/karnizy/karniz-s-lentoy-7sm-gretsiya-buk/",
-  "category" : "flexible",
-  "properties" : {
-    "Цвет" : "Бук",
-    "Ширина ленты (см)" : "7",
-    "Коллекция" : "Греция"
-  },
-  "propertiesFromDetailPage" : {
-    "Тип" : [ "прямой", "поворотный", "-" ],
-    "Количество рядов" : [ "2", "3", "-" ],
-    "Длина (м)" : [ "1,6", "1,8", "2,0", "2,2", "2,4", "2,6", "2,8", "3,0", "3,2", "3,4", "3,6", "4,0", "1,75", "1,85", "1,95", "2,05", "2,15", "2,25", "2,35", "2,45", "2,55", "2,65", "2,75", "2,85", "2,95", "3,05", "3,15", "3,25", "3,35", "3,45", "3,55", "3,65", "3,75", "3,85", "4,15", "4,25", "-" ]
-  }
-}, {
-  "imgUrl" : "https://asforos.by/upload/resize_cache/iblock/996/500_500_17236f3bb137eb253405d06e58cacf26c/996ee1ec3de33a0f43e1a27dfdda7d6a.JPG",
-  "title" : "Карниз 2-рядный «Лист вишни» D16 Кр / Кр Антик",
-  "price" : "",
-  "moreDetailsUrl" : "https://asforos.by/karnizy/karniz-2-ryadnyy-list-vishni-d16-kr-kr-antik/",
-  "category" : "flexible",
+  "moreDetailsUrl" : "https://asforos.by/metallicheskie-karnizy/karniz-2-ryadnyy-korona-d16-kr-gl-antik/",
+  "category" : "metallic",
   "properties" : {
     "Цвет" : "Антик",
     "Диаметр (мм)" : "16",
@@ -29,238 +13,16 @@
   "propertiesFromDetailPage" : {
     "Цвет" : [ "src='https://asforos.by/upload/uf/592/592a69ae3e9295aa9fbc8c087824694f.jpg' alt='Антик'" ],
     "Количество рядов" : [ "2", "-" ],
-    "Тип трубы" : [ "Крученая / Крученая", "-" ],
+    "Тип трубы" : [ "Крученая / Гладкая", "-" ],
     "Длина (м)" : [ "1,4", "1,6", "1,8", "2,0", "2,4", "3,0", "-" ],
     "Тип колец" : [ "Простое", "Простое с крючком", "Простое с зажимом", "Бесшумное", "Бесшумное с крючком", "Бесшумное с зажимом", "-" ]
   }
 }, {
-  "imgUrl" : "https://asforos.by/upload/resize_cache/iblock/45a/500_500_17236f3bb137eb253405d06e58cacf26c/45a59eeac1c80fc5b75af59162d34619.JPG",
-  "title" : "Карниз с лентой 7см «Греция» Венге",
+  "imgUrl" : "https://asforos.by/upload/resize_cache/iblock/dd0/500_500_17236f3bb137eb253405d06e58cacf26c/dd099e87e5b9ecfe1080733891690ce9.JPG",
+  "title" : "Карниз 2-рядный «Булава» D16 Гл / Гл Хром",
   "price" : "",
-  "moreDetailsUrl" : "https://asforos.by/karnizy/karniz-s-lentoy-7sm-gretsiya-venge/",
-  "category" : "flexible",
-  "properties" : {
-    "Цвет" : "Венге",
-    "Ширина ленты (см)" : "7",
-    "Коллекция" : "Греция"
-  },
-  "propertiesFromDetailPage" : {
-    "Тип" : [ "прямой", "поворотный", "-" ],
-    "Количество рядов" : [ "2", "3", "-" ],
-    "Длина (м)" : [ "1,6", "1,8", "2,0", "2,2", "2,4", "2,6", "2,8", "3,0", "3,2", "3,4", "3,6", "4,0", "1,75", "1,85", "1,95", "2,05", "2,15", "2,25", "2,35", "2,45", "2,55", "2,65", "2,75", "2,85", "2,95", "3,05", "3,15", "3,25", "3,35", "3,45", "3,55", "3,65", "3,75", "3,85", "4,15", "4,25", "-" ]
-  }
-}, {
-  "imgUrl" : "https://asforos.by/upload/resize_cache/iblock/c78/500_500_17236f3bb137eb253405d06e58cacf26c/c78bfc54fcc345f22bf3df007a610da6.JPG",
-  "title" : "Карниз 1-рядный «Корона» D25 Крученая Сатин",
-  "price" : "",
-  "moreDetailsUrl" : "https://asforos.by/karnizy/karniz-1-ryadnyy-korona-d25-kruchenaya-satin/",
-  "category" : "flexible",
-  "properties" : {
-    "Цвет" : "Сатин",
-    "Диаметр (мм)" : "25",
-    "Тип трубы" : "Крученая",
-    "Количество рядов" : "1"
-  },
-  "propertiesFromDetailPage" : {
-    "Цвет" : [ "src='https://asforos.by/upload/uf/5b6/5b653c44b641d9ef83145d79cb2ebed1.jpg' alt='Сатин'" ],
-    "Количество рядов" : [ "1", "-" ],
-    "Тип трубы" : [ "Крученая", "-" ],
-    "Длина (м)" : [ "1,4", "1,6", "1,8", "2,0", "2,4", "3,0", "-" ],
-    "Тип колец" : [ "Простое", "Простое с крючком", "Простое с зажимом", "Бесшумное", "Бесшумное с крючком", "Бесшумное с зажимом", "-" ]
-  }
-}, {
-  "imgUrl" : "https://asforos.by/upload/resize_cache/iblock/5e8/500_500_17236f3bb137eb253405d06e58cacf26c/5e823d16d3f3a5ba1f740ef5813f5b99.JPG",
-  "title" : "Карниз 2-рядный «Баваро» D16 Кр / Кр Антик",
-  "price" : "",
-  "moreDetailsUrl" : "https://asforos.by/karnizy/karniz-2-ryadnyy-bavaro-d16-kr-kr-antik/",
-  "category" : "flexible",
-  "properties" : {
-    "Цвет" : "Антик",
-    "Диаметр (мм)" : "16",
-    "Тип трубы" : "Крученая",
-    "Количество рядов" : "2"
-  },
-  "propertiesFromDetailPage" : {
-    "Цвет" : [ "src='https://asforos.by/upload/uf/592/592a69ae3e9295aa9fbc8c087824694f.jpg' alt='Антик'" ],
-    "Количество рядов" : [ "2", "-" ],
-    "Тип трубы" : [ "Крученая / Крученая", "-" ],
-    "Длина (м)" : [ "1,4", "1,6", "1,8", "2,0", "2,4", "3,0", "-" ],
-    "Тип колец" : [ "Простое", "Простое с крючком", "Простое с зажимом", "Бесшумное", "Бесшумное с крючком", "Бесшумное с зажимом", "-" ]
-  }
-}, {
-  "imgUrl" : "https://asforos.by/upload/resize_cache/iblock/91f/500_500_17236f3bb137eb253405d06e58cacf26c/91fa9811812c48b8b08edd0f4a17ba30.JPG",
-  "title" : "Карниз 2-рядный «Трапеция» D16 Кр / Кр Сатин",
-  "price" : "",
-  "moreDetailsUrl" : "https://asforos.by/karnizy/karniz-2-ryadnyy-trapetsiya-d16-kr-kr-satin/",
-  "category" : "flexible",
-  "properties" : {
-    "Цвет" : "Сатин",
-    "Диаметр (мм)" : "16",
-    "Тип трубы" : "Крученая",
-    "Количество рядов" : "2"
-  },
-  "propertiesFromDetailPage" : {
-    "Цвет" : [ "src='https://asforos.by/upload/uf/5b6/5b653c44b641d9ef83145d79cb2ebed1.jpg' alt='Сатин'" ],
-    "Количество рядов" : [ "2", "-" ],
-    "Тип трубы" : [ "Крученая / Крученая", "-" ],
-    "Длина (м)" : [ "1,4", "1,6", "1,8", "2,0", "2,4", "3,0", "-" ],
-    "Тип колец" : [ "Простое", "Простое с крючком", "Простое с зажимом", "Бесшумное", "Бесшумное с крючком", "Бесшумное с зажимом", "-" ]
-  }
-}, {
-  "imgUrl" : "https://asforos.by/upload/resize_cache/iblock/605/500_500_17236f3bb137eb253405d06e58cacf26c/60503ccc73d1c9069cbb8a2391779098.JPG",
-  "title" : "Карниз 1-рядный «Заглушка плоская» D25 Крученая Сатин",
-  "price" : "",
-  "moreDetailsUrl" : "https://asforos.by/karnizy/karniz-1-ryadnyy-zaglushka-ploskaya-d25-kruchenaya-satin/",
-  "category" : "flexible",
-  "properties" : {
-    "Цвет" : "Сатин",
-    "Диаметр (мм)" : "25",
-    "Тип трубы" : "Крученая",
-    "Количество рядов" : "1"
-  },
-  "propertiesFromDetailPage" : {
-    "Цвет" : [ "src='https://asforos.by/upload/uf/5b6/5b653c44b641d9ef83145d79cb2ebed1.jpg' alt='Сатин'" ],
-    "Количество рядов" : [ "1", "-" ],
-    "Тип трубы" : [ "Крученая", "-" ],
-    "Длина (м)" : [ "1,4", "1,6", "1,8", "2,0", "2,4", "3,0", "-" ],
-    "Тип колец" : [ "Простое", "Простое с крючком", "Простое с зажимом", "Бесшумное", "Бесшумное с крючком", "Бесшумное с зажимом", "-" ]
-  }
-}, {
-  "imgUrl" : "https://asforos.by/upload/resize_cache/iblock/d3b/500_500_17236f3bb137eb253405d06e58cacf26c/d3bfe609bf99cdd1187b149ea5fd7a4f.JPG",
-  "title" : "Карниз 1-рядный «Жемчужина» D25 Крученая Сатин",
-  "price" : "",
-  "moreDetailsUrl" : "https://asforos.by/karnizy/karniz-1-ryadnyy-zhemchuzhina-d25-kruchenaya-satin/",
-  "category" : "flexible",
-  "properties" : {
-    "Цвет" : "Сатин",
-    "Диаметр (мм)" : "25",
-    "Тип трубы" : "Крученая",
-    "Количество рядов" : "1"
-  },
-  "propertiesFromDetailPage" : {
-    "Цвет" : [ "src='https://asforos.by/upload/uf/e5a/e5aa1b2d2c8cfa46baebb58075bd82a7.jpg' alt='Сатин / Хром'" ],
-    "Количество рядов" : [ "1", "-" ],
-    "Тип трубы" : [ "Крученая", "-" ],
-    "Длина (м)" : [ "1,4", "1,6", "1,8", "2,0", "2,4", "3,0", "-" ],
-    "Тип колец" : [ "Простое", "Простое с крючком", "Простое с зажимом", "Бесшумное", "Бесшумное с крючком", "Бесшумное с зажимом", "-" ]
-  }
-}, {
-  "imgUrl" : "https://asforos.by/upload/resize_cache/iblock/fe9/500_500_17236f3bb137eb253405d06e58cacf26c/fe9ea6a579afa4883bf20aa1e83477e3.JPG",
-  "title" : "Карниз с лентой 7см «Греция» Карел. береза светлая",
-  "price" : "",
-  "moreDetailsUrl" : "https://asforos.by/karnizy/karniz-s-lentoy-7sm-gretsiya-karel-bereza-svetlaya/",
-  "category" : "flexible",
-  "properties" : {
-    "Цвет" : "Карельская Берёза Светлая",
-    "Ширина ленты (см)" : "7",
-    "Коллекция" : "Греция"
-  },
-  "propertiesFromDetailPage" : {
-    "Тип" : [ "прямой", "поворотный", "-" ],
-    "Количество рядов" : [ "2", "3", "-" ],
-    "Длина (м)" : [ "1,6", "1,8", "2,0", "2,2", "2,4", "2,6", "2,8", "3,0", "3,2", "3,4", "3,6", "4,0", "1,75", "1,85", "1,95", "2,05", "2,15", "2,25", "2,35", "2,45", "2,55", "2,65", "2,75", "2,85", "2,95", "3,05", "3,15", "3,25", "3,35", "3,45", "3,55", "3,65", "3,75", "3,85", "4,15", "4,25", "-" ]
-  }
-}, {
-  "imgUrl" : "https://asforos.by/upload/resize_cache/iblock/43e/500_500_17236f3bb137eb253405d06e58cacf26c/43ef3fdf9cc793f8d9857588722f1066.JPG",
-  "title" : "Карниз 1-рядный «Лист большой» D25 Крученая Сатин",
-  "price" : "",
-  "moreDetailsUrl" : "https://asforos.by/karnizy/karniz-1-ryadnyy-list-bolshoy-d25-kruchenaya-satin/",
-  "category" : "flexible",
-  "properties" : {
-    "Цвет" : "Сатин",
-    "Диаметр (мм)" : "25",
-    "Тип трубы" : "Крученая",
-    "Количество рядов" : "1"
-  },
-  "propertiesFromDetailPage" : {
-    "Цвет" : [ "src='https://asforos.by/upload/uf/5b6/5b653c44b641d9ef83145d79cb2ebed1.jpg' alt='Сатин'" ],
-    "Количество рядов" : [ "1", "-" ],
-    "Тип трубы" : [ "Крученая", "-" ],
-    "Длина (м)" : [ "1,4", "1,6", "1,8", "2,0", "2,4", "3,0", "-" ],
-    "Тип колец" : [ "Простое", "Простое с крючком", "Простое с зажимом", "Бесшумное", "Бесшумное с крючком", "Бесшумное с зажимом", "-" ]
-  }
-}, {
-  "imgUrl" : "https://asforos.by/upload/resize_cache/iblock/e69/500_500_17236f3bb137eb253405d06e58cacf26c/e691f1b2f6a1f9b8e9f5aa6109f098a9.JPG",
-  "title" : "Карниз 1-рядный «Заглушка закругленная» D25 Крученая Хром",
-  "price" : "",
-  "moreDetailsUrl" : "https://asforos.by/karnizy/karniz-1-ryadnyy-zaglushka-zakruglennaya-d25-kruchenaya-khrom/",
-  "category" : "flexible",
-  "properties" : {
-    "Цвет" : "Хром",
-    "Диаметр (мм)" : "25",
-    "Тип трубы" : "Крученая",
-    "Количество рядов" : "1"
-  },
-  "propertiesFromDetailPage" : {
-    "Цвет" : [ "src='https://asforos.by/upload/uf/6a8/6a8ef800940aecfbfba9efe93ff23a52.jpg' alt='Хром'" ],
-    "Количество рядов" : [ "1", "-" ],
-    "Тип трубы" : [ "Крученая", "-" ],
-    "Длина (м)" : [ "1,6", "1,8", "2,0", "2,4", "3,0", "-" ],
-    "Тип колец" : [ "Простое", "Простое с крючком", "Простое с зажимом", "Бесшумное", "Бесшумное с крючком", "Бесшумное с зажимом", "-" ]
-  }
-}, {
-  "imgUrl" : "https://asforos.by/upload/resize_cache/iblock/207/500_500_17236f3bb137eb253405d06e58cacf26c/2074693f99a2817a838a4a978dc3585b.JPG",
-  "title" : "Карниз 1-рядный «Колокол» D25 Крученая Хром",
-  "price" : "",
-  "moreDetailsUrl" : "https://asforos.by/karnizy/karniz-1-ryadnyy-kolokol-d25-kruchenaya-khrom/",
-  "category" : "flexible",
-  "properties" : {
-    "Цвет" : "Хром",
-    "Диаметр (мм)" : "25",
-    "Тип трубы" : "Крученая",
-    "Количество рядов" : "1"
-  },
-  "propertiesFromDetailPage" : {
-    "Цвет" : [ "src='https://asforos.by/upload/uf/6a8/6a8ef800940aecfbfba9efe93ff23a52.jpg' alt='Хром'" ],
-    "Количество рядов" : [ "1", "-" ],
-    "Тип трубы" : [ "Крученая", "-" ],
-    "Длина (м)" : [ "1,6", "1,8", "2,0", "2,4", "3,0", "-" ],
-    "Тип колец" : [ "Простое", "Простое с крючком", "Простое с зажимом", "Бесшумное", "Бесшумное с крючком", "Бесшумное с зажимом", "-" ]
-  }
-}, {
-  "imgUrl" : "https://asforos.by/upload/resize_cache/iblock/2e1/500_500_17236f3bb137eb253405d06e58cacf26c/2e1ed6f5adba15ee81940864af22b727.JPG",
-  "title" : "Карниз 2-рядный «Спираль» D16 Кр / Кр Антик",
-  "price" : "",
-  "moreDetailsUrl" : "https://asforos.by/karnizy/karniz-2-ryadnyy-spiral-d16-kr-kr-antik/",
-  "category" : "flexible",
-  "properties" : {
-    "Цвет" : "Антик",
-    "Диаметр (мм)" : "16",
-    "Тип трубы" : "Крученая",
-    "Количество рядов" : "2"
-  },
-  "propertiesFromDetailPage" : {
-    "Цвет" : [ "src='https://asforos.by/upload/uf/592/592a69ae3e9295aa9fbc8c087824694f.jpg' alt='Антик'" ],
-    "Количество рядов" : [ "2", "-" ],
-    "Тип трубы" : [ "Крученая / Крученая", "-" ],
-    "Длина (м)" : [ "1,4", "1,6", "1,8", "2,0", "2,4", "3,0", "-" ],
-    "Тип колец" : [ "Простое", "Простое с крючком", "Простое с зажимом", "Бесшумное", "Бесшумное с крючком", "Бесшумное с зажимом", "-" ]
-  }
-}, {
-  "imgUrl" : "https://asforos.by/upload/resize_cache/iblock/807/500_500_17236f3bb137eb253405d06e58cacf26c/807c4e23dec8aff3c542fc5e8ae312bb.JPG",
-  "title" : "Карниз 2-рядный «Твист» D16 Кр / Кр Сатин",
-  "price" : "",
-  "moreDetailsUrl" : "https://asforos.by/karnizy/karniz-2-ryadnyy-tvist-d16-kr-kr-satin/",
-  "category" : "flexible",
-  "properties" : {
-    "Цвет" : "Сатин",
-    "Диаметр (мм)" : "16",
-    "Тип трубы" : "Крученая",
-    "Количество рядов" : "2"
-  },
-  "propertiesFromDetailPage" : {
-    "Цвет" : [ "src='https://asforos.by/upload/uf/5b6/5b653c44b641d9ef83145d79cb2ebed1.jpg' alt='Сатин'" ],
-    "Количество рядов" : [ "2", "-" ],
-    "Тип трубы" : [ "Крученая / Крученая", "-" ],
-    "Длина (м)" : [ "1,4", "1,6", "1,8", "2,0", "2,4", "3,0", "-" ],
-    "Тип колец" : [ "Простое", "Простое с крючком", "Простое с зажимом", "Бесшумное", "Бесшумное с крючком", "Бесшумное с зажимом", "-" ]
-  }
-}, {
-  "imgUrl" : "https://asforos.by/upload/resize_cache/iblock/b44/500_500_17236f3bb137eb253405d06e58cacf26c/b44e4b52c354e1f3740d28dab791ef9c.JPG",
-  "title" : "Карниз 2-рядный «Ажур» D16 Гл / Гл Хром",
-  "price" : "",
-  "moreDetailsUrl" : "https://asforos.by/karnizy/karniz-2-ryadnyy-azhur-d16-gl-gl-khrom/",
-  "category" : "flexible",
+  "moreDetailsUrl" : "https://asforos.by/metallicheskie-karnizy/karniz-2-ryadnyy-bulava-d16-gl-gl-khrom/",
+  "category" : "metallic",
   "properties" : {
     "Цвет" : "Хром",
     "Диаметр (мм)" : "16",
@@ -272,6 +34,253 @@
     "Количество рядов" : [ "2", "-" ],
     "Тип трубы" : [ "Гладкая / Гладкая", "-" ],
     "Длина (м)" : [ "1,4", "1,6", "1,8", "2,0", "2,4", "3,0", "-" ],
+    "Тип колец" : [ "Простое", "Простое с крючком", "Простое с зажимом", "Бесшумное", "Бесшумное с крючком", "Бесшумное с зажимом", "-" ]
+  }
+}, {
+  "imgUrl" : "https://asforos.by/upload/resize_cache/iblock/c7d/500_500_17236f3bb137eb253405d06e58cacf26c/c7d5f7da407467d02df3dd270a5685c2.JPG",
+  "title" : "Карниз 2-рядный «Метеор» D16 Гл / Гл Хром",
+  "price" : "",
+  "moreDetailsUrl" : "https://asforos.by/metallicheskie-karnizy/karniz-2-ryadnyy-meteor-d16-gl-gl-khrom/",
+  "category" : "metallic",
+  "properties" : {
+    "Цвет" : "Хром",
+    "Диаметр (мм)" : "16",
+    "Тип трубы" : "Гладкая",
+    "Количество рядов" : "2"
+  },
+  "propertiesFromDetailPage" : {
+    "Цвет" : [ "src='https://asforos.by/upload/uf/6a8/6a8ef800940aecfbfba9efe93ff23a52.jpg' alt='Хром'" ],
+    "Количество рядов" : [ "2", "-" ],
+    "Тип трубы" : [ "Гладкая / Гладкая", "-" ],
+    "Длина (м)" : [ "1,4", "1,6", "1,8", "2,0", "2,4", "3,0", "-" ],
+    "Тип колец" : [ "Простое", "Простое с крючком", "Простое с зажимом", "Бесшумное", "Бесшумное с крючком", "Бесшумное с зажимом", "-" ]
+  }
+}, {
+  "imgUrl" : "https://asforos.by/upload/resize_cache/iblock/6b1/500_500_17236f3bb137eb253405d06e58cacf26c/6b177f9b8399a52022790918532bc856.JPG",
+  "title" : "Карниз 2-рядный «Шар рифленый» D16 Гл / Гл Хром",
+  "price" : "",
+  "moreDetailsUrl" : "https://asforos.by/metallicheskie-karnizy/karniz-2-ryadnyy-shar-riflenyy-d16-gl-gl-khrom/",
+  "category" : "metallic",
+  "properties" : {
+    "Цвет" : "Хром",
+    "Диаметр (мм)" : "16",
+    "Тип трубы" : "Гладкая",
+    "Количество рядов" : "2"
+  },
+  "propertiesFromDetailPage" : {
+    "Цвет" : [ "src='https://asforos.by/upload/uf/6a8/6a8ef800940aecfbfba9efe93ff23a52.jpg' alt='Хром'" ],
+    "Количество рядов" : [ "2", "-" ],
+    "Тип трубы" : [ "Гладкая / Гладкая", "-" ],
+    "Длина (м)" : [ "1,4", "1,6", "1,8", "2,0", "2,4", "3,0", "-" ],
+    "Тип колец" : [ "Простое", "Простое с крючком", "Простое с зажимом", "Бесшумное", "Бесшумное с крючком", "Бесшумное с зажимом", "-" ]
+  }
+}, {
+  "imgUrl" : "https://asforos.by/upload/resize_cache/iblock/3b3/500_500_17236f3bb137eb253405d06e58cacf26c/3b3e523fd7c6ebe8cce36e7fa6271db9.JPG",
+  "title" : "Карниз 2-рядный «Цилиндр» D16 Гл / Гл Хром",
+  "price" : "",
+  "moreDetailsUrl" : "https://asforos.by/metallicheskie-karnizy/karniz-2-ryadnyy-tsilindr-d16-gl-gl-khrom/",
+  "category" : "metallic",
+  "properties" : {
+    "Цвет" : "Хром",
+    "Диаметр (мм)" : "16",
+    "Тип трубы" : "Гладкая",
+    "Количество рядов" : "2"
+  },
+  "propertiesFromDetailPage" : {
+    "Цвет" : [ "src='https://asforos.by/upload/uf/6a8/6a8ef800940aecfbfba9efe93ff23a52.jpg' alt='Хром'" ],
+    "Количество рядов" : [ "2", "-" ],
+    "Тип трубы" : [ "Гладкая / Гладкая", "-" ],
+    "Длина (м)" : [ "1,4", "1,6", "1,8", "2,0", "2,4", "3,0", "-" ],
+    "Тип колец" : [ "Простое", "Простое с крючком", "Простое с зажимом", "Бесшумное", "Бесшумное с крючком", "Бесшумное с зажимом", "-" ]
+  }
+}, {
+  "imgUrl" : "https://asforos.by/upload/resize_cache/iblock/d6b/500_500_17236f3bb137eb253405d06e58cacf26c/d6b193ac2ec32322e072dd3b7a9e3a70.JPG",
+  "title" : "Карниз 2-рядный «Кристалл» D16 Гл / Гл Хром",
+  "price" : "",
+  "moreDetailsUrl" : "https://asforos.by/metallicheskie-karnizy/karniz-2-ryadnyy-kristall-d16-gl-gl-khrom/",
+  "category" : "metallic",
+  "properties" : {
+    "Цвет" : "Хром",
+    "Диаметр (мм)" : "16",
+    "Тип трубы" : "Гладкая",
+    "Количество рядов" : "2"
+  },
+  "propertiesFromDetailPage" : {
+    "Цвет" : [ "src='https://asforos.by/upload/uf/6a8/6a8ef800940aecfbfba9efe93ff23a52.jpg' alt='Хром'" ],
+    "Количество рядов" : [ "2", "-" ],
+    "Тип трубы" : [ "Гладкая / Гладкая", "-" ],
+    "Длина (м)" : [ "1,4", "1,6", "1,8", "2,0", "2,4", "3,0", "-" ],
+    "Тип колец" : [ "Простое", "Простое с крючком", "Простое с зажимом", "Бесшумное", "Бесшумное с крючком", "Бесшумное с зажимом", "-" ]
+  }
+}, {
+  "imgUrl" : "https://asforos.by/upload/resize_cache/iblock/89d/500_500_17236f3bb137eb253405d06e58cacf26c/89d119425eb1699b33f7f3c42da8772f.JPG",
+  "title" : "Карниз 2-рядный «Ампир» D16 Гл / Гл Хром",
+  "price" : "",
+  "moreDetailsUrl" : "https://asforos.by/metallicheskie-karnizy/karniz-2-ryadnyy-ampir-d16-gl-gl-khrom/",
+  "category" : "metallic",
+  "properties" : {
+    "Цвет" : "Хром",
+    "Диаметр (мм)" : "16",
+    "Тип трубы" : "Гладкая",
+    "Количество рядов" : "2"
+  },
+  "propertiesFromDetailPage" : {
+    "Цвет" : [ "src='https://asforos.by/upload/uf/6a8/6a8ef800940aecfbfba9efe93ff23a52.jpg' alt='Хром'" ],
+    "Количество рядов" : [ "2", "-" ],
+    "Тип трубы" : [ "Гладкая / Гладкая", "-" ],
+    "Длина (м)" : [ "1,4", "1,6", "1,8", "2,0", "2,4", "3,0", "-" ],
+    "Тип колец" : [ "Простое", "Простое с крючком", "Простое с зажимом", "Бесшумное", "Бесшумное с крючком", "Бесшумное с зажимом", "-" ]
+  }
+}, {
+  "imgUrl" : "https://asforos.by/upload/resize_cache/iblock/26c/500_500_17236f3bb137eb253405d06e58cacf26c/26c7c409e605f6f9fbe834c49a8501e1.JPG",
+  "title" : "Карниз 1-рядный «Ромилда» D25 Рифленая Антик",
+  "price" : "",
+  "moreDetailsUrl" : "https://asforos.by/metallicheskie-karnizy/karniz-1-ryadnyy-romilda-d25-riflenaya-antik/",
+  "category" : "metallic",
+  "properties" : {
+    "Цвет" : "Антик",
+    "Диаметр (мм)" : "25",
+    "Тип трубы" : "Рифлёная",
+    "Количество рядов" : "1"
+  },
+  "propertiesFromDetailPage" : {
+    "Цвет" : [ "src='https://asforos.by/upload/uf/592/592a69ae3e9295aa9fbc8c087824694f.jpg' alt='Антик'" ],
+    "Количество рядов" : [ "1", "-" ],
+    "Тип трубы" : [ "Рифлёная", "-" ],
+    "Длина (м)" : [ "1,6", "1,8", "2,0", "2,4", "3,0", "-" ],
+    "Тип колец" : [ "Простое", "Простое с крючком", "Простое с зажимом", "Бесшумное", "Бесшумное с крючком", "Бесшумное с зажимом", "-" ]
+  }
+}, {
+  "imgUrl" : "https://asforos.by/upload/resize_cache/iblock/0d6/500_500_17236f3bb137eb253405d06e58cacf26c/0d65f2c14d6564bbcf58489f4abaf663.JPG",
+  "title" : "Карниз 1-рядный «Эмпория» D25 Рифленая Сатин",
+  "price" : "",
+  "moreDetailsUrl" : "https://asforos.by/metallicheskie-karnizy/karniz-1-ryadnyy-emporiya-d25-riflenaya-satin/",
+  "category" : "metallic",
+  "properties" : {
+    "Цвет" : "Сатин",
+    "Диаметр (мм)" : "25",
+    "Тип трубы" : "Рифлёная",
+    "Количество рядов" : "1"
+  },
+  "propertiesFromDetailPage" : {
+    "Цвет" : [ "src='https://asforos.by/upload/uf/5b6/5b653c44b641d9ef83145d79cb2ebed1.jpg' alt='Сатин'" ],
+    "Количество рядов" : [ "1", "-" ],
+    "Тип трубы" : [ "Рифлёная", "-" ],
+    "Длина (м)" : [ "1,6", "1,8", "2,0", "2,4", "3,0", "-" ],
+    "Тип колец" : [ "Простое", "Простое с крючком", "Простое с зажимом", "Бесшумное", "Бесшумное с крючком", "Бесшумное с зажимом", "-" ]
+  }
+}, {
+  "imgUrl" : "https://asforos.by/upload/resize_cache/iblock/5e4/500_500_17236f3bb137eb253405d06e58cacf26c/5e4d0ac7259310fc40a68798a32274a8.JPG",
+  "title" : "Карниз 2-рядный «Тристан» D16 Кр / Кр Антик / Чёрный",
+  "price" : "",
+  "moreDetailsUrl" : "https://asforos.by/metallicheskie-karnizy/karniz-2-ryadnyy-tristan-d16-kr-kr-antik-chyernyy/",
+  "category" : "metallic",
+  "properties" : {
+    "Цвет" : "Антик",
+    "Диаметр (мм)" : "16",
+    "Тип трубы" : "Крученая",
+    "Количество рядов" : "2"
+  },
+  "propertiesFromDetailPage" : {
+    "Цвет" : [ "src='https://asforos.by/upload/uf/513/513c844e8f433d87c7d1803c6ca3c93e.jpg' alt='Антик / Чёрный'" ],
+    "Количество рядов" : [ "2", "-" ],
+    "Тип трубы" : [ "Крученая / Крученая", "-" ],
+    "Длина (м)" : [ "1,4", "1,6", "1,8", "2,0", "2,4", "3,0", "-" ],
+    "Тип колец" : [ "Простое", "Простое с крючком", "Простое с зажимом", "Бесшумное", "Бесшумное с крючком", "Бесшумное с зажимом", "-" ]
+  }
+}, {
+  "imgUrl" : "https://asforos.by/upload/resize_cache/iblock/2f7/500_500_17236f3bb137eb253405d06e58cacf26c/2f774092593c20eff3aaa4f134cb4e6d.JPG",
+  "title" : "Карниз 2-рядный «Белуно» D16 Кр / Кр Сатин",
+  "price" : "",
+  "moreDetailsUrl" : "https://asforos.by/metallicheskie-karnizy/karniz-2-ryadnyy-beluno-d16-kr-kr-satin/",
+  "category" : "metallic",
+  "properties" : {
+    "Цвет" : "Сатин",
+    "Диаметр (мм)" : "16",
+    "Тип трубы" : "Крученая",
+    "Количество рядов" : "2"
+  },
+  "propertiesFromDetailPage" : {
+    "Цвет" : [ "src='https://asforos.by/upload/uf/5b6/5b653c44b641d9ef83145d79cb2ebed1.jpg' alt='Сатин'" ],
+    "Количество рядов" : [ "2", "-" ],
+    "Тип трубы" : [ "Крученая / Крученая", "-" ],
+    "Длина (м)" : [ "1,4", "1,6", "1,8", "2,0", "2,4", "3,0", "-" ],
+    "Тип колец" : [ "Простое", "Простое с крючком", "Простое с зажимом", "Бесшумное", "Бесшумное с крючком", "Бесшумное с зажимом", "-" ]
+  }
+}, {
+  "imgUrl" : "https://asforos.by/upload/resize_cache/iblock/d65/500_500_17236f3bb137eb253405d06e58cacf26c/d65afd01e47f4b6253351d28d389d924.JPG",
+  "title" : "Карниз 1-рядный «Сатурн» D25 Рифленая Антик",
+  "price" : "",
+  "moreDetailsUrl" : "https://asforos.by/metallicheskie-karnizy/karniz-1-ryadnyy-saturn-d25-riflenaya-antik/",
+  "category" : "metallic",
+  "properties" : {
+    "Цвет" : "Антик",
+    "Диаметр (мм)" : "25",
+    "Тип трубы" : "Рифлёная",
+    "Количество рядов" : "1"
+  },
+  "propertiesFromDetailPage" : {
+    "Цвет" : [ "src='https://asforos.by/upload/uf/592/592a69ae3e9295aa9fbc8c087824694f.jpg' alt='Антик'" ],
+    "Количество рядов" : [ "1", "-" ],
+    "Тип трубы" : [ "Рифлёная", "-" ],
+    "Длина (м)" : [ "1,6", "1,8", "2,0", "2,4", "3,0", "-" ],
+    "Тип колец" : [ "Простое", "Простое с крючком", "Простое с зажимом", "Бесшумное", "Бесшумное с крючком", "Бесшумное с зажимом", "-" ]
+  }
+}, {
+  "imgUrl" : "https://asforos.by/upload/resize_cache/iblock/476/500_500_17236f3bb137eb253405d06e58cacf26c/4761e18100583d1abc2f519f1c06a0b1.JPG",
+  "title" : "Карниз 2-рядный «Милано» D16 Гл / Гл Хром",
+  "price" : "",
+  "moreDetailsUrl" : "https://asforos.by/metallicheskie-karnizy/karniz-2-ryadnyy-milano-d16-gl-gl-khrom/",
+  "category" : "metallic",
+  "properties" : {
+    "Цвет" : "Хром",
+    "Диаметр (мм)" : "16",
+    "Тип трубы" : "Гладкая",
+    "Количество рядов" : "2"
+  },
+  "propertiesFromDetailPage" : {
+    "Цвет" : [ "src='https://asforos.by/upload/uf/6a8/6a8ef800940aecfbfba9efe93ff23a52.jpg' alt='Хром'" ],
+    "Количество рядов" : [ "2", "-" ],
+    "Тип трубы" : [ "Гладкая / Гладкая", "-" ],
+    "Длина (м)" : [ "1,4", "1,6", "1,8", "2,0", "2,4", "3,0", "-" ],
+    "Тип колец" : [ "Простое", "Простое с крючком", "Простое с зажимом", "Бесшумное", "Бесшумное с крючком", "Бесшумное с зажимом", "-" ]
+  }
+}, {
+  "imgUrl" : "https://asforos.by/upload/resize_cache/iblock/633/500_500_17236f3bb137eb253405d06e58cacf26c/633858e6f5bd8644eec8ce517770804d.JPG",
+  "title" : "Карниз 1-рядный «Спираль» D25 Рифленая Антик",
+  "price" : "",
+  "moreDetailsUrl" : "https://asforos.by/metallicheskie-karnizy/karniz-1-ryadnyy-spiral-d25-riflenaya-antik/",
+  "category" : "metallic",
+  "properties" : {
+    "Цвет" : "Антик",
+    "Диаметр (мм)" : "25",
+    "Тип трубы" : "Рифлёная",
+    "Количество рядов" : "1"
+  },
+  "propertiesFromDetailPage" : {
+    "Цвет" : [ "src='https://asforos.by/upload/uf/592/592a69ae3e9295aa9fbc8c087824694f.jpg' alt='Антик'" ],
+    "Количество рядов" : [ "1", "-" ],
+    "Тип трубы" : [ "Рифлёная", "-" ],
+    "Длина (м)" : [ "1,6", "1,8", "2,0", "2,4", "3,0", "-" ],
+    "Тип колец" : [ "Простое", "Простое с крючком", "Простое с зажимом", "Бесшумное", "Бесшумное с крючком", "Бесшумное с зажимом", "-" ]
+  }
+}, {
+  "imgUrl" : "https://asforos.by/upload/resize_cache/iblock/37d/500_500_17236f3bb137eb253405d06e58cacf26c/37dbfce7bb8437d502bc2d3e5e9c924a.JPG",
+  "title" : "Карниз 1-рядный «Аванти» D25 Рифленая Сатин",
+  "price" : "",
+  "moreDetailsUrl" : "https://asforos.by/metallicheskie-karnizy/karniz-1-ryadnyy-avanti-d25-riflenaya-satin/",
+  "category" : "metallic",
+  "properties" : {
+    "Цвет" : "Сатин",
+    "Диаметр (мм)" : "25",
+    "Тип трубы" : "Рифлёная",
+    "Количество рядов" : "1"
+  },
+  "propertiesFromDetailPage" : {
+    "Цвет" : [ "src='https://asforos.by/upload/uf/5b6/5b653c44b641d9ef83145d79cb2ebed1.jpg' alt='Сатин'" ],
+    "Количество рядов" : [ "1", "-" ],
+    "Тип трубы" : [ "Рифлёная", "-" ],
+    "Длина (м)" : [ "1,6", "1,8", "2,0", "2,4", "3,0", "-" ],
     "Тип колец" : [ "Простое", "Простое с крючком", "Простое с зажимом", "Бесшумное", "Бесшумное с крючком", "Бесшумное с зажимом", "-" ]
   }
 } ]

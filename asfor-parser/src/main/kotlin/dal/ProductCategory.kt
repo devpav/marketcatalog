@@ -1,3 +1,3 @@
 package dal
 
-data class ProductCategory(val url: String, val name: String)
+data class ProductCategory(val uri: String, val name: String)
