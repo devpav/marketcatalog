@@ -47,7 +47,21 @@ class CharacteristicMapperHandler {
 
         val result: HashMap<String, CharacteristicMapperHolder> = HashMap<String, CharacteristicMapperHolder>()
         result["Цвет"] = CharacteristicMapperHolder(::stringCharacteristicMapper, ::availableCharacteristicMapper)
-        TODO("Вставка остальных свойств из Json файла")
+        result["Артикул"] = CharacteristicMapperHolder(::stringCharacteristicMapper, ::availableCharacteristicMapper)
+        result["Коллекция"] = CharacteristicMapperHolder(::stringCharacteristicMapper, ::availableCharacteristicMapper)
+        result["Составной"] = CharacteristicMapperHolder(::stringCharacteristicMapper, ::availableCharacteristicMapper)
+        result["Тип колец"] = CharacteristicMapperHolder(::stringCharacteristicMapper, ::availableCharacteristicMapper)
+        result["Тип"] = CharacteristicMapperHolder(::stringCharacteristicMapper, ::availableCharacteristicMapper)
+        result["ID поста блога для комментариев"] = CharacteristicMapperHolder(::stringCharacteristicMapper, ::availableCharacteristicMapper)
+        result["Тип трубы"] = CharacteristicMapperHolder(::stringCharacteristicMapper, ::availableCharacteristicMapper)
+
+        result["Количество рядов"] = CharacteristicMapperHolder(::stringCharacteristicMapper, ::availableCharacteristicMapper)
+        result["Ширина ленты (см)"] = CharacteristicMapperHolder(::doubleCharacteristicMapper, ::availableCharacteristicMapper)
+        result["Ширина (см)"] = CharacteristicMapperHolder(::doubleCharacteristicMapper, ::availableCharacteristicMapper)
+        result["Диаметр (мм)"] = CharacteristicMapperHolder(::doubleCharacteristicMapper, ::availableCharacteristicMapper)
+        result["Диаметр (см)"] = CharacteristicMapperHolder(::doubleCharacteristicMapper, ::availableCharacteristicMapper)
+        result["Длина (м)"] = CharacteristicMapperHolder(::doubleCharacteristicMapper, ::availableCharacteristicMapper)
+
         return result
     }
 
