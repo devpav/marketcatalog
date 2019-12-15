@@ -2,7 +2,11 @@ package by.market.parser.mapper
 
 import by.market.domain.product.ProductAccessory
 import by.market.repository.product.ProductAccessoryRepository
+import org.springframework.stereotype.Component
 
-class ProductAccessoryMapper(rep: ProductAccessoryRepository) : BaseParserMapper<ProductAccessory>(rep) {
-    override fun getDatabaseProductOrMakeEmptyProduct(title: String): ProductAccessory = TODO()
+@Component
+open class ProductAccessoryMapper(rep: ProductAccessoryRepository) : BaseParserMapper<ProductAccessory>(rep) {
+
+    override fun getEntity() = ProductAccessory()
+
 }

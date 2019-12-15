@@ -1,8 +1,0 @@
-package by.market.repository.characteristic.list
-
-import by.market.domain.characteristics.list.DoubleListCharacteristic
-import by.market.repository.characteristic.AbstractListCharacteristicRepository
-import org.springframework.stereotype.Repository
-
-@Repository
-interface DoubleListCharacteristicRepository : AbstractListCharacteristicRepository<DoubleListCharacteristic, Double>

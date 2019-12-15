@@ -3,35 +3,58 @@ package by.market.parser.mapper
 import by.market.core.IMapper
 import by.market.domain.AbstractProduct
 import by.market.domain.system.Category
-import by.market.repository.BaseRepository
+import by.market.repository.AbstractProductRepository
+import by.market.repository.system.CategoryRepository
+import org.springframework.beans.factory.annotation.Autowired
+import org.springframework.transaction.annotation.Transactional
 import product.AsforosProduct
+import javax.annotation.PostConstruct
 
-abstract class BaseParserMapper<TProduct: AbstractProduct>(protected val rep: BaseRepository<TProduct>) : IMapper<AsforosProduct, TProduct> {
-    private val categoryMap: HashMap<String, Category?> = createCategoryMap()
-    private val characteristicMapperHandler: CharacteristicMapperHandler = CharacteristicMapperHandler()
+abstract class BaseParserMapper<TProduct: AbstractProduct>(
+        protected val rep: AbstractProductRepository<TProduct>
+) : IMapper<AsforosProduct, TProduct> {
+    private lateinit var categoryMap: HashMap<String, Category?>
 
+    @Autowired
+    private lateinit var characteristicMapperHandler: CharacteristicMapperHandler
+    @Autowired
+    private lateinit var categoryRepository: CategoryRepository
+
+    @PostConstruct
+    private fun init() {
+        categoryMap = createCategoryMap()
+    }
+
+    @Transactional
     override suspend fun map(value: AsforosProduct): TProduct {
         val product = getDatabaseProductOrMakeEmptyProduct(value.title)
-        product.category = categoryMap.getOrDefault(value.category, null)
+        // product.category = categoryMap.getOrDefault(value.category, null)
         product.img = value.imgUrl
         product.title = value.title
 
-        insertOrUpdateInDatabase(product)
+        product.id = rep.saveAndFlush(product).id
+
         characteristicMapperHandler.handle(product, value)
 
         return product
     }
 
-    abstract fun getDatabaseProductOrMakeEmptyProduct(title: String): TProduct
+    fun getDatabaseProductOrMakeEmptyProduct(title: String): TProduct {
+        val existsByTitle = rep.existsByTitle(title)
 
-    private fun insertOrUpdateInDatabase(product: TProduct){
-        product.id = rep.saveAndFlush(product).id
+        var product = getEntity()
+
+        if (existsByTitle) {
+            product = rep.findByTitle(title)
+        }
+
+        return product
     }
 
+    abstract fun getEntity(): TProduct
+
     private fun createCategoryMap(): HashMap<String, Category?> {
-        fun findCategory(parserCategory: String): Category? {
-            TODO("Ищем по названию категории, категорию из БД")
-        }
+        fun findCategory(parserCategory: String) = categoryRepository.findBySystemName(parserCategory)
 
         val map = HashMap<String, Category?>()
         // Карнизы

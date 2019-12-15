@@ -16,27 +16,27 @@ VALUES
     ('f8a17421-5b48-4d22-8899-25a8765bbecc', 'STRING'),
     ('bb2c2f80-6fed-4504-ae5a-e8604ae8591f', 'DOUBLE');
 
-insert into tbx_s_category(id, title, id_parent_category)
+insert into tbx_s_category(id, title, id_parent_category, system_name)
 VALUES
-    ('5762a94b-43ce-4e0b-a635-c776e04b73ed','Карнизы', '5762a94b-43ce-4e0b-a635-c776e04b73ed'),
-    ('4afac74f-dfa0-4423-82b4-b0b50bb034c3','Металические', '5762a94b-43ce-4e0b-a635-c776e04b73ed'),
-    ('e5c91db9-7696-404c-a2a1-a9f6398f2793','Пластиковые потолочные', '5762a94b-43ce-4e0b-a635-c776e04b73ed'),
-    ('3a1142bf-9377-431f-bbc4-24b036afb2b2','Настенные металлопластиковые', '5762a94b-43ce-4e0b-a635-c776e04b73ed'),
-    ('3f948223-2db4-4b7e-8a42-037c41494d86','Гибкие', '5762a94b-43ce-4e0b-a635-c776e04b73ed'),
-    ('282313fa-3d9b-4839-842a-7a56ef2bc222','Комплектующие для потолочных', '5762a94b-43ce-4e0b-a635-c776e04b73ed'),
-    ('ec5dc3c2-a6b7-46ee-8bee-8978e742d134','Металлопластиковая фурнитура', '5762a94b-43ce-4e0b-a635-c776e04b73ed'),
-    ('c4c33ec7-488d-4c26-970e-b8009b1b6c21','Комплектующие для металлических', '5762a94b-43ce-4e0b-a635-c776e04b73ed'),
+    ('5762a94b-43ce-4e0b-a635-c776e04b73ed','Карнизы', '5762a94b-43ce-4e0b-a635-c776e04b73ed', 'cornice'),
+    ('4afac74f-dfa0-4423-82b4-b0b50bb034c3','Металические', '5762a94b-43ce-4e0b-a635-c776e04b73ed', 'metallic'),
+    ('e5c91db9-7696-404c-a2a1-a9f6398f2793','Пластиковые потолочные', '5762a94b-43ce-4e0b-a635-c776e04b73ed', 'plastic_ceilings'),
+    ('3a1142bf-9377-431f-bbc4-24b036afb2b2','Настенные металлопластиковые', '5762a94b-43ce-4e0b-a635-c776e04b73ed', 'wall_metal_plastic'),
+    ('3f948223-2db4-4b7e-8a42-037c41494d86','Гибкие', '5762a94b-43ce-4e0b-a635-c776e04b73ed', 'flexible'),
+    ('282313fa-3d9b-4839-842a-7a56ef2bc222','Комплектующие для потолочных', '5762a94b-43ce-4e0b-a635-c776e04b73ed', 'accessories_for_ceiling'),
+    ('ec5dc3c2-a6b7-46ee-8bee-8978e742d134','Металлопластиковая фурнитура', '5762a94b-43ce-4e0b-a635-c776e04b73ed', 'metal_plastic_accessories'),
+    ('c4c33ec7-488d-4c26-970e-b8009b1b6c21','Комплектующие для металлических', '5762a94b-43ce-4e0b-a635-c776e04b73ed', 'accessories_for_metal'),
 
-    ('f9ba484d-b696-4a9a-ac79-f2fbd0cfa551','Рольшторы','f9ba484d-b696-4a9a-ac79-f2fbd0cfa551'),
-    ('b04302c0-2771-466e-baba-d2977e97ad2f','День/ночь','f9ba484d-b696-4a9a-ac79-f2fbd0cfa551'),
-    ('dc77d8d8-c96c-4889-bf8a-4e5930ed641a','Стандарт','f9ba484d-b696-4a9a-ac79-f2fbd0cfa551'),
-    ('7a28617c-2a5f-4b3f-9e58-7dfa0b4d74bb','В коробке','f9ba484d-b696-4a9a-ac79-f2fbd0cfa551'),
-    ('6027dad3-9c43-4bf9-8520-5796d59a1300','Премиум','f9ba484d-b696-4a9a-ac79-f2fbd0cfa551'),
-    ('bd93cb0e-50f1-4c7b-9a73-b515129d0e1b','Блэкаут','f9ba484d-b696-4a9a-ac79-f2fbd0cfa551'),
+    ('f9ba484d-b696-4a9a-ac79-f2fbd0cfa551','Рольшторы','f9ba484d-b696-4a9a-ac79-f2fbd0cfa551', 'rolstor'),
+    ('b04302c0-2771-466e-baba-d2977e97ad2f','День/ночь','f9ba484d-b696-4a9a-ac79-f2fbd0cfa551', 'day_night'),
+    ('dc77d8d8-c96c-4889-bf8a-4e5930ed641a','Стандарт','f9ba484d-b696-4a9a-ac79-f2fbd0cfa551', 'standard'),
+    ('7a28617c-2a5f-4b3f-9e58-7dfa0b4d74bb','В коробке','f9ba484d-b696-4a9a-ac79-f2fbd0cfa551', 'in_box'),
+    ('6027dad3-9c43-4bf9-8520-5796d59a1300','Премиум','f9ba484d-b696-4a9a-ac79-f2fbd0cfa551', 'premium'),
+    ('bd93cb0e-50f1-4c7b-9a73-b515129d0e1b','Блэкаут','f9ba484d-b696-4a9a-ac79-f2fbd0cfa551', 'blackout'),
 
-    ('3ec43fef-647c-41f3-9fb5-2f930f60c089','Жалюзи','3ec43fef-647c-41f3-9fb5-2f930f60c089'),
+    ('3ec43fef-647c-41f3-9fb5-2f930f60c089','Жалюзи','3ec43fef-647c-41f3-9fb5-2f930f60c089', 'blind'),
 
-    ('b569605e-a61f-4e66-b7b9-802edc7d8165','Акссуары','b569605e-a61f-4e66-b7b9-802edc7d8165'),
-    ('61984db7-c6e2-4935-af7b-b14d8a3a67e6','Люверсы','b569605e-a61f-4e66-b7b9-802edc7d8165'),
-    ('b334c012-7e0f-47e8-8053-6d0e19adc9e6','Подхваты, держатели, крючки','b569605e-a61f-4e66-b7b9-802edc7d8165'),
-    ('e43e326a-14e3-45f2-849c-2fd371797d0f','Клипсы магнитные','b569605e-a61f-4e66-b7b9-802edc7d8165');
+    ('b569605e-a61f-4e66-b7b9-802edc7d8165','Акссуары','b569605e-a61f-4e66-b7b9-802edc7d8165', 'accessory'),
+    ('61984db7-c6e2-4935-af7b-b14d8a3a67e6','Люверсы','b569605e-a61f-4e66-b7b9-802edc7d8165', 'luversa'),
+    ('b334c012-7e0f-47e8-8053-6d0e19adc9e6','Подхваты, держатели, крючки','b569605e-a61f-4e66-b7b9-802edc7d8165', 'grips_holders_hooks'),
+    ('e43e326a-14e3-45f2-849c-2fd371797d0f','Клипсы магнитные','b569605e-a61f-4e66-b7b9-802edc7d8165', 'magnetic_clips');

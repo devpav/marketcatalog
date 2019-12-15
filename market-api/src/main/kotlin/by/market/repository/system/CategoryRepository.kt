@@ -5,4 +5,8 @@ import by.market.repository.BaseRepository
 import org.springframework.stereotype.Repository
 
 @Repository
-interface CategoryRepository : BaseRepository<Category>
+interface CategoryRepository : BaseRepository<Category> {
+
+    fun findBySystemName(title: String): Category?
+
+}

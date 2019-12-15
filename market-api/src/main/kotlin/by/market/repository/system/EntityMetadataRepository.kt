@@ -5,4 +5,8 @@ import by.market.repository.BaseRepository
 import org.springframework.stereotype.Repository
 
 @Repository
-interface EntityMetadataRepository : BaseRepository<EntityMetadata>
+interface EntityMetadataRepository : BaseRepository<EntityMetadata> {
+
+    fun findByTableName(tableName: String): EntityMetadata
+
+}
