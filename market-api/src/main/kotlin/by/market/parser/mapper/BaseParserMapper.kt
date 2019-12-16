@@ -27,28 +27,26 @@ abstract class BaseParserMapper<TProduct: AbstractProduct>(
 
     @Transactional
     override suspend fun map(value: AsforosProduct): TProduct {
-        val product = getDatabaseProductOrMakeEmptyProduct(value.title)
-        // product.category = categoryMap.getOrDefault(value.category, null)
+        val productPair = getDatabaseProductOrMakeEmptyProduct(value.title)
+        val product = productPair.first
         product.img = value.imgUrl
         product.title = value.title
 
         product.id = rep.saveAndFlush(product).id
 
-        characteristicMapperHandler.handle(product, value)
+        characteristicMapperHandler.handle(productPair.second, product, value)
 
         return product
     }
 
-    fun getDatabaseProductOrMakeEmptyProduct(title: String): TProduct {
+    private fun getDatabaseProductOrMakeEmptyProduct(title: String): Pair<TProduct, Boolean> {
         val existsByTitle = rep.existsByTitle(title)
 
-        var product = getEntity()
-
-        if (existsByTitle) {
-            product = rep.findByTitle(title)
+        return if (existsByTitle) {
+            Pair(rep.findByTitle(title), true)
+        }else{
+            Pair(getEntity(), false)
         }
-
-        return product
     }
 
     abstract fun getEntity(): TProduct
