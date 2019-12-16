@@ -37,7 +37,7 @@ class CharacteristicMapperHandler {
     suspend fun <TProduct: AbstractProduct> handle(isNewProduct: Boolean, product: TProduct, parserProduct: AsforosProduct) {
         val r = GlobalScope.async {
             val cleanTask = async {
-                if(isNewProduct)
+                if(!isNewProduct)
                     characteristicMetadata.deleteCharacteristics(product)
             }
 
