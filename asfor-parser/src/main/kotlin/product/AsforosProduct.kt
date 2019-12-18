@@ -1,13 +1,13 @@
 package product
 
 class AsforosProduct(
-  var imgUrl: String,
-  var title: String,
-  var price: String,
-  var moreDetailsUrl: String,
-  var category: String,
-  var properties: MutableMap<String, String>,
-  var propertiesFromDetailPage: MutableMap<String, List<String>>
+  var imgUrl: String = "",
+  var title: String = "",
+  var price: String = "",
+  var moreDetailsUrl: String = "",
+  var category: String = "",
+  var properties: MutableMap<String, String> = mutableMapOf(),
+  var propertiesFromDetailPage: MutableMap<String, List<String>> = mutableMapOf()
 ) {
 
   override fun toString(): String

@@ -11,4 +11,7 @@ class EmptyProductListener<TItem> : IProductListener<TItem> {
 
   override fun onLoadPageItems(doc: Document, items: List<TItem>, pageNumber: UInt) {
   }
+
+  override fun onLoadItem(doc: Document, item: TItem, pageNumber: UInt) {
+  }
 }

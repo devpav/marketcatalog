@@ -1,12 +1,12 @@
 package by.market.domain
 
 import by.market.domain.system.Category
-import javax.persistence.Column
-import javax.persistence.FetchType
-import javax.persistence.ManyToOne
-import javax.persistence.MappedSuperclass
+import javax.persistence.*
 
 @MappedSuperclass
+@Table(indexes = [
+    Index(name = "index_p_title", columnList = "title")
+])
 open class AbstractProduct : BaseEntity() {
 
     @Column(name = "title")

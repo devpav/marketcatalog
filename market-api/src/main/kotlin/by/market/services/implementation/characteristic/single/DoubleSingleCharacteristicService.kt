@@ -1,0 +1,11 @@
+package by.market.services.implementation.characteristic.single
+
+import by.market.domain.characteristics.single.DoubleCharacteristic
+import by.market.repository.characteristic.single.DoubleSingleCharacteristicRepository
+import by.market.services.implementation.characteristic.BaseCharacteristicService
+import by.market.services.implementation.characteristic.BaseSingleCharacteristicService
+import org.springframework.stereotype.Service
+
+@Service
+class DoubleSingleCharacteristicService(repository: DoubleSingleCharacteristicRepository)
+    : BaseSingleCharacteristicService<DoubleCharacteristic, DoubleSingleCharacteristicRepository>(repository)

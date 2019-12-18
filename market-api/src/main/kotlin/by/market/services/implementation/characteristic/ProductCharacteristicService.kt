@@ -2,7 +2,6 @@ package by.market.services.implementation.characteristic
 
 import by.market.domain.characteristics.ProductCharacteristic
 import by.market.repository.characteristic.ProductCharacteristicRepository
-import by.market.services.BaseCharacteristicService
 import org.springframework.stereotype.Service
 
 @Service

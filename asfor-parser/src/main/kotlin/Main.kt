@@ -1,14 +1,15 @@
 @file:Suppress("UNUSED_VARIABLE", "EXPERIMENTAL_UNSIGNED_LITERALS")
 
 import arrow.core.Option
+import com.fasterxml.jackson.databind.ObjectMapper
 import enums.AsforosProductContext
 import parser.AsforosProductParser
 import parser.parse
 import product.AsforosProduct
-import product_listener.ErrorHandlerListener
 import product_listener.PrintProductListener
 import product_listener.SaveProductListener
 import utility.profileTimeScope
+import java.io.File
 
 fun main() {
   val allContext = AsforosProductContext.values()
@@ -51,10 +52,9 @@ fun main() {
 fun parse(context: AsforosProductContext): List<AsforosProduct> {
   val saveListener = SaveProductListener<AsforosProduct>("json/${context.productName}", "${context.productName}.json")
   val printListener = PrintProductListener(saveListener)
-  val errorListener = ErrorHandlerListener(printListener)
 
   val parser = AsforosProductParser(Option.just(2500u))
-  return parser.parse(context, errorListener)
+  return parser.parse(context, printListener)
 }
 
 fun printInfoAboutInput(items: Array<AsforosProductContext>) {
@@ -66,4 +66,22 @@ fun printInfoAboutInput(items: Array<AsforosProductContext>) {
   println("Empty, if need load all or")
   println(contextStr)
   print("Input: ")
+}
+
+fun getAllProperties(): Set<String> {
+  val set = HashSet<String>()
+  val parser = ObjectMapper()
+  val directories = File("json").walk().filter { it.isFile }.toList()
+  directories.forEach { json ->
+    parser.readValue(json.readText(), Array<AsforosProduct>::class.java).forEach { product ->
+      product.properties.forEach{ prop ->
+        set.add(prop.key)
+      }
+
+      product.propertiesFromDetailPage.forEach{ prop ->
+        set.add(prop.key)
+      }
+    }
+  }
+  return set
 }

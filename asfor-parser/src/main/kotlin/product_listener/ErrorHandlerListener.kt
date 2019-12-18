@@ -21,4 +21,12 @@ class ErrorHandlerListener<TItem>(private val listener: IProductListener<TItem>)
       println("Error 'onLoadPageItems' - $e")
     }
   }
+
+  override fun onLoadItem(doc: Document, item: TItem, pageNumber: UInt) {
+    try {
+      listener.onLoadItem(doc, item, pageNumber)
+    } catch (e: Exception){
+      println("Error 'onLoadItem' - $e")
+    }
+  }
 }
