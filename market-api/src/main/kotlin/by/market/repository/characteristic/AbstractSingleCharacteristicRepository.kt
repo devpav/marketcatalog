@@ -8,6 +8,8 @@ import java.util.*
 @NoRepositoryBean
 interface AbstractSingleCharacteristicRepository<TEntity: AbstractSingleCharacteristic<TEntityValue>, TEntityValue>
     : AbstractCharacteristicRepository<TEntity, TEntityValue> {
-    fun existsByRowIdAndMetadata(rowId: UUID, metadata: EntityMetadata): Boolean
-    fun deleteAllByRowIdAndMetadata(rowId: UUID, metadata: EntityMetadata)
+
+    fun deleteAllByProductRowIdAndEntityMetadata(rowId: UUID, metadata: EntityMetadata): Boolean
+    fun existsByProductRowIdAndEntityMetadata(rowId: UUID, metadata: EntityMetadata): Boolean
+
 }
