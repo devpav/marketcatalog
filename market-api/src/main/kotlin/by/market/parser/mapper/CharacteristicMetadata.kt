@@ -21,6 +21,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.async
 import kotlinx.coroutines.withContext
 import org.springframework.transaction.annotation.Transactional
+import kotlin.reflect.KClass
 
 open class CharacteristicMetadata(private val dataTypeRepository: DataTypeRepository,
                                   private val entityMetadataRepository: EntityMetadataRepository,
@@ -73,9 +74,9 @@ open class CharacteristicMetadata(private val dataTypeRepository: DataTypeReposi
                                     name: CharacteristicName,
                                     type: DataType,
                                     rep: TRep,
-                                    entityMetadataMap: HashMap<String, EntityMetadata>) {
+                                    entityMetadataMap: HashMap<KClass<out AbstractProduct>, EntityMetadata>) {
         productValue.productRowId = product.id
-        productValue.entityMetadata = entityMetadataMap[product::javaClass.name]
+        productValue.entityMetadata = entityMetadataMap[product::class]
         productValue.value = value
         productValue.productCharacteristic = saveProductCharacteristicIfNotExists(name.value, type)
 
@@ -86,11 +87,11 @@ open class CharacteristicMetadata(private val dataTypeRepository: DataTypeReposi
         val stringType = dataTypeRepository.findByName("STRING")
         val doubleType = dataTypeRepository.findByName("DOUBLE")
 
-        val mapEntityMetadata: HashMap<String, EntityMetadata> = HashMap()
-        mapEntityMetadata[ProductCornice::javaClass.name] = entityMetadataRepository.findByTableName("cornice")
-        mapEntityMetadata[ProductBlind::javaClass.name] = entityMetadataRepository.findByTableName("blind")
-        mapEntityMetadata[ProductCurtain::javaClass.name] = entityMetadataRepository.findByTableName("curtain")
-        mapEntityMetadata[ProductAccessory::javaClass.name] = entityMetadataRepository.findByTableName("accessory")
+        val mapEntityMetadata: HashMap<KClass<out AbstractProduct>, EntityMetadata> = HashMap()
+        mapEntityMetadata[ProductCornice::class] = entityMetadataRepository.findByTableName("cornice")
+        mapEntityMetadata[ProductBlind::class] = entityMetadataRepository.findByTableName("blind")
+        mapEntityMetadata[ProductCurtain::class] = entityMetadataRepository.findByTableName("curtain")
+        mapEntityMetadata[ProductAccessory::class] = entityMetadataRepository.findByTableName("accessory")
 
         fun doubleCharacteristicMapper(product: AbstractProduct, name: CharacteristicName, values: CharacteristicValue) {
             val productValue = DoubleCharacteristic()
@@ -102,23 +103,25 @@ open class CharacteristicMetadata(private val dataTypeRepository: DataTypeReposi
             saveCharacteristicValue(product, productValue, values.value, name, stringType, stringCharRep, mapEntityMetadata)
         }
 
-        @Transactional
         suspend fun cleanup(product: AbstractProduct){
-            val metadata = mapEntityMetadata[product.javaClass.name]!!
-            withContext(Dispatchers.Default) {
+            val metadata = mapEntityMetadata[product::class]!!
+
+            @Transactional
+            suspend fun transactionContext() = withContext(Dispatchers.Default) {
                 val cleanupSingleDouble = async {
-                    if(!doubleCharRep.existsByRowIdAndMetadata(product.id!!, metadata))
-                        doubleCharRep.deleteAllByRowIdAndMetadata(product.id!!, metadata)
+                    if(!doubleCharRep.existsByProductRowIdAndEntityMetadata(product.id!!, metadata))
+                        doubleCharRep.deleteAllByProductRowIdAndEntityMetadata(product.id!!, metadata)
                 }
 
                 val cleanupSingleString = async {
-                    if(!stringCharRep.existsByRowIdAndMetadata(product.id!!, metadata))
-                        stringCharRep.deleteAllByRowIdAndMetadata(product.id!!, metadata)
+                    if(!stringCharRep.existsByProductRowIdAndEntityMetadata(product.id!!, metadata))
+                        stringCharRep.deleteAllByProductRowIdAndEntityMetadata(product.id!!, metadata)
                 }
 
                 cleanupSingleDouble.await()
                 cleanupSingleString.await()
             }
+
         }
 
         val result: HashMap<String, CharacteristicMapperHolder> = HashMap()
