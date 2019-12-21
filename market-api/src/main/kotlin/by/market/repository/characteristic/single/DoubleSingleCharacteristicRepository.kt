@@ -5,4 +5,8 @@ import by.market.repository.characteristic.AbstractSingleCharacteristicRepositor
 import org.springframework.stereotype.Repository
 
 @Repository
-interface DoubleSingleCharacteristicRepository : AbstractSingleCharacteristicRepository<DoubleCharacteristic, Double>
+interface DoubleSingleCharacteristicRepository
+    : AbstractSingleCharacteristicRepository<DoubleCharacteristic, Double> {
+
+
+}
