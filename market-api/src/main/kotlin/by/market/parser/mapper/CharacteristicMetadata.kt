@@ -86,7 +86,7 @@ open class CharacteristicMetadata(private val dataTypeRepository: DataTypeReposi
 
         val mapEntityMetadata: HashMap<KClass<out AbstractProduct>, EntityMetadata> = HashMap()
         mapEntityMetadata[ProductCornice::class] = entityMetadataRepository.findByTableName("cornice")
-        mapEntityMetadata[ProductCurtain::class] = entityMetadataRepository.findByTableName("curtain")
+        mapEntityMetadata[ProductRolstor::class] = entityMetadataRepository.findByTableName("rolstor")
         mapEntityMetadata[ProductAccessory::class] = entityMetadataRepository.findByTableName("accessory")
         mapEntityMetadata[ProductJalosie::class] = entityMetadataRepository.findByTableName("jalosie")
 
