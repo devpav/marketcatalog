@@ -9,7 +9,7 @@ VALUES
     ('3247f7e1-2adf-4c23-9c60-6952c5740793', 'cornice', 'Корниз', 'a19e2196-9a8e-4a25-8e98-6d8eb578458f'),
     ('d4508d64-acf9-4aea-9edc-ddde1eaa6ba9', 'accessory', 'Аксессуар', 'a19e2196-9a8e-4a25-8e98-6d8eb578458f'),
     ('30b9c908-cbde-4511-bc67-6f9886e90861', 'jalosie', 'Жалюзи', 'a19e2196-9a8e-4a25-8e98-6d8eb578458f'),
-    ('57ef02b6-eed2-489d-a41b-584a5bdc970a', 'curtain', 'Рольштора', 'a19e2196-9a8e-4a25-8e98-6d8eb578458f');
+    ('57ef02b6-eed2-489d-a41b-584a5bdc970a', 'rolstor', 'Рольштора', 'a19e2196-9a8e-4a25-8e98-6d8eb578458f');
 
 insert into tbx_s_data_type(id, name)
 VALUES
