@@ -1,5 +1,6 @@
 package by.market.config
 
+import by.market.parser.AccessoriesEntitiesToDbEntity
 import by.market.parser.CorniceEntitiesToDbEntity
 import by.market.parser.JalosieEntitiesToDbEntity
 import by.market.parser.RolstorEntitiesToDbEntity
@@ -16,12 +17,11 @@ class ApplicationSetup : ApplicationRunner {
     private lateinit var corniceSync: CorniceEntitiesToDbEntity
     private lateinit var jalosieSync: JalosieEntitiesToDbEntity
     private lateinit var rolstorSync: RolstorEntitiesToDbEntity
+    private lateinit var accessoriesSync: AccessoriesEntitiesToDbEntity
 
     override fun run(args: ApplicationArguments?) {
         log.info("Start ApplicationRunner with args: ", args)
-        arrayOf(corniceSync, jalosieSync, rolstorSync).forEach {
-            it.process()
-        }
+        arrayOf(corniceSync, jalosieSync, rolstorSync, accessoriesSync).forEach { it.process() }
         log.info("Data was loaded")
     }
 
