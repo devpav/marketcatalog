@@ -5,10 +5,7 @@ import by.market.domain.characteristics.AbstractSingleCharacteristic
 import by.market.domain.characteristics.ProductCharacteristic
 import by.market.domain.characteristics.single.DoubleCharacteristic
 import by.market.domain.characteristics.single.StringCharacteristic
-import by.market.domain.product.ProductAccessory
-import by.market.domain.product.ProductBlind
-import by.market.domain.product.ProductCornice
-import by.market.domain.product.ProductCurtain
+import by.market.domain.product.*
 import by.market.domain.system.DataType
 import by.market.domain.system.EntityMetadata
 import by.market.repository.characteristic.AbstractSingleCharacteristicRepository
@@ -89,13 +86,16 @@ open class CharacteristicMetadata(private val dataTypeRepository: DataTypeReposi
 
         val mapEntityMetadata: HashMap<KClass<out AbstractProduct>, EntityMetadata> = HashMap()
         mapEntityMetadata[ProductCornice::class] = entityMetadataRepository.findByTableName("cornice")
-        mapEntityMetadata[ProductBlind::class] = entityMetadataRepository.findByTableName("blind")
         mapEntityMetadata[ProductCurtain::class] = entityMetadataRepository.findByTableName("curtain")
         mapEntityMetadata[ProductAccessory::class] = entityMetadataRepository.findByTableName("accessory")
+        mapEntityMetadata[ProductJalosie::class] = entityMetadataRepository.findByTableName("jalosie")
 
         fun doubleCharacteristicMapper(product: AbstractProduct, name: CharacteristicName, values: CharacteristicValue) {
-            val productValue = DoubleCharacteristic()
-            saveCharacteristicValue(product, productValue, values.value.toDouble(), name, doubleType, doubleCharRep, mapEntityMetadata)
+            val doubleValue = values.value.toDoubleOrNull()
+            if(doubleValue != null) {
+                val productValue = DoubleCharacteristic()
+                saveCharacteristicValue(product, productValue, doubleValue, name, doubleType, doubleCharRep, mapEntityMetadata)
+            }
         }
 
         fun stringCharacteristicMapper(product: AbstractProduct, name: CharacteristicName, values: CharacteristicValue) {
@@ -141,6 +141,7 @@ open class CharacteristicMetadata(private val dataTypeRepository: DataTypeReposi
         result["Диаметр (мм)"]                      = CharacteristicMapperHolder(::doubleCharacteristicMapper)
         result["Диаметр (см)"]                      = CharacteristicMapperHolder(::doubleCharacteristicMapper)
         result["Длина (м)"]                         = CharacteristicMapperHolder(::doubleCharacteristicMapper)
+        result["Длина (см)"]                        = CharacteristicMapperHolder(::doubleCharacteristicMapper)
 
         return Pair(result, CleanupHandler(::cleanup))
     }

@@ -17,20 +17,20 @@ enum class AsforosProductContext(val categoriesArray: Array<ProductCategory>) : 
     override val categories: Array<ProductCategory>
       get() = categoriesArray
   },
-  Jalosie(arrayOf(
+  Rolstor(arrayOf(
           ProductCategory("https://asforos.by/rolshtory-rulonnye-shtory-den-noch/", "day_night"),
           ProductCategory("https://asforos.by/rolshtory-rulonnye-shtory-standart/", "standard"),
           ProductCategory("https://asforos.by/rolshtory-rulonnye-shtory-v-korobe/", "in_box"),
           ProductCategory("https://asforos.by/rolshtory-rulonnye-shtory-premium/", "premium"),
           ProductCategory("https://asforos.by/rolshtory-rulonnye-shtory-blackout/", "blackout"))) {
     override val productName: String
-      get() = "jalousie"
+      get() = "rolstor"
     override val categories: Array<ProductCategory>
       get() = categoriesArray
   },
-  Rolstor(arrayOf(ProductCategory("https://asforos.by/rolshtory-rulonnye-shtory", "rolstor"))) {
+  Jalosie(arrayOf(ProductCategory("https://asforos.by/zhalyuzi/", "jalousie"))) {
     override val productName: String
-      get() = "rolstor"
+      get() = "jalousie"
     override val categories: Array<ProductCategory>
       get() = categoriesArray
   },

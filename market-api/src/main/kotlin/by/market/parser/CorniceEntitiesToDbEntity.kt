@@ -8,8 +8,8 @@ import org.springframework.stereotype.Component
 import parser.AsforosProductParser
 
 @Component
-class CorniceEntitiesToDbEntity(rep: ProductCorniceRepository)
+class CorniceEntitiesToDbEntity(mapper: ProductCorniceMapper)
     : AsforosEntitiesToDbEntity<ProductCornice>(AsforosProductParser(),
         AsforosProductContext.Cornice,
-        ProductCorniceMapper(rep)) {
+        mapper) {
 }

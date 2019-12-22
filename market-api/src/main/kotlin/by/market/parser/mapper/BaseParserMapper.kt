@@ -43,9 +43,9 @@ abstract class BaseParserMapper<TProduct: AbstractProduct>(
         val existsByTitle = rep.existsByTitle(title)
 
         return if (existsByTitle) {
-            Pair(rep.findByTitle(title), true)
+            Pair(rep.findByTitle(title), false)
         }else{
-            Pair(getEntity(), false)
+            Pair(getEntity(), true)
         }
     }
 
