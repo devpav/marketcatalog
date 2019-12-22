@@ -31,7 +31,7 @@ abstract class BaseParserMapper<TProduct: AbstractProduct>(
         val product = productPair.first
         product.img = value.imgUrl
         product.title = value.title
-
+        product.category = categoryMap[value.category]!!
         product.id = rep.saveAndFlush(product).id
 
         characteristicMapperHandler.handle(productPair.second, product, value)

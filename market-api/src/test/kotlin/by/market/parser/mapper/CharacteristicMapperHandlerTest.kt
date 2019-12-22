@@ -1,7 +1,6 @@
 package by.market.parser.mapper
 
 import by.market.repository.characteristic.ProductCharacteristicRepository
-import junit.framework.Assert.assertNotNull
 import kotlinx.coroutines.runBlocking
 import org.junit.Test
 import org.junit.jupiter.api.DisplayName
@@ -50,4 +49,8 @@ class CharacteristicMapperHandlerTest {
         assertTrue(characteristics.any { it.title.equals("Диаметр (мм)") })
     }
 
+
+     private fun <T> assertNotNull(v: T){
+        assert(v != null)
+    }
 }
