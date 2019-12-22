@@ -16,6 +16,7 @@ open class AbstractProduct : BaseEntity() {
     var img: String? = null
 
     @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "id_category")
     var category: Category? = null
 
 }

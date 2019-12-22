@@ -4,6 +4,8 @@ import by.market.parser.AccessoriesEntitiesToDbEntity
 import by.market.parser.CorniceEntitiesToDbEntity
 import by.market.parser.JalosieEntitiesToDbEntity
 import by.market.parser.RolstorEntitiesToDbEntity
+import kotlinx.coroutines.async
+import kotlinx.coroutines.runBlocking
 import org.slf4j.LoggerFactory
 import org.springframework.boot.ApplicationArguments
 import org.springframework.boot.ApplicationRunner
@@ -22,7 +24,18 @@ class ApplicationSetup(private val jalosieSync: JalosieEntitiesToDbEntity,
     override fun run(args: ApplicationArguments?) {
         if ("test" !in env.activeProfiles) {
             log.info("Start ApplicationRunner with args: ", args)
-            arrayOf(corniceSync, jalosieSync, rolstorSync, accessoriesSync).forEach { it.process() }
+            runBlocking {
+                arrayOf(corniceSync, jalosieSync, rolstorSync, accessoriesSync)
+                        .map {
+                            async {
+                                it.process()
+                                it
+                            }
+                        }
+                        .toList()
+                        .forEach { it.await() }
+            }
+
             log.info("Data was loaded")
         }
     }
