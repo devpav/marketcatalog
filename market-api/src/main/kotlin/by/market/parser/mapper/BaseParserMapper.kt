@@ -31,7 +31,7 @@ abstract class BaseParserMapper<TProduct: AbstractProduct>(
         val product = productPair.first
         product.img = value.imgUrl
         product.title = value.title
-        product.category = categoryMap[value.category]!!
+        product.category = categoryMap[value.category]
         product.id = rep.saveAndFlush(product).id
 
         characteristicMapperHandler.handle(productPair.second, product, value)
@@ -64,15 +64,16 @@ abstract class BaseParserMapper<TProduct: AbstractProduct>(
         map["flexible"] = findCategory("flexible")
         map["metal_plastic_accessories"] = findCategory("metal_plastic_accessories")
 
-        // Жалюзи
+        // Рольшторы
         map["day_night"] = findCategory("day_night")
         map["standard"] = findCategory("standard")
         map["in_box"] = findCategory("in_box")
         map["premium"] = findCategory("premium")
         map["blackout"] = findCategory("blackout")
-
-        // Рольшторы
         map["rolstor"] = findCategory("rolstor")
+
+        // Жалюзи
+        map["jalousie"] = findCategory("jalousie")
 
         // Аксессуары
         map["luversa"] = findCategory("luversa")

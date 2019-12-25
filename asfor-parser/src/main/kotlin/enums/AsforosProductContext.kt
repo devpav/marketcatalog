@@ -9,7 +9,7 @@ enum class AsforosProductContext(val categoriesArray: Array<ProductCategory>) : 
           ProductCategory("https://asforos.by/potolochnye-karnizy/", "plastic_ceilings"),
           ProductCategory("https://asforos.by/metalloplastikovye-karnizy/", "wall_metal_plastic"),
           ProductCategory("https://asforos.by/komplektuyushhie-dlya-potolochnih-karnizov/", "accessories_for_ceiling"),
-          ProductCategory("https://asforos.by/komplektuyush%D1%81hie-dlya-metallicheskih-karnizov/", "accessories_for_metal"),
+          ProductCategory("https://asforos.by/komplektuyushchie-dlya-metallicheskih-karnizov/", "accessories_for_metal"),
           ProductCategory("https://asforos.by/gibkie-karnizy/", "flexible"),
           ProductCategory("https://asforos.by/metalloplastikovaya-furnitura/", "metal_plastic_accessories"))) {
     override val productName: String

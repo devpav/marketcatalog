@@ -34,7 +34,7 @@ VALUES
     ('6027dad3-9c43-4bf9-8520-5796d59a1300','Премиум','f9ba484d-b696-4a9a-ac79-f2fbd0cfa551', 'premium'),
     ('bd93cb0e-50f1-4c7b-9a73-b515129d0e1b','Блэкаут','f9ba484d-b696-4a9a-ac79-f2fbd0cfa551', 'blackout'),
 
-    ('3ec43fef-647c-41f3-9fb5-2f930f60c089','Жалюзи','3ec43fef-647c-41f3-9fb5-2f930f60c089', 'blind'),
+    ('3ec43fef-647c-41f3-9fb5-2f930f60c089','Жалюзи','3ec43fef-647c-41f3-9fb5-2f930f60c089', 'jalousie'),
 
     ('b569605e-a61f-4e66-b7b9-802edc7d8165','Акссуары','b569605e-a61f-4e66-b7b9-802edc7d8165', 'accessory'),
     ('61984db7-c6e2-4935-af7b-b14d8a3a67e6','Люверсы','b569605e-a61f-4e66-b7b9-802edc7d8165', 'luversa'),
