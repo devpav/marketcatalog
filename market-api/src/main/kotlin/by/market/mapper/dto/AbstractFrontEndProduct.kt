@@ -1,6 +1,6 @@
-package by.market.domain.front_end
+package by.market.mapper.dto
 
-import by.market.domain.front_end.system.CategoryFrontEnd
+import by.market.mapper.dto.system.CategoryFrontEnd
 
 
 open class AbstractFrontEndProduct : BaseFrontEndEntity() {

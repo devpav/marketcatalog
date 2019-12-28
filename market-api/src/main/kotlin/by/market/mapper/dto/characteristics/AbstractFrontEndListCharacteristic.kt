@@ -1,3 +1,3 @@
-package by.market.domain.front_end.characteristics
+package by.market.mapper.dto.characteristics
 
 open class AbstractFrontEndListCharacteristic<TValue> : AbstractFrontEndCharacteristic<TValue>()
