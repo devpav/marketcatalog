@@ -151,9 +151,9 @@
             <id>prod</id>
             <dependencies>
                 <dependency>
-                    <groupId>postgresql</groupId>
+                    <groupId>org.postgresql</groupId>
                     <artifactId>postgresql</artifactId>
-                    <version>${postgres.version}</version>
+                    <version>9.4-1206-jdbc42</version>
                 </dependency>
             </dependencies>
         </profile>
