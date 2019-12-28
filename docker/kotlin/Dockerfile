@@ -19,9 +19,7 @@ ARG PROFILE_SERVER
 
 COPY --from=clone /app/${REPOSITORY_SERVER} /app
 
-RUN mvn install -Dspring-boot.run.profiles=${PROFILE_SERVER} -Djar.finalName=${REPOSITORY_SERVER}
-
-RUN /bin/sh -c cat /app/${REPOSITORY_SERVER}/target/classes/application.yml
+RUN mvn install -Dspring-boot.run.profiles=${PROFILE_SERVER} -Djar.finalName=${REPOSITORY_SERVER} -Dmaven.test.skip=true
 
 #Java system environment
 FROM openjdk:8-jre-alpine
