@@ -1,0 +1,1 @@
+docker exec postgres pg_dump -U marketcatalog marketcatalog > init.sql
