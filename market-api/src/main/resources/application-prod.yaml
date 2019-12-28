@@ -14,3 +14,5 @@ spring:
     username: marketcatalog
     password: 5beeb33935c448a2828a3a043a4be7f4
 
+  profiles:
+    active: prod

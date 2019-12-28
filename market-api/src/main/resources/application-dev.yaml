@@ -17,6 +17,8 @@ spring:
     console:
       enabled: true
 
+  profiles:
+    active: dev
 #  liquibase:
 #    change-log: liquibase/db.changelog-master.xml
 #    url: ${spring.datasource.url}

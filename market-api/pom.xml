@@ -75,6 +75,11 @@
             <artifactId>jaxb-api</artifactId>
             <version>2.3.0</version>
         </dependency>
+        <dependency>
+            <groupId>org.postgresql</groupId>
+            <artifactId>postgresql</artifactId>
+            <version>9.4-1206-jdbc42</version>
+        </dependency>
     </dependencies>
 
     <build>
@@ -167,13 +172,6 @@
         </profile>
         <profile>
             <id>prod</id>
-            <dependencies>
-                <dependency>
-                    <groupId>org.postgresql</groupId>
-                    <artifactId>postgresql</artifactId>
-                    <version>9.4-1206-jdbc42</version>
-                </dependency>
-            </dependencies>
         </profile>
     </profiles>
 </project>
