@@ -21,7 +21,7 @@ class ApplicationSetup(private val jalosieSync: JalosieEntitiesToDbEntity,
     private val log = LoggerFactory.getLogger(ApplicationSetup::class.java)
 
     override fun run(args: ApplicationArguments?) {
-        if ("test" !in env.activeProfiles) {
+        if ("prod" in env.activeProfiles) {
             log.info("Start ApplicationRunner with args: ", args)
             runBlocking {
                 arrayOf(corniceSync, jalosieSync, rolstorSync, accessoriesSync)
