@@ -34,7 +34,7 @@ RUN chmod +x /app/wait.sh
 
 ENV ARTIFACT ${REPOSITORY_SERVER}.jar
 
-COPY --from=build /app/target/${ARTIFACT} /app
+COPY --from=build /app/market-api/target/${ARTIFACT} /app
 
 EXPOSE 8080
 
