@@ -1,6 +1,6 @@
-package by.market.domain.front_end.system
+package by.market.mapper.dto.system
 
-import by.market.domain.front_end.BaseFrontEndEntity
+import by.market.mapper.dto.BaseFrontEndEntity
 
 class EntityMetadataFrontEnd : BaseFrontEndEntity() {
     var tableName: String? = null

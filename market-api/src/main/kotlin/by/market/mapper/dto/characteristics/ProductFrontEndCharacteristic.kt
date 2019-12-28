@@ -1,7 +1,7 @@
-package by.market.domain.front_end.characteristics
+package by.market.mapper.dto.characteristics
 
-import by.market.domain.front_end.BaseFrontEndEntity
 import by.market.domain.system.DataType
+import by.market.mapper.dto.BaseFrontEndEntity
 
 class ProductFrontEndCharacteristic : BaseFrontEndEntity() {
 
