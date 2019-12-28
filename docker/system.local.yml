@@ -9,7 +9,7 @@ services:
     volumes:
       - psql-volume:/var/lib/postgresql/data
     networks:
-      - sber
+      - vitmarketcatalog
 
   backend:
     extends:
@@ -17,22 +17,22 @@ services:
       service: backend
     volumes:
       - backend-volume:/app/
-    networks:
-      - sber
     depends_on:
       - postgres
+    networks:
+      - vitmarketcatalog
 
   nginx:
     extends:
       file: nginx/nginx.yml
       service: nginx
-    networks:
-      - sber
     depends_on:
       - backend
+    networks:
+      - vitmarketcatalog
 
 networks:
-  sber:
+  vitmarketcatalog:
     driver: bridge
 
 volumes:
