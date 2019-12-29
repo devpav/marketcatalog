@@ -7,7 +7,7 @@ import org.springframework.data.domain.Pageable
 import org.springframework.data.domain.Sort
 import java.util.*
 
-interface IService<TEntity: BaseEntity> {
+interface IService<TEntity> {
     fun findAll(): MutableList<TEntity>
 
     fun findAll(sort: Sort): MutableList<TEntity>
