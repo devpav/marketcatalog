@@ -1,8 +1,8 @@
 package by.market.resources
 
-interface BaseResource<DTO, ID> {
+interface BaseResource<TEntity, TId> {
 
-    public fun findById(id: ID): DTO
+    public fun findById(id: TId): TEntity
 
-    public fun findAll(): MutableCollection<DTO>
+    public fun findAll(): MutableCollection<TEntity>
 }

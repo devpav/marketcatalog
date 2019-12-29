@@ -21,7 +21,7 @@ class ApplicationSetup(private val jalosieSync: JalosieEntitiesToDbEntity,
     private val log = LoggerFactory.getLogger(ApplicationSetup::class.java)
 
     override fun run(args: ApplicationArguments?) {
-        if ("prod" in env.activeProfiles) {
+        if (env.activeProfiles.any{ it == "prod" || it == "dev"}) {
             log.info("Start ApplicationRunner with args: ", args)
             runBlocking {
                 arrayOf(corniceSync, jalosieSync, rolstorSync, accessoriesSync)
@@ -35,6 +35,8 @@ class ApplicationSetup(private val jalosieSync: JalosieEntitiesToDbEntity,
             }
 
             log.info("Data was loaded")
+        }else{
+            log.info("Skip initialization database")
         }
     }
 
