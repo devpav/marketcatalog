@@ -7,9 +7,9 @@ import org.mapstruct.Mapping
 
 interface AbstractProductMapper<DTO: BaseFrontEndEntity, T: AbstractProduct>: IMapstructMapper<DTO, T> {
 
-    @Mapping(target = "category", ignore = true)
     override fun to(e: T): DTO
 
+    @Mapping(target = "category", ignore = true)
     override fun from(d: DTO): T
 
 }

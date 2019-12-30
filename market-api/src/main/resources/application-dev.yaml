@@ -1,6 +1,6 @@
 spring:
   datasource:
-    url: jdbc:h2:file:~/catalog;DB_CLOSE_ON_EXIT=FALSE;IFEXISTS=TRUE;DB_CLOSE_DELAY=-1;
+    url: jdbc:h2:file:~/catalog
     driver-class-name: org.h2.Driver
     username: dev
     password: dev
@@ -12,6 +12,10 @@ spring:
     database-platform: org.hibernate.dialect.H2Dialect
     hibernate:
       ddl-auto: update
+    properties:
+      hibernate:
+        format_sql: true
+
 
   h2:
     console:
@@ -19,12 +23,3 @@ spring:
 
   profiles:
     active: dev
-#  liquibase:
-#    change-log: liquibase/db.changelog-master.xml
-#    url: ${spring.datasource.url}
-#    password: ${spring.datasource.password}
-#    user: ${spring.datasource.username}
-#    enabled: true
-
-
-
