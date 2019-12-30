@@ -6,6 +6,7 @@ import org.junit.Test
 import org.junit.jupiter.api.DisplayName
 import org.junit.runner.RunWith
 import org.springframework.beans.factory.annotation.Autowired
+import org.springframework.beans.factory.annotation.Qualifier
 import org.springframework.boot.test.context.SpringBootTest
 import org.springframework.test.context.junit4.SpringRunner
 import product.AsforosProduct
@@ -17,6 +18,7 @@ import kotlin.test.assertTrue
 class CharacteristicMapperHandlerTest {
 
     @Autowired
+    @Qualifier("productCorniceAsforMapper")
     private lateinit var productCorniceMapper: ProductCorniceMapper
     @Autowired
     private lateinit var productCharacteristicRepository: ProductCharacteristicRepository

@@ -7,7 +7,7 @@ abstract class AbstractFrontEndCharacteristic<T> : BaseFrontEndEntity() {
 
     var value: T? = null
 
-    var productCharacteristic: ProductFrontEndCharacteristic? = null
+    var productCharacteristicFrontEnd: ProductCharacteristicFrontEnd? = null
 
     var entityMetadata: EntityMetadataFrontEnd? = null
 }

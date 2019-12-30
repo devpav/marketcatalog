@@ -2,14 +2,16 @@ package by.market.mapper
 
 import by.market.domain.BaseEntity
 import by.market.mapper.dto.BaseFrontEndEntity
-import org.mapstruct.MapperConfig
-import org.mapstruct.ReportingPolicy
+import org.mapstruct.Mapper
 
-@MapperConfig(
-        componentModel = "spring",
-        unmappedTargetPolicy = ReportingPolicy.IGNORE
-)
+
+@Mapper
 interface IMapstructMapper<TDto: BaseFrontEndEntity, TEntity: BaseEntity> {
-    fun toDto(e: TEntity): TDto
-    fun fromDto(d: TDto): TEntity
+
+    fun to(e: TEntity): TDto
+    fun from(d: TDto): TEntity
+
+    fun to(e: Collection<TEntity>): Collection<TDto>
+    fun from(d: Collection<TDto>): Collection<TEntity>
+
 }

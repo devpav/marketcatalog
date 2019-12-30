@@ -1,8 +1,7 @@
 package by.market.resources.system.implementation.characteristic
 
-import by.market.domain.BaseEntity
-import by.market.resources.system.implementation.BaseMutableResource
-import by.market.services.abstraction.IService
+import by.market.facade.Facade
+import by.market.mapper.dto.BaseFrontEndEntity
 
-open class BaseListCharacteristicResource<TService : IService<TEntity>, TEntity: BaseEntity>(service: TService)
-    : BaseCharacteristicResource<TService, TEntity>(service)
+open class BaseListCharacteristicResource<TFacade : Facade<TDto>, TDto: BaseFrontEndEntity>(service: TFacade)
+    : BaseCharacteristicResource<TFacade, TDto>(service)

@@ -1,7 +1,9 @@
 package by.market.mapper.domain_dto_mapper.product
 
 import by.market.domain.product.ProductAccessory
-import by.market.mapper.IMapstructMapper
-import by.market.mapper.dto.product.ProductFrontEndAccessory
+import by.market.mapper.MapperConfig
+import by.market.mapper.dto.product.ProductAccessoryFrontEnd
+import org.mapstruct.Mapper
 
-interface ProductAccessoryMapper : IMapstructMapper<ProductFrontEndAccessory, ProductAccessory>
+@Mapper(config = MapperConfig::class)
+interface ProductAccessoryMapper : AbstractProductMapper<ProductAccessoryFrontEnd, ProductAccessory>
