@@ -1,30 +1,52 @@
 package by.market.resources.system.implementation
 
-import by.market.domain.BaseEntity
+import by.market.facade.Facade
+import by.market.mapper.dto.BaseFrontEndEntity
 import by.market.resources.system.abstraction.IMutableResource
-import by.market.services.abstraction.IService
 import org.springframework.http.ResponseEntity
 import java.util.*
 
-open class BaseMutableResource<TService : IService<TEntity>, TEntity: BaseEntity>(service: TService)
-    : BaseReadonlyResource<TService, TEntity>(service), IMutableResource<TEntity> {
-    override fun <S : TEntity?> save(entity: S): ResponseEntity<S> = ResponseEntity.ok(service.save(entity))
+abstract class BaseMutableResource<TDto: BaseFrontEndEntity, TFacade : Facade<TDto>>(facade: TFacade)
+    : BaseReadonlyResource<TFacade, TDto>(facade), IMutableResource<TDto> {
 
-    override fun <S : TEntity?> saveAll(iterable: Iterable<S>): ResponseEntity<MutableList<S>> = ResponseEntity.ok(service.saveAll(iterable))
+    override fun <S : TDto?> save(entity: S): ResponseEntity<S> {
+        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+    }
 
-    override fun <S : TEntity?> saveAndFlush(entity: S): ResponseEntity<S> = ResponseEntity.ok(service.saveAndFlush(entity))
+    override fun <S : TDto?> saveAll(iterable: Iterable<S>): ResponseEntity<MutableList<S>> {
+        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+    }
 
-    override fun deleteAll() = service.deleteAll()
+    override fun <S : TDto?> saveAndFlush(entity: S): ResponseEntity<S> {
+        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+    }
 
-    override fun deleteAll(iterable: Iterable<TEntity?>) = service.deleteAll(iterable)
+    override fun deleteAll() {
+        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+    }
 
-    override fun deleteById(id: UUID) = service.deleteById(id)
+    override fun deleteAll(iterable: Iterable<TDto?>) {
+        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+    }
 
-    override fun delete(entity: TEntity) = service.delete(entity)
+    override fun deleteById(id: UUID) {
+        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+    }
 
-    override fun deleteInBatch(iterable: Iterable<TEntity?>) = service.deleteInBatch(iterable)
+    override fun delete(entity: TDto) {
+        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+    }
 
-    override fun deleteAllInBatch() = service.deleteAllInBatch()
+    override fun deleteInBatch(iterable: Iterable<TDto?>) {
+        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+    }
 
-    override fun flush() = service.flush()
+    override fun deleteAllInBatch() {
+        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+    }
+
+    override fun flush() {
+        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+    }
+
 }

@@ -12,23 +12,24 @@ import org.springframework.data.domain.Pageable
 import org.springframework.data.domain.Sort
 import java.util.*
 
-class DtoService<TDto : BaseFrontEndEntity, TEntity
+open class AbstractFacade<TDto : BaseFrontEndEntity, TEntity
     : BaseEntity>(private val entityService: IService<TEntity>,
-                  private val mapper: IMapstructMapper<TDto, TEntity>) : IService<TDto> {
+                  private val mapper: IMapstructMapper<TDto, TEntity>) : Facade<TDto> {
+
     override fun findAll(): MutableList<TDto> {
-        return entityService.findAll().map{mapper.toDto(it)}.toMutableList()
+        return mapper.to(entityService.findAll()).toMutableList()
     }
 
     override fun findAll(sort: Sort): MutableList<TDto> {
-        return entityService.findAll(sort).map{mapper.toDto(it)}.toMutableList()
+        return mapper.to(entityService.findAll(sort)).toMutableList()
     }
 
     override fun findAll(pageable: Pageable): Page<TDto> {
-        return ProjectPage(entityService.findAll(pageable), {mapper.toDto(it)})
+        return ProjectPage(entityService.findAll(pageable)) { mapper.to(it) }
     }
 
     override fun <S : TDto?> findAll(example: Example<S>): MutableList<S> {
-        TODO("not implemented")
+        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
     }
 
     override fun <S : TDto?> findAll(example: Example<S>, sort: Sort): MutableList<S> {
@@ -40,7 +41,7 @@ class DtoService<TDto : BaseFrontEndEntity, TEntity
     }
 
     override fun findAllById(iterable: Iterable<UUID?>): MutableList<TDto> {
-        return ProjectMutableList(entityService.findAllById(iterable), {mapper.toDto(it)}, {mapper.fromDto(it)})
+        return ProjectMutableList(entityService.findAllById(iterable), {mapper.to(it)}, {mapper.from(it)})
     }
 
     override fun <S : TDto?> findOne(example: Example<S>): Optional<S> {
@@ -48,7 +49,7 @@ class DtoService<TDto : BaseFrontEndEntity, TEntity
     }
 
     override fun findById(id: UUID): Optional<TDto> {
-        return entityService.findById(id).map { mapper.toDto(it) }
+        return entityService.findById(id).map { mapper.to(it) }
     }
 
     override fun getOne(id: UUID): BaseEntity {
@@ -70,14 +71,14 @@ class DtoService<TDto : BaseFrontEndEntity, TEntity
     override fun deleteAll() = entityService.deleteAll()
 
     override fun deleteAll(iterable: Iterable<TDto?>) {
-        return entityService.deleteAll(iterable.filterNotNull().map { mapper.fromDto(it) })
+        return entityService.deleteAll(iterable.filterNotNull().map { mapper.from(it) })
     }
 
     override fun deleteById(id: UUID) = entityService.deleteById(id)
 
-    override fun delete(entity: TDto) = entityService.delete(mapper.fromDto(entity))
+    override fun delete(entity: TDto) = entityService.delete(mapper.from(entity))
 
-    override fun deleteInBatch(iterable: Iterable<TDto?>)  = entityService.deleteInBatch(iterable.filterNotNull().map{ mapper.fromDto(it) })
+    override fun deleteInBatch(iterable: Iterable<TDto?>)  = entityService.deleteInBatch(iterable.filterNotNull().map{ mapper.from(it) })
 
     override fun deleteAllInBatch() = entityService.deleteAllInBatch()
 

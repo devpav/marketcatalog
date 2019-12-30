@@ -7,5 +7,5 @@ class EntityMetadataFrontEnd : BaseFrontEndEntity() {
 
     var description: String? = null
 
-    var container: ContainerFrontEndMetadata? = null
+    var containerFrontEnd: ContainerMetadataFrontEnd? = null
 }

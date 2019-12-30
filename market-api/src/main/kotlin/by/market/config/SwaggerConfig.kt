@@ -19,7 +19,7 @@ open class SwaggerConfig {
   open fun productApi(): Docket? {
     return Docket(DocumentationType.SWAGGER_2)
       .select()
-      .apis(RequestHandlerSelectors.basePackage("by.vitebsk.market.resources"))
+      .apis(RequestHandlerSelectors.basePackage("by.market.resources"))
       .build()
   }
 
