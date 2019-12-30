@@ -1,13 +1,18 @@
-package by.market.resources.system.implementation
+package by.market.resources
 
 import by.market.facade.Facade
 import by.market.mapper.dto.BaseFrontEndEntity
-import by.market.resources.system.abstraction.IMutableResource
+import org.springframework.data.domain.Page
+import org.springframework.data.domain.Pageable
 import org.springframework.http.ResponseEntity
 import java.util.*
 
 abstract class BaseMutableResource<TDto: BaseFrontEndEntity, TFacade : Facade<TDto>>(facade: TFacade)
     : BaseReadonlyResource<TFacade, TDto>(facade), IMutableResource<TDto> {
+
+    override fun findAll(pageable: Pageable): ResponseEntity<Page<TDto>> {
+        return ResponseEntity.ok(this.service.findAll(pageable))
+    }
 
     override fun <S : TDto?> save(entity: S): ResponseEntity<S> {
         TODO("not implemented") //To change body of created functions use File | Settings | File Templates.

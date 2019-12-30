@@ -1,9 +1,8 @@
-package by.market.resources.system.implementation
+package by.market.resources
 
 import by.market.domain.BaseEntity
 import by.market.facade.Facade
 import by.market.mapper.dto.BaseFrontEndEntity
-import by.market.resources.system.abstraction.IReadonlyResource
 import org.springframework.data.domain.Example
 import org.springframework.data.domain.Page
 import org.springframework.data.domain.Pageable
@@ -41,11 +40,11 @@ open class BaseReadonlyResource<TFacade: Facade<TDto>, TDto : BaseFrontEndEntity
         TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
     }
 
-    override fun <S : TDto?> findOne(example: Example<S>): ResponseEntity<Optional<S>> {
+    override fun <S : TDto?> findOne(example: Example<S>): ResponseEntity<S> {
         TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
     }
 
-    override fun findById(id: UUID): ResponseEntity<Optional<TDto>> {
+    override fun findById(id: UUID): ResponseEntity<TDto> {
         TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
     }
 

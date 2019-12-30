@@ -25,7 +25,8 @@ open class AbstractFacade<TDto : BaseFrontEndEntity, TEntity
     }
 
     override fun findAll(pageable: Pageable): Page<TDto> {
-        return ProjectPage(entityService.findAll(pageable)) { mapper.to(it) }
+        val entities: Page<TEntity> = entityService.findAll(pageable)
+        return ProjectPage(entities, { mapper.to(it) })
     }
 
     override fun <S : TDto?> findAll(example: Example<S>): MutableList<S> {

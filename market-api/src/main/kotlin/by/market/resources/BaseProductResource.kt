@@ -1,4 +1,4 @@
-package by.market.resources.system.implementation
+package by.market.resources
 
 import by.market.facade.Facade
 import by.market.mapper.dto.BaseFrontEndEntity

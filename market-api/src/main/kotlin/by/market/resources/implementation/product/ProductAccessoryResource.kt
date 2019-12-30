@@ -1,8 +1,8 @@
-package by.market.resources.system.implementation.product
+package by.market.resources.implementation.product
 
 import by.market.facade.product.ProductAccessoryFacade
 import by.market.mapper.dto.product.ProductAccessoryFrontEnd
-import by.market.resources.system.implementation.BaseProductResource
+import by.market.resources.BaseProductResource
 import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.RestController
 
