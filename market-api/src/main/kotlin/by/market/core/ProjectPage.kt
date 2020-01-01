@@ -7,8 +7,8 @@ import java.util.function.Function
 
 class ProjectPage<TEntity, TDto>(
         val innerPage: Page<TEntity>,
-        val mapper: (TEntity) -> TDto)
-    : Page<TDto>
+        val mapper: (TEntity) -> TDto
+) : Page<TDto>
 {
     override fun hasPrevious(): Boolean = innerPage.hasPrevious()
 

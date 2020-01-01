@@ -1,6 +1,7 @@
 package by.market.mapper.dto.system
 
 import by.market.mapper.dto.BaseFrontEndEntity
+import java.util.*
 
 class CategoryFrontEnd : BaseFrontEndEntity() {
 
@@ -8,5 +9,5 @@ class CategoryFrontEnd : BaseFrontEndEntity() {
 
     var systemName: String? = null;
 
-    var childCategory: CategoryFrontEnd? = null
+    var child: UUID? = null
 }

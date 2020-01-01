@@ -18,7 +18,7 @@ interface IReadonlyResource<TEntity> {
     fun findAll(@PathVariable("sort") sort: Sort): ResponseEntity<MutableList<TEntity>>
 
     @GetMapping(value = ["/all/{pageable}"])
-    fun findAll(@PathVariable("pageable") pageable: Pageable): ResponseEntity<Page<TEntity>>
+    fun findAll(@PathVariable("pageable") pageable: Pageable): ResponseEntity<MutableList<TEntity>>
 
     @GetMapping(value = ["/all/{example}"])
     fun <S : TEntity?> findAll(@PathVariable("example") example: Example<S>): ResponseEntity<MutableList<S>>

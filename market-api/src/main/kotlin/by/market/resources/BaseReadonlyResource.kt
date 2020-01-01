@@ -20,7 +20,7 @@ open class BaseReadonlyResource<TFacade: Facade<TDto>, TDto : BaseFrontEndEntity
         TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
     }
 
-    override fun findAll(pageable: Pageable): ResponseEntity<Page<TDto>> {
+    override fun findAll(pageable: Pageable): ResponseEntity<MutableList<TDto>> {
         TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
     }
 
