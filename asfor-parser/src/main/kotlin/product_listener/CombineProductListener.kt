@@ -16,8 +16,18 @@ class CombineProductListener<TProduct>(private val first: IProductListener<TProd
         second.onLoadItem(doc, item, pageNumber)
     }
 
-    override fun onLoadPageItems(doc: Document, items: List<TProduct>, pageNumber: UInt) {
-        first.onLoadPageItems(doc, items, pageNumber)
-        second.onLoadPageItems(doc, items, pageNumber)
+    override fun onLoadDetailPageItems(doc: Document, items: List<TProduct>, pageNumber: UInt) {
+        first.onLoadDetailPageItems(doc, items, pageNumber)
+        second.onLoadDetailPageItems(doc, items, pageNumber)
+    }
+
+    override fun onEndError(e: Exception) {
+        first.onEndError(e)
+        second.onEndError(e)
+    }
+
+    override fun afterFillDetails(doc: Document, product: TProduct) {
+        first.afterFillDetails(doc, product)
+        second.afterFillDetails(doc, product)
     }
 }
