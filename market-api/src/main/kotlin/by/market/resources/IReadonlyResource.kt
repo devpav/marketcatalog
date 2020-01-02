@@ -1,4 +1,4 @@
-package by.market.resources.system.abstraction
+package by.market.resources
 
 import by.market.domain.BaseEntity
 import org.springframework.data.domain.Example
@@ -18,7 +18,7 @@ interface IReadonlyResource<TEntity> {
     fun findAll(@PathVariable("sort") sort: Sort): ResponseEntity<MutableList<TEntity>>
 
     @GetMapping(value = ["/all/{pageable}"])
-    fun findAll(@PathVariable("pageable") pageable: Pageable): ResponseEntity<Page<TEntity>>
+    fun findAll(@PathVariable("pageable") pageable: Pageable): ResponseEntity<MutableList<TEntity>>
 
     @GetMapping(value = ["/all/{example}"])
     fun <S : TEntity?> findAll(@PathVariable("example") example: Example<S>): ResponseEntity<MutableList<S>>
@@ -35,10 +35,10 @@ interface IReadonlyResource<TEntity> {
     fun findAllById(@PathVariable("entities") iterable: Iterable<UUID?>): ResponseEntity<MutableList<TEntity>>
 
     @GetMapping(value = ["/find/{example}"])
-    fun <S : TEntity?> findOne(@PathVariable("example") example: Example<S>): ResponseEntity<Optional<S>>
+    fun <S : TEntity?> findOne(@PathVariable("example") example: Example<S>): ResponseEntity<S>
 
     @GetMapping(value = ["/find/{id}"])
-    fun findById(@PathVariable("id") id: UUID): ResponseEntity<Optional<TEntity>>
+    fun findById(@PathVariable("id") id: UUID): ResponseEntity<TEntity>
 
     @GetMapping(value = ["/get-one/{id}"])
     fun getOne(@PathVariable("id") id: UUID): ResponseEntity<BaseEntity>

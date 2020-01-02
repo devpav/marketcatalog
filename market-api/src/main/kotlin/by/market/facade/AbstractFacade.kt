@@ -1,7 +1,6 @@
 package by.market.facade
 
 import by.market.core.ProjectMutableList
-import by.market.core.ProjectPage
 import by.market.domain.BaseEntity
 import by.market.mapper.IMapstructMapper
 import by.market.mapper.dto.BaseFrontEndEntity
@@ -25,7 +24,8 @@ open class AbstractFacade<TDto : BaseFrontEndEntity, TEntity
     }
 
     override fun findAll(pageable: Pageable): Page<TDto> {
-        return ProjectPage(entityService.findAll(pageable)) { mapper.to(it) }
+        val entities: Page<TEntity> = entityService.findAll(pageable)
+        return entities.map { mapper.to(it) }
     }
 
     override fun <S : TDto?> findAll(example: Example<S>): MutableList<S> {

@@ -1,26 +1,21 @@
-package by.market.resources.system.implementation.system
+package by.market.resources
 
-import by.market.facade.system.ProductTypeFacade
-import by.market.mapper.dto.system.ProductTypeFrontEnd
-import by.market.resources.system.implementation.BaseMutableResource
+import by.market.facade.Facade
+import by.market.mapper.dto.BaseFrontEndEntity
 import org.springframework.http.ResponseEntity
-import org.springframework.web.bind.annotation.RequestMapping
-import org.springframework.web.bind.annotation.RestController
 import java.util.*
 
-@RestController
-@RequestMapping("/api/product-type")
-open class ProductTypeResource(facade: ProductTypeFacade)
-    : BaseMutableResource<ProductTypeFrontEnd, ProductTypeFacade>(facade) {
-    override fun <S : ProductTypeFrontEnd?> save(entity: S): ResponseEntity<S> {
+open class BaseProductResource<TFacade : Facade<TDto>, TDto: BaseFrontEndEntity>(service: TFacade)
+    : BaseMutableResource<TDto, TFacade>(service) {
+    override fun <S : TDto?> save(entity: S): ResponseEntity<S> {
         TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
     }
 
-    override fun <S : ProductTypeFrontEnd?> saveAll(iterable: Iterable<S>): ResponseEntity<MutableList<S>> {
+    override fun <S : TDto?> saveAll(iterable: Iterable<S>): ResponseEntity<MutableList<S>> {
         TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
     }
 
-    override fun <S : ProductTypeFrontEnd?> saveAndFlush(entity: S): ResponseEntity<S> {
+    override fun <S : TDto?> saveAndFlush(entity: S): ResponseEntity<S> {
         TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
     }
 
@@ -28,7 +23,7 @@ open class ProductTypeResource(facade: ProductTypeFacade)
         TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
     }
 
-    override fun deleteAll(iterable: Iterable<ProductTypeFrontEnd?>) {
+    override fun deleteAll(iterable: Iterable<TDto?>) {
         TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
     }
 
@@ -36,11 +31,11 @@ open class ProductTypeResource(facade: ProductTypeFacade)
         TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
     }
 
-    override fun delete(entity: ProductTypeFrontEnd) {
+    override fun delete(entity: TDto) {
         TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
     }
 
-    override fun deleteInBatch(iterable: Iterable<ProductTypeFrontEnd?>) {
+    override fun deleteInBatch(iterable: Iterable<TDto?>) {
         TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
     }
 
@@ -51,4 +46,6 @@ open class ProductTypeResource(facade: ProductTypeFacade)
     override fun flush() {
         TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
     }
+
+
 }

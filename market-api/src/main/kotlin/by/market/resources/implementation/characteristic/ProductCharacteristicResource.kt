@@ -1,4 +1,4 @@
-package by.market.resources.system.implementation.characteristic
+package by.market.resources.implementation.characteristic
 
 import by.market.facade.characteristics.ProductCharacteristicFacade
 import by.market.mapper.dto.characteristics.ProductCharacteristicFrontEnd

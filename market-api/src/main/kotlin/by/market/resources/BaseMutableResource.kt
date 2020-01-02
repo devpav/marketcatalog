@@ -1,12 +1,18 @@
-package by.market.resources.system.implementation
+package by.market.resources
 
 import by.market.facade.Facade
 import by.market.mapper.dto.BaseFrontEndEntity
+import org.springframework.data.domain.Pageable
 import org.springframework.http.ResponseEntity
 import java.util.*
 
-open class BaseProductResource<TFacade : Facade<TDto>, TDto: BaseFrontEndEntity>(service: TFacade)
-    : BaseMutableResource<TDto, TFacade>(service) {
+abstract class BaseMutableResource<TDto: BaseFrontEndEntity, TFacade : Facade<TDto>>(facade: TFacade)
+    : BaseReadonlyResource<TFacade, TDto>(facade), IMutableResource<TDto> {
+
+    override fun findAll(pageable: Pageable): ResponseEntity<MutableList<TDto>> {
+        return ResponseEntity.ok(this.service.findAll(pageable).content.toMutableList())
+    }
+
     override fun <S : TDto?> save(entity: S): ResponseEntity<S> {
         TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
     }
@@ -46,6 +52,5 @@ open class BaseProductResource<TFacade : Facade<TDto>, TDto: BaseFrontEndEntity>
     override fun flush() {
         TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
     }
-
 
 }

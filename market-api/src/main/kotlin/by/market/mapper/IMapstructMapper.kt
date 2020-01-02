@@ -2,10 +2,7 @@ package by.market.mapper
 
 import by.market.domain.BaseEntity
 import by.market.mapper.dto.BaseFrontEndEntity
-import org.mapstruct.Mapper
 
-
-@Mapper
 interface IMapstructMapper<TDto: BaseFrontEndEntity, TEntity: BaseEntity> {
 
     fun to(e: TEntity): TDto

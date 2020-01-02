@@ -1,4 +1,4 @@
-package by.market.resources.system.abstraction
+package by.market.resources
 
 import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.GetMapping
