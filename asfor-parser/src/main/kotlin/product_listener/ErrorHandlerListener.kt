@@ -14,19 +14,35 @@ class ErrorHandlerListener<TItem>(private val listener: IProductListener<TItem>)
     }
   }
 
-  override fun onLoadPageItems(doc: Document, items: List<TItem>, pageNumber: UInt) {
-    try {
-      listener.onLoadPageItems(doc, items, pageNumber)
-    } catch (e: Exception){
-      println("Error 'onLoadPageItems' - $e")
-    }
-  }
-
   override fun onLoadItem(doc: Document, item: TItem, pageNumber: UInt) {
     try {
       listener.onLoadItem(doc, item, pageNumber)
     } catch (e: Exception){
       println("Error 'onLoadItem' - $e")
+    }
+  }
+
+  override fun onLoadDetailPageItems(doc: Document, items: List<TItem>, pageNumber: UInt) {
+    try {
+      listener.onLoadDetailPageItems(doc, items, pageNumber)
+    } catch (e: Exception){
+      println("Error 'onLoadWithoutDetailPageItems' - $e")
+    }
+  }
+
+  override fun afterFillDetails(doc: Document, product: TItem) {
+    try {
+      listener.afterFillDetails(doc, product)
+    } catch (e: Exception){
+      println("Error 'afterFillDetails' - $e")
+    }
+  }
+
+  override fun onEndError(e: java.lang.Exception) {
+    try {
+        listener.onEndError(e)
+    }catch (e: Exception) {
+      println("Error 'onEndError' - $e")
     }
   }
 }

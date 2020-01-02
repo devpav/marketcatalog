@@ -1,19 +1,12 @@
 package parser
 
-import org.junit.jupiter.api.AfterEach
-import org.junit.jupiter.api.BeforeEach
+import org.junit.Test
+import org.junit.jupiter.api.DisplayName
 
 internal class AsforosProductParserTest {
 
-    @BeforeEach
-    fun setUp() {
-    }
-
-    @AfterEach
-    fun tearDown() {
-    }
-
-    @org.junit.jupiter.api.Test
-    fun parseAsync() {
+    @DisplayName("Parse Cornice")
+    @Test
+    fun parseCornice() {
     }
 }

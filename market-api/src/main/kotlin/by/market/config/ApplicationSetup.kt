@@ -29,7 +29,10 @@ class ApplicationSetup(private val jalosieSync: JalosieEntitiesToDbEntity,
                             try {
                                 it.process()
                             }catch (e: Exception){
-                                log.error("Type[${it::javaClass.name}] Ex[$e]")
+                                log.error("Type[${it::javaClass.name}]\n" +
+                                        "Ex[$e]\n" +
+                                        "Message[${e.message}]\n" +
+                                        "StackTrace[${e.stackTrace?.toString()}")
                             }
                         }
             }
