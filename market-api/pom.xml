@@ -150,7 +150,6 @@
                             <goal>test-compile</goal>
                         </goals>
                     </execution>
-
                 </executions>
                 <dependencies>
                     <dependency>
