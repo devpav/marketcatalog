@@ -1,286 +1,181 @@
 [ {
-  "imgUrl" : "https://asforos.by/upload/resize_cache/iblock/92c/500_500_17236f3bb137eb253405d06e58cacf26c/92c2f2af0c2c25ad98b21ec7ee9d9031.JPG",
-  "title" : "Карниз 1-рядный «Квадро» D16 Крученая Антик",
+  "imgUrl" : "https://asforos.by/upload/resize_cache/iblock/83b/500_500_17236f3bb137eb253405d06e58cacf26c/83bd687e80b4e91f0c30907566f7d84e.jpg",
+  "title" : "Наконечник D25 «Ампир»",
   "price" : "",
-  "moreDetailsUrl" : "https://asforos.by/metallicheskie-karnizy/karniz-1-ryadnyy-kvadro-d16-kruchenaya-antik/",
-  "category" : "metallic",
+  "moreDetailsUrl" : "https://asforos.by/komplektuyush%D1%81hie-dlya-metallicheskih-karnizov/nakonechnik-d25-ampir/",
+  "category" : "accessories_for_metal",
   "properties" : {
-    "Цвет" : "Антик",
-    "Диаметр (мм)" : "16",
-    "Тип трубы" : "Крученая",
-    "Количество рядов" : "1"
+    "Диаметр (мм)" : "25"
   },
   "propertiesFromDetailPage" : {
-    "Цвет" : [ "src='https://asforos.by/upload/uf/592/592a69ae3e9295aa9fbc8c087824694f.jpg' alt='Антик'" ],
-    "Количество рядов" : [ "1", "-" ],
-    "Тип трубы" : [ "Крученая", "-" ],
-    "Длина (м)" : [ "1,4", "1,6", "1,8", "2,0", "2,4", "3,0", "-" ],
-    "Тип колец" : [ "Простое", "Простое с крючком", "Простое с зажимом", "Бесшумное", "Бесшумное с крючком", "Бесшумное с зажимом", "-" ]
+    "Цвет" : [ "src='https://asforos.by/upload/uf/592/592a69ae3e9295aa9fbc8c087824694f.jpg' alt='Антик'", "src='https://asforos.by/upload/uf/5b6/5b653c44b641d9ef83145d79cb2ebed1.jpg' alt='Сатин'", "src='https://asforos.by/upload/uf/6a8/6a8ef800940aecfbfba9efe93ff23a52.jpg' alt='Хром'" ]
   }
 }, {
-  "imgUrl" : "https://asforos.by/upload/resize_cache/iblock/d58/500_500_17236f3bb137eb253405d06e58cacf26c/d58ee0fb02a6002ef284ec7c4abe07eb.JPG",
-  "title" : "Карниз 1-рядный «Клён» D16 Гладкая Антик",
+  "imgUrl" : "https://asforos.by/upload/resize_cache/iblock/78a/500_500_17236f3bb137eb253405d06e58cacf26c/78a6725bba1c931a226e15baac71205a.jpg",
+  "title" : "Наконечник D25 «Метеор»",
   "price" : "",
-  "moreDetailsUrl" : "https://asforos.by/metallicheskie-karnizy/karniz-1-ryadnyy-klyen-d16-gladkaya-antik/",
-  "category" : "metallic",
+  "moreDetailsUrl" : "https://asforos.by/komplektuyush%D1%81hie-dlya-metallicheskih-karnizov/nakonechnik-d25-meteor/",
+  "category" : "accessories_for_metal",
   "properties" : {
-    "Цвет" : "Антик",
-    "Диаметр (мм)" : "16",
-    "Тип трубы" : "Гладкая",
-    "Количество рядов" : "1"
+    "Диаметр (мм)" : "25"
   },
   "propertiesFromDetailPage" : {
-    "Цвет" : [ "src='https://asforos.by/upload/uf/592/592a69ae3e9295aa9fbc8c087824694f.jpg' alt='Антик'" ],
-    "Количество рядов" : [ "1", "-" ],
-    "Тип трубы" : [ "Гладкая", "-" ],
-    "Длина (м)" : [ "1,4", "1,6", "1,8", "2,0", "2,4", "3,0", "-" ],
-    "Тип колец" : [ "Простое", "Простое с крючком", "Простое с зажимом", "Бесшумное", "Бесшумное с крючком", "Бесшумное с зажимом", "-" ]
+    "Цвет" : [ "src='https://asforos.by/upload/uf/592/592a69ae3e9295aa9fbc8c087824694f.jpg' alt='Антик'", "src='https://asforos.by/upload/uf/5b6/5b653c44b641d9ef83145d79cb2ebed1.jpg' alt='Сатин'", "src='https://asforos.by/upload/uf/6a8/6a8ef800940aecfbfba9efe93ff23a52.jpg' alt='Хром'" ]
   }
 }, {
-  "imgUrl" : "https://asforos.by/upload/resize_cache/iblock/c40/500_500_17236f3bb137eb253405d06e58cacf26c/c405e3085640b4081b5bd0ed6b6ec2c3.JPG",
-  "title" : "Карниз 1-рядный «Завиток одинарный» D16 Гладкая Сатин",
+  "imgUrl" : "https://asforos.by/upload/resize_cache/iblock/491/500_500_17236f3bb137eb253405d06e58cacf26c/491ac7b362d8a01bd8bf148d336e0827.jpg",
+  "title" : "Наконечник D25 «Жемчужина»",
   "price" : "",
-  "moreDetailsUrl" : "https://asforos.by/metallicheskie-karnizy/karniz-1-ryadnyy-zavitok-odinarnyy-d16-gladkaya-satin/",
-  "category" : "metallic",
+  "moreDetailsUrl" : "https://asforos.by/komplektuyush%D1%81hie-dlya-metallicheskih-karnizov/nakonechnik-d25-zhemchuzhina/",
+  "category" : "accessories_for_metal",
   "properties" : {
-    "Цвет" : "Сатин",
-    "Диаметр (мм)" : "16",
-    "Тип трубы" : "Гладкая",
-    "Количество рядов" : "1"
+    "Диаметр (мм)" : "25"
   },
   "propertiesFromDetailPage" : {
-    "Цвет" : [ "src='https://asforos.by/upload/uf/5b6/5b653c44b641d9ef83145d79cb2ebed1.jpg' alt='Сатин'" ],
-    "Количество рядов" : [ "1", "-" ],
-    "Тип трубы" : [ "Гладкая", "-" ],
-    "Длина (м)" : [ "1,4", "1,6", "1,8", "2,0", "2,4", "3,0", "-" ],
-    "Тип колец" : [ "Простое", "Простое с крючком", "Простое с зажимом", "Бесшумное", "Бесшумное с крючком", "Бесшумное с зажимом", "-" ]
+    "Цвет" : [ "src='https://asforos.by/upload/uf/a61/a61f9596148a05bb7ed48d04886cbe12.jpg' alt='Антик / Золото'", "src='https://asforos.by/upload/uf/e5a/e5aa1b2d2c8cfa46baebb58075bd82a7.jpg' alt='Сатин / Хром'" ]
   }
 }, {
-  "imgUrl" : "https://asforos.by/upload/resize_cache/iblock/690/500_500_17236f3bb137eb253405d06e58cacf26c/69016e15c23a49859024128a2bc071a4.JPG",
-  "title" : "Карниз 2-рядный «Лира» D16 Кр / Гл Сатин",
+  "imgUrl" : "https://asforos.by/upload/resize_cache/iblock/6e8/500_500_17236f3bb137eb253405d06e58cacf26c/6e8328aeb1e1b4d9491512ccdc903aa3.jpg",
+  "title" : "Наконечник D25 «Тапас»",
   "price" : "",
-  "moreDetailsUrl" : "https://asforos.by/metallicheskie-karnizy/karniz-2-ryadnyy-lira-d16-kr-gl-satin/",
-  "category" : "metallic",
+  "moreDetailsUrl" : "https://asforos.by/komplektuyush%D1%81hie-dlya-metallicheskih-karnizov/nakonechnik-d25-tapas/",
+  "category" : "accessories_for_metal",
   "properties" : {
-    "Цвет" : "Сатин",
-    "Диаметр (мм)" : "16",
-    "Тип трубы" : "Крученая",
-    "Количество рядов" : "2"
+    "Диаметр (мм)" : "25"
   },
   "propertiesFromDetailPage" : {
-    "Цвет" : [ "src='https://asforos.by/upload/uf/5b6/5b653c44b641d9ef83145d79cb2ebed1.jpg' alt='Сатин'" ],
-    "Количество рядов" : [ "2", "-" ],
-    "Тип трубы" : [ "Крученая / Гладкая", "-" ],
-    "Длина (м)" : [ "1,4", "1,6", "1,8", "2,0", "2,4", "3,0", "-" ],
-    "Тип колец" : [ "Простое", "Простое с крючком", "Простое с зажимом", "Бесшумное", "Бесшумное с крючком", "Бесшумное с зажимом", "-" ]
+    "Цвет" : [ "src='https://asforos.by/upload/uf/592/592a69ae3e9295aa9fbc8c087824694f.jpg' alt='Антик'", "src='https://asforos.by/upload/uf/5b6/5b653c44b641d9ef83145d79cb2ebed1.jpg' alt='Сатин'" ]
   }
 }, {
-  "imgUrl" : "https://asforos.by/upload/resize_cache/iblock/57d/500_500_17236f3bb137eb253405d06e58cacf26c/57d6dc1b2909bb8c33b6adc56a8e7bf2.JPG",
-  "title" : "Карниз 1-рядный «Лабиринт» D16 Гладкая Сатин",
+  "imgUrl" : "https://asforos.by/upload/resize_cache/iblock/189/500_500_17236f3bb137eb253405d06e58cacf26c/1891ae9406180b6b5b3a02f07b3ab696.jpg",
+  "title" : "Наконечник D25 «Буэнос»",
   "price" : "",
-  "moreDetailsUrl" : "https://asforos.by/metallicheskie-karnizy/karniz-1-ryadnyy-labirint-d16-gladkaya-satin/",
-  "category" : "metallic",
+  "moreDetailsUrl" : "https://asforos.by/komplektuyush%D1%81hie-dlya-metallicheskih-karnizov/nakonechnik-d25-buenos/",
+  "category" : "accessories_for_metal",
   "properties" : {
-    "Цвет" : "Сатин",
-    "Диаметр (мм)" : "16",
-    "Тип трубы" : "Гладкая",
-    "Количество рядов" : "1"
+    "Диаметр (мм)" : "25"
   },
   "propertiesFromDetailPage" : {
-    "Цвет" : [ "src='https://asforos.by/upload/uf/5b6/5b653c44b641d9ef83145d79cb2ebed1.jpg' alt='Сатин'" ],
-    "Количество рядов" : [ "1", "-" ],
-    "Тип трубы" : [ "Гладкая", "-" ],
-    "Длина (м)" : [ "1,4", "1,6", "1,8", "2,0", "2,4", "3,0", "-" ],
-    "Тип колец" : [ "Простое", "Простое с крючком", "Простое с зажимом", "Бесшумное", "Бесшумное с крючком", "Бесшумное с зажимом", "-" ]
+    "Цвет" : [ "src='https://asforos.by/upload/uf/592/592a69ae3e9295aa9fbc8c087824694f.jpg' alt='Антик'", "src='https://asforos.by/upload/uf/5b6/5b653c44b641d9ef83145d79cb2ebed1.jpg' alt='Сатин'" ]
   }
 }, {
-  "imgUrl" : "https://asforos.by/upload/resize_cache/iblock/ecc/500_500_17236f3bb137eb253405d06e58cacf26c/ecc87a69a733494bdeb54ba3015607e5.JPG",
-  "title" : "Карниз 1-рядный «Крис» D16 Крученая Антик",
+  "imgUrl" : "https://asforos.by/upload/resize_cache/iblock/44e/500_500_17236f3bb137eb253405d06e58cacf26c/44e4bdde7797b876129fadbfba44df8c.jpg",
+  "title" : "Наконечник D25 «Магнолия»",
   "price" : "",
-  "moreDetailsUrl" : "https://asforos.by/metallicheskie-karnizy/karniz-1-ryadnyy-kris-d16-kruchenaya-antik/",
-  "category" : "metallic",
+  "moreDetailsUrl" : "https://asforos.by/komplektuyush%D1%81hie-dlya-metallicheskih-karnizov/nakonechnik-d25-magnoliya/",
+  "category" : "accessories_for_metal",
   "properties" : {
-    "Цвет" : "Антик",
-    "Диаметр (мм)" : "16",
-    "Тип трубы" : "Крученая",
-    "Количество рядов" : "1"
+    "Диаметр (мм)" : "25"
   },
   "propertiesFromDetailPage" : {
-    "Цвет" : [ "src='https://asforos.by/upload/uf/592/592a69ae3e9295aa9fbc8c087824694f.jpg' alt='Антик'" ],
-    "Количество рядов" : [ "1", "-" ],
-    "Тип трубы" : [ "Крученая", "-" ],
-    "Длина (м)" : [ "1,4", "1,6", "1,8", "2,0", "2,4", "3,0", "-" ],
-    "Тип колец" : [ "Простое", "Простое с крючком", "Простое с зажимом", "Бесшумное", "Бесшумное с крючком", "Бесшумное с зажимом", "-" ]
+    "Цвет" : [ "src='https://asforos.by/upload/uf/592/592a69ae3e9295aa9fbc8c087824694f.jpg' alt='Антик'", "src='https://asforos.by/upload/uf/5b6/5b653c44b641d9ef83145d79cb2ebed1.jpg' alt='Сатин'" ]
   }
 }, {
-  "imgUrl" : "https://asforos.by/upload/resize_cache/iblock/b92/500_500_17236f3bb137eb253405d06e58cacf26c/b9202395ed83324cd6f3bda0590233bd.JPG",
-  "title" : "Карниз 1-рядный «Волна» D16 Гладкая Сатин",
+  "imgUrl" : "https://asforos.by/upload/resize_cache/iblock/671/500_500_17236f3bb137eb253405d06e58cacf26c/671b230418b2dfb7ffd3752cf440cf62.jpg",
+  "title" : "Наконечник D25 «Корона»",
   "price" : "",
-  "moreDetailsUrl" : "https://asforos.by/metallicheskie-karnizy/karniz-1-ryadnyy-volna-d16-gladkaya-satin/",
-  "category" : "metallic",
+  "moreDetailsUrl" : "https://asforos.by/komplektuyush%D1%81hie-dlya-metallicheskih-karnizov/nakonechnik-d25-korona/",
+  "category" : "accessories_for_metal",
   "properties" : {
-    "Цвет" : "Сатин",
-    "Диаметр (мм)" : "16",
-    "Тип трубы" : "Гладкая",
-    "Количество рядов" : "1"
+    "Диаметр (мм)" : "25"
   },
   "propertiesFromDetailPage" : {
-    "Цвет" : [ "src='https://asforos.by/upload/uf/5b6/5b653c44b641d9ef83145d79cb2ebed1.jpg' alt='Сатин'" ],
-    "Количество рядов" : [ "1", "-" ],
-    "Тип трубы" : [ "Гладкая", "-" ],
-    "Длина (м)" : [ "1,4", "1,6", "1,8", "2,0", "2,4", "3,0", "-" ],
-    "Тип колец" : [ "Простое", "Простое с крючком", "Простое с зажимом", "Бесшумное", "Бесшумное с крючком", "Бесшумное с зажимом", "-" ]
+    "Цвет" : [ "src='https://asforos.by/upload/uf/592/592a69ae3e9295aa9fbc8c087824694f.jpg' alt='Антик'", "src='https://asforos.by/upload/uf/5b6/5b653c44b641d9ef83145d79cb2ebed1.jpg' alt='Сатин'", "src='https://asforos.by/upload/uf/6a8/6a8ef800940aecfbfba9efe93ff23a52.jpg' alt='Хром'" ]
   }
 }, {
-  "imgUrl" : "https://asforos.by/upload/resize_cache/iblock/9ed/500_500_17236f3bb137eb253405d06e58cacf26c/9ed1110fec0a9d1d99da1050ba710c40.JPG",
-  "title" : "Карниз 1-рядный «Венето» D16 Крученая Антик",
+  "imgUrl" : "https://asforos.by/upload/resize_cache/iblock/82e/500_500_17236f3bb137eb253405d06e58cacf26c/82ea234c8f0d6e520d640140943ff22f.jpg",
+  "title" : "Наконечник D25 «Версус»",
   "price" : "",
-  "moreDetailsUrl" : "https://asforos.by/metallicheskie-karnizy/karniz-1-ryadnyy-veneto-d16-kruchenaya-antik/",
-  "category" : "metallic",
+  "moreDetailsUrl" : "https://asforos.by/komplektuyush%D1%81hie-dlya-metallicheskih-karnizov/nakonechnik-d25-versus/",
+  "category" : "accessories_for_metal",
   "properties" : {
-    "Цвет" : "Антик",
-    "Диаметр (мм)" : "16",
-    "Тип трубы" : "Крученая",
-    "Количество рядов" : "1"
+    "Диаметр (мм)" : "25"
   },
   "propertiesFromDetailPage" : {
-    "Цвет" : [ "src='https://asforos.by/upload/uf/592/592a69ae3e9295aa9fbc8c087824694f.jpg' alt='Антик'" ],
-    "Количество рядов" : [ "1", "-" ],
-    "Тип трубы" : [ "Крученая", "-" ],
-    "Длина (м)" : [ "1,4", "1,6", "1,8", "2,0", "2,4", "3,0", "-" ],
-    "Тип колец" : [ "Простое", "Простое с крючком", "Простое с зажимом", "Бесшумное", "Бесшумное с крючком", "Бесшумное с зажимом", "-" ]
+    "Цвет" : [ "src='https://asforos.by/upload/uf/592/592a69ae3e9295aa9fbc8c087824694f.jpg' alt='Антик'", "src='https://asforos.by/upload/uf/5b6/5b653c44b641d9ef83145d79cb2ebed1.jpg' alt='Сатин'" ]
   }
 }, {
-  "imgUrl" : "https://asforos.by/upload/resize_cache/iblock/ff1/500_500_17236f3bb137eb253405d06e58cacf26c/ff18c318d43fabce0fc9e92e28f8525c.JPG",
-  "title" : "Карниз 1-рядный «Денвер» D16 Гладкая Сатин",
+  "imgUrl" : "https://asforos.by/upload/resize_cache/iblock/db6/500_500_17236f3bb137eb253405d06e58cacf26c/db650b7d46acbae1001b6c2b61e5b3cb.jpg",
+  "title" : "Наконечник D25 «Ромилда»",
   "price" : "",
-  "moreDetailsUrl" : "https://asforos.by/metallicheskie-karnizy/karniz-1-ryadnyy-denver-d16-gladkaya-satin/",
-  "category" : "metallic",
+  "moreDetailsUrl" : "https://asforos.by/komplektuyush%D1%81hie-dlya-metallicheskih-karnizov/nakonechnik-d25-romilda/",
+  "category" : "accessories_for_metal",
   "properties" : {
-    "Цвет" : "Сатин",
-    "Диаметр (мм)" : "16",
-    "Тип трубы" : "Гладкая",
-    "Количество рядов" : "1"
+    "Диаметр (мм)" : "25"
   },
   "propertiesFromDetailPage" : {
-    "Цвет" : [ "src='https://asforos.by/upload/uf/5b6/5b653c44b641d9ef83145d79cb2ebed1.jpg' alt='Сатин'" ],
-    "Количество рядов" : [ "1", "-" ],
-    "Тип трубы" : [ "Гладкая", "-" ],
-    "Длина (м)" : [ "1,4", "1,6", "1,8", "2,0", "2,4", "3,0", "-" ],
-    "Тип колец" : [ "Простое", "Простое с крючком", "Простое с зажимом", "Бесшумное", "Бесшумное с крючком", "Бесшумное с зажимом", "-" ]
+    "Цвет" : [ "src='https://asforos.by/upload/uf/592/592a69ae3e9295aa9fbc8c087824694f.jpg' alt='Антик'", "src='https://asforos.by/upload/uf/5b6/5b653c44b641d9ef83145d79cb2ebed1.jpg' alt='Сатин'" ]
   }
 }, {
-  "imgUrl" : "https://asforos.by/upload/resize_cache/iblock/5a7/500_500_17236f3bb137eb253405d06e58cacf26c/5a78dcb1135be96583b272e2983e218a.JPG",
-  "title" : "Карниз 1-рядный «Торино» D16 Крученая Антик",
+  "imgUrl" : "https://asforos.by/upload/resize_cache/iblock/0f7/500_500_17236f3bb137eb253405d06e58cacf26c/0f7d8c47ac9de8e2c9a5f708fbeeb089.jpg",
+  "title" : "Наконечник D25 «Волна»",
   "price" : "",
-  "moreDetailsUrl" : "https://asforos.by/metallicheskie-karnizy/karniz-1-ryadnyy-torino-d16-kruchenaya-antik/",
-  "category" : "metallic",
+  "moreDetailsUrl" : "https://asforos.by/komplektuyush%D1%81hie-dlya-metallicheskih-karnizov/nakonechnik-d25-volna/",
+  "category" : "accessories_for_metal",
   "properties" : {
-    "Цвет" : "Антик",
-    "Диаметр (мм)" : "16",
-    "Тип трубы" : "Крученая",
-    "Количество рядов" : "1"
+    "Диаметр (мм)" : "25"
   },
   "propertiesFromDetailPage" : {
-    "Цвет" : [ "src='https://asforos.by/upload/uf/592/592a69ae3e9295aa9fbc8c087824694f.jpg' alt='Антик'" ],
-    "Количество рядов" : [ "1", "-" ],
-    "Тип трубы" : [ "Крученая", "-" ],
-    "Длина (м)" : [ "1,4", "1,6", "1,8", "2,0", "2,4", "3,0", "-" ],
-    "Тип колец" : [ "Простое", "Простое с крючком", "Простое с зажимом", "Бесшумное", "Бесшумное с крючком", "Бесшумное с зажимом", "-" ]
+    "Цвет" : [ "src='https://asforos.by/upload/uf/592/592a69ae3e9295aa9fbc8c087824694f.jpg' alt='Антик'", "src='https://asforos.by/upload/uf/5b6/5b653c44b641d9ef83145d79cb2ebed1.jpg' alt='Сатин'" ]
   }
 }, {
-  "imgUrl" : "https://asforos.by/upload/resize_cache/iblock/99e/500_500_17236f3bb137eb253405d06e58cacf26c/99e6926f223759e1983084de750021b1.JPG",
-  "title" : "Карниз 2-рядный «Кортеза» D16 Риф / Риф Антик",
+  "imgUrl" : "https://asforos.by/upload/resize_cache/iblock/900/500_500_17236f3bb137eb253405d06e58cacf26c/90018784b3c30b787e7c189481b3a412.jpg",
+  "title" : "Наконечник D25 «Булава»",
   "price" : "",
-  "moreDetailsUrl" : "https://asforos.by/metallicheskie-karnizy/karniz-2-ryadnyy-korteza-d16-rif-rif-antik/",
-  "category" : "metallic",
+  "moreDetailsUrl" : "https://asforos.by/komplektuyush%D1%81hie-dlya-metallicheskih-karnizov/nakonechnik-d25-bulava/",
+  "category" : "accessories_for_metal",
   "properties" : {
-    "Цвет" : "Антик",
-    "Диаметр (мм)" : "16",
-    "Тип трубы" : "Рифлёная",
-    "Количество рядов" : "2"
+    "Диаметр (мм)" : "25"
   },
   "propertiesFromDetailPage" : {
-    "Цвет" : [ "src='https://asforos.by/upload/uf/592/592a69ae3e9295aa9fbc8c087824694f.jpg' alt='Антик'" ],
-    "Количество рядов" : [ "2", "-" ],
-    "Тип трубы" : [ "Рифлёная / Рифлёная", "-" ],
-    "Длина (м)" : [ "1,6", "1,8", "2,0", "2,4", "3,0", "-" ],
-    "Тип колец" : [ "Простое", "Простое с крючком", "Простое с зажимом", "Бесшумное", "Бесшумное с крючком", "Бесшумное с зажимом", "-" ]
+    "Цвет" : [ "src='https://asforos.by/upload/uf/592/592a69ae3e9295aa9fbc8c087824694f.jpg' alt='Антик'", "src='https://asforos.by/upload/uf/5b6/5b653c44b641d9ef83145d79cb2ebed1.jpg' alt='Сатин'", "src='https://asforos.by/upload/uf/6a8/6a8ef800940aecfbfba9efe93ff23a52.jpg' alt='Хром'" ]
   }
 }, {
-  "imgUrl" : "https://asforos.by/upload/resize_cache/iblock/8a7/500_500_17236f3bb137eb253405d06e58cacf26c/8a7d2e1259e9fce3a18dfbda6b4ee61e.JPG",
-  "title" : "Карниз 1-рядный «Шишка» D16 Гладкая Хром",
+  "imgUrl" : "https://asforos.by/upload/resize_cache/iblock/92b/500_500_17236f3bb137eb253405d06e58cacf26c/92bac19e691d77337927a65bc418a5c5.jpg",
+  "title" : "Наконечник D25 «Ажур»",
   "price" : "",
-  "moreDetailsUrl" : "https://asforos.by/metallicheskie-karnizy/karniz-1-ryadnyy-shishka-d16-gladkaya-khrom/",
-  "category" : "metallic",
+  "moreDetailsUrl" : "https://asforos.by/komplektuyush%D1%81hie-dlya-metallicheskih-karnizov/nakonechnik-d25-azhur/",
+  "category" : "accessories_for_metal",
   "properties" : {
-    "Цвет" : "Хром",
-    "Диаметр (мм)" : "16",
-    "Тип трубы" : "Гладкая",
-    "Количество рядов" : "1"
+    "Диаметр (мм)" : "25"
   },
   "propertiesFromDetailPage" : {
-    "Цвет" : [ "src='https://asforos.by/upload/uf/6a8/6a8ef800940aecfbfba9efe93ff23a52.jpg' alt='Хром'" ],
-    "Количество рядов" : [ "1", "-" ],
-    "Тип трубы" : [ "Гладкая", "-" ],
-    "Длина (м)" : [ "1,4", "1,6", "1,8", "2,0", "2,4", "3,0", "-" ],
-    "Тип колец" : [ "Простое", "Простое с крючком", "Простое с зажимом", "Бесшумное", "Бесшумное с крючком", "Бесшумное с зажимом", "-" ]
+    "Цвет" : [ "src='https://asforos.by/upload/uf/592/592a69ae3e9295aa9fbc8c087824694f.jpg' alt='Антик'", "src='https://asforos.by/upload/uf/5b6/5b653c44b641d9ef83145d79cb2ebed1.jpg' alt='Сатин'", "src='https://asforos.by/upload/uf/6a8/6a8ef800940aecfbfba9efe93ff23a52.jpg' alt='Хром'" ]
   }
 }, {
-  "imgUrl" : "https://asforos.by/upload/resize_cache/iblock/117/500_500_17236f3bb137eb253405d06e58cacf26c/1176d3a043f3bb4abd64358b80c1d090.JPG",
-  "title" : "Карниз 1-рядный «Лист вишни» D16 Гладкая Сатин",
+  "imgUrl" : "https://asforos.by/upload/resize_cache/iblock/949/500_500_17236f3bb137eb253405d06e58cacf26c/949e36b62cf5d89820ff89e905409e4a.jpg",
+  "title" : "Наконечник D25 «Спираль»",
   "price" : "",
-  "moreDetailsUrl" : "https://asforos.by/metallicheskie-karnizy/karniz-1-ryadnyy-list-vishni-d16-gladkaya-satin/",
-  "category" : "metallic",
+  "moreDetailsUrl" : "https://asforos.by/komplektuyush%D1%81hie-dlya-metallicheskih-karnizov/nakonechnik-d25-spiral/",
+  "category" : "accessories_for_metal",
   "properties" : {
-    "Цвет" : "Сатин",
-    "Диаметр (мм)" : "16",
-    "Тип трубы" : "Гладкая",
-    "Количество рядов" : "1"
+    "Диаметр (мм)" : "25"
   },
   "propertiesFromDetailPage" : {
-    "Цвет" : [ "src='https://asforos.by/upload/uf/5b6/5b653c44b641d9ef83145d79cb2ebed1.jpg' alt='Сатин'" ],
-    "Количество рядов" : [ "1", "-" ],
-    "Тип трубы" : [ "Гладкая", "-" ],
-    "Длина (м)" : [ "1,4", "1,6", "1,8", "2,0", "2,4", "3,0", "-" ],
-    "Тип колец" : [ "Простое", "Простое с крючком", "Простое с зажимом", "Бесшумное", "Бесшумное с крючком", "Бесшумное с зажимом", "-" ]
+    "Цвет" : [ "src='https://asforos.by/upload/uf/592/592a69ae3e9295aa9fbc8c087824694f.jpg' alt='Антик'", "src='https://asforos.by/upload/uf/5b6/5b653c44b641d9ef83145d79cb2ebed1.jpg' alt='Сатин'" ]
   }
 }, {
-  "imgUrl" : "https://asforos.by/upload/resize_cache/iblock/cc1/500_500_17236f3bb137eb253405d06e58cacf26c/cc16decbc6bf66f97d12913fc83e8636.JPG",
-  "title" : "Карниз 1-рядный «Баваро» D16 Гладкая Сатин",
+  "imgUrl" : "https://asforos.by/upload/resize_cache/iblock/01c/500_500_17236f3bb137eb253405d06e58cacf26c/01cc752fd0a3e537cac0ffd821be0bdd.jpg",
+  "title" : "Наконечник D25 «Колокол»",
   "price" : "",
-  "moreDetailsUrl" : "https://asforos.by/metallicheskie-karnizy/karniz-1-ryadnyy-bavaro-d16-gladkaya-satin/",
-  "category" : "metallic",
+  "moreDetailsUrl" : "https://asforos.by/komplektuyush%D1%81hie-dlya-metallicheskih-karnizov/nakonechnik-d25-kolokol/",
+  "category" : "accessories_for_metal",
   "properties" : {
-    "Цвет" : "Сатин",
-    "Диаметр (мм)" : "16",
-    "Тип трубы" : "Гладкая",
-    "Количество рядов" : "1"
+    "Диаметр (мм)" : "25"
   },
   "propertiesFromDetailPage" : {
-    "Цвет" : [ "src='https://asforos.by/upload/uf/5b6/5b653c44b641d9ef83145d79cb2ebed1.jpg' alt='Сатин'" ],
-    "Количество рядов" : [ "1", "-" ],
-    "Тип трубы" : [ "Гладкая", "-" ],
-    "Длина (м)" : [ "1,4", "1,6", "1,8", "2,0", "2,4", "3,0", "-" ],
-    "Тип колец" : [ "Простое", "Простое с крючком", "Простое с зажимом", "Бесшумное", "Бесшумное с крючком", "Бесшумное с зажимом", "-" ]
+    "Цвет" : [ "src='https://asforos.by/upload/uf/592/592a69ae3e9295aa9fbc8c087824694f.jpg' alt='Антик'", "src='https://asforos.by/upload/uf/5b6/5b653c44b641d9ef83145d79cb2ebed1.jpg' alt='Сатин'", "src='https://asforos.by/upload/uf/6a8/6a8ef800940aecfbfba9efe93ff23a52.jpg' alt='Хром'" ]
   }
 }, {
-  "imgUrl" : "https://asforos.by/upload/resize_cache/iblock/c70/500_500_17236f3bb137eb253405d06e58cacf26c/c70e4e1244d818a71a7aa0c6d452748c.JPG",
-  "title" : "Карниз 1-рядный «Трапеция» D16 Крученая Антик",
+  "imgUrl" : "https://asforos.by/upload/resize_cache/iblock/348/500_500_17236f3bb137eb253405d06e58cacf26c/34836c451065d5f175685d0dd5e2199b.JPG",
+  "title" : "Наконечник D25 «Пегас»",
   "price" : "",
-  "moreDetailsUrl" : "https://asforos.by/metallicheskie-karnizy/karniz-1-ryadnyy-trapetsiya-d16-kruchenaya-antik/",
-  "category" : "metallic",
+  "moreDetailsUrl" : "https://asforos.by/komplektuyush%D1%81hie-dlya-metallicheskih-karnizov/nakonechnik-d25-pegas/",
+  "category" : "accessories_for_metal",
   "properties" : {
-    "Цвет" : "Антик",
-    "Диаметр (мм)" : "16",
-    "Тип трубы" : "Крученая",
-    "Количество рядов" : "1"
+    "Диаметр (мм)" : "25"
   },
   "propertiesFromDetailPage" : {
-    "Цвет" : [ "src='https://asforos.by/upload/uf/592/592a69ae3e9295aa9fbc8c087824694f.jpg' alt='Антик'" ],
-    "Количество рядов" : [ "1", "-" ],
-    "Тип трубы" : [ "Крученая", "-" ],
-    "Длина (м)" : [ "1,4", "1,6", "1,8", "2,0", "2,4", "3,0", "-" ],
-    "Тип колец" : [ "Простое", "Простое с крючком", "Простое с зажимом", "Бесшумное", "Бесшумное с крючком", "Бесшумное с зажимом", "-" ]
+    "Цвет" : [ "src='https://asforos.by/upload/uf/a61/a61f9596148a05bb7ed48d04886cbe12.jpg' alt='Антик / Золото'", "src='https://asforos.by/upload/uf/513/513c844e8f433d87c7d1803c6ca3c93e.jpg' alt='Антик / Чёрный'", "src='https://asforos.by/upload/uf/e5a/e5aa1b2d2c8cfa46baebb58075bd82a7.jpg' alt='Сатин / Хром'" ]
   }
 } ]

@@ -5,7 +5,10 @@ import by.market.domain.characteristics.AbstractSingleCharacteristic
 import by.market.domain.characteristics.ProductCharacteristic
 import by.market.domain.characteristics.single.DoubleCharacteristic
 import by.market.domain.characteristics.single.StringCharacteristic
-import by.market.domain.product.*
+import by.market.domain.product.ProductAccessory
+import by.market.domain.product.ProductCornice
+import by.market.domain.product.ProductJalosie
+import by.market.domain.product.ProductRolstor
 import by.market.domain.system.DataType
 import by.market.domain.system.EntityMetadata
 import by.market.repository.characteristic.AbstractSingleCharacteristicRepository
@@ -17,6 +20,7 @@ import by.market.repository.system.EntityMetadataRepository
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.async
 import kotlinx.coroutines.withContext
+import org.slf4j.LoggerFactory
 import org.springframework.transaction.annotation.Transactional
 import kotlin.reflect.KClass
 
@@ -25,6 +29,8 @@ open class CharacteristicMetadata(private val dataTypeRepository: DataTypeReposi
                                   private val productCharacteristicRepository: ProductCharacteristicRepository,
                                   private val doubleCharRep: DoubleSingleCharacteristicRepository,
                                   private val stringCharRep: StringSingleCharacteristicRepository) {
+
+    private val logger = LoggerFactory.getLogger(javaClass)
 
     private val map: HashMap<String, CharacteristicMapperHolder>
     private val cleanupFunc: CleanupHandler
@@ -36,14 +42,24 @@ open class CharacteristicMetadata(private val dataTypeRepository: DataTypeReposi
     }
 
     fun <TProduct: AbstractProduct> handleCharacteristic(product: TProduct, characteristicName: String, value: String){
-        val handler = map[characteristicName]!!
-        handler.characteristicMapper(product, CharacteristicName(characteristicName), CharacteristicValue(value))
+        val handler = map[characteristicName]
+        if(handler != null) {
+            handler.characteristicMapper(product, CharacteristicName(characteristicName), CharacteristicValue(value))
+        }
+        else{
+            logger.error("[handleCharacteristic] Not found characteristic mapper {}", characteristicName)
+        }
     }
 
     fun <TProduct: AbstractProduct> handleCharacteristic(product: TProduct, characteristicName: String, values: List<String>){
-        val handler = map[characteristicName]!!
-        values.forEach {
-            handler.characteristicMapper(product, CharacteristicName(characteristicName), CharacteristicValue(it))
+        val handler = map[characteristicName]
+        if(handler != null){
+            values.forEach {
+                handler.characteristicMapper(product, CharacteristicName(characteristicName), CharacteristicValue(it))
+            }
+        }
+        else{
+            logger.error("[handleCharacteristic] Not found characteristic mapper {}", characteristicName)
         }
     }
 
@@ -126,22 +142,25 @@ open class CharacteristicMetadata(private val dataTypeRepository: DataTypeReposi
 
         val result: HashMap<String, CharacteristicMapperHolder> = HashMap()
 
-        result["Цвет"]                              = CharacteristicMapperHolder(::stringCharacteristicMapper)
-        result["Артикул"]                           = CharacteristicMapperHolder(::stringCharacteristicMapper)
-        result["Коллекция"]                         = CharacteristicMapperHolder(::stringCharacteristicMapper)
-        result["Составной"]                         = CharacteristicMapperHolder(::stringCharacteristicMapper)
-        result["Тип колец"]                         = CharacteristicMapperHolder(::stringCharacteristicMapper)
-        result["Тип"]                               = CharacteristicMapperHolder(::stringCharacteristicMapper)
-        result["ID поста блога для комментариев"]   = CharacteristicMapperHolder(::stringCharacteristicMapper)
-        result["Тип трубы"]                         = CharacteristicMapperHolder(::stringCharacteristicMapper)
+        result["Цвет"]                                  = CharacteristicMapperHolder(::stringCharacteristicMapper)
+        result["Артикул"]                               = CharacteristicMapperHolder(::stringCharacteristicMapper)
+        result["Коллекция"]                             = CharacteristicMapperHolder(::stringCharacteristicMapper)
+        result["Составной"]                             = CharacteristicMapperHolder(::stringCharacteristicMapper)
+        result["Тип колец"]                             = CharacteristicMapperHolder(::stringCharacteristicMapper)
+        result["Тип"]                                   = CharacteristicMapperHolder(::stringCharacteristicMapper)
+        result["ID поста блога для комментариев"]       = CharacteristicMapperHolder(::stringCharacteristicMapper)
+        result["Тип трубы"]                             = CharacteristicMapperHolder(::stringCharacteristicMapper)
+        result["Тип крепления"]                         = CharacteristicMapperHolder(::stringCharacteristicMapper)
+        result["Шина"]                                  = CharacteristicMapperHolder(::stringCharacteristicMapper)
 
-        result["Количество рядов"]                  = CharacteristicMapperHolder(::stringCharacteristicMapper)
-        result["Ширина ленты (см)"]                 = CharacteristicMapperHolder(::doubleCharacteristicMapper)
-        result["Ширина (см)"]                       = CharacteristicMapperHolder(::doubleCharacteristicMapper)
-        result["Диаметр (мм)"]                      = CharacteristicMapperHolder(::doubleCharacteristicMapper)
-        result["Диаметр (см)"]                      = CharacteristicMapperHolder(::doubleCharacteristicMapper)
-        result["Длина (м)"]                         = CharacteristicMapperHolder(::doubleCharacteristicMapper)
-        result["Длина (см)"]                        = CharacteristicMapperHolder(::doubleCharacteristicMapper)
+        result["Количество рядов"]                      = CharacteristicMapperHolder(::stringCharacteristicMapper)
+        result["Ширина ленты (см)"]                     = CharacteristicMapperHolder(::doubleCharacteristicMapper)
+        result["Ширина (см)"]                           = CharacteristicMapperHolder(::doubleCharacteristicMapper)
+        result["Диаметр (мм)"]                          = CharacteristicMapperHolder(::doubleCharacteristicMapper)
+        result["Диаметр (см)"]                          = CharacteristicMapperHolder(::doubleCharacteristicMapper)
+        result["Длина (м)"]                             = CharacteristicMapperHolder(::doubleCharacteristicMapper)
+        result["Длина (см)"]                            = CharacteristicMapperHolder(::doubleCharacteristicMapper)
+        result["Ширина"]                                = CharacteristicMapperHolder(::doubleCharacteristicMapper)
 
         return Pair(result, CleanupHandler(::cleanup))
     }

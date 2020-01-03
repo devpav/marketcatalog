@@ -22,3 +22,10 @@ spring:
 
   profiles:
     active: dev
+
+logging:
+  level:
+    root: TRACE
+    org.springframework.web: TRACE
+    com.howtodoinjava: TRACE
+    org.hibernate: TRACE

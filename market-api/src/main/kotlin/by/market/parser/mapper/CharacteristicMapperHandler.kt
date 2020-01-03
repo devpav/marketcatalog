@@ -38,20 +38,19 @@ class CharacteristicMapperHandler {
             characteristicMetadata = CharacteristicMetadata(dataTypeRepository, entityMetadataRepository, productCharacteristicRepository, doubleCharRep, stringCharRep)
         }catch (e: Exception){
             logger.error("Error when Create CharacteristicMetadata", e)
-            throw e;
+            throw e
         }
     }
 
     suspend fun <TProduct: AbstractProduct> handle(isNewProduct: Boolean, product: TProduct, parserProduct: AsforosProduct) {
         val r = GlobalScope.async {
-            val cleanTask = async {
-                if(!isNewProduct)
-                {
-                    try {
-                        characteristicMetadata.deleteCharacteristics(product)
-                    }catch (e: Exception){
-                        logger.error("Error when deleteCharacteristics for Product [${product.id}, ${product.title}]", e)
-                    }
+            if(!isNewProduct)
+            {
+                // Удалять необходимо до вставок!!!
+                try {
+                    characteristicMetadata.deleteCharacteristics(product)
+                }catch (e: Exception){
+                    logger.error("Error when deleteCharacteristics for Product [${product.id}, ${product.title}]", e)
                 }
             }
 
@@ -79,7 +78,6 @@ class CharacteristicMapperHandler {
                 }
             }
 
-            cleanTask.await()
             productCharacteristicHandler.await()
             availableCharacteristicHandler.await()
         }

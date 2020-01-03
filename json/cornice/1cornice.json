@@ -1,119 +1,59 @@
 [ {
-  "imgUrl" : "https://asforos.by/upload/resize_cache/iblock/429/500_500_17236f3bb137eb253405d06e58cacf26c/42993b88b2a8726b918a6c1ec5a727aa.jpg",
-  "title" : "Карниз металлопластиковый «Белый»",
+  "imgUrl" : "https://asforos.by/upload/resize_cache/iblock/6f1/500_500_17236f3bb137eb253405d06e58cacf26c/6f1f9a51aae7bc3958a0b8e3c71371cb.JPG",
+  "title" : "Кронштейн пласт. D28",
   "price" : "",
-  "moreDetailsUrl" : "https://asforos.by/metalloplastikovye-karnizy/karniz-metalloplastikovyy-belyy/",
-  "category" : "wall_metal_plastic",
-  "properties" : {
-    "Цвет" : "Белый",
-    "ID поста блога для комментариев" : "4"
-  },
+  "moreDetailsUrl" : "https://asforos.by/metalloplastikovaya-furnitura/kronshteyn-plast-d28/",
+  "category" : "metal_plastic_accessories",
+  "properties" : { },
   "propertiesFromDetailPage" : {
-    "Длина (м)" : [ "1,2", "1,4", "1,6", "1,8", "2,0", "2,2", "2,4", "2,8", "3,0", "3,2", "3,6", "-" ],
-    "Составной" : [ "Не составной", "Составной", "-" ]
+    "Цвет" : [ "src='https://asforos.by/upload/uf/e96/e966bd7eee0e43d0dc66f4a503f48ad8.jpg' alt='Белый'", "src='https://asforos.by/upload/uf/63b/63bf02cbad40e026b9667d7202f7a9b4.jpg' alt='Бук'", "src='https://asforos.by/upload/uf/dc3/dc37d5476ab5f69ae705f6dd5bc78b22.jpg' alt='Дуб Античный'", "src='https://asforos.by/upload/uf/a76/a76a03c5d30fdfe742cacf5218d657c6.jpg' alt='Дуб Золотой'", "src='https://asforos.by/upload/uf/ee7/ee72cd63b9738d958b65dcd76fbffb2b.jpg' alt='Дуб Рустик'", "src='https://asforos.by/upload/uf/117/117a84d657ae80edd3389e310c5a9fa7.jpg' alt='Дуб Светлый'", "src='https://asforos.by/upload/uf/e7d/e7dcee5884f4217c237bf6670957fbdd.jpg' alt='Махагон'", "src='https://asforos.by/upload/uf/5cb/5cb3a5611e10b45dc0cb7f71e3a2cc7f.jpg' alt='Орех'", "src='https://asforos.by/upload/uf/cb4/cb405efea119f031184989d0e23a6cd0.jpg' alt='Черешня'" ]
   }
 }, {
-  "imgUrl" : "https://asforos.by/upload/resize_cache/iblock/4bd/500_500_17236f3bb137eb253405d06e58cacf26c/4bd50b1d53ced339ea4ba78fcf978065.jpg",
-  "title" : "Карниз металлопластиковый «Бук»",
+  "imgUrl" : "https://asforos.by/upload/resize_cache/iblock/cfa/500_500_17236f3bb137eb253405d06e58cacf26c/cfa34ffc49dbb249de02fb1b7b525805.JPG",
+  "title" : "Кольцо пласт. D28",
   "price" : "",
-  "moreDetailsUrl" : "https://asforos.by/metalloplastikovye-karnizy/karniz-metalloplastikovyy-buk/",
-  "category" : "wall_metal_plastic",
-  "properties" : {
-    "Цвет" : "Бук"
-  },
+  "moreDetailsUrl" : "https://asforos.by/metalloplastikovaya-furnitura/koltso-plast-d28/",
+  "category" : "metal_plastic_accessories",
+  "properties" : { },
   "propertiesFromDetailPage" : {
-    "Длина (м)" : [ "1,2", "1,4", "1,6", "1,8", "2,0", "2,2", "2,4", "2,8", "3,0", "3,2", "3,6", "-" ],
-    "Составной" : [ "Не составной", "Составной", "-" ]
+    "Цвет" : [ "src='https://asforos.by/upload/uf/e96/e966bd7eee0e43d0dc66f4a503f48ad8.jpg' alt='Белый'", "src='https://asforos.by/upload/uf/63b/63bf02cbad40e026b9667d7202f7a9b4.jpg' alt='Бук'", "src='https://asforos.by/upload/uf/dc3/dc37d5476ab5f69ae705f6dd5bc78b22.jpg' alt='Дуб Античный'", "src='https://asforos.by/upload/uf/a76/a76a03c5d30fdfe742cacf5218d657c6.jpg' alt='Дуб Золотой'", "src='https://asforos.by/upload/uf/ee7/ee72cd63b9738d958b65dcd76fbffb2b.jpg' alt='Дуб Рустик'", "src='https://asforos.by/upload/uf/117/117a84d657ae80edd3389e310c5a9fa7.jpg' alt='Дуб Светлый'", "src='https://asforos.by/upload/uf/e7d/e7dcee5884f4217c237bf6670957fbdd.jpg' alt='Махагон'", "src='https://asforos.by/upload/uf/5cb/5cb3a5611e10b45dc0cb7f71e3a2cc7f.jpg' alt='Орех'", "src='https://asforos.by/upload/uf/cb4/cb405efea119f031184989d0e23a6cd0.jpg' alt='Черешня'" ]
   }
 }, {
-  "imgUrl" : "https://asforos.by/upload/resize_cache/iblock/a2f/500_500_17236f3bb137eb253405d06e58cacf26c/a2f98ce77660df0e17b385db2e4765d4.jpg",
-  "title" : "Карниз металлопластиковый «Дуб Античный»",
+  "imgUrl" : "https://asforos.by/upload/resize_cache/iblock/4ae/500_500_17236f3bb137eb253405d06e58cacf26c/4ae88bccdf5d623a0bbdd4255d1e0868.JPG",
+  "title" : "Зажим для кольца пласт. D28",
   "price" : "",
-  "moreDetailsUrl" : "https://asforos.by/metalloplastikovye-karnizy/karniz-metalloplastikovyy-dub-antichnyy/",
-  "category" : "wall_metal_plastic",
-  "properties" : {
-    "Цвет" : "Дуб Античный"
-  },
+  "moreDetailsUrl" : "https://asforos.by/metalloplastikovaya-furnitura/zazhim-dlya-koltsa-plast-d28/",
+  "category" : "metal_plastic_accessories",
+  "properties" : { },
   "propertiesFromDetailPage" : {
-    "Длина (м)" : [ "1,2", "1,4", "1,6", "1,8", "2,0", "2,2", "2,4", "2,8", "3,0", "3,2", "3,6", "-" ],
-    "Составной" : [ "Не составной", "Составной", "-" ]
+    "Цвет" : [ "src='https://asforos.by/upload/uf/e96/e966bd7eee0e43d0dc66f4a503f48ad8.jpg' alt='Белый'", "src='https://asforos.by/upload/uf/63b/63bf02cbad40e026b9667d7202f7a9b4.jpg' alt='Бук'", "src='https://asforos.by/upload/uf/dc3/dc37d5476ab5f69ae705f6dd5bc78b22.jpg' alt='Дуб Античный'", "src='https://asforos.by/upload/uf/a76/a76a03c5d30fdfe742cacf5218d657c6.jpg' alt='Дуб Золотой'", "src='https://asforos.by/upload/uf/ee7/ee72cd63b9738d958b65dcd76fbffb2b.jpg' alt='Дуб Рустик'", "src='https://asforos.by/upload/uf/117/117a84d657ae80edd3389e310c5a9fa7.jpg' alt='Дуб Светлый'", "src='https://asforos.by/upload/uf/e7d/e7dcee5884f4217c237bf6670957fbdd.jpg' alt='Махагон'", "src='https://asforos.by/upload/uf/5cb/5cb3a5611e10b45dc0cb7f71e3a2cc7f.jpg' alt='Орех'", "src='https://asforos.by/upload/uf/cb4/cb405efea119f031184989d0e23a6cd0.jpg' alt='Черешня'" ]
   }
 }, {
-  "imgUrl" : "https://asforos.by/upload/resize_cache/iblock/5b5/500_500_17236f3bb137eb253405d06e58cacf26c/5b550b53160dd3cda62902b192d8113a.jpg",
-  "title" : "Карниз металлопластиковый «Дуб Золотой»",
+  "imgUrl" : "https://asforos.by/upload/resize_cache/iblock/f6d/500_500_17236f3bb137eb253405d06e58cacf26c/f6df58878a694fed34b4955c0a0f1a59.JPG",
+  "title" : "Зажим для U-шины пласт. D28",
   "price" : "",
-  "moreDetailsUrl" : "https://asforos.by/metalloplastikovye-karnizy/karniz-metalloplastikovyy-dub-zolotoy/",
-  "category" : "wall_metal_plastic",
-  "properties" : {
-    "Цвет" : "Дуб Золотой"
-  },
+  "moreDetailsUrl" : "https://asforos.by/metalloplastikovaya-furnitura/zazhim-dlya-u-shiny-plast-d28/",
+  "category" : "metal_plastic_accessories",
+  "properties" : { },
   "propertiesFromDetailPage" : {
-    "Длина (м)" : [ "1,2", "1,4", "1,6", "1,8", "2,0", "2,2", "2,4", "2,8", "3,0", "3,2", "3,6", "-" ],
-    "Составной" : [ "Не составной", "Составной", "-" ]
+    "Цвет" : [ "src='https://asforos.by/upload/uf/e96/e966bd7eee0e43d0dc66f4a503f48ad8.jpg' alt='Белый'", "src='https://asforos.by/upload/uf/63b/63bf02cbad40e026b9667d7202f7a9b4.jpg' alt='Бук'", "src='https://asforos.by/upload/uf/dc3/dc37d5476ab5f69ae705f6dd5bc78b22.jpg' alt='Дуб Античный'", "src='https://asforos.by/upload/uf/a76/a76a03c5d30fdfe742cacf5218d657c6.jpg' alt='Дуб Золотой'", "src='https://asforos.by/upload/uf/ee7/ee72cd63b9738d958b65dcd76fbffb2b.jpg' alt='Дуб Рустик'", "src='https://asforos.by/upload/uf/117/117a84d657ae80edd3389e310c5a9fa7.jpg' alt='Дуб Светлый'", "src='https://asforos.by/upload/uf/e7d/e7dcee5884f4217c237bf6670957fbdd.jpg' alt='Махагон'", "src='https://asforos.by/upload/uf/5cb/5cb3a5611e10b45dc0cb7f71e3a2cc7f.jpg' alt='Орех'", "src='https://asforos.by/upload/uf/cb4/cb405efea119f031184989d0e23a6cd0.jpg' alt='Черешня'" ]
   }
 }, {
-  "imgUrl" : "https://asforos.by/upload/resize_cache/iblock/93f/500_500_17236f3bb137eb253405d06e58cacf26c/93fac22c6945965f51df33b9031d9ae6.jpg",
-  "title" : "Карниз металлопластиковый «Дуб Рустик»",
+  "imgUrl" : "https://asforos.by/upload/resize_cache/iblock/fba/500_500_17236f3bb137eb253405d06e58cacf26c/fba44124880d4860fb0c5ff124abc1ca.JPG",
+  "title" : "Держатель U-шины D28 пласт. (уп 10шт)",
   "price" : "",
-  "moreDetailsUrl" : "https://asforos.by/metalloplastikovye-karnizy/karniz-metalloplastikovyy-dub-rustik/",
-  "category" : "wall_metal_plastic",
-  "properties" : {
-    "Цвет" : "Дуб Рустик"
-  },
+  "moreDetailsUrl" : "https://asforos.by/metalloplastikovaya-furnitura/derzhatel-u-shiny-d28-plast-up-10sht/",
+  "category" : "metal_plastic_accessories",
+  "properties" : { },
   "propertiesFromDetailPage" : {
-    "Длина (м)" : [ "1,2", "1,4", "1,6", "1,8", "2,0", "2,2", "2,4", "2,8", "3,0", "3,2", "3,6", "-" ],
-    "Составной" : [ "Не составной", "Составной", "-" ]
+    "Цвет" : [ "src='https://asforos.by/upload/uf/e96/e966bd7eee0e43d0dc66f4a503f48ad8.jpg' alt='Белый'", "src='https://asforos.by/upload/uf/63b/63bf02cbad40e026b9667d7202f7a9b4.jpg' alt='Бук'", "src='https://asforos.by/upload/uf/dc3/dc37d5476ab5f69ae705f6dd5bc78b22.jpg' alt='Дуб Античный'", "src='https://asforos.by/upload/uf/a76/a76a03c5d30fdfe742cacf5218d657c6.jpg' alt='Дуб Золотой'", "src='https://asforos.by/upload/uf/ee7/ee72cd63b9738d958b65dcd76fbffb2b.jpg' alt='Дуб Рустик'", "src='https://asforos.by/upload/uf/117/117a84d657ae80edd3389e310c5a9fa7.jpg' alt='Дуб Светлый'", "src='https://asforos.by/upload/uf/e7d/e7dcee5884f4217c237bf6670957fbdd.jpg' alt='Махагон'", "src='https://asforos.by/upload/uf/5cb/5cb3a5611e10b45dc0cb7f71e3a2cc7f.jpg' alt='Орех'", "src='https://asforos.by/upload/uf/cb4/cb405efea119f031184989d0e23a6cd0.jpg' alt='Черешня'" ]
   }
 }, {
-  "imgUrl" : "https://asforos.by/upload/resize_cache/iblock/4a0/500_500_17236f3bb137eb253405d06e58cacf26c/4a0142e47be07d483587484db34aaa2c.jpg",
-  "title" : "Карниз металлопластиковый «Дуб Светлый»",
+  "imgUrl" : "https://asforos.by/upload/resize_cache/iblock/ebd/500_500_17236f3bb137eb253405d06e58cacf26c/ebded11c96812eb80f29e9a0680b584a.JPG",
+  "title" : "Соединитель трубы D28 пласт.",
   "price" : "",
-  "moreDetailsUrl" : "https://asforos.by/metalloplastikovye-karnizy/karniz-metalloplastikovyy-dub-svetlyy/",
-  "category" : "wall_metal_plastic",
-  "properties" : {
-    "Цвет" : "Дуб Светлый"
-  },
-  "propertiesFromDetailPage" : {
-    "Длина (м)" : [ "1,2", "1,4", "1,6", "1,8", "2,0", "2,2", "2,4", "2,8", "3,0", "3,2", "3,6", "-" ],
-    "Составной" : [ "Не составной", "Составной", "-" ]
-  }
-}, {
-  "imgUrl" : "https://asforos.by/upload/resize_cache/iblock/e80/500_500_17236f3bb137eb253405d06e58cacf26c/e80b49da5476de83145cd8b29d12e450.jpg",
-  "title" : "Карниз металлопластиковый «Черешня»",
-  "price" : "",
-  "moreDetailsUrl" : "https://asforos.by/metalloplastikovye-karnizy/karniz-metalloplastikovyy-chereshnya/",
-  "category" : "wall_metal_plastic",
-  "properties" : {
-    "Цвет" : "Черешня"
-  },
-  "propertiesFromDetailPage" : {
-    "Длина (м)" : [ "1,2", "1,4", "1,6", "1,8", "2,0", "2,2", "2,4", "2,8", "3,0", "3,2", "3,6", "-" ],
-    "Составной" : [ "Не составной", "Составной", "-" ]
-  }
-}, {
-  "imgUrl" : "https://asforos.by/upload/resize_cache/iblock/7ac/500_500_17236f3bb137eb253405d06e58cacf26c/7ac48c0173e06aacf1e49b8e61f9f3c4.jpg",
-  "title" : "Карниз металлопластиковый «Орех»",
-  "price" : "",
-  "moreDetailsUrl" : "https://asforos.by/metalloplastikovye-karnizy/karniz-metalloplastikovyy-orekh/",
-  "category" : "wall_metal_plastic",
-  "properties" : {
-    "Цвет" : "Орех"
-  },
-  "propertiesFromDetailPage" : {
-    "Длина (м)" : [ "1,2", "1,4", "1,6", "1,8", "2,0", "2,2", "2,4", "2,8", "3,0", "3,2", "3,6", "-" ],
-    "Составной" : [ "Не составной", "Составной", "-" ]
-  }
-}, {
-  "imgUrl" : "https://asforos.by/upload/resize_cache/iblock/f0b/500_500_17236f3bb137eb253405d06e58cacf26c/f0b81f46843bbd22a164477b75d63b54.jpg",
-  "title" : "Карниз металлопластиковый «Махагон»",
-  "price" : "",
-  "moreDetailsUrl" : "https://asforos.by/metalloplastikovye-karnizy/karniz-metalloplastikovyy-makhagon/",
-  "category" : "wall_metal_plastic",
-  "properties" : {
-    "Цвет" : "Махагон"
-  },
-  "propertiesFromDetailPage" : {
-    "Длина (м)" : [ "1,2", "1,4", "1,6", "1,8", "2,0", "2,2", "2,4", "2,8", "3,0", "3,2", "3,6", "-" ],
-    "Составной" : [ "Не составной", "Составной", "-" ]
-  }
+  "moreDetailsUrl" : "",
+  "category" : "metal_plastic_accessories",
+  "properties" : { },
+  "propertiesFromDetailPage" : { }
 } ]
