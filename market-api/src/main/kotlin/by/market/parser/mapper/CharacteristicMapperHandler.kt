@@ -8,6 +8,7 @@ import by.market.repository.system.DataTypeRepository
 import by.market.repository.system.EntityMetadataRepository
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.async
+import org.slf4j.LoggerFactory
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.stereotype.Component
 import product.AsforosProduct
@@ -17,6 +18,8 @@ import javax.annotation.PostConstruct
 class CharacteristicMapperHandler {
 
     private lateinit var characteristicMetadata: CharacteristicMetadata
+
+    private val logger = LoggerFactory.getLogger(javaClass)
 
     @Autowired
     private lateinit var dataTypeRepository: DataTypeRepository
@@ -31,25 +34,48 @@ class CharacteristicMapperHandler {
 
     @PostConstruct
     private fun init() {
-        characteristicMetadata = CharacteristicMetadata(dataTypeRepository, entityMetadataRepository, productCharacteristicRepository, doubleCharRep, stringCharRep)
+        try {
+            characteristicMetadata = CharacteristicMetadata(dataTypeRepository, entityMetadataRepository, productCharacteristicRepository, doubleCharRep, stringCharRep)
+        }catch (e: Exception){
+            logger.error("Error when Create CharacteristicMetadata", e)
+            throw e;
+        }
     }
 
     suspend fun <TProduct: AbstractProduct> handle(isNewProduct: Boolean, product: TProduct, parserProduct: AsforosProduct) {
         val r = GlobalScope.async {
             val cleanTask = async {
                 if(!isNewProduct)
-                    characteristicMetadata.deleteCharacteristics(product)
+                {
+                    try {
+                        characteristicMetadata.deleteCharacteristics(product)
+                    }catch (e: Exception){
+                        logger.error("Error when deleteCharacteristics for Product [${product.id}, ${product.title}]", e)
+                    }
+                }
             }
 
             val productCharacteristicHandler = async {
                 parserProduct.properties.forEach { entry ->
-                    characteristicMetadata.handleCharacteristic(product, entry.key, entry.value)
+                    try {
+                        characteristicMetadata.handleCharacteristic(product, entry.key, entry.value)
+                    }catch (e: Exception){
+                        logger.error("Error when handleCharacteristic properties for Product " +
+                                "[${product.id}, ${product.title}] " +
+                                "[characteristicName: ${entry.key}, value: ${entry.value}]", e)
+                    }
                 }
             }
 
             val availableCharacteristicHandler = async {
                 parserProduct.propertiesFromDetailPage.forEach { entry ->
-                    characteristicMetadata.handleCharacteristic(product, entry.key, entry.value)
+                    try {
+                        characteristicMetadata.handleCharacteristic(product, entry.key, entry.value)
+                    }catch (e: Exception){
+                        logger.error("Error when handleCharacteristic propertiesFromDetailPage for Product " +
+                                "[${product.id}, ${product.title}] " +
+                                "[characteristicName: ${entry.key}, value: ${entry.value}]", e)
+                    }
                 }
             }
 
