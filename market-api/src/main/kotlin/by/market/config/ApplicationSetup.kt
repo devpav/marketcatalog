@@ -27,12 +27,11 @@ class ApplicationSetup(private val jalosieSync: JalosieEntitiesToDbEntity,
                 arrayOf(corniceSync, jalosieSync, rolstorSync, accessoriesSync)
                         .forEach {
                             try {
+                                log.info("On Before process products {}", it.javaClass)
                                 it.process()
+                                log.info("On After process products {}", it.javaClass)
                             }catch (e: Exception){
-                                log.error("Type[${it::javaClass.name}]\n" +
-                                        "Ex[$e]\n" +
-                                        "Message[${e.message}]\n" +
-                                        "StackTrace[${e.stackTrace?.toString()}")
+                                log.error("Type[${it::javaClass.name}]", e)
                             }
                         }
             }
