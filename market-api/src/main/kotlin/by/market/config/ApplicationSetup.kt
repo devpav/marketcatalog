@@ -22,12 +22,16 @@ class ApplicationSetup(private val jalosieSync: JalosieEntitiesToDbEntity,
 
     override fun run(args: ApplicationArguments?) {
         if (env.activeProfiles.any{ it == "prod" || it == "dev"}) {
-            log.info("Start ApplicationRunner with args: ", args)
+            log.warn("Start ApplicationRunner with args: ", args)
             runBlocking {
+
+                //val productSource = FilesystemAsforosProductSource("E:\\Program\\projects\\from git\\marketcatalog\\json")
+
                 arrayOf(corniceSync, jalosieSync, rolstorSync, accessoriesSync)
                         .forEach {
                             try {
                                 log.info("On Before process products {}", it.javaClass)
+                                //it.productSource = productSource
                                 it.process()
                                 log.info("On After process products {}", it.javaClass)
                             }catch (e: Exception){
@@ -36,9 +40,9 @@ class ApplicationSetup(private val jalosieSync: JalosieEntitiesToDbEntity,
                         }
             }
 
-            log.info("Data was loaded")
+            log.warn("Data was loaded")
         }else{
-            log.info("Skip initialization database")
+            log.warn("Skip initialization database")
         }
     }
 

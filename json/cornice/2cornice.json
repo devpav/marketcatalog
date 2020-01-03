@@ -1,241 +1,185 @@
 [ {
-  "imgUrl" : "https://asforos.by/upload/resize_cache/iblock/c79/500_500_17236f3bb137eb253405d06e58cacf26c/c7962af1a111bb9373b163c26ff10d0c.JPG",
-  "title" : "Карниз с лентой 7см «Ажур А3» Карел. береза темная",
+  "imgUrl" : "https://asforos.by/upload/resize_cache/iblock/c44/500_500_17236f3bb137eb253405d06e58cacf26c/c44d14aebc5041390d6433be75a89242.jpg",
+  "title" : "Труба D25 Крученая",
   "price" : "",
-  "moreDetailsUrl" : "https://asforos.by/potolochnye-karnizy/karniz-s-lentoy-7sm-azhur-a3-karel-bereza-temnaya/",
-  "category" : "plastic_ceilings",
+  "moreDetailsUrl" : "https://asforos.by/komplektuyush%D1%81hie-dlya-metallicheskih-karnizov/truba-d25-kruchenaya/",
+  "category" : "accessories_for_metal",
   "properties" : {
-    "Цвет" : "Карельская Берёза Тёмная",
-    "Ширина ленты (см)" : "7",
-    "Коллекция" : "Ажур А3"
+    "Диаметр (мм)" : "25",
+    "Тип трубы" : "Крученая"
   },
   "propertiesFromDetailPage" : {
-    "Тип" : [ "прямой", "поворотный", "-" ],
-    "Количество рядов" : [ "2", "3", "-" ],
-    "Длина (м)" : [ "1,6", "1,8", "2,0", "2,2", "2,4", "2,6", "2,8", "3,0", "3,2", "3,4", "3,6", "4,0", "1,75", "1,85", "1,95", "2,05", "2,15", "2,25", "2,35", "2,45", "2,55", "2,65", "2,75", "2,85", "2,95", "3,05", "3,15", "3,25", "3,35", "3,45", "3,55", "3,65", "3,75", "3,85", "4,15", "4,25", "-" ]
+    "Цвет" : [ "src='https://asforos.by/upload/uf/592/592a69ae3e9295aa9fbc8c087824694f.jpg' alt='Антик'", "src='https://asforos.by/upload/uf/5b6/5b653c44b641d9ef83145d79cb2ebed1.jpg' alt='Сатин'", "src='https://asforos.by/upload/uf/6a8/6a8ef800940aecfbfba9efe93ff23a52.jpg' alt='Хром'" ],
+    "Длина (м)" : [ "1,4", "1,6", "1,8", "2,0", "2,4", "3,0", "-" ]
   }
 }, {
-  "imgUrl" : "https://asforos.by/upload/resize_cache/iblock/dfe/500_500_17236f3bb137eb253405d06e58cacf26c/dfe77281e393bd57fcf4a80f8da39f4c.JPG",
-  "title" : "Карниз с лентой 7см «Ажур А3» Махагон",
+  "imgUrl" : "https://asforos.by/upload/resize_cache/iblock/cff/500_500_17236f3bb137eb253405d06e58cacf26c/cffaa51ec4158e799ea6da71e38dcdba.jpg",
+  "title" : "Труба D25 Рифлёная",
   "price" : "",
-  "moreDetailsUrl" : "https://asforos.by/potolochnye-karnizy/karniz-s-lentoy-7sm-azhur-a3-makhagon/",
-  "category" : "plastic_ceilings",
+  "moreDetailsUrl" : "https://asforos.by/komplektuyush%D1%81hie-dlya-metallicheskih-karnizov/truba-d25-riflyenaya/",
+  "category" : "accessories_for_metal",
   "properties" : {
-    "Цвет" : "Махагон",
-    "Ширина ленты (см)" : "7",
-    "Коллекция" : "Ажур А3"
+    "Диаметр (мм)" : "25",
+    "Тип трубы" : "Рифлёная"
   },
   "propertiesFromDetailPage" : {
-    "Тип" : [ "прямой", "поворотный", "-" ],
-    "Количество рядов" : [ "2", "3", "-" ],
-    "Длина (м)" : [ "1,6", "1,8", "2,0", "2,2", "2,4", "2,6", "2,8", "3,0", "3,2", "3,4", "3,6", "4,0", "1,75", "1,85", "1,95", "2,05", "2,15", "2,25", "2,35", "2,45", "2,55", "2,65", "2,75", "2,85", "2,95", "3,05", "3,15", "3,25", "3,35", "3,45", "3,55", "3,65", "3,75", "3,85", "4,15", "4,25", "-" ]
+    "Цвет" : [ "src='https://asforos.by/upload/uf/592/592a69ae3e9295aa9fbc8c087824694f.jpg' alt='Антик'", "src='https://asforos.by/upload/uf/5b6/5b653c44b641d9ef83145d79cb2ebed1.jpg' alt='Сатин'" ],
+    "Длина (м)" : [ "1,6", "1,8", "2,0", "2,4", "3,0", "-" ]
   }
 }, {
-  "imgUrl" : "https://asforos.by/upload/resize_cache/iblock/c38/500_500_17236f3bb137eb253405d06e58cacf26c/c3821513d74df607c1e2cd6b8d6e7226.JPG",
-  "title" : "Карниз с лентой 7см «Ажур А3» Мрамор",
+  "imgUrl" : "https://asforos.by/upload/resize_cache/iblock/e4a/500_500_17236f3bb137eb253405d06e58cacf26c/e4a427eb643cd9e6f81c030b46e82604.jpg",
+  "title" : "Наконечник D16 «Лист Вишни»",
   "price" : "",
-  "moreDetailsUrl" : "https://asforos.by/potolochnye-karnizy/karniz-s-lentoy-7sm-azhur-a3-mramor/",
-  "category" : "plastic_ceilings",
+  "moreDetailsUrl" : "https://asforos.by/komplektuyush%D1%81hie-dlya-metallicheskih-karnizov/nakonechnik-d16-list-vishni/",
+  "category" : "accessories_for_metal",
   "properties" : {
-    "Цвет" : "Мрамор",
-    "Ширина ленты (см)" : "7",
-    "Коллекция" : "Ажур А3"
+    "Диаметр (мм)" : "16"
   },
   "propertiesFromDetailPage" : {
-    "Тип" : [ "прямой", "поворотный", "-" ],
-    "Количество рядов" : [ "2", "3", "-" ],
-    "Длина (м)" : [ "1,6", "1,8", "2,0", "2,2", "2,4", "2,6", "2,8", "3,0", "3,2", "3,4", "3,6", "4,0", "1,75", "1,85", "1,95", "2,05", "2,15", "2,25", "2,35", "2,45", "2,55", "2,65", "2,75", "2,85", "2,95", "3,05", "3,15", "3,25", "3,35", "3,45", "3,55", "3,65", "3,75", "3,85", "4,15", "4,25", "-" ]
+    "Цвет" : [ "src='https://asforos.by/upload/uf/592/592a69ae3e9295aa9fbc8c087824694f.jpg' alt='Антик'", "src='https://asforos.by/upload/uf/5b6/5b653c44b641d9ef83145d79cb2ebed1.jpg' alt='Сатин'" ]
   }
 }, {
-  "imgUrl" : "https://asforos.by/upload/resize_cache/iblock/ea6/500_500_17236f3bb137eb253405d06e58cacf26c/ea61cccafe81b06e0dc01fb2e956f115.JPG",
-  "title" : "Карниз с лентой 7см «Ажур А3» Орех бежевый",
+  "imgUrl" : "https://asforos.by/upload/resize_cache/iblock/858/500_500_17236f3bb137eb253405d06e58cacf26c/858c77de5876350e0620d67cbdd16fa8.jpg",
+  "title" : "Наконечник D16 «Баваро»",
   "price" : "",
-  "moreDetailsUrl" : "https://asforos.by/potolochnye-karnizy/karniz-s-lentoy-7sm-azhur-a3-orekh-bezhevyy/",
-  "category" : "plastic_ceilings",
+  "moreDetailsUrl" : "https://asforos.by/komplektuyush%D1%81hie-dlya-metallicheskih-karnizov/nakonechnik-d16-bavaro/",
+  "category" : "accessories_for_metal",
   "properties" : {
-    "Цвет" : "Орех Бежевый",
-    "Ширина ленты (см)" : "7",
-    "Коллекция" : "Ажур А3"
+    "Диаметр (мм)" : "16"
   },
   "propertiesFromDetailPage" : {
-    "Тип" : [ "прямой", "поворотный", "-" ],
-    "Количество рядов" : [ "2", "3", "-" ],
-    "Длина (м)" : [ "1,6", "1,8", "2,0", "2,2", "2,4", "2,6", "2,8", "3,0", "3,2", "3,4", "3,6", "4,0", "1,75", "1,85", "1,95", "2,05", "2,15", "2,25", "2,35", "2,45", "2,55", "2,65", "2,75", "2,85", "2,95", "3,05", "3,15", "3,25", "3,35", "3,45", "3,55", "3,65", "3,75", "3,85", "4,15", "4,25", "-" ]
+    "Цвет" : [ "src='https://asforos.by/upload/uf/592/592a69ae3e9295aa9fbc8c087824694f.jpg' alt='Антик'", "src='https://asforos.by/upload/uf/5b6/5b653c44b641d9ef83145d79cb2ebed1.jpg' alt='Сатин'" ]
   }
 }, {
-  "imgUrl" : "https://asforos.by/upload/resize_cache/iblock/a29/500_500_17236f3bb137eb253405d06e58cacf26c/a29f7833d0415970ac28361e6461dff1.JPG",
-  "title" : "Карниз с лентой 7см «Ажур А3» Песок",
+  "imgUrl" : "https://asforos.by/upload/resize_cache/iblock/0c0/500_500_17236f3bb137eb253405d06e58cacf26c/0c089f33f5a360f8dc0e75394b587ebb.jpg",
+  "title" : "Наконечник D16 «Клён»",
   "price" : "",
-  "moreDetailsUrl" : "https://asforos.by/potolochnye-karnizy/karniz-s-lentoy-7sm-azhur-a3-pesok/",
-  "category" : "plastic_ceilings",
+  "moreDetailsUrl" : "https://asforos.by/komplektuyush%D1%81hie-dlya-metallicheskih-karnizov/nakonechnik-d16-klyen/",
+  "category" : "accessories_for_metal",
   "properties" : {
-    "Цвет" : "Песок",
-    "Ширина ленты (см)" : "7",
-    "Коллекция" : "Ажур А3"
+    "Диаметр (мм)" : "16"
   },
   "propertiesFromDetailPage" : {
-    "Тип" : [ "прямой", "поворотный", "-" ],
-    "Количество рядов" : [ "2", "3", "-" ],
-    "Длина (м)" : [ "1,6", "1,8", "2,0", "2,2", "2,4", "2,6", "2,8", "3,0", "3,2", "3,4", "3,6", "4,0", "1,75", "1,85", "1,95", "2,05", "2,15", "2,25", "2,35", "2,45", "2,55", "2,65", "2,75", "2,85", "2,95", "3,05", "3,15", "3,25", "3,35", "3,45", "3,55", "3,65", "3,75", "3,85", "4,15", "4,25", "-" ]
+    "Цвет" : [ "src='https://asforos.by/upload/uf/592/592a69ae3e9295aa9fbc8c087824694f.jpg' alt='Антик'", "src='https://asforos.by/upload/uf/5b6/5b653c44b641d9ef83145d79cb2ebed1.jpg' alt='Сатин'", "src='https://asforos.by/upload/uf/6a8/6a8ef800940aecfbfba9efe93ff23a52.jpg' alt='Хром'" ]
   }
 }, {
-  "imgUrl" : "https://asforos.by/upload/resize_cache/iblock/eff/500_500_17236f3bb137eb253405d06e58cacf26c/eff3457e2f0e5ac6c82a969d75407480.JPG",
-  "title" : "Карниз с лентой 7см «Ажур А3» Серебро темное",
+  "imgUrl" : "https://asforos.by/upload/resize_cache/iblock/977/500_500_17236f3bb137eb253405d06e58cacf26c/977475e3cffe40fba9914daf121a0d63.jpg",
+  "title" : "Наконечник D16 «Завиток одинарный»",
   "price" : "",
-  "moreDetailsUrl" : "https://asforos.by/potolochnye-karnizy/karniz-s-lentoy-7sm-azhur-a3-serebro-temnoe/",
-  "category" : "plastic_ceilings",
+  "moreDetailsUrl" : "https://asforos.by/komplektuyush%D1%81hie-dlya-metallicheskih-karnizov/nakonechnik-d16-zavitok-odinarnyy/",
+  "category" : "accessories_for_metal",
   "properties" : {
-    "Цвет" : "Серебро Темное",
-    "Ширина ленты (см)" : "7",
-    "Коллекция" : "Ажур А3"
+    "Диаметр (мм)" : "16"
   },
   "propertiesFromDetailPage" : {
-    "Тип" : [ "прямой", "поворотный", "-" ],
-    "Количество рядов" : [ "2", "3", "-" ],
-    "Длина (м)" : [ "1,6", "1,8", "2,0", "2,2", "2,4", "2,6", "2,8", "3,0", "3,2", "3,4", "3,6", "4,0", "1,75", "1,85", "1,95", "2,05", "2,15", "2,25", "2,35", "2,45", "2,55", "2,65", "2,75", "2,85", "2,95", "3,05", "3,15", "3,25", "3,35", "3,45", "3,55", "3,65", "3,75", "3,85", "4,15", "4,25", "-" ]
+    "Цвет" : [ "src='https://asforos.by/upload/uf/592/592a69ae3e9295aa9fbc8c087824694f.jpg' alt='Антик'", "src='https://asforos.by/upload/uf/5b6/5b653c44b641d9ef83145d79cb2ebed1.jpg' alt='Сатин'" ]
   }
 }, {
-  "imgUrl" : "https://asforos.by/upload/resize_cache/iblock/a86/500_500_17236f3bb137eb253405d06e58cacf26c/a86c8b103ee309a257eef4345af8eddf.JPG",
-  "title" : "Карниз с лентой 7см «Ажур А3» Черешня",
+  "imgUrl" : "https://asforos.by/upload/resize_cache/iblock/cbc/500_500_17236f3bb137eb253405d06e58cacf26c/cbc5eb3e8c7f2149ee012b014f46c2cf.jpg",
+  "title" : "Наконечник D16 «Спираль»",
   "price" : "",
-  "moreDetailsUrl" : "https://asforos.by/potolochnye-karnizy/karniz-s-lentoy-7sm-azhur-a3-chereshnya/",
-  "category" : "plastic_ceilings",
+  "moreDetailsUrl" : "https://asforos.by/komplektuyush%D1%81hie-dlya-metallicheskih-karnizov/nakonechnik-d16-spiral/",
+  "category" : "accessories_for_metal",
   "properties" : {
-    "Цвет" : "Черешня",
-    "Ширина ленты (см)" : "7",
-    "Коллекция" : "Ажур А3"
+    "Диаметр (мм)" : "16"
   },
   "propertiesFromDetailPage" : {
-    "Тип" : [ "прямой", "поворотный", "-" ],
-    "Количество рядов" : [ "2", "3", "-" ],
-    "Длина (м)" : [ "1,6", "1,8", "2,0", "2,2", "2,4", "2,6", "2,8", "3,0", "3,2", "3,4", "3,6", "4,0", "1,75", "1,85", "1,95", "2,05", "2,15", "2,25", "2,35", "2,45", "2,55", "2,65", "2,75", "2,85", "2,95", "3,05", "3,15", "3,25", "3,35", "3,45", "3,55", "3,65", "3,75", "3,85", "4,15", "4,25", "-" ]
+    "Цвет" : [ "src='https://asforos.by/upload/uf/592/592a69ae3e9295aa9fbc8c087824694f.jpg' alt='Антик'", "src='https://asforos.by/upload/uf/5b6/5b653c44b641d9ef83145d79cb2ebed1.jpg' alt='Сатин'" ]
   }
 }, {
-  "imgUrl" : "https://asforos.by/upload/resize_cache/iblock/11b/500_500_17236f3bb137eb253405d06e58cacf26c/11bd4ea519c4bd76c838dc597788c50e.JPG",
-  "title" : "Карниз с лентой 7см «Ажур А3» №313",
+  "imgUrl" : "https://asforos.by/upload/resize_cache/iblock/7f9/500_500_17236f3bb137eb253405d06e58cacf26c/7f92365526ec28d2183814cc1a77da04.jpg",
+  "title" : "Наконечник D16 «Лист Ветка»",
   "price" : "",
-  "moreDetailsUrl" : "https://asforos.by/potolochnye-karnizy/karniz-s-lentoy-7sm-azhur-a3-313/",
-  "category" : "plastic_ceilings",
+  "moreDetailsUrl" : "https://asforos.by/komplektuyush%D1%81hie-dlya-metallicheskih-karnizov/nakonechnik-d16-list-vetka/",
+  "category" : "accessories_for_metal",
   "properties" : {
-    "Цвет" : "313",
-    "Ширина ленты (см)" : "7",
-    "Коллекция" : "Ажур А3"
+    "Диаметр (мм)" : "16"
   },
   "propertiesFromDetailPage" : {
-    "Тип" : [ "прямой", "поворотный", "-" ],
-    "Количество рядов" : [ "2", "3", "-" ],
-    "Длина (м)" : [ "1,6", "1,8", "2,0", "2,2", "2,4", "2,6", "2,8", "3,0", "3,2", "3,4", "3,6", "4,0", "1,75", "1,85", "1,95", "2,05", "2,15", "2,25", "2,35", "2,45", "2,55", "2,65", "2,75", "2,85", "2,95", "3,05", "3,15", "3,25", "3,35", "3,45", "3,55", "3,65", "3,75", "3,85", "4,15", "4,25", "-" ]
+    "Цвет" : [ "src='https://asforos.by/upload/uf/592/592a69ae3e9295aa9fbc8c087824694f.jpg' alt='Антик'", "src='https://asforos.by/upload/uf/5b6/5b653c44b641d9ef83145d79cb2ebed1.jpg' alt='Сатин'" ]
   }
 }, {
-  "imgUrl" : "https://asforos.by/upload/resize_cache/iblock/4e3/500_500_17236f3bb137eb253405d06e58cacf26c/4e3bf375e8dfd5b1eb2f9325ef10748b.JPG",
-  "title" : "Карниз с лентой 7см «Ажур А4» Бежевая",
+  "imgUrl" : "https://asforos.by/upload/resize_cache/iblock/052/500_500_17236f3bb137eb253405d06e58cacf26c/05273bd9cf560b727d34de37b54e7e71.jpg",
+  "title" : "Наконечник D16 «Лист Большой»",
   "price" : "",
-  "moreDetailsUrl" : "https://asforos.by/potolochnye-karnizy/karniz-s-lentoy-7sm-azhur-a4-bezhevaya/",
-  "category" : "plastic_ceilings",
+  "moreDetailsUrl" : "https://asforos.by/komplektuyush%D1%81hie-dlya-metallicheskih-karnizov/nakonechnik-d16-list-bolshoy/",
+  "category" : "accessories_for_metal",
   "properties" : {
-    "Цвет" : "Бежевый",
-    "Ширина ленты (см)" : "7",
-    "Коллекция" : "Ажур А4"
+    "Диаметр (мм)" : "16"
   },
   "propertiesFromDetailPage" : {
-    "Тип" : [ "прямой", "поворотный", "-" ],
-    "Количество рядов" : [ "2", "3", "-" ],
-    "Длина (м)" : [ "1,6", "1,8", "2,0", "2,2", "2,4", "2,6", "2,8", "3,0", "3,2", "3,4", "3,6", "4,0", "1,75", "1,85", "1,95", "2,05", "2,15", "2,25", "2,35", "2,45", "2,55", "2,65", "2,75", "2,85", "2,95", "3,05", "3,15", "3,25", "3,35", "3,45", "3,55", "3,65", "3,75", "3,85", "4,15", "4,25", "-" ]
+    "Цвет" : [ "src='https://asforos.by/upload/uf/592/592a69ae3e9295aa9fbc8c087824694f.jpg' alt='Антик'", "src='https://asforos.by/upload/uf/5b6/5b653c44b641d9ef83145d79cb2ebed1.jpg' alt='Сатин'" ]
   }
 }, {
-  "imgUrl" : "https://asforos.by/upload/resize_cache/iblock/a4a/500_500_17236f3bb137eb253405d06e58cacf26c/a4a9883c765e6c0a4e4d906000a80762.JPG",
-  "title" : "Карниз с лентой 7см «Ажур А4» Белый / Золото",
+  "imgUrl" : "https://asforos.by/upload/resize_cache/iblock/582/500_500_17236f3bb137eb253405d06e58cacf26c/582c479440d605314b327f0d938f9d3c.jpg",
+  "title" : "Наконечник D16 «Лист Розы»",
   "price" : "",
-  "moreDetailsUrl" : "https://asforos.by/potolochnye-karnizy/karniz-s-lentoy-7sm-azhur-a4-belyy-zoloto/",
-  "category" : "plastic_ceilings",
+  "moreDetailsUrl" : "https://asforos.by/komplektuyush%D1%81hie-dlya-metallicheskih-karnizov/nakonechnik-d16-list-rozy/",
+  "category" : "accessories_for_metal",
   "properties" : {
-    "Цвет" : "Белый / Золото",
-    "Ширина ленты (см)" : "7",
-    "Коллекция" : "Ажур А4"
+    "Диаметр (мм)" : "16"
   },
   "propertiesFromDetailPage" : {
-    "Тип" : [ "прямой", "поворотный", "-" ],
-    "Количество рядов" : [ "2", "3", "-" ],
-    "Длина (м)" : [ "1,6", "1,8", "2,0", "2,2", "2,4", "2,6", "2,8", "3,0", "3,2", "3,4", "3,6", "4,0", "1,75", "1,85", "1,95", "2,05", "2,15", "2,25", "2,35", "2,45", "2,55", "2,65", "2,75", "2,85", "2,95", "3,05", "3,15", "3,25", "3,35", "3,45", "3,55", "3,65", "3,75", "3,85", "4,15", "4,25", "-" ]
+    "Цвет" : [ "src='https://asforos.by/upload/uf/592/592a69ae3e9295aa9fbc8c087824694f.jpg' alt='Антик'", "src='https://asforos.by/upload/uf/5b6/5b653c44b641d9ef83145d79cb2ebed1.jpg' alt='Сатин'", "src='https://asforos.by/upload/uf/6a8/6a8ef800940aecfbfba9efe93ff23a52.jpg' alt='Хром'" ]
   }
 }, {
-  "imgUrl" : "https://asforos.by/upload/resize_cache/iblock/694/500_500_17236f3bb137eb253405d06e58cacf26c/69435dabcc7e438fa92bf069a6e7e10e.JPG",
-  "title" : "Карниз с лентой 7см «Ажур А4» Белый / Хром",
+  "imgUrl" : "https://asforos.by/upload/resize_cache/iblock/542/500_500_17236f3bb137eb253405d06e58cacf26c/5422c381abaeba28ddfe478ac1f112f9.jpg",
+  "title" : "Наконечник D16 «Лабиринт»",
   "price" : "",
-  "moreDetailsUrl" : "https://asforos.by/potolochnye-karnizy/karniz-s-lentoy-7sm-azhur-a4-belyy-khrom/",
-  "category" : "plastic_ceilings",
+  "moreDetailsUrl" : "https://asforos.by/komplektuyush%D1%81hie-dlya-metallicheskih-karnizov/nakonechnik-d16-labirint/",
+  "category" : "accessories_for_metal",
   "properties" : {
-    "Цвет" : "Белый / Хром",
-    "Ширина ленты (см)" : "7",
-    "Коллекция" : "Ажур А4"
+    "Диаметр (мм)" : "16"
   },
   "propertiesFromDetailPage" : {
-    "Тип" : [ "прямой", "поворотный", "-" ],
-    "Количество рядов" : [ "2", "3", "-" ],
-    "Длина (м)" : [ "1,6", "1,8", "2,0", "2,2", "2,4", "2,6", "2,8", "3,0", "3,2", "3,4", "3,6", "4,0", "1,75", "1,85", "1,95", "2,05", "2,15", "2,25", "2,35", "2,45", "2,55", "2,65", "2,75", "2,85", "2,95", "3,05", "3,15", "3,25", "3,35", "3,45", "3,55", "3,65", "3,75", "3,85", "4,15", "4,25", "-" ]
+    "Цвет" : [ "src='https://asforos.by/upload/uf/592/592a69ae3e9295aa9fbc8c087824694f.jpg' alt='Антик'", "src='https://asforos.by/upload/uf/5b6/5b653c44b641d9ef83145d79cb2ebed1.jpg' alt='Сатин'", "src='https://asforos.by/upload/uf/6a8/6a8ef800940aecfbfba9efe93ff23a52.jpg' alt='Хром'" ]
   }
 }, {
-  "imgUrl" : "https://asforos.by/upload/resize_cache/iblock/d53/500_500_17236f3bb137eb253405d06e58cacf26c/d535bcb2d82c3309d546cea517791c47.JPG",
-  "title" : "Карниз с лентой 7см «Ажур А4» Мрамор",
+  "imgUrl" : "https://asforos.by/upload/resize_cache/iblock/2ba/500_500_17236f3bb137eb253405d06e58cacf26c/2bae36bfc79d743bbc1353a31cc1ebf3.jpg",
+  "title" : "Наконечник D16 «Веер»",
   "price" : "",
-  "moreDetailsUrl" : "https://asforos.by/potolochnye-karnizy/karniz-s-lentoy-7sm-azhur-a4-mramor/",
-  "category" : "plastic_ceilings",
+  "moreDetailsUrl" : "https://asforos.by/komplektuyush%D1%81hie-dlya-metallicheskih-karnizov/nakonechnik-d16-veer/",
+  "category" : "accessories_for_metal",
   "properties" : {
-    "Цвет" : "Мрамор",
-    "Ширина ленты (см)" : "7",
-    "Коллекция" : "Ажур А4"
+    "Диаметр (мм)" : "16"
   },
   "propertiesFromDetailPage" : {
-    "Тип" : [ "прямой", "поворотный", "-" ],
-    "Количество рядов" : [ "2", "3", "-" ],
-    "Длина (м)" : [ "1,6", "1,8", "2,0", "2,2", "2,4", "2,6", "2,8", "3,0", "3,2", "3,4", "3,6", "4,0", "1,75", "1,85", "1,95", "2,05", "2,15", "2,25", "2,35", "2,45", "2,55", "2,65", "2,75", "2,85", "2,95", "3,05", "3,15", "3,25", "3,35", "3,45", "3,55", "3,65", "3,75", "3,85", "4,15", "4,25", "-" ]
+    "Цвет" : [ "src='https://asforos.by/upload/uf/592/592a69ae3e9295aa9fbc8c087824694f.jpg' alt='Антик'", "src='https://asforos.by/upload/uf/5b6/5b653c44b641d9ef83145d79cb2ebed1.jpg' alt='Сатин'", "src='https://asforos.by/upload/uf/6a8/6a8ef800940aecfbfba9efe93ff23a52.jpg' alt='Хром'" ]
   }
 }, {
-  "imgUrl" : "https://asforos.by/upload/resize_cache/iblock/f08/500_500_17236f3bb137eb253405d06e58cacf26c/f0855523232ded8be007d040e31395f5.JPG",
-  "title" : "Карниз с лентой 7см «Белая» Глянцевая",
+  "imgUrl" : "https://asforos.by/upload/resize_cache/iblock/7ee/500_500_17236f3bb137eb253405d06e58cacf26c/7ee5a98fc428385d2d9c002844326bb3.jpg",
+  "title" : "Наконечник D16 «Лоза»",
   "price" : "",
-  "moreDetailsUrl" : "https://asforos.by/potolochnye-karnizy/karniz-s-lentoy-7sm-belaya-glyantsevaya/",
-  "category" : "plastic_ceilings",
+  "moreDetailsUrl" : "https://asforos.by/komplektuyush%D1%81hie-dlya-metallicheskih-karnizov/nakonechnik-d16-loza/",
+  "category" : "accessories_for_metal",
   "properties" : {
-    "Цвет" : "Белый (глянцевый)",
-    "Ширина ленты (см)" : "7",
-    "Коллекция" : "Белая"
+    "Диаметр (мм)" : "16"
   },
   "propertiesFromDetailPage" : {
-    "Тип" : [ "прямой", "поворотный", "-" ],
-    "Количество рядов" : [ "2", "3", "-" ],
-    "Длина (м)" : [ "1,6", "1,8", "2,0", "2,2", "2,4", "2,6", "2,8", "3,0", "3,2", "3,4", "3,6", "4,0", "1,75", "1,85", "1,95", "2,05", "2,15", "2,25", "2,35", "2,45", "2,55", "2,65", "2,75", "2,85", "2,95", "3,05", "3,15", "3,25", "3,35", "3,45", "3,55", "3,65", "3,75", "3,85", "4,15", "4,25", "-" ]
+    "Цвет" : [ "src='https://asforos.by/upload/uf/592/592a69ae3e9295aa9fbc8c087824694f.jpg' alt='Антик'", "src='https://asforos.by/upload/uf/5b6/5b653c44b641d9ef83145d79cb2ebed1.jpg' alt='Сатин'", "src='https://asforos.by/upload/uf/6a8/6a8ef800940aecfbfba9efe93ff23a52.jpg' alt='Хром'" ]
   }
 }, {
-  "imgUrl" : "https://asforos.by/upload/resize_cache/iblock/b71/500_500_17236f3bb137eb253405d06e58cacf26c/b71ef7a5ca18374b6343937a27c1262b.JPG",
-  "title" : "Карниз с Лентой 7см «Белая» Матовая Снежок",
+  "imgUrl" : "https://asforos.by/upload/resize_cache/iblock/96f/500_500_17236f3bb137eb253405d06e58cacf26c/96fe76808ae1a98ff1f9537f2a3ba4e0.jpg",
+  "title" : "Наконечник D16 «Ромилда»",
   "price" : "",
-  "moreDetailsUrl" : "https://asforos.by/potolochnye-karnizy/karniz-s-lentoy-7sm-belaya-matovaya-snezhok/",
-  "category" : "plastic_ceilings",
+  "moreDetailsUrl" : "https://asforos.by/komplektuyush%D1%81hie-dlya-metallicheskih-karnizov/nakonechnik-d16-romilda/",
+  "category" : "accessories_for_metal",
   "properties" : {
-    "Цвет" : "Белый (матовый)",
-    "Ширина ленты (см)" : "7",
-    "Коллекция" : "Белая"
+    "Диаметр (мм)" : "16"
   },
   "propertiesFromDetailPage" : {
-    "Тип" : [ "прямой", "поворотный", "-" ],
-    "Количество рядов" : [ "2", "3", "-" ],
-    "Длина (м)" : [ "1,6", "1,8", "2,0", "2,2", "2,4", "2,6", "2,8", "3,0", "3,2", "3,4", "3,6", "4,0", "1,75", "1,85", "1,95", "2,05", "2,15", "2,25", "2,35", "2,45", "2,55", "2,65", "2,75", "2,85", "2,95", "3,05", "3,15", "3,25", "3,35", "3,45", "3,55", "3,65", "3,75", "3,85", "4,15", "4,25", "-" ]
+    "Цвет" : [ "src='https://asforos.by/upload/uf/592/592a69ae3e9295aa9fbc8c087824694f.jpg' alt='Антик'", "src='https://asforos.by/upload/uf/5b6/5b653c44b641d9ef83145d79cb2ebed1.jpg' alt='Сатин'" ]
   }
 }, {
-  "imgUrl" : "https://asforos.by/upload/resize_cache/iblock/cdc/500_500_17236f3bb137eb253405d06e58cacf26c/cdcb9875fd74be0b170ee5ff90b00009.JPG",
-  "title" : "Карниз с лентой 7см «Богемия» №041",
+  "imgUrl" : "https://asforos.by/upload/resize_cache/iblock/29e/500_500_17236f3bb137eb253405d06e58cacf26c/29ed3cc61dc7e40fd30e754dda63842f.jpg",
+  "title" : "Наконечник D16 «Игнацио»",
   "price" : "",
-  "moreDetailsUrl" : "https://asforos.by/potolochnye-karnizy/karniz-s-lentoy-7sm-bogemiya-041/",
-  "category" : "plastic_ceilings",
+  "moreDetailsUrl" : "https://asforos.by/komplektuyush%D1%81hie-dlya-metallicheskih-karnizov/nakonechnik-d16-ignatsio/",
+  "category" : "accessories_for_metal",
   "properties" : {
-    "Цвет" : "41",
-    "Ширина ленты (см)" : "7",
-    "Коллекция" : "Богемия"
+    "Диаметр (мм)" : "16"
   },
   "propertiesFromDetailPage" : {
-    "Тип" : [ "прямой", "поворотный", "-" ],
-    "Количество рядов" : [ "2", "3", "-" ],
-    "Длина (м)" : [ "1,6", "1,8", "2,0", "2,2", "2,4", "2,6", "2,8", "3,0", "3,2", "3,4", "3,6", "4,0", "1,75", "1,85", "1,95", "2,05", "2,15", "2,25", "2,35", "2,45", "2,55", "2,65", "2,75", "2,85", "2,95", "3,05", "3,15", "3,25", "3,35", "3,45", "3,55", "3,65", "3,75", "3,85", "4,15", "4,25", "-" ]
+    "Цвет" : [ "src='https://asforos.by/upload/uf/592/592a69ae3e9295aa9fbc8c087824694f.jpg' alt='Антик'", "src='https://asforos.by/upload/uf/5b6/5b653c44b641d9ef83145d79cb2ebed1.jpg' alt='Сатин'" ]
   }
 } ]

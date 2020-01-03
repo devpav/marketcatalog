@@ -1,24 +1,48 @@
 package by.market.parser
 
 import abstraction.IParserContext
-import abstraction.IProductListener
+import by.market.core.IAsforosProductSource
 import by.market.core.IMapper
 import by.market.domain.AbstractProduct
+import by.market.parser.asforos_product_source.ParserAsforosProductSource
 import kotlinx.coroutines.runBlocking
 import org.slf4j.LoggerFactory
-import parser.AsforosProductParser
 import product.AsforosProduct
 
-open class AsforosEntitiesToDbEntity<TProduct: AbstractProduct>(private val parser: AsforosProductParser,
-                                                                private val context: IParserContext,
+open class AsforosEntitiesToDbEntity<TProduct: AbstractProduct>(private val context: IParserContext,
                                                                 private val mapper: IMapper<AsforosProduct, TProduct>) {
+
+    private var backProductSource: IAsforosProductSource? = null
+
+    var productSource: IAsforosProductSource
+        get() {
+            val curProductSource = backProductSource
+            if(curProductSource != null)
+                return curProductSource
+
+            synchronized(context){
+                var curProductSource = backProductSource
+                if(curProductSource != null)
+                    return curProductSource
+
+                curProductSource = ParserAsforosProductSource(LogListener(logger))
+                backProductSource = curProductSource
+                return curProductSource
+            }
+        }
+
+    set(value) {
+        synchronized(context){
+            backProductSource = value
+        }
+    }
 
     private val logger = LoggerFactory.getLogger(javaClass)
 
-    fun process(listener: IProductListener<AsforosProduct> = LogListener(logger)) {
-        var parseProducts: List<AsforosProduct>? = null
+    fun process() {
+        var parseProducts: List<AsforosProduct>?
         try {
-            parseProducts = parser.parse(context, listener)
+            parseProducts = productSource.get(context)
 
             logger.info("After Parse {}", mapper.javaClass)
         }catch (ex: Exception) {

@@ -1,208 +1,195 @@
 [ {
-  "imgUrl" : "https://asforos.by/upload/resize_cache/iblock/278/500_500_17236f3bb137eb253405d06e58cacf26c/2781dbb4abf8a6dd136d9b6f880f2697.JPG",
-  "title" : "Рулонная штора «День/Ночь» Шоколад",
+  "imgUrl" : "https://asforos.by/upload/resize_cache/iblock/c9e/500_500_17236f3bb137eb253405d06e58cacf26c/c9eb30a48b25c5a3ffd773c05f57df1c.JPG",
+  "title" : "Рулонная штора «Сильвия» Белый",
   "price" : "",
-  "moreDetailsUrl" : "https://asforos.by/rolshtory-rulonnye-shtory/rulonnaya-shtora-den-noch-shokolad/",
-  "category" : "rolstor",
+  "moreDetailsUrl" : "https://asforos.by/rolshtory-rulonnye-shtory-blackout/rulonnaya-shtora-silviya-belyy/",
+  "category" : "blackout",
   "properties" : {
-    "Цвет" : "Шоколад",
-    "Коллекция" : "День/Ночь",
-    "Длина (см)" : "160"
+    "Цвет" : "Белый",
+    "Коллекция" : "Сильвия",
+    "Артикул" : "8070"
   },
   "propertiesFromDetailPage" : {
-    "Ширина (см)" : [ "45", "50", "55", "65", "75", "80", "-" ]
+    "Ширина (см)" : [ "38", "43", "48", "52", "57", "61", "67", "72", "78", "85", "90", "-", "Ваш размер" ]
   }
 }, {
-  "imgUrl" : "https://asforos.by/upload/resize_cache/iblock/b8f/500_500_17236f3bb137eb253405d06e58cacf26c/b8f5708348dbaab28b9f6e01718d360f.JPG",
-  "title" : "Рулонная штора «День/Ночь» Светло-зеленый",
+  "imgUrl" : "https://asforos.by/upload/resize_cache/iblock/00f/500_500_17236f3bb137eb253405d06e58cacf26c/00f50ceee883cc9942853f905931f14d.JPG",
+  "title" : "Рулонная штора «Сильвия» Фисташковый",
   "price" : "",
-  "moreDetailsUrl" : "https://asforos.by/rolshtory-rulonnye-shtory/rolshtora-den-noch-svetlo-zelenyyrulonnaya-shtora-/",
-  "category" : "rolstor",
+  "moreDetailsUrl" : "https://asforos.by/rolshtory-rulonnye-shtory-blackout/rulonnaya-shtora-silviya-fistashkovyy/",
+  "category" : "blackout",
   "properties" : {
-    "Цвет" : "Светло-зеленый",
-    "Коллекция" : "День/Ночь",
-    "Длина (см)" : "160"
+    "Цвет" : "Фисташковый",
+    "Коллекция" : "Сильвия",
+    "Артикул" : "8073"
   },
   "propertiesFromDetailPage" : {
-    "Ширина (см)" : [ "40", "45", "50", "55", "60", "65", "70", "75", "80", "-" ]
+    "Ширина (см)" : [ "38", "43", "48", "52", "57", "61", "67", "72", "78", "85", "90", "-", "Ваш размер" ]
   }
 }, {
-  "imgUrl" : "https://asforos.by/upload/resize_cache/iblock/5b8/500_500_17236f3bb137eb253405d06e58cacf26c/5b8391872c14cce2701ffd7a38bf9775.JPG",
-  "title" : "Рулонная штора «День/Ночь» Розовый",
+  "imgUrl" : "https://asforos.by/upload/resize_cache/iblock/df5/500_500_17236f3bb137eb253405d06e58cacf26c/df50cc96501838d40e83fb62aef775ef.JPG",
+  "title" : "Рулонная штора «Сильвия» Латте",
   "price" : "",
-  "moreDetailsUrl" : "https://asforos.by/rolshtory-rulonnye-shtory/rulonnaya-shtora-den-noch-rozovyy/",
-  "category" : "rolstor",
+  "moreDetailsUrl" : "https://asforos.by/rolshtory-rulonnye-shtory-blackout/rulonnaya-shtora-silviya-latte/",
+  "category" : "blackout",
   "properties" : {
-    "Цвет" : "Розовый",
-    "Коллекция" : "День/Ночь",
-    "Длина (см)" : "160"
+    "Цвет" : "Латте",
+    "Коллекция" : "Сильвия",
+    "Артикул" : "8075"
   },
   "propertiesFromDetailPage" : {
-    "Ширина (см)" : [ "40", "45", "50", "55", "60", "65", "70", "75", "80", "-" ]
+    "Ширина (см)" : [ "38", "43", "48", "52", "57", "61", "67", "72", "78", "85", "90", "-", "Ваш размер" ]
   }
 }, {
-  "imgUrl" : "https://asforos.by/upload/resize_cache/iblock/aee/500_500_17236f3bb137eb253405d06e58cacf26c/aeeed5fcc958ddeb642cea22aed6d3af.JPG",
-  "title" : "Рулонная штора «День/Ночь» Персик",
+  "imgUrl" : "https://asforos.by/upload/resize_cache/iblock/7f1/500_500_17236f3bb137eb253405d06e58cacf26c/7f15f0ec95dfd6f68e22f254f983ba30.JPG",
+  "title" : "Рулонная штора «Сильвия» Бежевый",
   "price" : "",
-  "moreDetailsUrl" : "https://asforos.by/rolshtory-rulonnye-shtory/rulonnaya-shtora-den-noch-persik/",
-  "category" : "rolstor",
+  "moreDetailsUrl" : "https://asforos.by/rolshtory-rulonnye-shtory-blackout/rulonnaya-shtora-silviya-bezhevyy/",
+  "category" : "blackout",
+  "properties" : {
+    "Цвет" : "Бежевый",
+    "Коллекция" : "Сильвия",
+    "Артикул" : "8076"
+  },
+  "propertiesFromDetailPage" : {
+    "Ширина (см)" : [ "38", "43", "48", "52", "57", "61", "67", "72", "78", "85", "90", "-", "Ваш размер" ]
+  }
+}, {
+  "imgUrl" : "https://asforos.by/upload/resize_cache/iblock/116/500_500_17236f3bb137eb253405d06e58cacf26c/1165ea4b4a821a4cc300b729544a1893.JPG",
+  "title" : "Рулонная штора «Сильвия» Кофейный",
+  "price" : "",
+  "moreDetailsUrl" : "https://asforos.by/rolshtory-rulonnye-shtory-blackout/rulonnaya-shtora-silviya-kofeynyy/",
+  "category" : "blackout",
+  "properties" : {
+    "Цвет" : "Кофейный",
+    "Коллекция" : "Сильвия",
+    "Артикул" : "8077"
+  },
+  "propertiesFromDetailPage" : {
+    "Ширина (см)" : [ "38", "43", "48", "52", "57", "61", "67", "72", "78", "85", "90", "-", "Ваш размер" ]
+  }
+}, {
+  "imgUrl" : "https://asforos.by/upload/resize_cache/iblock/0a0/500_500_17236f3bb137eb253405d06e58cacf26c/0a04faae10b10f2fba4d6803617fd503.JPG",
+  "title" : "Рулонная штора «Сильвия» Графит",
+  "price" : "",
+  "moreDetailsUrl" : "https://asforos.by/rolshtory-rulonnye-shtory-blackout/rulonnaya-shtora-silviya-grafit/",
+  "category" : "blackout",
+  "properties" : {
+    "Цвет" : "Графит",
+    "Коллекция" : "Сильвия",
+    "Артикул" : "8081"
+  },
+  "propertiesFromDetailPage" : {
+    "Ширина (см)" : [ "38", "43", "48", "52", "57", "61", "67", "72", "78", "85", "90", "-", "Ваш размер" ]
+  }
+}, {
+  "imgUrl" : "https://asforos.by/upload/resize_cache/iblock/3ef/500_500_17236f3bb137eb253405d06e58cacf26c/3ef8b70217eb8b29bd69cea22c370895.JPG",
+  "title" : "Рулонная штора «Сильвия» Сиреневый",
+  "price" : "",
+  "moreDetailsUrl" : "https://asforos.by/rolshtory-rulonnye-shtory-blackout/rulonnaya-shtora-silviya-sirenevyy/",
+  "category" : "blackout",
+  "properties" : {
+    "Цвет" : "Сиреневый",
+    "Коллекция" : "Сильвия",
+    "Артикул" : "8085"
+  },
+  "propertiesFromDetailPage" : {
+    "Ширина (см)" : [ "38", "43", "48", "52", "57", "61", "67", "72", "78", "85", "90", "-", "Ваш размер" ]
+  }
+}, {
+  "imgUrl" : "https://asforos.by/upload/resize_cache/iblock/bd8/500_500_17236f3bb137eb253405d06e58cacf26c/bd897298331b1ecd9fa68289701eb625.JPG",
+  "title" : "Рулонная штора «Тисса» Песочный",
+  "price" : "",
+  "moreDetailsUrl" : "https://asforos.by/rolshtory-rulonnye-shtory-blackout/rulonnaya-shtora-tissa-pesochnyy/",
+  "category" : "blackout",
+  "properties" : {
+    "Цвет" : "Песочный",
+    "Коллекция" : "Тисса",
+    "Артикул" : "7620"
+  },
+  "propertiesFromDetailPage" : { }
+}, {
+  "imgUrl" : "https://asforos.by/upload/resize_cache/iblock/d19/500_500_17236f3bb137eb253405d06e58cacf26c/d19cefb64c3aa19cfe464b3c5fa2fc16.JPG",
+  "title" : "Рулонная штора «Тисса» Бежевый",
+  "price" : "",
+  "moreDetailsUrl" : "https://asforos.by/rolshtory-rulonnye-shtory-blackout/rulonnaya-shtora-tissa-bezhevyy/",
+  "category" : "blackout",
+  "properties" : {
+    "Цвет" : "Бежевый",
+    "Коллекция" : "Тисса",
+    "Артикул" : "7621"
+  },
+  "propertiesFromDetailPage" : { }
+}, {
+  "imgUrl" : "https://asforos.by/upload/resize_cache/iblock/f8a/500_500_17236f3bb137eb253405d06e58cacf26c/f8a8b28160658aeab6caf7743e92c58b.JPG",
+  "title" : "Рулонная штора «Тисса» Коричневый",
+  "price" : "",
+  "moreDetailsUrl" : "https://asforos.by/rolshtory-rulonnye-shtory-blackout/rulonnaya-shtora-tissa-korichnevyy/",
+  "category" : "blackout",
+  "properties" : {
+    "Цвет" : "Коричневый",
+    "Коллекция" : "Тисса",
+    "Артикул" : "7621"
+  },
+  "propertiesFromDetailPage" : { }
+}, {
+  "imgUrl" : "https://asforos.by/upload/resize_cache/iblock/101/500_500_17236f3bb137eb253405d06e58cacf26c/101fc546bafc9a104c9970c91364fdcf.JPG",
+  "title" : "Рулонная штора «Тисса» Терракот",
+  "price" : "",
+  "moreDetailsUrl" : "https://asforos.by/rolshtory-rulonnye-shtory-blackout/rulonnaya-shtora-tissa-terrakot/",
+  "category" : "blackout",
+  "properties" : {
+    "Цвет" : "Терракот",
+    "Коллекция" : "Тисса",
+    "Артикул" : "7621"
+  },
+  "propertiesFromDetailPage" : { }
+}, {
+  "imgUrl" : "https://asforos.by/upload/resize_cache/iblock/e7e/500_500_17236f3bb137eb253405d06e58cacf26c/e7ebf053cb14d3e556df837228cb14d9.JPG",
+  "title" : "Рулонная штора «Шелл» Слоновая кость",
+  "price" : "",
+  "moreDetailsUrl" : "https://asforos.by/rolshtory-rulonnye-shtory-blackout/rulonnaya-shtora-shell-slonovaya-kost/",
+  "category" : "blackout",
+  "properties" : {
+    "Цвет" : "Слоновая кость",
+    "Коллекция" : "Шелл",
+    "Артикул" : "7610"
+  },
+  "propertiesFromDetailPage" : { }
+}, {
+  "imgUrl" : "https://asforos.by/upload/resize_cache/iblock/0ca/500_500_17236f3bb137eb253405d06e58cacf26c/0cad4611af0c7470b6841c780ebfcd49.JPG",
+  "title" : "Рулонная штора «Шелл» Серый",
+  "price" : "",
+  "moreDetailsUrl" : "https://asforos.by/rolshtory-rulonnye-shtory-blackout/rulonnaya-shtora-shell-seryy/",
+  "category" : "blackout",
+  "properties" : {
+    "Цвет" : "Серый",
+    "Коллекция" : "Шелл",
+    "Артикул" : "7611"
+  },
+  "propertiesFromDetailPage" : { }
+}, {
+  "imgUrl" : "https://asforos.by/upload/resize_cache/iblock/2cb/500_500_17236f3bb137eb253405d06e58cacf26c/2cb998ab4faf729100a86cf5e27b5783.JPG",
+  "title" : "Рулонная штора «Шелл» Бежевый",
+  "price" : "",
+  "moreDetailsUrl" : "https://asforos.by/rolshtory-rulonnye-shtory-blackout/rulonnaya-shtora-shell-bezhevyy/",
+  "category" : "blackout",
+  "properties" : {
+    "Цвет" : "Бежевый",
+    "Коллекция" : "Шелл",
+    "Артикул" : "7612"
+  },
+  "propertiesFromDetailPage" : { }
+}, {
+  "imgUrl" : "https://asforos.by/upload/resize_cache/iblock/8e5/500_500_17236f3bb137eb253405d06e58cacf26c/8e5877e14b5800297a1d402271c8837d.JPG",
+  "title" : "Рулонная штора «Шелл» Персик",
+  "price" : "",
+  "moreDetailsUrl" : "https://asforos.by/rolshtory-rulonnye-shtory-blackout/rulonnaya-shtora-shell-persik/",
+  "category" : "blackout",
   "properties" : {
     "Цвет" : "Персик",
-    "Коллекция" : "День/Ночь",
-    "Длина (см)" : "160"
-  },
-  "propertiesFromDetailPage" : {
-    "Ширина (см)" : [ "40", "50", "55", "60", "70", "75", "80", "-" ]
-  }
-}, {
-  "imgUrl" : "https://asforos.by/upload/resize_cache/iblock/421/500_500_17236f3bb137eb253405d06e58cacf26c/4211acbafd8cf4c4611265b63e2c60f0.JPG",
-  "title" : "Рулонная штора «День/Ночь» Красное вино",
-  "price" : "",
-  "moreDetailsUrl" : "https://asforos.by/rolshtory-rulonnye-shtory/rulonnaya-shtora-den-noch-krasnoe-vino/",
-  "category" : "rolstor",
-  "properties" : {
-    "Цвет" : "Красное вино",
-    "Коллекция" : "День/Ночь",
-    "Длина (см)" : "160"
-  },
-  "propertiesFromDetailPage" : {
-    "Ширина (см)" : [ "40", "45", "50", "55", "60", "70", "80", "-" ]
-  }
-}, {
-  "imgUrl" : "https://asforos.by/upload/resize_cache/iblock/b83/500_500_17236f3bb137eb253405d06e58cacf26c/b83122ac7a9bc911716edad550b964cd.JPG",
-  "title" : "Рулонная штора «День/Ночь» Кофе с молоком",
-  "price" : "",
-  "moreDetailsUrl" : "https://asforos.by/rolshtory-rulonnye-shtory/rulonnaya-shtora-den-noch-kofe-s-molokom/",
-  "category" : "rolstor",
-  "properties" : {
-    "Цвет" : "Кофе с молоком",
-    "Коллекция" : "День/Ночь",
-    "Длина (см)" : "160"
-  },
-  "propertiesFromDetailPage" : {
-    "Ширина (см)" : [ "40", "45", "50", "55", "60", "65", "70", "75", "80", "-" ]
-  }
-}, {
-  "imgUrl" : "https://asforos.by/upload/resize_cache/iblock/cae/500_500_17236f3bb137eb253405d06e58cacf26c/caea1524ab8905ab893dd7143880f108.JPG",
-  "title" : "Рулонная штора «День/Ночь» Белый",
-  "price" : "",
-  "moreDetailsUrl" : "https://asforos.by/rolshtory-rulonnye-shtory/rulonnaya-shtora-den-noch-belyy/",
-  "category" : "rolstor",
-  "properties" : {
-    "Цвет" : "Белый",
-    "Коллекция" : "День/Ночь",
-    "Длина (см)" : "160"
-  },
-  "propertiesFromDetailPage" : {
-    "Ширина (см)" : [ "40", "45", "50", "55", "70", "75", "80", "-" ]
-  }
-}, {
-  "imgUrl" : "https://asforos.by/upload/resize_cache/iblock/260/500_500_17236f3bb137eb253405d06e58cacf26c/26049c2e84349a04ea468cfdc92b057c.JPG",
-  "title" : "Рулонная штора «Кентукки» (День/Ночь) Белый",
-  "price" : "",
-  "moreDetailsUrl" : "https://asforos.by/rolshtory-rulonnye-shtory/rulonnaya-shtora-kentukki-belyy-v-korobe/",
-  "category" : "rolstor",
-  "properties" : {
-    "Цвет" : "Белый",
-    "Коллекция" : "Кентукки",
-    "Артикул" : "8920"
+    "Коллекция" : "Шелл",
+    "Артикул" : "7613"
   },
   "propertiesFromDetailPage" : { }
-}, {
-  "imgUrl" : "https://asforos.by/upload/resize_cache/iblock/f02/500_500_17236f3bb137eb253405d06e58cacf26c/f022ea6c96fc2a55efd6f42d130b3051.JPG",
-  "title" : "Рулонная штора «Кентукки» (День/Ночь) Белый",
-  "price" : "",
-  "moreDetailsUrl" : "https://asforos.by/rolshtory-rulonnye-shtory/rulonnaya-shtora-kentukki-belyy/",
-  "category" : "rolstor",
-  "properties" : {
-    "Цвет" : "Белый",
-    "Коллекция" : "Кентукки",
-    "Артикул" : "8920",
-    "Длина (см)" : "160"
-  },
-  "propertiesFromDetailPage" : {
-    "Ширина (см)" : [ "38", "43", "48", "52", "57", "61", "67", "72", "78", "85", "90", "-", "Ваш размер" ]
-  }
-}, {
-  "imgUrl" : "https://asforos.by/upload/resize_cache/iblock/92f/500_500_17236f3bb137eb253405d06e58cacf26c/92faae068c580a30bd42dcec66af005a.JPG",
-  "title" : "Рулонная штора «Кентукки» (День/Ночь) Фисташковый",
-  "price" : "",
-  "moreDetailsUrl" : "https://asforos.by/rolshtory-rulonnye-shtory/rulonnaya-shtora-kentukki-den-noch-fistashkovyy-v-korobe/",
-  "category" : "rolstor",
-  "properties" : {
-    "Цвет" : "Фисташковый",
-    "Коллекция" : "Кентукки",
-    "Артикул" : "8926"
-  },
-  "propertiesFromDetailPage" : { }
-}, {
-  "imgUrl" : "https://asforos.by/upload/resize_cache/iblock/1d6/500_500_17236f3bb137eb253405d06e58cacf26c/1d6173264d4ca20f36efedb9be699111.JPG",
-  "title" : "Рулонная штора «Кентукки» (День/Ночь) Фисташковый",
-  "price" : "",
-  "moreDetailsUrl" : "https://asforos.by/rolshtory-rulonnye-shtory/rulonnaya-shtora-kentukki-fistashkovyy/",
-  "category" : "rolstor",
-  "properties" : {
-    "Цвет" : "Фисташковый",
-    "Коллекция" : "Кентукки",
-    "Артикул" : "8926",
-    "Длина (см)" : "160"
-  },
-  "propertiesFromDetailPage" : {
-    "Ширина (см)" : [ "38", "43", "48", "52", "57", "61", "67", "72", "78", "85", "90", "-", "Ваш размер" ]
-  }
-}, {
-  "imgUrl" : "https://asforos.by/upload/resize_cache/iblock/777/500_500_17236f3bb137eb253405d06e58cacf26c/7773ac35ccd9dbc2754a513401c035d1.JPG",
-  "title" : "Рулонная штора «Кентукки» (День/Ночь) Персиковый",
-  "price" : "",
-  "moreDetailsUrl" : "https://asforos.by/rolshtory-rulonnye-shtory/rulonnaya-shtora-kentukki-persikovyy2790-v-korobe/",
-  "category" : "rolstor",
-  "properties" : {
-    "Цвет" : "Персиковый",
-    "Коллекция" : "Кентукки",
-    "Артикул" : "8927"
-  },
-  "propertiesFromDetailPage" : { }
-}, {
-  "imgUrl" : "https://asforos.by/upload/resize_cache/iblock/745/500_500_17236f3bb137eb253405d06e58cacf26c/745775741209db92712e96c5ef79d8ab.JPG",
-  "title" : "Рулонная штора «Кентукки» (День/Ночь) Персиковый",
-  "price" : "",
-  "moreDetailsUrl" : "https://asforos.by/rolshtory-rulonnye-shtory/rulonnaya-shtora-kentukki-persikovyy/",
-  "category" : "rolstor",
-  "properties" : {
-    "Цвет" : "Персиковый",
-    "Коллекция" : "Кентукки",
-    "Артикул" : "8927",
-    "Длина (см)" : "160"
-  },
-  "propertiesFromDetailPage" : {
-    "Ширина (см)" : [ "38", "43", "48", "52", "57", "61", "67", "72", "78", "85", "90", "-", "Ваш размер" ]
-  }
-}, {
-  "imgUrl" : "https://asforos.by/upload/resize_cache/iblock/24e/500_500_17236f3bb137eb253405d06e58cacf26c/24edcd4448ff607e4ddfba39bb2e5735.JPG",
-  "title" : "Рулонная штора «Кентукки» (День/Ночь) Светло-бежевый",
-  "price" : "",
-  "moreDetailsUrl" : "https://asforos.by/rolshtory-rulonnye-shtory/rulonnaya-shtora-kentukki-svetlo-bezhevyy6317-v-korobe/",
-  "category" : "rolstor",
-  "properties" : {
-    "Цвет" : "Светло-бежевый",
-    "Коллекция" : "Кентукки",
-    "Артикул" : "8928",
-    "Длина (см)" : "160"
-  },
-  "propertiesFromDetailPage" : { }
-}, {
-  "imgUrl" : "https://asforos.by/upload/resize_cache/iblock/635/500_500_17236f3bb137eb253405d06e58cacf26c/6354195c592f10e0862f59653760516a.JPG",
-  "title" : "Рулонная штора «Кентукки» (День/Ночь) Светло-бежевый",
-  "price" : "",
-  "moreDetailsUrl" : "https://asforos.by/rolshtory-rulonnye-shtory/rulonnaya-shtora-kentukki-svetlo-bezhevyy/",
-  "category" : "rolstor",
-  "properties" : {
-    "Цвет" : "Светло-бежевый",
-    "Коллекция" : "Кентукки",
-    "Артикул" : "8928",
-    "Длина (см)" : "160"
-  },
-  "propertiesFromDetailPage" : {
-    "Ширина (см)" : [ "38", "43", "48", "52", "57", "61", "67", "72", "78", "85", "90", "-", "Ваш размер" ]
-  }
 } ]

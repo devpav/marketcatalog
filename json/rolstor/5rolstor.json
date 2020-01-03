@@ -1,181 +1,197 @@
 [ {
-  "imgUrl" : "https://asforos.by/upload/resize_cache/iblock/e4a/500_500_17236f3bb137eb253405d06e58cacf26c/e4aa53eda1af774f27798d38dbac6d0b.JPG",
-  "title" : "Рулонная штора «Канзас» Бежевый",
+  "imgUrl" : "https://asforos.by/upload/resize_cache/iblock/d42/500_500_17236f3bb137eb253405d06e58cacf26c/d42f6644294915be477c5c9ec1dad529.JPG",
+  "title" : "Рулонная штора «Шатунг» Шоколад",
   "price" : "",
-  "moreDetailsUrl" : "https://asforos.by/rolshtory-rulonnye-shtory/rulonnaya-shtora-kanzas-bezhevyy-8928/",
-  "category" : "rolstor",
+  "moreDetailsUrl" : "https://asforos.by/rolshtory-rulonnye-shtory-v-korobe/rulonnaya-shtora-shatung-shokolad2791-v-korobe/",
+  "category" : "in_box",
   "properties" : {
-    "Цвет" : "Бежевый",
-    "Коллекция" : "Канзас",
-    "Артикул" : "8928"
+    "Цвет" : "Шоколад",
+    "Коллекция" : "Шатунг",
+    "Артикул" : "8005.0",
+    "Длина (см)" : "160"
   },
   "propertiesFromDetailPage" : { }
 }, {
-  "imgUrl" : "https://asforos.by/upload/resize_cache/iblock/00d/500_500_17236f3bb137eb253405d06e58cacf26c/00d235737c8e9eb43e2843715bc19e00.JPG",
-  "title" : "Рулонная штора «Кутюр» Бежевый",
+  "imgUrl" : "https://asforos.by/upload/resize_cache/iblock/9de/500_500_17236f3bb137eb253405d06e58cacf26c/9dead245a6a75bf7cb9c5fb4c3809b2c.JPG",
+  "title" : "Рулонная штора «Шатунг» Какао",
   "price" : "",
-  "moreDetailsUrl" : "https://asforos.by/rolshtory-rulonnye-shtory/rulonnaya-shtora-kutyur-bezhevyy6290-v-korobe/",
-  "category" : "rolstor",
+  "moreDetailsUrl" : "https://asforos.by/rolshtory-rulonnye-shtory-v-korobe/rulonnaya-shtora-shatung-kakao8732-v-korobe/",
+  "category" : "in_box",
   "properties" : {
-    "Цвет" : "Бежевый",
-    "Коллекция" : "Кутюр",
-    "Артикул" : "8850"
+    "Цвет" : "Какао",
+    "Коллекция" : "Шатунг",
+    "Артикул" : "8007.0",
+    "Длина (см)" : "160"
   },
   "propertiesFromDetailPage" : { }
 }, {
-  "imgUrl" : "https://asforos.by/upload/resize_cache/iblock/6fb/500_500_17236f3bb137eb253405d06e58cacf26c/6fb8bdfdd52cf57220bb9db47eeea602.jpg",
-  "title" : "Рулонная штора «Кутюр» Бежевый",
+  "imgUrl" : "https://asforos.by/upload/resize_cache/iblock/a67/500_500_17236f3bb137eb253405d06e58cacf26c/a67b70bae2852f3211e0a1bd259b9686.JPG",
+  "title" : "Рулонная штора «Плейн» Белый",
   "price" : "",
-  "moreDetailsUrl" : "https://asforos.by/rolshtory-rulonnye-shtory/rulonnaya-shtora-kutyur-bezhevyy/",
-  "category" : "rolstor",
+  "moreDetailsUrl" : "https://asforos.by/rolshtory-rulonnye-shtory-v-korobe/rulonnaya-shtora-pleyn-belyy1061-v-korobe/",
+  "category" : "in_box",
   "properties" : {
-    "Цвет" : "Бежевый",
-    "Коллекция" : "Кутюр",
-    "Артикул" : "8850"
+    "Цвет" : "Белый",
+    "Коллекция" : "Плейн",
+    "Артикул" : "7501",
+    "Длина (см)" : "175",
+    "ID поста блога для комментариев" : "6"
   },
   "propertiesFromDetailPage" : { }
 }, {
-  "imgUrl" : "https://asforos.by/upload/resize_cache/iblock/15e/500_500_17236f3bb137eb253405d06e58cacf26c/15e968256b50a52f767551ebc7a7d87e.JPG",
-  "title" : "Рулонная штора «Кутюр» Фисташковый",
+  "imgUrl" : "https://asforos.by/upload/resize_cache/iblock/14e/500_500_17236f3bb137eb253405d06e58cacf26c/14e108bb255de7b6d1f953f88e350db3.JPG",
+  "title" : "Рулонная штора «Плейн» Светло-cерый",
   "price" : "",
-  "moreDetailsUrl" : "https://asforos.by/rolshtory-rulonnye-shtory/rulonnaya-shtora-kutyur-fistashkovyy3215-v-korobe/",
-  "category" : "rolstor",
+  "moreDetailsUrl" : "https://asforos.by/rolshtory-rulonnye-shtory-v-korobe/rulonnaya-shtora-pleyn-svetlo-ceryy8702-v-korobe/",
+  "category" : "in_box",
+  "properties" : {
+    "Цвет" : "Светло-cерый",
+    "Коллекция" : "Плейн",
+    "Артикул" : "7502",
+    "Длина (см)" : "175"
+  },
+  "propertiesFromDetailPage" : { }
+}, {
+  "imgUrl" : "https://asforos.by/upload/resize_cache/iblock/239/500_500_17236f3bb137eb253405d06e58cacf26c/239d5af79832d18d8508c93501a29305.JPG",
+  "title" : "Рулонная штора «Плейн» Темно-серый",
+  "price" : "",
+  "moreDetailsUrl" : "https://asforos.by/rolshtory-rulonnye-shtory-v-korobe/rulonnaya-shtora-pleyn-temno-seryy993-v-korobe/",
+  "category" : "in_box",
+  "properties" : {
+    "Цвет" : "Темно-cерый",
+    "Коллекция" : "Плейн",
+    "Артикул" : "7503",
+    "Длина (см)" : "175"
+  },
+  "propertiesFromDetailPage" : { }
+}, {
+  "imgUrl" : "https://asforos.by/upload/resize_cache/iblock/3ee/500_500_17236f3bb137eb253405d06e58cacf26c/3ee8f547ed629cd1ef0890c37487d325.JPG",
+  "title" : "Рулонная штора «Плейн» Графит",
+  "price" : "",
+  "moreDetailsUrl" : "https://asforos.by/rolshtory-rulonnye-shtory-v-korobe/rulonnaya-shtora-pleyn-grafit2695-v-korobe/",
+  "category" : "in_box",
+  "properties" : {
+    "Цвет" : "Графит",
+    "Коллекция" : "Плейн",
+    "Артикул" : "7504",
+    "Длина (см)" : "175"
+  },
+  "propertiesFromDetailPage" : { }
+}, {
+  "imgUrl" : "https://asforos.by/upload/resize_cache/iblock/9d3/500_500_17236f3bb137eb253405d06e58cacf26c/9d3574f60d26b0306c577f0787fbb239.JPG",
+  "title" : "Рулонная штора «Плейн» Кремовый",
+  "price" : "",
+  "moreDetailsUrl" : "https://asforos.by/rolshtory-rulonnye-shtory-v-korobe/rulonnaya-shtora-pleyn-kremovyy6451-v-korobe/",
+  "category" : "in_box",
+  "properties" : {
+    "Цвет" : "Кремовый",
+    "Коллекция" : "Плейн",
+    "Артикул" : "7505",
+    "Длина (см)" : "175"
+  },
+  "propertiesFromDetailPage" : { }
+}, {
+  "imgUrl" : "https://asforos.by/upload/resize_cache/iblock/bc2/500_500_17236f3bb137eb253405d06e58cacf26c/bc28c183b057f9f971459d02e5f64023.JPG",
+  "title" : "Рулонная штора «Плейн» Светло-зеленый",
+  "price" : "",
+  "moreDetailsUrl" : "https://asforos.by/rolshtory-rulonnye-shtory-v-korobe/rulonnaya-shtora-pleyn-svetlo-zelenyy7077-v-korobe/",
+  "category" : "in_box",
+  "properties" : {
+    "Цвет" : "Светло-зеленый",
+    "Коллекция" : "Плейн",
+    "Артикул" : "7513",
+    "Длина (см)" : "175"
+  },
+  "propertiesFromDetailPage" : { }
+}, {
+  "imgUrl" : "https://asforos.by/upload/resize_cache/iblock/84c/500_500_17236f3bb137eb253405d06e58cacf26c/84c319773cf1f6cadc3742494e33fc3c.JPG",
+  "title" : "Рулонная штора «Плейн» Синий",
+  "price" : "",
+  "moreDetailsUrl" : "https://asforos.by/rolshtory-rulonnye-shtory-v-korobe/rulonnaya-shtora-pleyn-sinyy1245-v-korobe/",
+  "category" : "in_box",
+  "properties" : {
+    "Цвет" : "Синий",
+    "Коллекция" : "Плейн",
+    "Артикул" : "7517",
+    "Длина (см)" : "175"
+  },
+  "propertiesFromDetailPage" : { }
+}, {
+  "imgUrl" : "https://asforos.by/upload/resize_cache/iblock/e44/500_500_17236f3bb137eb253405d06e58cacf26c/e44210785e22f4545797004d1e73bfa0.JPG",
+  "title" : "Рулонная штора «Плейн» Молочный шоколад",
+  "price" : "",
+  "moreDetailsUrl" : "https://asforos.by/rolshtory-rulonnye-shtory-v-korobe/rulonnaya-shtora-pleyn-molochnyy-shokolad4775-v-korobe/",
+  "category" : "in_box",
+  "properties" : {
+    "Цвет" : "Молочный шоколад",
+    "Коллекция" : "Плейн",
+    "Артикул" : "7518",
+    "Длина (см)" : "175"
+  },
+  "propertiesFromDetailPage" : { }
+}, {
+  "imgUrl" : "https://asforos.by/upload/resize_cache/iblock/821/500_500_17236f3bb137eb253405d06e58cacf26c/821252d043bf967190fc13c0b43db87a.JPG",
+  "title" : "Рулонная штора «Плейн» Терракот",
+  "price" : "",
+  "moreDetailsUrl" : "https://asforos.by/rolshtory-rulonnye-shtory-v-korobe/rulonnaya-shtora-pleyn-terrakot4699-v-korobe/",
+  "category" : "in_box",
+  "properties" : {
+    "Цвет" : "Терракот",
+    "Коллекция" : "Плейн",
+    "Артикул" : "7519",
+    "Длина (см)" : "175"
+  },
+  "propertiesFromDetailPage" : { }
+}, {
+  "imgUrl" : "https://asforos.by/upload/resize_cache/iblock/f5a/500_500_17236f3bb137eb253405d06e58cacf26c/f5a6960a91fabfe27fdd020b0fb80fc2.JPG",
+  "title" : "Рулонная штора «Плейн» Какао",
+  "price" : "",
+  "moreDetailsUrl" : "https://asforos.by/rolshtory-rulonnye-shtory-v-korobe/rulonnaya-shtora-pleyn-kakao6839-v-korobe/",
+  "category" : "in_box",
+  "properties" : {
+    "Цвет" : "Какао",
+    "Коллекция" : "Плейн",
+    "Артикул" : "7520",
+    "Длина (см)" : "175"
+  },
+  "propertiesFromDetailPage" : { }
+}, {
+  "imgUrl" : "https://asforos.by/upload/resize_cache/iblock/47a/500_500_17236f3bb137eb253405d06e58cacf26c/47a443bc33168cc167638ee9cc197c19.JPG",
+  "title" : "Рулонная штора «Плейн» Светло-сиреневый",
+  "price" : "",
+  "moreDetailsUrl" : "https://asforos.by/rolshtory-rulonnye-shtory-v-korobe/rulonnaya-shtora-pleyn-svetlo-sirenevyy8878-v-korobe/",
+  "category" : "in_box",
+  "properties" : {
+    "Цвет" : "Светло-сиреневый",
+    "Коллекция" : "Плейн",
+    "Артикул" : "7522",
+    "Длина (см)" : "175"
+  },
+  "propertiesFromDetailPage" : { }
+}, {
+  "imgUrl" : "https://asforos.by/upload/resize_cache/iblock/a39/500_500_17236f3bb137eb253405d06e58cacf26c/a398b177bf204d30f58dfa482915186b.JPG",
+  "title" : "Рулонная штора «Плейн» Сливочный",
+  "price" : "",
+  "moreDetailsUrl" : "https://asforos.by/rolshtory-rulonnye-shtory-v-korobe/rulonnaya-shtora-pleyn-slivochnyy2193-v-korobe/",
+  "category" : "in_box",
+  "properties" : {
+    "Цвет" : "Сливочный",
+    "Коллекция" : "Плейн",
+    "Артикул" : "7523",
+    "Длина (см)" : "175"
+  },
+  "propertiesFromDetailPage" : { }
+}, {
+  "imgUrl" : "https://asforos.by/upload/resize_cache/iblock/1f7/500_500_17236f3bb137eb253405d06e58cacf26c/1f7eb87b33a1c110bcd5bf7154dddb5b.JPG",
+  "title" : "Рулонная штора «Плейн» Фисташковый",
+  "price" : "",
+  "moreDetailsUrl" : "https://asforos.by/rolshtory-rulonnye-shtory-v-korobe/rulonnaya-shtora-pleyn-fistashkovyy1334-v-korobe/",
+  "category" : "in_box",
   "properties" : {
     "Цвет" : "Фисташковый",
-    "Коллекция" : "Кутюр",
-    "Артикул" : "8851"
-  },
-  "propertiesFromDetailPage" : { }
-}, {
-  "imgUrl" : "https://asforos.by/upload/resize_cache/iblock/225/500_500_17236f3bb137eb253405d06e58cacf26c/225a43a321aa1b56f1b2109c69197183.JPG",
-  "title" : "Рулонная штора «Кутюр» Фисташковый",
-  "price" : "",
-  "moreDetailsUrl" : "https://asforos.by/rolshtory-rulonnye-shtory/rulonnaya-shtora-kutyur-fistashkovyy/",
-  "category" : "rolstor",
-  "properties" : {
-    "Цвет" : "Фисташковый",
-    "Коллекция" : "Кутюр",
-    "Артикул" : "8851"
-  },
-  "propertiesFromDetailPage" : { }
-}, {
-  "imgUrl" : "https://asforos.by/upload/resize_cache/iblock/4f6/500_500_17236f3bb137eb253405d06e58cacf26c/4f6d1747ed2e8b67e92bb9f1645c6878.JPG",
-  "title" : "Рулонная штора «Кутюр» Серый",
-  "price" : "",
-  "moreDetailsUrl" : "https://asforos.by/rolshtory-rulonnye-shtory/rulonnaya-shtora-kutyur-seryy5136-v-korobe/",
-  "category" : "rolstor",
-  "properties" : {
-    "Цвет" : "Серый",
-    "Коллекция" : "Кутюр",
-    "Артикул" : "8852"
-  },
-  "propertiesFromDetailPage" : { }
-}, {
-  "imgUrl" : "https://asforos.by/upload/resize_cache/iblock/414/500_500_17236f3bb137eb253405d06e58cacf26c/414bc0977aaec561017a212c4fb4b9e9.jpg",
-  "title" : "Рулонная штора «Кутюр» Серый",
-  "price" : "",
-  "moreDetailsUrl" : "https://asforos.by/rolshtory-rulonnye-shtory/rulonnaya-shtora-kutyur-seryy/",
-  "category" : "rolstor",
-  "properties" : {
-    "Цвет" : "Серый",
-    "Коллекция" : "Кутюр",
-    "Артикул" : "8852"
-  },
-  "propertiesFromDetailPage" : { }
-}, {
-  "imgUrl" : "https://asforos.by/upload/resize_cache/iblock/c3f/500_500_17236f3bb137eb253405d06e58cacf26c/c3fed31075af3e9cfc021d53ba473377.JPG",
-  "title" : "Рулонная штора «Кутюр» Коричневый",
-  "price" : "",
-  "moreDetailsUrl" : "https://asforos.by/rolshtory-rulonnye-shtory/rulonnaya-shtora-kutyur-korichnevyy6657-v-korobe/",
-  "category" : "rolstor",
-  "properties" : {
-    "Цвет" : "Коричневый",
-    "Коллекция" : "Кутюр",
-    "Артикул" : "8853"
-  },
-  "propertiesFromDetailPage" : { }
-}, {
-  "imgUrl" : "https://asforos.by/upload/resize_cache/iblock/d7f/500_500_17236f3bb137eb253405d06e58cacf26c/d7f1c557dfad669a42ecd60e57a49dc5.jpg",
-  "title" : "Рулонная штора «Кутюр» Коричневый",
-  "price" : "",
-  "moreDetailsUrl" : "https://asforos.by/rolshtory-rulonnye-shtory/rulonnaya-shtora-kutyur-korichnevyy/",
-  "category" : "rolstor",
-  "properties" : {
-    "Цвет" : "Коричневый",
-    "Коллекция" : "Кутюр",
-    "Артикул" : "8853"
-  },
-  "propertiesFromDetailPage" : { }
-}, {
-  "imgUrl" : "https://asforos.by/upload/resize_cache/iblock/ac6/500_500_17236f3bb137eb253405d06e58cacf26c/ac66f3f29a2f2af06897b2f1d052dbc0.JPG",
-  "title" : "Рулонная штора «Линней»",
-  "price" : "",
-  "moreDetailsUrl" : "https://asforos.by/rolshtory-rulonnye-shtory/rulonnaya-shtora-linney9029-v-korobe/",
-  "category" : "rolstor",
-  "properties" : {
-    "Цвет" : "Линней",
-    "Коллекция" : "Линней",
-    "Артикул" : "8282"
-  },
-  "propertiesFromDetailPage" : { }
-}, {
-  "imgUrl" : "https://asforos.by/upload/resize_cache/iblock/758/500_500_17236f3bb137eb253405d06e58cacf26c/758cafce207578c22c36f3194bd43e13.JPG",
-  "title" : "Рулонная штора «Линней»",
-  "price" : "",
-  "moreDetailsUrl" : "https://asforos.by/rolshtory-rulonnye-shtory/rulonnaya-shtora-linney/",
-  "category" : "rolstor",
-  "properties" : {
-    "Цвет" : "Линней",
-    "Коллекция" : "Линней",
-    "Артикул" : "8282"
-  },
-  "propertiesFromDetailPage" : { }
-}, {
-  "imgUrl" : "https://asforos.by/upload/resize_cache/iblock/1a6/500_500_17236f3bb137eb253405d06e58cacf26c/1a6c6e7a6747307879abbc163ae8c54b.JPG",
-  "title" : "Рулонная штора «Пандора»",
-  "price" : "",
-  "moreDetailsUrl" : "https://asforos.by/rolshtory-rulonnye-shtory/rulonnaya-shtora-pandora-9529-v-korobe/",
-  "category" : "rolstor",
-  "properties" : {
-    "Цвет" : "Пандора",
-    "Коллекция" : "Пандора",
-    "Артикул" : "8283"
-  },
-  "propertiesFromDetailPage" : { }
-}, {
-  "imgUrl" : "https://asforos.by/upload/resize_cache/iblock/f54/500_500_17236f3bb137eb253405d06e58cacf26c/f547b0a8a71cfb9415988f00ab26b98d.JPG",
-  "title" : "Рулонная штора «Пандора»",
-  "price" : "",
-  "moreDetailsUrl" : "https://asforos.by/rolshtory-rulonnye-shtory/rulonnaya-shtora-pandora-/",
-  "category" : "rolstor",
-  "properties" : {
-    "Цвет" : "Пандора",
-    "Коллекция" : "Пандора",
-    "Артикул" : "8283"
-  },
-  "propertiesFromDetailPage" : { }
-}, {
-  "imgUrl" : "https://asforos.by/upload/resize_cache/iblock/1ba/500_500_17236f3bb137eb253405d06e58cacf26c/1ba191f6594beeecccc64b9f435ded7c.JPG",
-  "title" : "Рулонная штора «Сайма» Песочный",
-  "price" : "",
-  "moreDetailsUrl" : "https://asforos.by/rolshtory-rulonnye-shtory/rulonnaya-shtora-sayma-pesochnyy8099-v-korobe/",
-  "category" : "rolstor",
-  "properties" : {
-    "Цвет" : "Песочный",
-    "Коллекция" : "Сайма",
-    "Артикул" : "7910"
-  },
-  "propertiesFromDetailPage" : { }
-}, {
-  "imgUrl" : "https://asforos.by/upload/resize_cache/iblock/786/500_500_17236f3bb137eb253405d06e58cacf26c/786e1ffda1a8e7050d72beef9c059e4b.jpg",
-  "title" : "Рулонная штора «Сайма» Песочный",
-  "price" : "",
-  "moreDetailsUrl" : "https://asforos.by/rolshtory-rulonnye-shtory/rulonnaya-shtora-sayma-pesochnyy/",
-  "category" : "rolstor",
-  "properties" : {
-    "Цвет" : "Песочный",
-    "Коллекция" : "Сайма",
-    "Артикул" : "7910"
+    "Коллекция" : "Плейн",
+    "Артикул" : "7525",
+    "Длина (см)" : "175"
   },
   "propertiesFromDetailPage" : { }
 } ]
