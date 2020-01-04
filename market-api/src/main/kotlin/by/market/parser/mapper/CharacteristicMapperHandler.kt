@@ -1,6 +1,7 @@
 package by.market.parser.mapper
 
 import by.market.domain.AbstractProduct
+import by.market.parser.mapper.metadata.CharacteristicMetadata
 import by.market.repository.characteristic.ProductCharacteristicRepository
 import by.market.repository.characteristic.single.DoubleSingleCharacteristicRepository
 import by.market.repository.characteristic.single.StringSingleCharacteristicRepository
@@ -54,32 +55,25 @@ class CharacteristicMapperHandler {
                 }
             }
 
-            val productCharacteristicHandler = async {
-                parserProduct.properties.forEach { entry ->
-                    try {
-                        characteristicMetadata.handleCharacteristic(product, entry.key, entry.value)
-                    }catch (e: Exception){
-                        logger.error("Error when handleCharacteristic properties for Product " +
-                                "[${product.id}, ${product.title}] " +
-                                "[characteristicName: ${entry.key}, value: ${entry.value}]", e)
-                    }
+            parserProduct.properties.forEach { entry ->
+                try {
+                    characteristicMetadata.handleCharacteristic(product, entry.key, entry.value)
+                }catch (e: Exception){
+                    logger.error("Error when handleCharacteristic properties for Product " +
+                            "[${product.id}, ${product.title}] " +
+                            "[characteristicName: ${entry.key}, value: ${entry.value}]", e)
                 }
             }
 
-            val availableCharacteristicHandler = async {
-                parserProduct.propertiesFromDetailPage.forEach { entry ->
-                    try {
-                        characteristicMetadata.handleCharacteristic(product, entry.key, entry.value)
-                    }catch (e: Exception){
-                        logger.error("Error when handleCharacteristic propertiesFromDetailPage for Product " +
-                                "[${product.id}, ${product.title}] " +
-                                "[characteristicName: ${entry.key}, value: ${entry.value}]", e)
-                    }
+            parserProduct.propertiesFromDetailPage.forEach { entry ->
+                try {
+                    characteristicMetadata.handleCharacteristic(product, entry.key, entry.value)
+                }catch (e: Exception){
+                    logger.error("Error when handleCharacteristic propertiesFromDetailPage for Product " +
+                            "[${product.id}, ${product.title}] " +
+                            "[characteristicName: ${entry.key}, value: ${entry.value}]", e)
                 }
             }
-
-            productCharacteristicHandler.await()
-            availableCharacteristicHandler.await()
         }
 
         r.await()

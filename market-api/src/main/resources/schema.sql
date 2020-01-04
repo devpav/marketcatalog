@@ -78,7 +78,7 @@ create table tbx_p_accessory
     id_category                 UUID NOT NULL REFERENCES tbx_s_category(id)
 );
 
-create table tbx_p_blind
+create table tbx_p_jalosie
 (
     id                          UUID primary key,
     title                       VARCHAR(256) NOT NULL,
@@ -94,7 +94,7 @@ create table tbx_p_cornice
     id_category                 UUID REFERENCES tbx_s_category(id)
 );
 
-create table tbx_p_curtain
+create table tbx_p_rolstor
 (
     id                          UUID primary key,
     title                       VARCHAR(256) NOT NULL,
