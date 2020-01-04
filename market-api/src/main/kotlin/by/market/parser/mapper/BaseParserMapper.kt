@@ -67,33 +67,13 @@ abstract class BaseParserMapper<TProduct: AbstractProduct>(
     abstract fun getEntity(): TProduct
 
     private fun createCategoryMap(): HashMap<String, Category?> {
-        fun findCategory(parserCategory: String) = categoryRepository.findBySystemName(parserCategory)
-
         val map = HashMap<String, Category?>()
-        // Карнизы
-        map["metallic"] = findCategory("metallic")
-        map["plastic_ceilings"] = findCategory("plastic_ceilings")
-        map["wall_metal_plastic"] = findCategory("wall_metal_plastic")
-        map["accessories_for_ceiling"] = findCategory("accessories_for_ceiling")
-        map["accessories_for_metal"] = findCategory("accessories_for_metal")
-        map["flexible"] = findCategory("flexible")
-        map["metal_plastic_accessories"] = findCategory("metal_plastic_accessories")
 
-        // Рольшторы
-        map["day_night"] = findCategory("day_night")
-        map["standard"] = findCategory("standard")
-        map["in_box"] = findCategory("in_box")
-        map["premium"] = findCategory("premium")
-        map["blackout"] = findCategory("blackout")
-        map["rolstor"] = findCategory("rolstor")
-
-        // Жалюзи
-        map["jalousie"] = findCategory("jalousie")
-
-        // Аксессуары
-        map["luversa"] = findCategory("luversa")
-        map["grips_holders_hooks"] = findCategory("grips_holders_hooks")
-        map["magnetic_clips"] = findCategory("magnetic_clips")
+        val it = categoryRepository.findAll()
+        it.filterNotNull().forEach {
+            if(it.systemName != null)
+                map[it.systemName!!] = it
+        }
 
         return map
     }
