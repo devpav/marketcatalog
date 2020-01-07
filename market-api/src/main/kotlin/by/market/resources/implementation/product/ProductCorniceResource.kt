@@ -2,6 +2,7 @@ package by.market.resources.implementation.product
 
 import by.market.facade.product.ProductCorniceFacade
 import by.market.mapper.dto.product.ProductCorniceFrontEnd
+import by.market.mapper.dto.system.CategoryFrontEnd
 import by.market.resources.BaseProductResource
 import org.springframework.data.domain.Pageable
 import org.springframework.http.ResponseEntity
@@ -19,4 +20,8 @@ class ProductCorniceResource(facade: ProductCorniceFacade)
         return super.findAll(pageable)
     }
 
+    @GetMapping
+    override fun findByCategory(category: CategoryFrontEnd): ResponseEntity<MutableList<ProductCorniceFrontEnd>> {
+        return super.findByCategory(category)
+    }
 }
