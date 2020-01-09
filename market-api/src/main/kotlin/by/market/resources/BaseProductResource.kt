@@ -2,6 +2,7 @@ package by.market.resources
 
 import by.market.facade.IProductFacade
 import by.market.mapper.dto.AbstractFrontEndProduct
+import by.market.mapper.dto.characteristics.FrontEndCharacteristicPair
 import by.market.mapper.dto.system.CategoryFrontEnd
 import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.GetMapping
@@ -14,6 +15,11 @@ open class BaseProductResource<TFacade : IProductFacade<TDto>, TDto: AbstractFro
     @GetMapping(value = ["/findByCategory/{category}"])
     open fun findByCategory(@PathVariable("category")  category: CategoryFrontEnd): ResponseEntity<MutableList<TDto>> {
         return ResponseEntity.ok(service.findByCategory(category))
+    }
+
+    @GetMapping(value = ["/findCharacteristic/{id}"])
+    open fun findCharacteristic(@PathVariable("id") id: UUID): ResponseEntity<FrontEndCharacteristicPair> {
+        return ResponseEntity.ok(service.findCharacteristicById(id))
     }
 
     override fun <S : TDto?> save(entity: S): ResponseEntity<S> {
