@@ -11,4 +11,5 @@ interface AbstractSingleCharacteristicRepository<TEntity: AbstractSingleCharacte
 
     fun deleteAllByProductRowIdAndEntityMetadata(rowId: UUID, metadata: EntityMetadata): Int
     fun existsByProductRowIdAndEntityMetadata(rowId: UUID, metadata: EntityMetadata): Boolean
+    fun findByEntityMetadataAndRowId(metadata: EntityMetadata, rowId: UUID): List<TEntity>
 }

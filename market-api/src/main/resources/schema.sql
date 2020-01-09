@@ -52,24 +52,6 @@ create table tbx_ch_string_characteristic
     id_product_row              UUID NOT NULL
 );
 
-create table tbx_ch_double_list_characteristic
-(
-    id                          UUID primary key,
-    value                       DECIMAL(19, 4) NOT NULL,
-    id_product_characteristic   UUID NOT NULL REFERENCES tbx_ch_characteristic(id),
-    id_entity_metadata          UUID NOT NULL REFERENCES tbx_s_entity_metadata(id),
-    id_product_row              UUID NOT NULL
-);
-
-create table tbx_ch_string_list_characteristic
-(
-    id                          UUID primary key,
-    value                       TEXT NOT NULL,
-    id_product_characteristic   UUID NOT NULL REFERENCES tbx_ch_characteristic(id),
-    id_entity_metadata          UUID NOT NULL REFERENCES tbx_s_entity_metadata(id),
-    id_product_row              UUID NOT NULL
-);
-
 create table tbx_p_accessory
 (
     id                          UUID primary key,
