@@ -2,6 +2,7 @@ package by.market.resources.implementation.product
 
 import by.market.facade.product.ProductJalosieFacade
 import by.market.mapper.dto.product.ProductJalosieFrontEnd
+import by.market.mapper.dto.system.CategoryFrontEnd
 import by.market.resources.BaseProductResource
 import org.springframework.data.domain.Pageable
 import org.springframework.http.ResponseEntity
@@ -19,4 +20,8 @@ class ProductJalosieResource(facade: ProductJalosieFacade)
         return super.findAll(pageable)
     }
 
+    @GetMapping
+    override fun findByCategory(category: CategoryFrontEnd): ResponseEntity<MutableList<ProductJalosieFrontEnd>> {
+        return super.findByCategory(category)
+    }
 }

@@ -11,9 +11,9 @@ import org.springframework.data.domain.Pageable
 import org.springframework.data.domain.Sort
 import java.util.*
 
-open class AbstractFacade<TDto : BaseFrontEndEntity, TEntity
-    : BaseEntity>(private val entityService: IService<TEntity>,
-                  private val mapper: IMapstructMapper<TDto, TEntity>) : Facade<TDto> {
+open class AbstractFacade<TService : IService<TEntity>, TDto : BaseFrontEndEntity, TEntity
+    : BaseEntity>(protected val entityService: TService,
+                  protected val mapper: IMapstructMapper<TDto, TEntity>) : Facade<TDto> {
 
     override fun findAll(): MutableList<TDto> {
         return mapper.to(entityService.findAll()).toMutableList()

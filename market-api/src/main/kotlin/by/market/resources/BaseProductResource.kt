@@ -1,12 +1,21 @@
 package by.market.resources
 
-import by.market.facade.Facade
-import by.market.mapper.dto.BaseFrontEndEntity
+import by.market.facade.IProductFacade
+import by.market.mapper.dto.AbstractFrontEndProduct
+import by.market.mapper.dto.system.CategoryFrontEnd
 import org.springframework.http.ResponseEntity
+import org.springframework.web.bind.annotation.GetMapping
+import org.springframework.web.bind.annotation.PathVariable
 import java.util.*
 
-open class BaseProductResource<TFacade : Facade<TDto>, TDto: BaseFrontEndEntity>(service: TFacade)
+open class BaseProductResource<TFacade : IProductFacade<TDto>, TDto: AbstractFrontEndProduct>(service: TFacade)
     : BaseMutableResource<TDto, TFacade>(service) {
+
+    @GetMapping(value = ["/findByCategory/{category}"])
+    open fun findByCategory(@PathVariable("category")  category: CategoryFrontEnd): ResponseEntity<MutableList<TDto>> {
+        return ResponseEntity.ok(service.findByCategory(category))
+    }
+
     override fun <S : TDto?> save(entity: S): ResponseEntity<S> {
         TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
     }
@@ -46,6 +55,4 @@ open class BaseProductResource<TFacade : Facade<TDto>, TDto: BaseFrontEndEntity>
     override fun flush() {
         TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
     }
-
-
 }
