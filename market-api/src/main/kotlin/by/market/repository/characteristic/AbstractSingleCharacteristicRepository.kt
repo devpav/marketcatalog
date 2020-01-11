@@ -9,7 +9,8 @@ import java.util.*
 interface AbstractSingleCharacteristicRepository<TEntity: AbstractSingleCharacteristic<TEntityValue>, TEntityValue>
     : AbstractCharacteristicRepository<TEntity, TEntityValue> {
 
-    fun deleteAllByProductRowIdAndEntityMetadata(rowId: UUID, metadata: EntityMetadata): Boolean
-    fun existsByProductRowIdAndEntityMetadata(rowId: UUID, metadata: EntityMetadata): Boolean
-    fun findByEntityMetadataAndProductRowId(metadata: EntityMetadata, rowId: UUID): List<TEntity>
+    fun deleteAllByProductRowIdAndEntityMetadata(productRowId: UUID, metadata: EntityMetadata): Boolean
+    fun existsByProductRowIdAndEntityMetadata(productRowId: UUID, metadata: EntityMetadata): Boolean
+    fun findByEntityMetadataAndProductRowId(metadata: EntityMetadata, productRowId: UUID): List<TEntity>
+
 }
