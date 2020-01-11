@@ -28,11 +28,11 @@ abstract class BaseProductService<
     }
 
     override fun findDoubleCharacteristicById(id: UUID): List<DoubleCharacteristic> {
-        return doubleSingleCharacteristicRepository.findByEntityMetadataAndRowId(lazyEntityMetadata, id)
+        return doubleSingleCharacteristicRepository.findByEntityMetadataAndProductRowId(lazyEntityMetadata, id)
     }
 
     override fun findStringCharacteristicById(id: UUID): List<StringCharacteristic> {
-        return stringSingleCharacteristicRepository.findByEntityMetadataAndRowId(lazyEntityMetadata, id)
+        return stringSingleCharacteristicRepository.findByEntityMetadataAndProductRowId(lazyEntityMetadata, id)
     }
 
     protected abstract fun getEntityMetadata(): EntityMetadata
