@@ -31,4 +31,9 @@ class ProductAccessoryResource(facade: ProductAccessoryFacade)
     override fun findCharacteristic(id: UUID): ResponseEntity<FrontEndCharacteristicPair> {
         return super.findCharacteristic(id)
     }
+
+    @GetMapping("/count")
+    override fun count(): ResponseEntity<Long> {
+        return super.count()
+    }
 }
