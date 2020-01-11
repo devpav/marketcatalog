@@ -1,6 +1,5 @@
 package by.market.domain.characteristics
 
-import by.market.domain.AbstractProduct
 import by.market.domain.BaseEntity
 import by.market.domain.system.EntityMetadata
 import java.util.*
@@ -25,4 +24,5 @@ abstract class AbstractCharacteristic<T> : BaseEntity() {
 
     @Column(name = "id_product_row")
     var productRowId: UUID? = null
+
 }
