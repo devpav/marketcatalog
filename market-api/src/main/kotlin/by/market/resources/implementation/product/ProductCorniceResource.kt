@@ -22,12 +22,12 @@ class ProductCorniceResource(facade: ProductCorniceFacade)
         return super.findAll(pageable)
     }
 
-    @GetMapping
+    @GetMapping("/category")
     override fun findByCategory(category: CategoryFrontEnd): ResponseEntity<MutableList<ProductCorniceFrontEnd>> {
         return super.findByCategory(category)
     }
 
-    @GetMapping
+    @GetMapping("/characteristic")
     override fun findCharacteristic(id: UUID): ResponseEntity<FrontEndCharacteristicPair> {
         return super.findCharacteristic(id)
     }

@@ -22,12 +22,12 @@ class ProductJalosieResource(facade: ProductJalosieFacade)
         return super.findAll(pageable)
     }
 
-    @GetMapping
+    @GetMapping("/category")
     override fun findByCategory(category: CategoryFrontEnd): ResponseEntity<MutableList<ProductJalosieFrontEnd>> {
         return super.findByCategory(category)
     }
 
-    @GetMapping
+    @GetMapping("/characteristic")
     override fun findCharacteristic(id: UUID): ResponseEntity<FrontEndCharacteristicPair> {
         return super.findCharacteristic(id)
     }

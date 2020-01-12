@@ -53,4 +53,7 @@ abstract class BaseMutableResource<TDto: BaseFrontEndEntity, TFacade : Facade<TD
         TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
     }
 
+    override fun count(): ResponseEntity<Long> {
+        return ResponseEntity.ok(service.count());
+    }
 }
