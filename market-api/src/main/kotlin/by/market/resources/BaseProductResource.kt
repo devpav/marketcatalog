@@ -17,9 +17,20 @@ open class BaseProductResource<TFacade : IProductFacade<TDto>, TDto: AbstractFro
         return ResponseEntity.ok(service.findByCategory(category))
     }
 
-    @GetMapping(value = ["/findCharacteristic/{id}"])
-    open fun findCharacteristic(@PathVariable("id") id: UUID): ResponseEntity<FrontEndCharacteristicPair> {
-        return ResponseEntity.ok(service.findCharacteristicById(id))
+    @GetMapping(value = ["/findByCategories/{categories}"])
+    open fun findByCategories(@PathVariable("categories")  categories: List<CategoryFrontEnd>): ResponseEntity<MutableList<TDto>> {
+        val res = categories.mapNotNull {
+            findByCategory(it).body
+        }
+                .flatten()
+                .toMutableList()
+
+        return ResponseEntity.ok(res)
+    }
+
+    @GetMapping(value = ["/findCharacteristic/{product}"])
+    open fun findCharacteristic(@PathVariable("product") product: TDto): ResponseEntity<FrontEndCharacteristicPair> {
+        return ResponseEntity.ok(service.findCharacteristicByProduct(product))
     }
 
     override fun <S : TDto?> save(entity: S): ResponseEntity<S> {

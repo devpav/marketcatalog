@@ -1,4 +1,4 @@
-package by.market.domain.front_end.characteristics.single
+package by.market.mapper.dto.characteristics.single
 
 import by.market.mapper.dto.characteristics.AbstractFrontEndSingleCharacteristic
 

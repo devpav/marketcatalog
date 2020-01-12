@@ -12,7 +12,6 @@ import by.market.mapper.dto.system.CategoryFrontEnd
 import by.market.services.abstraction.IProductService
 import kotlinx.coroutines.async
 import kotlinx.coroutines.runBlocking
-import java.util.*
 
 open class BaseProductFacade<TDto : AbstractFrontEndProduct, TEntity : AbstractProduct>(entityService: IProductService<TEntity>,
                                                                                         mapper: IMapstructMapper<TDto, TEntity>,
@@ -24,10 +23,10 @@ open class BaseProductFacade<TDto : AbstractFrontEndProduct, TEntity : AbstractP
         return mapper.to(entitiesByCategory).toMutableList()
     }
 
-    override fun findCharacteristicById(id: UUID): FrontEndCharacteristicPair {
+    override fun findCharacteristicByProduct(dto: TDto): FrontEndCharacteristicPair {
         return runBlocking {
-            val doubleCharacteristicTask = async { buildCharacteristicMap(entityService.findDoubleCharacteristicById(id)) }
-            val stringCharacteristicTask = async { buildCharacteristicMap(entityService.findStringCharacteristicById(id)) }
+            val doubleCharacteristicTask = async { buildCharacteristicMap(entityService.findDoubleCharacteristicById(dto.id!!)) }
+            val stringCharacteristicTask = async { buildCharacteristicMap(entityService.findStringCharacteristicById(dto.id!!)) }
 
             val doubleRes = doubleCharacteristicTask.await()
             val stringRes = stringCharacteristicTask.await()
