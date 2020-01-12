@@ -8,9 +8,9 @@ import by.market.resources.BaseProductResource
 import org.springframework.data.domain.Pageable
 import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.GetMapping
+import org.springframework.web.bind.annotation.PathVariable
 import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.RestController
-import java.util.*
 
 @RestController
 @RequestMapping("/api/accessory-product")
@@ -28,8 +28,13 @@ class ProductAccessoryResource(facade: ProductAccessoryFacade)
     }
 
     @GetMapping("/characteristic")
-    override fun findCharacteristic(id: UUID): ResponseEntity<FrontEndCharacteristicPair> {
-        return super.findCharacteristic(id)
+    override fun findCharacteristic(product: ProductAccessoryFrontEnd): ResponseEntity<FrontEndCharacteristicPair> {
+        return super.findCharacteristic(product)
+    }
+
+    @GetMapping(value = ["/findByCategories/{categories}"])
+    override fun findByCategories(@PathVariable("categories") categories: List<CategoryFrontEnd>): ResponseEntity<MutableList<ProductAccessoryFrontEnd>> {
+        return super.findByCategories(categories)
     }
 
     @GetMapping("/count")
