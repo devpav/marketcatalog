@@ -6,17 +6,26 @@ import by.market.domain.characteristics.ProductCharacteristic
 import by.market.domain.system.Category
 import by.market.mapper.IMapstructMapper
 import by.market.mapper.dto.AbstractFrontEndProduct
+import by.market.mapper.dto.ProductFilterFrontEnd
 import by.market.mapper.dto.characteristics.FrontEndCharacteristicDescription
 import by.market.mapper.dto.characteristics.FrontEndCharacteristicPair
 import by.market.mapper.dto.system.CategoryFrontEnd
 import by.market.services.abstraction.IProductService
 import kotlinx.coroutines.async
 import kotlinx.coroutines.runBlocking
+import org.hibernate.Session
+import javax.persistence.EntityManager
+import javax.persistence.PersistenceContext
+
 
 open class BaseProductFacade<TDto : AbstractFrontEndProduct, TEntity : AbstractProduct>(entityService: IProductService<TEntity>,
                                                                                         mapper: IMapstructMapper<TDto, TEntity>,
-                                                                                        protected val categoryMapper: IMapstructMapper<CategoryFrontEnd, Category>)
+                                                                                        protected val categoryMapper: IMapstructMapper<CategoryFrontEnd, Category>,
+                                                                                        protected val session: Session)
     : IProductFacade<TDto>, AbstractFacade<IProductService<TEntity>, TDto, TEntity>(entityService, mapper) {
+    @PersistenceContext
+    private lateinit var entityManager: EntityManager
+
     override fun findByCategory(category: CategoryFrontEnd): MutableList<TDto> {
         var databaseCategory = categoryMapper.from(category)
         val entitiesByCategory = entityService.findByCategory(databaseCategory)
@@ -59,5 +68,10 @@ open class BaseProductFacade<TDto : AbstractFrontEndProduct, TEntity : AbstractP
         }
 
         return resMap
+    }
+
+    override fun findByFilter(filter: ProductFilterFrontEnd): MutableList<TDto> {
+        session.createQuery(TEntity::class.java)
+        return mutableListOf()
     }
 }

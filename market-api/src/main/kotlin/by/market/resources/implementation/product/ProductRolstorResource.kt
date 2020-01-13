@@ -1,6 +1,7 @@
 package by.market.resources.implementation.product
 
 import by.market.facade.product.ProductRolstorFacade
+import by.market.mapper.dto.ProductFilterFrontEnd
 import by.market.mapper.dto.characteristics.FrontEndCharacteristicPair
 import by.market.mapper.dto.product.ProductRolstorFrontEnd
 import by.market.mapper.dto.system.CategoryFrontEnd
@@ -35,6 +36,11 @@ class ProductRolstorResource(facade: ProductRolstorFacade)
     @GetMapping(value = ["/findByCategories/{categories}"])
     override fun findByCategories(@PathVariable("categories") categories: List<CategoryFrontEnd>): ResponseEntity<MutableList<ProductRolstorFrontEnd>> {
         return super.findByCategories(categories)
+    }
+
+    @GetMapping(value = ["/findByFilter/{filter}"])
+    override fun findByFilter(@PathVariable("filter") filter: ProductFilterFrontEnd): ResponseEntity<MutableList<ProductRolstorFrontEnd>> {
+        return super.findByFilter(filter)
     }
 
     @GetMapping("/count")

@@ -2,6 +2,7 @@ package by.market.resources
 
 import by.market.facade.IProductFacade
 import by.market.mapper.dto.AbstractFrontEndProduct
+import by.market.mapper.dto.ProductFilterFrontEnd
 import by.market.mapper.dto.characteristics.FrontEndCharacteristicPair
 import by.market.mapper.dto.system.CategoryFrontEnd
 import org.springframework.http.ResponseEntity
@@ -26,6 +27,11 @@ open class BaseProductResource<TFacade : IProductFacade<TDto>, TDto: AbstractFro
                 .toMutableList()
 
         return ResponseEntity.ok(res)
+    }
+
+    @GetMapping(value = ["/findByFilter/{filter}"])
+    open fun findByFilter(@PathVariable("filter") filter: ProductFilterFrontEnd): ResponseEntity<MutableList<TDto>> {
+        return ResponseEntity.ok(service.findByFilter(filter))
     }
 
     @GetMapping(value = ["/findCharacteristic/{product}"])

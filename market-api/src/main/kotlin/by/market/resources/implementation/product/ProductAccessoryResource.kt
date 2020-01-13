@@ -1,6 +1,7 @@
 package by.market.resources.implementation.product
 
 import by.market.facade.product.ProductAccessoryFacade
+import by.market.mapper.dto.ProductFilterFrontEnd
 import by.market.mapper.dto.characteristics.FrontEndCharacteristicPair
 import by.market.mapper.dto.product.ProductAccessoryFrontEnd
 import by.market.mapper.dto.system.CategoryFrontEnd
@@ -35,6 +36,11 @@ class ProductAccessoryResource(facade: ProductAccessoryFacade)
     @GetMapping(value = ["/findByCategories/{categories}"])
     override fun findByCategories(@PathVariable("categories") categories: List<CategoryFrontEnd>): ResponseEntity<MutableList<ProductAccessoryFrontEnd>> {
         return super.findByCategories(categories)
+    }
+
+    @GetMapping(value = ["/findByFilter/{filter}"])
+    override fun findByFilter(@PathVariable("filter") filter: ProductFilterFrontEnd): ResponseEntity<MutableList<ProductAccessoryFrontEnd>> {
+        return super.findByFilter(filter)
     }
 
     @GetMapping("/count")
