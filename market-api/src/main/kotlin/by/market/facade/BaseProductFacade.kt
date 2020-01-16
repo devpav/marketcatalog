@@ -17,6 +17,7 @@ open class BaseProductFacade<TDto : AbstractFrontEndProduct, TEntity : AbstractP
                                                                                         mapper: IMapstructMapper<TDto, TEntity>,
                                                                                         protected val categoryMapper: IMapstructMapper<CategoryFrontEnd, Category>)
     : IProductFacade<TDto>, AbstractFacade<IProductService<TEntity>, TDto, TEntity>(entityService, mapper) {
+
     override fun findByCategory(category: CategoryFrontEnd): MutableList<TDto> {
         var databaseCategory = categoryMapper.from(category)
         val entitiesByCategory = entityService.findByCategory(databaseCategory)
@@ -59,5 +60,11 @@ open class BaseProductFacade<TDto : AbstractFrontEndProduct, TEntity : AbstractP
         }
 
         return resMap
+    }
+
+    override fun findByFilter(title: String): MutableList<TDto> {
+        return this.entityService.findByFilter(title)
+                .map { mapper.to(it) }
+                .toMutableList()
     }
 }

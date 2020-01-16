@@ -9,4 +9,6 @@ interface IProductService<TEntity> : IService<TEntity> {
     fun findByCategory(category: Category): List<TEntity>
     fun findDoubleCharacteristicById(id: UUID): List<DoubleCharacteristic>
     fun findStringCharacteristicById(id: UUID): List<StringCharacteristic>
+
+    fun findByFilter(title: String): List<TEntity>
 }

@@ -72,4 +72,8 @@ open class BaseProductResource<TFacade : IProductFacade<TDto>, TDto: AbstractFro
     override fun flush() {
         TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
     }
+
+    open fun findByFilter(title: String): ResponseEntity<MutableList<TDto>> {
+        return ResponseEntity.ok(service.findByFilter(title));
+    }
 }

@@ -7,10 +7,7 @@ import by.market.mapper.dto.system.CategoryFrontEnd
 import by.market.resources.BaseProductResource
 import org.springframework.data.domain.Pageable
 import org.springframework.http.ResponseEntity
-import org.springframework.web.bind.annotation.GetMapping
-import org.springframework.web.bind.annotation.PathVariable
-import org.springframework.web.bind.annotation.RequestMapping
-import org.springframework.web.bind.annotation.RestController
+import org.springframework.web.bind.annotation.*
 
 @RestController
 @RequestMapping("/api/cornice-product")
@@ -35,6 +32,11 @@ class ProductCorniceResource(facade: ProductCorniceFacade)
     @GetMapping(value = ["/findByCategories/{categories}"])
     override fun findByCategories(@PathVariable("categories") categories: List<CategoryFrontEnd>): ResponseEntity<MutableList<ProductCorniceFrontEnd>> {
         return super.findByCategories(categories)
+    }
+
+    @GetMapping(value = ["/filter"])
+    override fun findByFilter(@RequestParam("title") title: String): ResponseEntity<MutableList<ProductCorniceFrontEnd>> {
+        return super.findByFilter(title)
     }
 
     @GetMapping("/count")
