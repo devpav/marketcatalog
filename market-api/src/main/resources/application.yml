@@ -1,6 +1,13 @@
 server:
   port: 8080
 
+logging:
+  level:
+    root: INFO
+    org.springframework.web: INFO
+    com.howtodoinjava: INFO
+    org.hibernate: INFO
+
 spring:
   jpa:
     show-sql: true
