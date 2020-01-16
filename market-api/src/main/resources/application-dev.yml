@@ -7,6 +7,13 @@ spring:
     platform: h2
     data: classpath:data.sql
     initialization-mode: always
+    tomcat:
+      initial-size: 1000
+      max-wait: 20000
+      max-active: 100
+      max-age: 50
+      max-idle: 25
+      default-auto-commit: true
 
   jpa:
     database-platform: org.hibernate.dialect.H2Dialect
@@ -23,9 +30,4 @@ spring:
   profiles:
     active: dev
 
-logging:
-  level:
-    root: TRACE
-    org.springframework.web: TRACE
-    com.howtodoinjava: TRACE
-    org.hibernate: TRACE
+

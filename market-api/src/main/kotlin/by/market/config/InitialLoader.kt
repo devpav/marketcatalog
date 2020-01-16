@@ -6,27 +6,23 @@ import by.market.parser.JalosieEntitiesToDbEntity
 import by.market.parser.RolstorEntitiesToDbEntity
 import kotlinx.coroutines.runBlocking
 import org.slf4j.LoggerFactory
-import org.springframework.boot.ApplicationArguments
-import org.springframework.boot.ApplicationRunner
+import org.springframework.boot.CommandLineRunner
 import org.springframework.core.env.Environment
-import org.springframework.stereotype.Component
+import org.springframework.stereotype.Service
 
-@Component
-class ApplicationSetup(private val jalosieSync: JalosieEntitiesToDbEntity,
-                       private val corniceSync: CorniceEntitiesToDbEntity,
-                       private val rolstorSync: RolstorEntitiesToDbEntity,
-                       private val accessoriesSync: AccessoriesEntitiesToDbEntity,
-                       private val env: Environment) : ApplicationRunner {
+@Service
+class InitialLoader(private val jalosieSync: JalosieEntitiesToDbEntity,
+                    private val corniceSync: CorniceEntitiesToDbEntity,
+                    private val rolstorSync: RolstorEntitiesToDbEntity,
+                    private val accessoriesSync: AccessoriesEntitiesToDbEntity,
+                    private val env: Environment) : CommandLineRunner {
 
-    private val log = LoggerFactory.getLogger(ApplicationSetup::class.java)
+    private val log = LoggerFactory.getLogger(InitialLoader::class.java)
 
-    override fun run(args: ApplicationArguments?) {
+    override fun run(vararg args: String?) {
         if (env.activeProfiles.any{ it == "prod" || it == "dev"}) {
             log.warn("Start ApplicationRunner with args: ", args)
             runBlocking {
-
-                //val productSource = FilesystemAsforosProductSource("E:\\Program\\projects\\from git\\marketcatalog\\json")
-
                 arrayOf(corniceSync, jalosieSync, rolstorSync, accessoriesSync)
                         .forEach {
                             try {
@@ -39,7 +35,6 @@ class ApplicationSetup(private val jalosieSync: JalosieEntitiesToDbEntity,
                             }
                         }
             }
-
             log.warn("Data was loaded")
         }else{
             log.warn("Skip initialization database")
