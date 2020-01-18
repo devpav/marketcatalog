@@ -4,6 +4,7 @@ import by.market.facade.IProductFacade
 import by.market.mapper.dto.AbstractFrontEndProduct
 import by.market.mapper.dto.characteristics.FrontEndCharacteristicPair
 import by.market.mapper.dto.system.CategoryFrontEnd
+import by.market.services.filter.model.ProductFilter
 import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.PathVariable
@@ -73,7 +74,7 @@ open class BaseProductResource<TFacade : IProductFacade<TDto>, TDto: AbstractFro
         TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
     }
 
-    open fun findByFilter(title: String): ResponseEntity<MutableList<TDto>> {
-        return ResponseEntity.ok(service.findByFilter(title));
+    open fun findByFilter(productFilter: ProductFilter): ResponseEntity<MutableList<TDto>> {
+        return ResponseEntity.ok(service.findByFilter(productFilter))
     }
 }
