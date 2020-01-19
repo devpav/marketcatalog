@@ -183,7 +183,7 @@ class AsforosProductParser() : IProductParser<AsforosProduct> {
               val img = divItemScuItemText.selectFirst("img")
               if (img != null) {
                 val attributes = img.attributes()
-                val srcValue = attributes["src"]
+                val srcValue = attributes["alt"]
 
                 detailItems.add(srcValue)
               }
@@ -192,7 +192,9 @@ class AsforosProductParser() : IProductParser<AsforosProduct> {
                 if (divProductItemText != null) {
                   val txt = divProductItemText.text()
 
-                  if(txt.isNotEmpty())
+                  if(txt.isNotEmpty() &&
+                          // End list "-"
+                          txt != "-")
                     detailItems.add(txt)
                 }
               }
