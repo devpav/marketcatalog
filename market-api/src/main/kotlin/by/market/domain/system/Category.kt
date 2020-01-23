@@ -19,5 +19,5 @@ class Category : BaseEntity() {
     @ManyToOne
     @JoinColumn(name = "id_parent_category")
     @JsonBackReference("category_child")
-    var childCategory: Category? = null
+    var parentCategory: Category? = null
 }

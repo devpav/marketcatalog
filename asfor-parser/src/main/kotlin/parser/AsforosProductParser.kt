@@ -19,7 +19,6 @@ import kotlin.concurrent.getOrSet
 
 class AsforosProductParser() : IProductParser<AsforosProduct> {
   private val nodeStore: ThreadLocal<MutableList<Pair<HtmlEl, Element>>> = ThreadLocal()
-  private val builderStore: ThreadLocal<StringBuilder> = ThreadLocal()
   private val connectionPool: ConcurrentLinkedQueue<HttpConnection> = ConcurrentLinkedQueue()
 
   override fun parse(context: IParserContext, listener: IProductListener<AsforosProduct>): List<AsforosProduct> {
@@ -131,7 +130,7 @@ class AsforosProductParser() : IProductParser<AsforosProduct> {
   }
 
   private fun fillDetails(product: AsforosProduct, listener: IProductListener<AsforosProduct>) {
-    if(product.moreDetailsUrl.isNullOrBlank())
+    if(product.moreDetailsUrl.isBlank())
       return
 
     val detailDoc = openDocByUri(product.moreDetailsUrl)
@@ -184,11 +183,7 @@ class AsforosProductParser() : IProductParser<AsforosProduct> {
               val img = divItemScuItemText.selectFirst("img")
               if (img != null) {
                 val attributes = img.attributes()
-                val srcValue = builderStore.getOrSet { java.lang.StringBuilder(128) }
-                  .clear()
-                  .append("src='").append(Site).append(attributes["src"]).append("' alt='")
-                  .append(attributes["alt"]).append('\'')
-                  .toString()
+                val srcValue = attributes["alt"]
 
                 detailItems.add(srcValue)
               }
@@ -197,7 +192,9 @@ class AsforosProductParser() : IProductParser<AsforosProduct> {
                 if (divProductItemText != null) {
                   val txt = divProductItemText.text()
 
-                  if(txt.isNotEmpty())
+                  if(txt.isNotEmpty() &&
+                          // End list "-"
+                          txt != "-")
                     detailItems.add(txt)
                 }
               }

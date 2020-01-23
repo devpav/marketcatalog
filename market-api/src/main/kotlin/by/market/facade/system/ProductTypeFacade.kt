@@ -11,4 +11,4 @@ import org.springframework.stereotype.Component
 class ProductTypeFacade(
         productTypeService: ProductTypeService,
         productTypeMapper: ProductTypeMapper
-) : BaseSystemFacade<ProductTypeFrontEnd, ProductType>(productTypeService, productTypeMapper)
+) : BaseSystemFacade<ProductTypeFrontEnd, ProductType, ProductTypeService>(productTypeService, productTypeMapper)

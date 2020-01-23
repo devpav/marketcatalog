@@ -11,4 +11,9 @@ import org.springframework.stereotype.Component
 class CategoryProductFacade(
         categoryService: CategoryService,
         categoryMapper: CategoryMapper
-) : BaseSystemFacade<CategoryFrontEnd, Category>(categoryService, categoryMapper)
+) : BaseSystemFacade<CategoryFrontEnd, Category, CategoryService>(categoryService, categoryMapper) {
+    fun findByParent(category: CategoryFrontEnd): Collection<CategoryFrontEnd> {
+        val databaseCategory = mapper.from(category)
+        return mapper.to(entityService.findAllByParentCategory(databaseCategory))
+    }
+}

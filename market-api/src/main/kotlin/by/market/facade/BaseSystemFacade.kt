@@ -7,9 +7,10 @@ import by.market.services.abstraction.ISystemService
 
 open class BaseSystemFacade<
         TDto : BaseFrontEndEntity,
-        TEntity : BaseEntity
-        >(entityService: ISystemService<TEntity>,
-          mapper: IMapstructMapper<TDto, TEntity>) : AbstractFacade<ISystemService<TEntity>, TDto, TEntity>(
+        TEntity : BaseEntity,
+        TService: ISystemService<TEntity>
+        >(entityService: TService,
+          mapper: IMapstructMapper<TDto, TEntity>) : AbstractFacade<TService, TDto, TEntity>(
         entityService,
         mapper) {
 }
