@@ -11,4 +11,4 @@ import org.springframework.stereotype.Component
 class DataTypeFacade(
         dataTypeService: DataTypeService,
         dataTypeMapper: DataTypeMapper
-): BaseSystemFacade<DataTypeFrontEnd, DataType>(dataTypeService, dataTypeMapper)
+): BaseSystemFacade<DataTypeFrontEnd, DataType, DataTypeService>(dataTypeService, dataTypeMapper)
