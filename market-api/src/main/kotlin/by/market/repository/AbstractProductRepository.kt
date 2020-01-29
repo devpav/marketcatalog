@@ -3,7 +3,6 @@ package by.market.repository
 import by.market.domain.AbstractProduct
 import by.market.domain.system.Category
 import org.springframework.data.repository.NoRepositoryBean
-import java.util.*
 
 @NoRepositoryBean
 interface AbstractProductRepository<T: AbstractProduct> : BaseRepository<T> {
@@ -13,6 +12,4 @@ interface AbstractProductRepository<T: AbstractProduct> : BaseRepository<T> {
     fun findByTitle(title: String): T
 
     fun findByCategory(category: Category): List<T>
-
-    fun getAllIds(): List<UUID>
 }

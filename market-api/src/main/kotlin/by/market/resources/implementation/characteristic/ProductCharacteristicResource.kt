@@ -57,7 +57,7 @@ class ProductCharacteristicResource(facade: ProductCharacteristicFacade)
 
         val entityMetadata = categories.map { entityMetadataProductCharacteristicMapper.toFrom(it).orNull() }
                 .filterNotNull()
-                .mapNotNull { Pair(it, entityMetadataProductTypeMapper.fromTo(it).getOrElse { ProductType.Cornice }) }
+                .map { Pair(it, entityMetadataProductTypeMapper.fromTo(it).getOrElse { ProductType.Cornice }) }
 
         var doubleMap: HashMap<UUID, CharacteristicValue> = HashMap()
         var stringMap: HashMap<UUID, CharacteristicValue> = HashMap()
