@@ -5,6 +5,7 @@ import by.market.mapper.dto.characteristics.FrontEndCharacteristicPair
 import by.market.mapper.dto.product.ProductCorniceFrontEnd
 import by.market.mapper.dto.system.CategoryFrontEnd
 import by.market.resources.BaseProductResource
+import by.market.services.filter.model.ProductFilter
 import org.springframework.data.domain.Pageable
 import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.*
@@ -34,13 +35,14 @@ class ProductCorniceResource(facade: ProductCorniceFacade)
         return super.findByCategories(categories)
     }
 
-    @GetMapping(value = ["/filter"])
-    override fun findByFilter(@RequestParam("title") title: String): ResponseEntity<MutableList<ProductCorniceFrontEnd>> {
-        return super.findByFilter(title)
+    @PostMapping(value = ["/filter"])
+    override fun findByFilter(@RequestBody productFilter: ProductFilter): ResponseEntity<MutableList<ProductCorniceFrontEnd>> {
+        return super.findByFilter(productFilter)
     }
 
     @GetMapping("/count")
     override fun count(): ResponseEntity<Long> {
         return super.count()
     }
+
 }

@@ -17,5 +17,4 @@ class CategoryResource(facade: CategoryProductFacade) : BaseMutableResource<Cate
     override fun findAll(pageable: Pageable): ResponseEntity<MutableList<CategoryFrontEnd>> {
         return super.findAll(pageable)
     }
-
 }

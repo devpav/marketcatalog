@@ -11,7 +11,7 @@ import org.mapstruct.Mapping
 @Mapper(config = MapperConfig::class)
 interface CategoryMapper : IMapstructMapper<CategoryFrontEnd, Category> {
 
-    @Mapping(source = "childCategory.id", target = "child")
+    @Mapping(source = "parentCategory.id", target = "parent")
     override fun to(e: Category): CategoryFrontEnd
 
     @InheritInverseConfiguration

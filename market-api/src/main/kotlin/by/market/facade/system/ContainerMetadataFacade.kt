@@ -11,4 +11,4 @@ import org.springframework.stereotype.Component
 class ContainerMetadataFacade(
         containerMetadataService: ContainerMetadataService,
         containerMetadataMapper: ContainerMetadataMapper
-): BaseSystemFacade<ContainerMetadataFrontEnd, ContainerMetadata>(containerMetadataService, containerMetadataMapper)
+): BaseSystemFacade<ContainerMetadataFrontEnd, ContainerMetadata, ContainerMetadataService>(containerMetadataService, containerMetadataMapper)

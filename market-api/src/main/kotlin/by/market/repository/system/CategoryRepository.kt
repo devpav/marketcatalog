@@ -8,5 +8,5 @@ import org.springframework.stereotype.Repository
 interface CategoryRepository : BaseRepository<Category> {
 
     fun findBySystemName(title: String): Category?
-
+    fun findAllByParentCategory(category: Category): List<Category>
 }
