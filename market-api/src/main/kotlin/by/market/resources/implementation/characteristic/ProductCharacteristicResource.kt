@@ -59,18 +59,19 @@ class ProductCharacteristicResource(facade: ProductCharacteristicFacade)
                 .filterNotNull()
                 .map { Pair(it, entityMetadataProductTypeMapper.fromTo(it).getOrElse { ProductType.Cornice }) }
 
-        var doubleMap: HashMap<UUID, CharacteristicValue> = HashMap()
-        var stringMap: HashMap<UUID, CharacteristicValue> = HashMap()
+        val doubleMap: HashMap<UUID, CharacteristicValue> = HashMap()
+        val stringMap: HashMap<UUID, CharacteristicValue> = HashMap()
 
         entityMetadata.forEach {
             val ids = when(it.second) {
                 ProductType.Accessories -> accessoryRepository.stream().select { i -> i.id }
-                ProductType.Cornice     -> corniceRepository.stream().select { i -> i.id }
+/*                ProductType.Cornice     -> corniceRepository.stream().select { i -> i.id }
                 ProductType.Jalosie     -> jalosieRepository.stream().select { i -> i.id }
-                ProductType.Rolstor     -> rolstorRepository.stream().select { i -> i.id }
+                ProductType.Rolstor     -> rolstorRepository.stream().select { i -> i.id }*/
+                else -> accessoryRepository.stream().select { i -> i.id }
             }.select { i -> i!! }
 
-            var s = stringCharacteristicRep.stream()
+            val s = stringCharacteristicRep.stream()
                     .where<Exception> { i ->
                         ids.where<Exception> { p -> p == i.productRowId }.findAny().isPresent
                                 &&
@@ -87,7 +88,7 @@ class ProductCharacteristicResource(facade: ProductCharacteristicFacade)
                 }
             }
 
-            var d = doubleCharacteristicRep.stream()
+            val d = doubleCharacteristicRep.stream()
                     .where<Exception> { i ->
                         ids.where<Exception> { p -> p == i.productRowId }.findAny().isPresent
                                 &&

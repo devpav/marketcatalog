@@ -20,12 +20,7 @@ open class BaseProductResource<TFacade : IProductFacade<TDto>, TDto: AbstractFro
 
     @GetMapping(value = ["/findByCategories/{categories}"])
     open fun findByCategories(@PathVariable("categories")  categories: List<CategoryFrontEnd>): ResponseEntity<MutableList<TDto>> {
-        val res = categories.mapNotNull {
-            findByCategory(it).body
-        }
-                .flatten()
-                .toMutableList()
-
+        val res = categories.mapNotNull { findByCategory(it).body }.flatten().toMutableList()
         return ResponseEntity.ok(res)
     }
 
