@@ -11,4 +11,4 @@ import org.springframework.stereotype.Component
 class EntityMetadataFacade(
         entityMetadataService: EntityMetadataService,
         entityMetadataMapper: EntityMetadataMapper
-) : BaseSystemFacade<EntityMetadataFrontEnd, EntityMetadata>(entityMetadataService, entityMetadataMapper)
+) : BaseSystemFacade<EntityMetadataFrontEnd, EntityMetadata, EntityMetadataService>(entityMetadataService, entityMetadataMapper)

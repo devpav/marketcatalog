@@ -9,5 +9,5 @@ class CategoryFrontEnd : BaseFrontEndEntity() {
 
     var systemName: String? = null;
 
-    var child: UUID? = null
+    var parent: UUID? = null
 }

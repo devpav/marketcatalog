@@ -12,4 +12,5 @@ interface AbstractProductRepository<T: AbstractProduct> : BaseRepository<T> {
     fun findByTitle(title: String): T
 
     fun findByCategory(category: Category): List<T>
+
 }

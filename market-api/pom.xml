@@ -26,6 +26,7 @@
         <kotlin.compiler.incremental>true</kotlin.compiler.incremental>
         <mapstruct.version>1.3.1.Final</mapstruct.version>
         <swagger.version>2.8.0</swagger.version>
+        <jinq.version>1.8.29</jinq.version>
     </properties>
 
     <dependencies>
@@ -93,6 +94,11 @@
             <version>${kotlin.version}</version>
             <scope>test</scope>
         </dependency>
+        <dependency>
+            <groupId>org.jinq</groupId>
+            <artifactId>jinq-jpa</artifactId>
+            <version>${jinq.version}</version>
+        </dependency>
     </dependencies>
 
     <build>
@@ -133,6 +139,7 @@
                 <executions>
                     <execution>
                         <id>kapt</id>
+                        <phase>generate-sources</phase>
                         <goals>
                             <goal>kapt</goal>
                         </goals>
