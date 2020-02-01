@@ -5,12 +5,10 @@ import by.market.mapper.dto.characteristics.FrontEndCharacteristicPair
 import by.market.mapper.dto.product.ProductRolstorFrontEnd
 import by.market.mapper.dto.system.CategoryFrontEnd
 import by.market.resources.BaseProductResource
+import by.market.services.filter.model.ProductFilter
 import org.springframework.data.domain.Pageable
 import org.springframework.http.ResponseEntity
-import org.springframework.web.bind.annotation.GetMapping
-import org.springframework.web.bind.annotation.PathVariable
-import org.springframework.web.bind.annotation.RequestMapping
-import org.springframework.web.bind.annotation.RestController
+import org.springframework.web.bind.annotation.*
 
 @RestController
 @RequestMapping("/api/rolstor-product")
@@ -35,6 +33,11 @@ class ProductRolstorResource(facade: ProductRolstorFacade)
     @GetMapping(value = ["/findByCategories/{categories}"])
     override fun findByCategories(@PathVariable("categories") categories: List<CategoryFrontEnd>): ResponseEntity<MutableList<ProductRolstorFrontEnd>> {
         return super.findByCategories(categories)
+    }
+
+    @PostMapping(value = ["/filter"])
+    override fun findByFilter(@RequestBody productFilter: ProductFilter): ResponseEntity<MutableList<ProductRolstorFrontEnd>> {
+        return super.findByFilter(productFilter)
     }
 
     @GetMapping("/count")

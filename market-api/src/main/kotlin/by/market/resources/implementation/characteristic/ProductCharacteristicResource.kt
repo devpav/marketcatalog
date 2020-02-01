@@ -59,8 +59,8 @@ class ProductCharacteristicResource(facade: ProductCharacteristicFacade)
                 .filterNotNull()
                 .map { Pair(it, entityMetadataProductTypeMapper.fromTo(it).getOrElse { ProductType.Cornice }) }
 
-        var doubleMap: HashMap<UUID, CharacteristicValue> = HashMap()
-        var stringMap: HashMap<UUID, CharacteristicValue> = HashMap()
+        val doubleMap: HashMap<UUID, CharacteristicValue> = HashMap()
+        val stringMap: HashMap<UUID, CharacteristicValue> = HashMap()
 
         entityMetadata.forEach {
             val ids = when(it.second) {

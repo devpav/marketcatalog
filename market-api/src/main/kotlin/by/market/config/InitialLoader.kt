@@ -4,6 +4,7 @@ import by.market.parser.AccessoriesEntitiesToDbEntity
 import by.market.parser.CorniceEntitiesToDbEntity
 import by.market.parser.JalosieEntitiesToDbEntity
 import by.market.parser.RolstorEntitiesToDbEntity
+import by.market.parser.asforos_product_source.FilesystemAsforosProductSource
 import kotlinx.coroutines.runBlocking
 import org.slf4j.LoggerFactory
 import org.springframework.boot.CommandLineRunner
@@ -23,11 +24,14 @@ class InitialLoader(private val jalosieSync: JalosieEntitiesToDbEntity,
         if (env.activeProfiles.any{ it == "prod" || it == "dev"}) {
             log.warn("Start ApplicationRunner with args: ", args)
             runBlocking {
+
+                val productSource = FilesystemAsforosProductSource("json")
+
                 arrayOf(corniceSync, jalosieSync, rolstorSync, accessoriesSync)
                         .forEach {
                             try {
                                 log.info("On Before process products {}", it.javaClass)
-                                //it.productSource = productSource
+                                it.productSource = productSource
                                 it.process()
                                 log.info("On After process products {}", it.javaClass)
                             }catch (e: Exception){

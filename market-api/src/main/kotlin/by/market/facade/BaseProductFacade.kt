@@ -10,6 +10,7 @@ import by.market.mapper.dto.characteristics.FrontEndCharacteristicDescription
 import by.market.mapper.dto.characteristics.FrontEndCharacteristicPair
 import by.market.mapper.dto.system.CategoryFrontEnd
 import by.market.services.abstraction.IProductService
+import by.market.services.filter.model.ProductFilter
 import kotlinx.coroutines.async
 import kotlinx.coroutines.runBlocking
 
@@ -62,8 +63,8 @@ open class BaseProductFacade<TDto : AbstractFrontEndProduct, TEntity : AbstractP
         return resMap
     }
 
-    override fun findByFilter(title: String): MutableList<TDto> {
-        return this.entityService.findByFilter(title)
+    override fun findByFilter(productFilter: ProductFilter): MutableList<TDto> {
+        return this.entityService.findByFilter(productFilter)
                 .map { mapper.to(it) }
                 .toMutableList()
     }
