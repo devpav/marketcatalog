@@ -65,13 +65,12 @@ class ProductCharacteristicResource(facade: ProductCharacteristicFacade)
         entityMetadata.forEach {
             val ids = when(it.second) {
                 ProductType.Accessories -> accessoryRepository.stream().select { i -> i.id }
-/*                ProductType.Cornice     -> corniceRepository.stream().select { i -> i.id }
+                ProductType.Cornice     -> corniceRepository.stream().select { i -> i.id }
                 ProductType.Jalosie     -> jalosieRepository.stream().select { i -> i.id }
-                ProductType.Rolstor     -> rolstorRepository.stream().select { i -> i.id }*/
-                else -> accessoryRepository.stream().select { i -> i.id }
+                ProductType.Rolstor     -> rolstorRepository.stream().select { i -> i.id }
             }.select { i -> i!! }
 
-            val s = stringCharacteristicRep.stream()
+            var s = stringCharacteristicRep.stream()
                     .where<Exception> { i ->
                         ids.where<Exception> { p -> p == i.productRowId }.findAny().isPresent
                                 &&
@@ -88,7 +87,7 @@ class ProductCharacteristicResource(facade: ProductCharacteristicFacade)
                 }
             }
 
-            val d = doubleCharacteristicRep.stream()
+            var d = doubleCharacteristicRep.stream()
                     .where<Exception> { i ->
                         ids.where<Exception> { p -> p == i.productRowId }.findAny().isPresent
                                 &&

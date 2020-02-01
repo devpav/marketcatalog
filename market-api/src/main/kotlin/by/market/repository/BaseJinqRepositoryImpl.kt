@@ -23,7 +23,7 @@ abstract class BaseJinqRepositoryImpl<T>() {
     fun stream(): JPAJinqStream<T> {
         return streamOf(entityType());
     }
-
+  
     private fun streamOf(clazz: Class<T>): JPAJinqStream<T> {
         return jdp!!.streamAll(entityManager, clazz)
     }
