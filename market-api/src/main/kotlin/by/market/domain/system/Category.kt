@@ -11,13 +11,19 @@ import javax.persistence.*
 class Category : BaseEntity() {
 
     @Column(name = "title")
-    var title: String? = null;
+    var title: String? = null
+        public get
+        public set
 
     @Column(name = "system_name")
-    var systemName: String? = null;
+    var systemName: String? = null
+        public get
+        public set
 
     @ManyToOne
     @JoinColumn(name = "id_parent_category")
     @JsonBackReference("category_child")
     var parentCategory: Category? = null
+        public get
+        public set
 }
