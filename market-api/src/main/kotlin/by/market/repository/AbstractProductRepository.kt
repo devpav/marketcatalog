@@ -13,6 +13,6 @@ interface AbstractProductRepository<T: AbstractProduct> : BaseRepository<T> {
     fun findByTitle(title: String): T
     fun findByCategory(category: Category): List<T>
 
-    @Query("select p.id from #{#entityName} p where p.id_category IN (:id_categories)")
+    @Query("select p.id from #{#entityName} p inner join p.category c where c.id IN (:id_categories)")
     fun getAllIdsByCategoryIds(@Param("id_categories") categoryIds: List<UUID>): List<UUID>
 }
