@@ -62,11 +62,21 @@ class ProductCharacteristicResource(facade: ProductCharacteristicFacade)
 
     @GetMapping("/findCharacteristic")
     fun findByCategory(id: String): ResponseEntity<MutableList<UniversalCharacteristicFrontEnd>> {
-        val categoryNullable = categoryRepository.findById(UUID.fromString(id))
+        var findCategoryId = UUID.fromString(id)
+        val categoryNullable = categoryRepository.findById(findCategoryId)
         if(!categoryNullable.isPresent || categoryNullable.get().parentCategory == null)
             return ResponseEntity.of(Optional.empty())
 
-        val category = categoryNullable.get().parentCategory!!
+        val findCategory = categoryNullable.get()
+
+        val categoriesForFound = categoryRepository.findAllByParentCategory(findCategory)
+                .map { it.id }
+                .mapNotNull { it!! }
+                .toMutableList()
+
+        categoriesForFound.add(findCategoryId)
+
+        val category = findCategory.parentCategory!!
 
         // Нужна родительская категория, чтобы определить тип сущности
         var entityMetadata = entityMetadataProductCharacteristicMapper.toFrom(category).orNull()
@@ -81,10 +91,10 @@ class ProductCharacteristicResource(facade: ProductCharacteristicFacade)
         val stringMap: HashMap<UUID, CharacteristicValue> = HashMap()
 
         val entityIds = when(productType) {
-            ProductType.Accessories -> accessoryRepository.getAllIdsByCategoryId(category.id!!)
-            ProductType.Cornice     -> corniceRepository.getAllIdsByCategoryId(category.id!!)
-            ProductType.Jalosie     -> jalosieRepository.getAllIdsByCategoryId(category.id!!)
-            ProductType.Rolstor     -> rolstorRepository.getAllIdsByCategoryId(category.id!!)
+            ProductType.Accessories -> accessoryRepository.getAllIdsByCategoryIds(categoriesForFound)
+            ProductType.Cornice     -> corniceRepository.getAllIdsByCategoryIds(categoriesForFound)
+            ProductType.Jalosie     -> jalosieRepository.getAllIdsByCategoryIds(categoriesForFound)
+            ProductType.Rolstor     -> rolstorRepository.getAllIdsByCategoryIds(categoriesForFound)
         }
 
         val stringCharacteristic = buildStringCharacteristic(entityIds, entityMetadata)
