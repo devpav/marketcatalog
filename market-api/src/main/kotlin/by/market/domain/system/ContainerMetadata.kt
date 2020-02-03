@@ -14,8 +14,12 @@ class ContainerMetadata : BaseEntity() {
 
     @Column(name = "description")
     var description: String? = null
+        public get
+        public set
 
     @Column(name = "system_name")
     var systemName: String? = null
+        public get
+        public set
 
 }
