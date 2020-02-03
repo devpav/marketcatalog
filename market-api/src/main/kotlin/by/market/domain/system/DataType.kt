@@ -11,5 +11,6 @@ class DataType : BaseEntity() {
 
     @Column(name = "name")
     var name: String? = null
-
+        public get
+        public set
 }

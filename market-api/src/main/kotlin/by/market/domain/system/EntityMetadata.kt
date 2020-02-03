@@ -14,12 +14,17 @@ class EntityMetadata : BaseEntity() {
 
     @Column(name = "table_name")
     var tableName: String? = null
+        public get
+        public set
 
     @Column(name = "description")
     var description: String? = null
+        public get
+        public set
 
     @ManyToOne
     @JoinColumn(name = "id_container")
     var container: ContainerMetadata? = null
-
+        public get
+        public set
 }

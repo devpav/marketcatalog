@@ -18,9 +18,12 @@ class ProductCharacteristic : BaseEntity() {
 
     @Column(name = "title")
     var title: String? = null
+        public get
+        public set
 
     @ManyToOne
     @JoinColumn(name = "id_data_type")
     var dataType: DataType? = null
-
+        public get
+        public set
 }
