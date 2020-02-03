@@ -11,12 +11,17 @@ open class AbstractProduct : BaseEntity() {
 
     @Column(name = "title")
     var title: String? = null
+        public get
+        public set
 
     @Column(name = "img")
     var img: String? = null
+        public get
+        public set
 
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "id_category")
     var category: Category? = null
-
+        public get
+        public set
 }

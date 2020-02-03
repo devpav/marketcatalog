@@ -1,21 +1,19 @@
 package by.market.resources.implementation.characteristic
 
-import arrow.core.getOrElse
 import by.market.core.DataType
 import by.market.core.ProductType
+import by.market.domain.system.EntityMetadata
 import by.market.facade.characteristics.ProductCharacteristicFacade
-import by.market.mapper.domain_dto_mapper.system.CategoryMapper
 import by.market.mapper.dto.characteristics.ProductCharacteristicFrontEnd
 import by.market.mapper.dto.characteristics.UniversalCharacteristicFrontEnd
-import by.market.mapper.dto.system.CategoryFrontEnd
 import by.market.mapper.entity_metadata.EntityMetadataProductCharacteristicMapper
 import by.market.mapper.entity_metadata.EntityMetadataProductTypeMapper
-import by.market.repository.characteristic.single.Jinq.JinqDoubleCharacteristicRepository
-import by.market.repository.characteristic.single.Jinq.JinqStringCharacteristicRepository
-import by.market.repository.product.Jinq.JinqProductAccessoryRepository
-import by.market.repository.product.Jinq.JinqProductCorniceRepository
-import by.market.repository.product.Jinq.JinqProductJalosieRepository
-import by.market.repository.product.Jinq.JinqProductRolstorRepository
+import by.market.repository.characteristic.single.DoubleSingleCharacteristicRepository
+import by.market.repository.characteristic.single.StringSingleCharacteristicRepository
+import by.market.repository.product.ProductAccessoryRepository
+import by.market.repository.product.ProductCorniceRepository
+import by.market.repository.product.ProductJalosieRepository
+import by.market.repository.product.ProductRolstorRepository
 import by.market.repository.system.CategoryRepository
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.http.ResponseEntity
@@ -24,108 +22,113 @@ import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.RestController
 import java.util.*
 import kotlin.collections.HashMap
+import kotlin.collections.HashSet
 
 @RestController
 @RequestMapping("/api/product-characteristic")
 class ProductCharacteristicResource(facade: ProductCharacteristicFacade)
     : BaseCharacteristicResource<ProductCharacteristicFacade, ProductCharacteristicFrontEnd>(facade){
     @Autowired
-    private lateinit var stringCharacteristicRep: JinqStringCharacteristicRepository
+    private lateinit var stringCharacteristicRep: StringSingleCharacteristicRepository
     @Autowired
-    private lateinit var doubleCharacteristicRep: JinqDoubleCharacteristicRepository
+    private lateinit var doubleCharacteristicRep: DoubleSingleCharacteristicRepository
     @Autowired
-    private lateinit var accessoryRepository: JinqProductAccessoryRepository
+    private lateinit var accessoryRepository: ProductAccessoryRepository
     @Autowired
-    private lateinit var corniceRepository: JinqProductCorniceRepository
+    private lateinit var corniceRepository: ProductCorniceRepository
     @Autowired
-    private lateinit var jalosieRepository: JinqProductJalosieRepository
+    private lateinit var jalosieRepository: ProductJalosieRepository
     @Autowired
-    private lateinit var rolstorRepository: JinqProductRolstorRepository
+    private lateinit var rolstorRepository: ProductRolstorRepository
     @Autowired
     private lateinit var entityMetadataProductTypeMapper: EntityMetadataProductTypeMapper
     @Autowired
     private lateinit var entityMetadataProductCharacteristicMapper: EntityMetadataProductCharacteristicMapper
     @Autowired
     private lateinit var categoryRepository: CategoryRepository
-    @Autowired
-    private lateinit var categoryMapper: CategoryMapper
+
+    private fun fillCharacteristicMap(map: HashMap<UUID, CharacteristicValue>, characteristic: List<Characteristic>) {
+        characteristic.forEach { sc ->
+            val lst = map[sc.id]
+            if(lst != null){
+                lst.values.add(sc.value)
+            }else{
+                val set = HashSet<String>(5)
+                set.add(sc.value)
+                map[sc.id] = CharacteristicValue(sc, set)
+            }
+        }
+    }
 
     @GetMapping("/findCharacteristic")
-    fun findByCategory(category: CategoryFrontEnd): ResponseEntity<MutableList<UniversalCharacteristicFrontEnd>> {
-        val categoryDatabase = categoryMapper.from(category)
-        val categories = categoryRepository.findAllByParentCategory(categoryDatabase)
+    fun findByCategory(id: String): ResponseEntity<MutableList<UniversalCharacteristicFrontEnd>> {
+        var findCategoryId = UUID.fromString(id)
+        val categoryNullable = categoryRepository.findById(findCategoryId)
+        if(!categoryNullable.isPresent || categoryNullable.get().parentCategory == null)
+            return ResponseEntity.of(Optional.empty())
 
-        val entityMetadata = categories.map { entityMetadataProductCharacteristicMapper.toFrom(it).orNull() }
-                .filterNotNull()
-                .map { Pair(it, entityMetadataProductTypeMapper.fromTo(it).getOrElse { ProductType.Cornice }) }
+        val findCategory = categoryNullable.get()
+
+        val categoriesForFound = categoryRepository.findAllByParentCategory(findCategory)
+                .map { it.id }
+                .mapNotNull { it!! }
+                .toMutableList()
+
+        categoriesForFound.add(findCategoryId)
+
+        val category = findCategory.parentCategory!!
+
+        // Нужна родительская категория, чтобы определить тип сущности
+        var entityMetadata = entityMetadataProductCharacteristicMapper.toFrom(category).orNull()
+        if(entityMetadata == null)
+            return ResponseEntity.of(Optional.empty())
+
+        var productType = entityMetadataProductTypeMapper.fromTo(entityMetadata).orNull()
+        if(productType == null)
+            return ResponseEntity.of(Optional.empty())
 
         val doubleMap: HashMap<UUID, CharacteristicValue> = HashMap()
         val stringMap: HashMap<UUID, CharacteristicValue> = HashMap()
 
-        entityMetadata.forEach {
-            val ids = when(it.second) {
-                ProductType.Accessories -> accessoryRepository.stream().select { i -> i.id }
-                ProductType.Cornice     -> corniceRepository.stream().select { i -> i.id }
-                ProductType.Jalosie     -> jalosieRepository.stream().select { i -> i.id }
-                ProductType.Rolstor     -> rolstorRepository.stream().select { i -> i.id }
-            }.select { i -> i!! }
-
-            var s = stringCharacteristicRep.stream()
-                    .where<Exception> { i ->
-                        ids.where<Exception> { p -> p == i.productRowId }.findAny().isPresent
-                                &&
-                                i.entityMetadata!!.id == it.first.id
-                    }
-                    .select { p -> Characteristic(p.productCharacteristic!!.id!!, p.productCharacteristic!!.title!!, DataType.String, p.value!!) }
-
-            s.forEach { sc ->
-                val lst = stringMap[sc.id]
-                if(lst != null){
-                    lst.values.add(sc.value)
-                }else{
-                    stringMap[sc.id] = CharacteristicValue(sc, mutableListOf(sc.value))
-                }
-            }
-
-            var d = doubleCharacteristicRep.stream()
-                    .where<Exception> { i ->
-                        ids.where<Exception> { p -> p == i.productRowId }.findAny().isPresent
-                                &&
-                                i.entityMetadata!!.id == it.first.id
-                    }
-                    .select { p -> Characteristic(p.productCharacteristic!!.id!!, p.productCharacteristic!!.title!!, DataType.Double, p.value!!.toString()) }
-
-            d.forEach { sc ->
-                val lst = doubleMap[sc.id]
-                if(lst != null){
-                    lst.values.add(sc.value)
-                }else{
-                    doubleMap[sc.id] = CharacteristicValue(sc, mutableListOf(sc.value))
-                }
-            }
+        val entityIds = when(productType) {
+            ProductType.Accessories -> accessoryRepository.getAllIdsByCategoryIds(categoriesForFound)
+            ProductType.Cornice     -> corniceRepository.getAllIdsByCategoryIds(categoriesForFound)
+            ProductType.Jalosie     -> jalosieRepository.getAllIdsByCategoryIds(categoriesForFound)
+            ProductType.Rolstor     -> rolstorRepository.getAllIdsByCategoryIds(categoriesForFound)
         }
 
-        val result = (
-                stringMap.map {
-                    val value = it.value
-                    return@map UniversalCharacteristicFrontEnd(value.characteristic.id,
-                            value.characteristic.title,
-                            value.characteristic.dataType,
-                            value.values)
-                }
-                        +
-                        doubleMap.map {
-                            val value = it.value
-                            return@map UniversalCharacteristicFrontEnd(value.characteristic.id,
-                                    value.characteristic.title,
-                                    value.characteristic.dataType,
-                                    value.values)
-                        }
-                ).toMutableList()
+        val stringCharacteristic = buildStringCharacteristic(entityIds, entityMetadata)
+        fillCharacteristicMap(stringMap, stringCharacteristic)
+
+        val doubleCharacteristic = buildDoubleCharacteristic(entityIds, entityMetadata)
+        fillCharacteristicMap(doubleMap, doubleCharacteristic)
+
+        val result = (toUniversalCharacteristicFrontEnd(stringMap) + toUniversalCharacteristicFrontEnd(doubleMap))
+                .toMutableList()
 
         return ResponseEntity.ok(result)
     }
 
+    private fun toUniversalCharacteristicFrontEnd(characteristic: HashMap<UUID, CharacteristicValue>): List<UniversalCharacteristicFrontEnd> {
+        return characteristic.map {
+            val value = it.value
+            return@map UniversalCharacteristicFrontEnd(value.characteristic.id,
+                    value.characteristic.title,
+                    value.characteristic.dataType,
+                    value.values)
+        }
+    }
+
+    private fun buildStringCharacteristic(rows: List<UUID>, metadaa: EntityMetadata): List<Characteristic>{
+        return stringCharacteristicRep.findByProductRowIdInAndEntityMetadata(rows, metadaa)
+                .map { p -> Characteristic(p.productCharacteristic!!.id!!, p.productCharacteristic!!.title!!, DataType.String, p.value!!) }
+    }
+
+    private fun buildDoubleCharacteristic(rows: List<UUID>, metadaa: EntityMetadata): List<Characteristic>{
+        return doubleCharacteristicRep.findByProductRowIdInAndEntityMetadata(rows, metadaa)
+                .map { p -> Characteristic(p.productCharacteristic!!.id!!, p.productCharacteristic!!.title!!, DataType.Double, p.value!!.toString()) }
+    }
+
     private data class Characteristic(val id: UUID, val title: String, val dataType: DataType, val value: String)
-    private data class CharacteristicValue(val characteristic: Characteristic, val values: MutableList<String>)
+    private data class CharacteristicValue(val characteristic: Characteristic, val values: HashSet<String>)
 }
