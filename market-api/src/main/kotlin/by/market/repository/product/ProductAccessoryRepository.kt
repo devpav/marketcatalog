@@ -8,5 +8,4 @@ import org.springframework.stereotype.Repository
 interface ProductAccessoryRepository : AbstractProductRepository<ProductAccessory> {
 
     override fun findAll(): MutableList<ProductAccessory>
-
 }

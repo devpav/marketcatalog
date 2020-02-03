@@ -5,4 +5,6 @@ import by.market.repository.AbstractProductRepository
 import org.springframework.stereotype.Repository
 
 @Repository
-interface ProductCorniceRepository : AbstractProductRepository<ProductCornice>
+interface ProductCorniceRepository : AbstractProductRepository<ProductCornice>{
+
+}
