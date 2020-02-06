@@ -60,8 +60,8 @@ class ProductCharacteristicResource(facade: ProductCharacteristicFacade)
         }
     }
 
-    @GetMapping("/findCharacteristic")
-    fun findByCategory(id: String): ResponseEntity<MutableList<UniversalCharacteristicFrontEnd>> {
+    @GetMapping("/filter")
+    fun filter(id: String): ResponseEntity<MutableList<UniversalCharacteristicFrontEnd>> {
         var findCategoryId = UUID.fromString(id)
         val categoryNullable = categoryRepository.findById(findCategoryId)
         if(!categoryNullable.isPresent || categoryNullable.get().parentCategory == null)
