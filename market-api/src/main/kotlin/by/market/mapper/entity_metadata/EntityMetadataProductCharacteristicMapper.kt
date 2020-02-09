@@ -1,6 +1,7 @@
 package by.market.mapper.entity_metadata
 
 import arrow.core.Option
+import by.market.core.Constant
 import by.market.core.IBiMapper
 import by.market.domain.system.Category
 import by.market.domain.system.EntityMetadata
@@ -19,7 +20,7 @@ class EntityMetadataProductCharacteristicMapper(private val categoryRep: Categor
             "cornice", "metallic", "plastic_ceilings", "wall_metal_plastic",
             "flexible", "accessories_for_ceiling", "metal_plastic_accessories", "accessories_for_metal"
                 -> Option.fromNullable(categoryRep.findBySystemName("cornice"))
-            "jalosie"
+            "jalousie"
                 -> Option.fromNullable(categoryRep.findBySystemName("jalousie"))
             "rolstor", "day_night", "standard", "in_box", "premium", "blackout"
                 -> Option.fromNullable(categoryRep.findBySystemName("rolstor"))
@@ -29,10 +30,10 @@ class EntityMetadataProductCharacteristicMapper(private val categoryRep: Categor
 
     override fun toFrom(to: Category): Option<EntityMetadata> {
         return when(to.systemName){
-            "accessory" -> Option.fromNullable(entityMetadataRepository.findByTableName("accessory"))
-            "cornice" -> Option.fromNullable(entityMetadataRepository.findByTableName("cornice"))
-            "jalosie" -> Option.fromNullable(entityMetadataRepository.findByTableName("jalosie"))
-            "rolstor" -> Option.fromNullable(entityMetadataRepository.findByTableName("rolstor"))
+            Constant.EntityMetadata.Accessory-> Option.fromNullable(entityMetadataRepository.findAccessory())
+            Constant.EntityMetadata.Cornice -> Option.fromNullable(entityMetadataRepository.findCornice())
+            Constant.EntityMetadata.Jalousie -> Option.fromNullable(entityMetadataRepository.findJalousie())
+            Constant.EntityMetadata.Rolstor -> Option.fromNullable(entityMetadataRepository.findRolstor())
             else -> Option.empty()
         }
     }

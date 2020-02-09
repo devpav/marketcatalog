@@ -12,9 +12,12 @@ import by.market.repository.characteristic.single.DoubleSingleCharacteristicRepo
 import by.market.repository.characteristic.single.StringSingleCharacteristicRepository
 import by.market.repository.product.ProductAccessoryRepository
 import by.market.repository.product.ProductCorniceRepository
-import by.market.repository.product.ProductJalosieRepository
+import by.market.repository.product.ProductJalousieRepository
 import by.market.repository.product.ProductRolstorRepository
 import by.market.repository.system.CategoryRepository
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.async
+import kotlinx.coroutines.runBlocking
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.GetMapping
@@ -37,7 +40,7 @@ class ProductCharacteristicResource(facade: ProductCharacteristicFacade)
     @Autowired
     private lateinit var corniceRepository: ProductCorniceRepository
     @Autowired
-    private lateinit var jalosieRepository: ProductJalosieRepository
+    private lateinit var jalousieRepository: ProductJalousieRepository
     @Autowired
     private lateinit var rolstorRepository: ProductRolstorRepository
     @Autowired
@@ -70,38 +73,51 @@ class ProductCharacteristicResource(facade: ProductCharacteristicFacade)
         val findCategory = categoryNullable.get()
 
         val categoriesForFound = categoryRepository.findAllByParentCategory(findCategory)
+                .filter { !it.isParent }
                 .map { it.id }
                 .mapNotNull { it!! }
                 .toMutableList()
 
-        categoriesForFound.add(findCategoryId)
+        if(!findCategory.isParent)
+            categoriesForFound.add(findCategoryId)
 
         val category = findCategory.parentCategory!!
 
         // Нужна родительская категория, чтобы определить тип сущности
-        var entityMetadata = entityMetadataProductCharacteristicMapper.toFrom(category).orNull()
-        if(entityMetadata == null)
+        var parentEntityMetadata = entityMetadataProductCharacteristicMapper.toFrom(category).orNull()
+        if(parentEntityMetadata == null)
             return ResponseEntity.of(Optional.empty())
 
-        var productType = entityMetadataProductTypeMapper.fromTo(entityMetadata).orNull()
-        if(productType == null)
+        var parentProductType = entityMetadataProductTypeMapper.fromTo(parentEntityMetadata).orNull()
+        if(parentProductType == null)
             return ResponseEntity.of(Optional.empty())
 
         val doubleMap: HashMap<UUID, CharacteristicValue> = HashMap()
         val stringMap: HashMap<UUID, CharacteristicValue> = HashMap()
 
-        val entityIds = when(productType) {
+        val entityIds = when(parentProductType) {
             ProductType.Accessories -> accessoryRepository.getAllIdsByCategoryIds(categoriesForFound)
             ProductType.Cornice     -> corniceRepository.getAllIdsByCategoryIds(categoriesForFound)
-            ProductType.Jalosie     -> jalosieRepository.getAllIdsByCategoryIds(categoriesForFound)
+            ProductType.Jalousie     -> jalousieRepository.getAllIdsByCategoryIds(categoriesForFound)
             ProductType.Rolstor     -> rolstorRepository.getAllIdsByCategoryIds(categoriesForFound)
         }
 
-        val stringCharacteristic = buildStringCharacteristic(entityIds, entityMetadata)
-        fillCharacteristicMap(stringMap, stringCharacteristic)
+        GlobalScope.run {
+            val stringAsync = async {
+                val stringCharacteristic = buildStringCharacteristic(entityIds, parentEntityMetadata)
+                fillCharacteristicMap(stringMap, stringCharacteristic)
+            }
 
-        val doubleCharacteristic = buildDoubleCharacteristic(entityIds, entityMetadata)
-        fillCharacteristicMap(doubleMap, doubleCharacteristic)
+            val doubleAsync = async {
+                val doubleCharacteristic = buildDoubleCharacteristic(entityIds, parentEntityMetadata)
+                fillCharacteristicMap(doubleMap, doubleCharacteristic)
+            }
+
+            runBlocking {
+                stringAsync.await()
+                doubleAsync.await()
+            }
+        }
 
         val result = (toUniversalCharacteristicFrontEnd(stringMap) + toUniversalCharacteristicFrontEnd(doubleMap))
                 .toMutableList()
