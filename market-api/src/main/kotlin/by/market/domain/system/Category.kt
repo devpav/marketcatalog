@@ -26,4 +26,7 @@ class Category : BaseEntity() {
     var parentCategory: Category? = null
         public get
         public set
+
+    val isParent: Boolean
+        get() = id == parentCategory?.id
 }

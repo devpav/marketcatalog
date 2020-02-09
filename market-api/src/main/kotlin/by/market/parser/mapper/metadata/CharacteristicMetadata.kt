@@ -3,7 +3,7 @@ package by.market.parser.mapper.metadata
 import by.market.domain.AbstractProduct
 import by.market.domain.product.ProductAccessory
 import by.market.domain.product.ProductCornice
-import by.market.domain.product.ProductJalosie
+import by.market.domain.product.ProductJalousie
 import by.market.domain.product.ProductRolstor
 import by.market.domain.system.EntityMetadata
 import by.market.parser.mapper.metadata.database_mapper.DoubleMetadataMapper
@@ -65,7 +65,7 @@ open class CharacteristicMetadata(private val dataTypeRepository: DataTypeReposi
         mapEntityMetadata[ProductCornice::class] = entityMetadataRepository.findByTableName("cornice")
         mapEntityMetadata[ProductRolstor::class] = entityMetadataRepository.findByTableName("rolstor")
         mapEntityMetadata[ProductAccessory::class] = entityMetadataRepository.findByTableName("accessory")
-        mapEntityMetadata[ProductJalosie::class] = entityMetadataRepository.findByTableName("jalosie")
+        mapEntityMetadata[ProductJalousie::class] = entityMetadataRepository.findByTableName("jalosie")
 
         val result: HashMap<String, IMetadataMapper> = HashMap()
 

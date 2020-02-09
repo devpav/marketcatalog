@@ -60,7 +60,7 @@ create table tbx_p_accessory
     id_category                 UUID NOT NULL REFERENCES tbx_s_category(id)
 );
 
-create table tbx_p_jalosie
+create table tbx_p_jalousie
 (
     id                          UUID primary key,
     title                       VARCHAR(256) NOT NULL,
