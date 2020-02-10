@@ -1,6 +1,7 @@
 package by.market.mapper.entity_metadata
 
 import arrow.core.Option
+import by.market.core.Constant
 import by.market.core.IBiMapper
 import by.market.core.ProductType
 import by.market.domain.system.EntityMetadata
@@ -12,20 +13,20 @@ class EntityMetadataProductTypeMapper(private val entityMetadataRepository: Enti
     : IBiMapper<EntityMetadata, ProductType> {
     override fun fromTo(from: EntityMetadata): Option<ProductType> {
         return when(from.tableName) {
-            "accessory" -> Option.just(ProductType.Accessories)
-            "cornice" -> Option.just(ProductType.Cornice)
-            "jalosie" -> Option.just(ProductType.Jalosie)
-            "rolstor" -> Option.just(ProductType.Rolstor)
+            Constant.EntityMetadata.Accessory -> Option.just(ProductType.Accessories)
+            Constant.EntityMetadata.Cornice -> Option.just(ProductType.Cornice)
+            Constant.EntityMetadata.Jalousie -> Option.just(ProductType.Jalousie)
+            Constant.EntityMetadata.Rolstor -> Option.just(ProductType.Rolstor)
             else -> Option.empty()
         }
     }
 
     override fun toFrom(to: ProductType): Option<EntityMetadata> {
         return when(to) {
-            ProductType.Accessories -> Option.just(entityMetadataRepository.findByTableName("accessory"))
-            ProductType.Cornice -> Option.just(entityMetadataRepository.findByTableName("cornice"))
-            ProductType.Jalosie -> Option.just(entityMetadataRepository.findByTableName("jalosie"))
-            ProductType.Rolstor -> Option.just(entityMetadataRepository.findByTableName("rolstor"))
+            ProductType.Accessories -> Option.just(entityMetadataRepository.findAccessory())
+            ProductType.Cornice -> Option.just(entityMetadataRepository.findCornice())
+            ProductType.Jalousie -> Option.just(entityMetadataRepository.findJalousie())
+            ProductType.Rolstor -> Option.just(entityMetadataRepository.findRolstor())
         }
     }
 
