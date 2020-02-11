@@ -1,5 +1,6 @@
 package by.market.parser.mapper.metadata
 
+import by.market.core.Constant
 import by.market.domain.AbstractProduct
 import by.market.domain.product.ProductAccessory
 import by.market.domain.product.ProductCornice
@@ -62,10 +63,10 @@ open class CharacteristicMetadata(private val dataTypeRepository: DataTypeReposi
 
     private fun createCharacteristicMetadata() : Pair<HashMap<String, IMetadataMapper>, MetadataRemover> {
         val mapEntityMetadata: HashMap<KClass<out AbstractProduct>, EntityMetadata> = HashMap()
-        mapEntityMetadata[ProductCornice::class] = entityMetadataRepository.findByTableName("cornice")
-        mapEntityMetadata[ProductRolstor::class] = entityMetadataRepository.findByTableName("rolstor")
-        mapEntityMetadata[ProductAccessory::class] = entityMetadataRepository.findByTableName("accessory")
-        mapEntityMetadata[ProductJalousie::class] = entityMetadataRepository.findByTableName("jalosie")
+        mapEntityMetadata[ProductCornice::class] = entityMetadataRepository.findByTableName(Constant.EntityMetadata.Cornice)
+        mapEntityMetadata[ProductRolstor::class] = entityMetadataRepository.findByTableName(Constant.EntityMetadata.Rolstor)
+        mapEntityMetadata[ProductAccessory::class] = entityMetadataRepository.findByTableName(Constant.EntityMetadata.Accessory)
+        mapEntityMetadata[ProductJalousie::class] = entityMetadataRepository.findByTableName(Constant.EntityMetadata.Jalousie)
 
         val result: HashMap<String, IMetadataMapper> = HashMap()
 
