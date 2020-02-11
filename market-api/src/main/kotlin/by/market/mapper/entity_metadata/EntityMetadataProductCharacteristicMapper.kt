@@ -5,6 +5,10 @@ import by.market.core.Constant
 import by.market.core.IBiMapper
 import by.market.domain.system.Category
 import by.market.domain.system.EntityMetadata
+import by.market.extension.findAccessory
+import by.market.extension.findCornice
+import by.market.extension.findJalousie
+import by.market.extension.findRolstor
 import by.market.repository.system.CategoryRepository
 import by.market.repository.system.EntityMetadataRepository
 import org.springframework.stereotype.Component
