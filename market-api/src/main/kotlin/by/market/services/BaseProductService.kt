@@ -24,10 +24,7 @@ import javax.persistence.TypedQuery
 import javax.persistence.criteria.*
 
 
-abstract class BaseProductService<
-        TEntity : AbstractProduct,
-        TRepository : AbstractProductRepository<TEntity>
-        >(rep: TRepository,
+abstract class BaseProductService<TEntity : AbstractProduct, TRepository : AbstractProductRepository<TEntity>>(rep: TRepository,
           protected val stringSingleCharacteristicRepository: StringSingleCharacteristicRepository,
           protected val doubleSingleCharacteristicRepository: DoubleSingleCharacteristicRepository)
     : IProductService<TEntity>, BaseService<TEntity, TRepository>(rep) {
@@ -55,6 +52,10 @@ abstract class BaseProductService<
 
     override fun findByCategory(category: Category): List<TEntity> {
         return rep.findByCategory(category)
+    }
+
+    override fun findById(id: UUID): Optional<TEntity> {
+        return rep.findById(id)
     }
 
     override fun findDoubleCharacteristicById(id: UUID): List<DoubleCharacteristic> {

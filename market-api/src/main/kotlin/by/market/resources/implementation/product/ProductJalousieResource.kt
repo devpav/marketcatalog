@@ -9,11 +9,18 @@ import by.market.services.filter.model.ProductFilter
 import org.springframework.data.domain.Pageable
 import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.*
+import java.util.*
 
 @RestController
 @RequestMapping("/api/jalousie-product")
 class ProductJalousieResource(facade: ProductJalousieFacade)
     : BaseProductResource<ProductJalousieFacade, ProductJalousieFrontEnd>(facade) {
+
+    @GetMapping("/{id}")
+    override fun findById(@PathVariable("id") id: UUID): ResponseEntity<ProductJalousieFrontEnd> {
+        return super.findById(id)
+    }
+
 
     @GetMapping
     override fun findAll(pageable: Pageable): ResponseEntity<MutableList<ProductJalousieFrontEnd>> {

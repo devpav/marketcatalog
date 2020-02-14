@@ -13,6 +13,13 @@ abstract class BaseMutableResource<TDto: BaseFrontEndEntity, TFacade : Facade<TD
         return ResponseEntity.ok(this.service.findAll(pageable).content.toMutableList())
     }
 
+    override fun findById(id: UUID): ResponseEntity<TDto> {
+        val entity = this.service.findById(id).orElse(null) ?:
+            return ResponseEntity.notFound().build()
+
+        return ResponseEntity.ok(entity)
+    }
+
     override fun <S : TDto?> save(entity: S): ResponseEntity<S> {
         TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
     }
