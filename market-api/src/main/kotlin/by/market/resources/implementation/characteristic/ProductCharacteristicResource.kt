@@ -2,6 +2,7 @@ package by.market.resources.implementation.characteristic
 
 import by.market.core.DataType
 import by.market.core.ProductType
+import by.market.domain.system.Category
 import by.market.domain.system.EntityMetadata
 import by.market.facade.characteristics.ProductCharacteristicFacade
 import by.market.mapper.dto.characteristics.ProductCharacteristicFrontEnd
@@ -65,43 +66,49 @@ class ProductCharacteristicResource(facade: ProductCharacteristicFacade)
 
     @GetMapping("/filter")
     fun filter(id: String): ResponseEntity<MutableList<UniversalCharacteristicFrontEnd>> {
-        var findCategoryId = UUID.fromString(id)
+        val findCategoryId = UUID.fromString(id)
         val categoryNullable = categoryRepository.findById(findCategoryId)
         if(!categoryNullable.isPresent || categoryNullable.get().parentCategory == null)
             return ResponseEntity.of(Optional.empty())
 
         val findCategory = categoryNullable.get()
 
+        val res = cachedFilter(findCategory).orElse(mutableListOf())
+        return ResponseEntity.ok(res)
+    }
+
+    @org.springframework.cache.annotation.Cacheable(value = ["characteristics"], key = "#findCategory")
+    protected open fun cachedFilter(findCategory: Category): Optional<MutableList<UniversalCharacteristicFrontEnd>> {
         val categoriesForFound = categoryRepository.findAllByParentCategory(findCategory)
                 .map { it.id }
                 .mapNotNull { it!! }
                 .toMutableList()
 
         if(!findCategory.isParent)
-            categoriesForFound.add(findCategoryId)
+            categoriesForFound.add(findCategory.id!!)
 
         if(categoriesForFound.count() == 0)
-            return ResponseEntity.of(Optional.empty())
+            return Optional.empty()
 
         val category = findCategory.parentCategory!!
 
         // Нужна родительская категория, чтобы определить тип сущности
         var parentEntityMetadata = entityMetadataProductCharacteristicMapper.toFrom(category).orNull()
         if(parentEntityMetadata == null)
-            return ResponseEntity.of(Optional.empty())
+            return Optional.empty()
 
         var parentProductType = entityMetadataProductTypeMapper.fromTo(parentEntityMetadata).orNull()
         if(parentProductType == null)
-            return ResponseEntity.of(Optional.empty())
+            return Optional.empty()
 
         val doubleMap: HashMap<UUID, CharacteristicValue> = HashMap()
         val stringMap: HashMap<UUID, CharacteristicValue> = HashMap()
 
         val entityIds = when(parentProductType) {
-            ProductType.Accessories -> accessoryRepository.getAllIdsByCategoryIds(categoriesForFound)
-            ProductType.Cornice     -> corniceRepository.getAllIdsByCategoryIds(categoriesForFound)
+            ProductType.Accessories  -> accessoryRepository.getAllIdsByCategoryIds(categoriesForFound)
+            ProductType.Cornice      -> corniceRepository.getAllIdsByCategoryIds(categoriesForFound)
             ProductType.Jalousie     -> jalousieRepository.getAllIdsByCategoryIds(categoriesForFound)
-            ProductType.Rolstor     -> rolstorRepository.getAllIdsByCategoryIds(categoriesForFound)
+            ProductType.Rolstor      -> rolstorRepository.getAllIdsByCategoryIds(categoriesForFound)
         }
 
         GlobalScope.run {
@@ -122,7 +129,7 @@ class ProductCharacteristicResource(facade: ProductCharacteristicFacade)
         }
 
         val result = (toUniversalCharacteristicFrontEnd(stringMap) + toUniversalCharacteristicFrontEnd(doubleMap)).toMutableList()
-        return ResponseEntity.ok(result)
+        return Optional.of(result)
     }
 
     private fun toUniversalCharacteristicFrontEnd(characteristic: HashMap<UUID, CharacteristicValue>): List<UniversalCharacteristicFrontEnd> {
