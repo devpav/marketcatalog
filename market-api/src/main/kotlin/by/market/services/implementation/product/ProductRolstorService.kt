@@ -1,5 +1,6 @@
 package by.market.services.implementation.product
 
+import by.market.core.Constant
 import by.market.domain.product.ProductRolstor
 import by.market.domain.system.EntityMetadata
 import by.market.repository.characteristic.single.DoubleSingleCharacteristicRepository
@@ -18,6 +19,6 @@ class ProductRolstorService(repository: ProductRolstorRepository,
         stringSingleCharacteristicRepository,
         doubleSingleCharacteristicRepository) {
     override fun getEntityMetadata(): EntityMetadata {
-        return entityMetadataRepository.findByTableName("rolstor")
+        return entityMetadataRepository.findByTableName(Constant.EntityMetadata.Rolstor)
     }
 }
