@@ -17,6 +17,7 @@ import by.market.repository.extension.findDouble
 import by.market.repository.extension.findString
 import by.market.repository.system.DataTypeRepository
 import by.market.repository.system.EntityMetadataRepository
+import org.jinq.tuples.Tuple4
 import org.slf4j.LoggerFactory
 import kotlin.reflect.KClass
 
@@ -30,11 +31,15 @@ open class CharacteristicMetadata(private val dataTypeRepository: DataTypeReposi
 
     private val map: HashMap<String, IMetadataMapper>
     private val remover: MetadataRemover
+    private val stringMetadataMapper: StringMetadataMapper
+    private val doubleMetadataMapper: DoubleMetadataMapper
 
     init {
         val metadata = createCharacteristicMetadata()
-        map = metadata.first
-        remover = metadata.second
+        map = metadata.one
+        remover = metadata.two
+        stringMetadataMapper = metadata.three
+        doubleMetadataMapper = metadata.four
     }
 
     fun <TProduct: AbstractProduct> handleCharacteristic(product: TProduct, characteristicName: String, value: String){
@@ -43,7 +48,7 @@ open class CharacteristicMetadata(private val dataTypeRepository: DataTypeReposi
             handler.mapToDatabaseEntity(product, characteristicName, value)
         }
         else{
-            logger.error("[handleCharacteristic] Not found characteristic mapper {}", characteristicName)
+            handleUnknownCharacteristic(product, characteristicName, value)
         }
     }
 
@@ -55,7 +60,19 @@ open class CharacteristicMetadata(private val dataTypeRepository: DataTypeReposi
             }
         }
         else{
-            logger.error("[handleCharacteristic] Not found characteristic mapper {}", characteristicName)
+            values.forEach {
+                handleUnknownCharacteristic(product, characteristicName, it)
+            }
+        }
+    }
+
+    private fun <TProduct: AbstractProduct> handleUnknownCharacteristic(product: TProduct, characteristicName: String, value: String) {
+        // Если на сайте появились новые характеристики, обрабатываем их в ручную
+        val doubleValue = value.toDoubleOrNull()
+        if(doubleValue != null){
+            doubleMetadataMapper.mapToDatabaseEntity(product, characteristicName, value)
+        } else {
+            stringMetadataMapper.mapToDatabaseEntity(product, characteristicName, value)
         }
     }
 
@@ -63,7 +80,7 @@ open class CharacteristicMetadata(private val dataTypeRepository: DataTypeReposi
         remover.remove(product)
     }
 
-    private fun createCharacteristicMetadata() : Pair<HashMap<String, IMetadataMapper>, MetadataRemover> {
+    private fun createCharacteristicMetadata() : Tuple4<HashMap<String, IMetadataMapper>, MetadataRemover, StringMetadataMapper, DoubleMetadataMapper> {
         val mapEntityMetadata: HashMap<KClass<out AbstractProduct>, EntityMetadata> = HashMap()
         mapEntityMetadata[ProductCornice::class] = entityMetadataRepository.findByTableName(Constant.EntityMetadata.Cornice)
         mapEntityMetadata[ProductRolstor::class] = entityMetadataRepository.findByTableName(Constant.EntityMetadata.Rolstor)
@@ -99,6 +116,6 @@ open class CharacteristicMetadata(private val dataTypeRepository: DataTypeReposi
         result["Ширина"]                                = doubleMetadataMapper
 
         val remover = MetadataRemover(mapEntityMetadata, doubleCharRep, stringCharRep, logger)
-        return Pair(result, remover)
+        return Tuple4(result, remover, stringMetadataMapper, doubleMetadataMapper)
     }
 }
