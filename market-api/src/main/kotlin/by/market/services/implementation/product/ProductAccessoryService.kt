@@ -1,5 +1,6 @@
 package by.market.services.implementation.product
 
+import by.market.core.Constant
 import by.market.domain.product.ProductAccessory
 import by.market.domain.system.EntityMetadata
 import by.market.repository.characteristic.single.DoubleSingleCharacteristicRepository
@@ -19,6 +20,6 @@ class ProductAccessoryService(repository: ProductAccessoryRepository,
         doubleSingleCharacteristicRepository) {
 
     override fun getEntityMetadata(): EntityMetadata {
-        return entityMetadataRepository.findByTableName("accessory")
+        return entityMetadataRepository.findByTableName(Constant.EntityMetadata.Accessory)
     }
 }
