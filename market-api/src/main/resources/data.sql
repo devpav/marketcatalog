@@ -14,7 +14,7 @@ VALUES
     ('ae842f08-27b8-4d4a-9027-25883f352f9e', 'data_type', 'Тип данных', 'a2f67e2c-f430-42f1-84f0-c0bd459831ba'),
     ('edcab99b-1fc6-4423-9f76-1218a98277b9', 'container', 'Контейнер', 'a2f67e2c-f430-42f1-84f0-c0bd459831ba'),
     ('283de48b-c432-4314-9274-7d0b978248f6', 'category', 'Категория', 'a2f67e2c-f430-42f1-84f0-c0bd459831ba'),
-    ('edcab99b-1fc6-4423-9f76-1218a98277b9', 'entity_metadata', 'Метаданные сущности', 'a2f67e2c-f430-42f1-84f0-c0bd459831ba'),
+    ('35985b15-36a0-4324-8c92-dead84d1a6b3', 'entity_metadata', 'Метаданные сущности', 'a2f67e2c-f430-42f1-84f0-c0bd459831ba'),
 
     ('8e7afb48-ee0b-4df7-8b14-80e42cb4e081', 'characteristic', 'Характеристика продукта', 'a531733a-7f3c-4001-9afa-77c5fbdfa7cf'),
     ('c8d321e0-41fe-4cd2-a097-bc9a04582721', 'string_characteristic', 'Строковая характеристика', 'a531733a-7f3c-4001-9afa-77c5fbdfa7cf'),
