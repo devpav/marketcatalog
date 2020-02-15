@@ -7,8 +7,6 @@ import by.market.repository.characteristic.single.DoubleSingleCharacteristicRepo
 import by.market.repository.characteristic.single.StringSingleCharacteristicRepository
 import by.market.repository.system.DataTypeRepository
 import by.market.repository.system.EntityMetadataRepository
-import kotlinx.coroutines.GlobalScope
-import kotlinx.coroutines.async
 import org.slf4j.LoggerFactory
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.stereotype.Component
@@ -43,40 +41,35 @@ class CharacteristicMapperHandler {
         }
     }
 
-    suspend fun <TProduct: AbstractProduct> handle(isNewProduct: Boolean, product: TProduct, parserProduct: AsforosProduct) {
-        val r = GlobalScope.async {
-            if(!isNewProduct)
-            {
-                // Удалять необходимо до вставок!!!
-                try {
-                    characteristicMetadata.deleteCharacteristics(product)
-                }catch (e: Exception){
-                    logger.error("Error when deleteCharacteristics for Product [${product.id}, ${product.title}]", e)
-                }
-            }
-
-            parserProduct.properties.forEach { entry ->
-                try {
-                    characteristicMetadata.handleCharacteristic(product, entry.key, entry.value)
-                }catch (e: Exception){
-                    logger.error("Error when handleCharacteristic properties for Product " +
-                            "[${product.id}, ${product.title}] " +
-                            "[characteristicName: ${entry.key}, value: ${entry.value}]", e)
-                }
-            }
-
-            parserProduct.propertiesFromDetailPage.forEach { entry ->
-                try {
-                    characteristicMetadata.handleCharacteristic(product, entry.key, entry.value)
-                }catch (e: Exception){
-                    logger.error("Error when handleCharacteristic propertiesFromDetailPage for Product " +
-                            "[${product.id}, ${product.title}] " +
-                            "[characteristicName: ${entry.key}, value: ${entry.value}]", e)
-                }
+    fun <TProduct: AbstractProduct> handle(isNewProduct: Boolean, product: TProduct, parserProduct: AsforosProduct) {
+        if(!isNewProduct) {
+            // Удалять необходимо до вставок!!!
+            try {
+                characteristicMetadata.deleteCharacteristics(product)
+            }catch (e: Exception){
+                logger.error("Error when deleteCharacteristics for Product [${product.id}, ${product.title}]", e)
             }
         }
 
-        r.await()
+        parserProduct.properties.forEach { entry ->
+            try {
+                characteristicMetadata.handleCharacteristic(product, entry.key, entry.value)
+            }catch (e: Exception){
+                logger.error("Error when handleCharacteristic properties for Product " +
+                        "[${product.id}, ${product.title}] " +
+                        "[characteristicName: ${entry.key}, value: ${entry.value}]", e)
+            }
+        }
+
+        parserProduct.propertiesFromDetailPage.forEach { entry ->
+            try {
+                characteristicMetadata.handleCharacteristic(product, entry.key, entry.value)
+            }catch (e: Exception){
+                logger.error("Error when handleCharacteristic propertiesFromDetailPage for Product " +
+                        "[${product.id}, ${product.title}] " +
+                        "[characteristicName: ${entry.key}, value: ${entry.value}]", e)
+            }
+        }
     }
 }
 
