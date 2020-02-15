@@ -73,13 +73,15 @@ class ProductCharacteristicResource(facade: ProductCharacteristicFacade)
         val findCategory = categoryNullable.get()
 
         val categoriesForFound = categoryRepository.findAllByParentCategory(findCategory)
-                .filter { !it.isParent }
                 .map { it.id }
                 .mapNotNull { it!! }
                 .toMutableList()
 
         if(!findCategory.isParent)
             categoriesForFound.add(findCategoryId)
+
+        if(categoriesForFound.count() == 0)
+            return ResponseEntity.of(Optional.empty())
 
         val category = findCategory.parentCategory!!
 
