@@ -1,5 +1,6 @@
 package by.market.parser.mapper.metadata
 
+import arrow.core.Tuple4
 import by.market.core.Constant
 import by.market.domain.AbstractProduct
 import by.market.domain.product.ProductAccessory
@@ -17,7 +18,6 @@ import by.market.repository.extension.findDouble
 import by.market.repository.extension.findString
 import by.market.repository.system.DataTypeRepository
 import by.market.repository.system.EntityMetadataRepository
-import org.jinq.tuples.Tuple4
 import org.slf4j.LoggerFactory
 import kotlin.reflect.KClass
 
@@ -36,10 +36,10 @@ open class CharacteristicMetadata(private val dataTypeRepository: DataTypeReposi
 
     init {
         val metadata = createCharacteristicMetadata()
-        map = metadata.one
-        remover = metadata.two
-        stringMetadataMapper = metadata.three
-        doubleMetadataMapper = metadata.four
+        map = metadata.a
+        remover = metadata.b
+        stringMetadataMapper = metadata.c
+        doubleMetadataMapper = metadata.d
     }
 
     fun <TProduct: AbstractProduct> handleCharacteristic(product: TProduct, characteristicName: String, value: String){
