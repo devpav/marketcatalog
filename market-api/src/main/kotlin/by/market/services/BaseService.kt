@@ -31,26 +31,6 @@ open class BaseService<TEntity: BaseEntity, TRepository: BaseRepository<TEntity>
 
     override fun getOne(id: UUID): BaseEntity = rep.getOne(id)
 
-    override fun <S : TEntity?> save(entity: S): S = rep.save(entity)
-
-    override fun <S : TEntity?> saveAll(iterable: Iterable<S>): MutableList<S> = rep.saveAll(iterable)
-
-    override fun <S : TEntity?> saveAndFlush(entity: S): S = rep.saveAndFlush(entity)
-
-    override fun deleteAll(): Unit = rep.deleteAll()
-
-    override fun deleteAll(iterable: Iterable<TEntity?>): Unit = rep.deleteAll(iterable)
-
-    override fun deleteById(id: UUID): Unit = rep.deleteById(id)
-
-    override fun delete(entity: TEntity): Unit = rep.delete(entity)
-
-    override fun deleteInBatch(iterable: Iterable<TEntity?>): Unit = rep.deleteInBatch(iterable)
-
-    override fun deleteAllInBatch(): Unit = rep.deleteAllInBatch()
-
-    override fun flush(): Unit = rep.flush()
-
     override fun <S : TEntity?> exists(example: Example<S>): Boolean = rep.exists(example)
 
     override fun existsById(id: UUID): Boolean = rep.existsById(id)

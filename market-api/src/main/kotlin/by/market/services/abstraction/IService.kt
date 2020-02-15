@@ -28,26 +28,6 @@ interface IService<TEntity> {
 
     fun getOne(id: UUID): BaseEntity
 
-    fun <S : TEntity?> save(entity: S): S
-
-    fun <S : TEntity?> saveAll(iterable: Iterable<S>): MutableList<S>
-
-    fun <S : TEntity?> saveAndFlush(entity: S): S
-
-    fun deleteAll(): Unit
-
-    fun deleteAll(iterable: Iterable<TEntity?>): Unit
-
-    fun deleteById(id: UUID): Unit
-
-    fun delete(entity: TEntity): Unit
-
-    fun deleteInBatch(iterable: Iterable<TEntity?>): Unit
-
-    fun deleteAllInBatch(): Unit
-
-    fun flush(): Unit
-
     fun <S : TEntity?> exists(example: Example<S>): Boolean
 
     fun existsById(id: UUID): Boolean
