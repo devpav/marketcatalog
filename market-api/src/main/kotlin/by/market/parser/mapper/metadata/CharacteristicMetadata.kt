@@ -57,7 +57,7 @@ open class CharacteristicMetadata(private val dataTypeRepository: DataTypeReposi
         }
     }
 
-    suspend fun deleteCharacteristics(product: AbstractProduct){
+    fun deleteCharacteristics(product: AbstractProduct){
         remover.remove(product)
     }
 

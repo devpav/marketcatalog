@@ -15,7 +15,7 @@ open class MetadataRemover(private val mapEntityMetadata: Map<KClass<out Abstrac
                            private val logger: Logger) {
 
     @Transactional
-    open suspend fun remove(product: AbstractProduct) {
+    open fun remove(product: AbstractProduct) {
         val metadata = mapEntityMetadata[product::class]
         if(metadata == null){
             logger.error("Not found category for class: ${product::class.jvmName}")
