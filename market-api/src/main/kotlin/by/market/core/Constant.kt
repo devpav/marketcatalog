@@ -6,6 +6,14 @@ object Constant {
         val Cornice: String = "cornice"
         val Jalousie: String = "jalousie"
         val Rolstor: String = "rolstor"
+
+        val DataType: String = "data_type"
+        val Container: String = "container"
+        val Category: String = "category"
+        val EntityMetadata: String = "entity_metadata"
+        val Characteristic: String = "characteristic"
+        val StringCharacteristic: String = "string_characteristic"
+        val DoubleCharacteristic: String = "double_characteristic"
     }
 
     object DataType {
