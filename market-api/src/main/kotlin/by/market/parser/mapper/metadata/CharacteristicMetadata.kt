@@ -13,6 +13,8 @@ import by.market.parser.mapper.metadata.database_mapper.StringMetadataMapper
 import by.market.repository.characteristic.ProductCharacteristicRepository
 import by.market.repository.characteristic.single.DoubleSingleCharacteristicRepository
 import by.market.repository.characteristic.single.StringSingleCharacteristicRepository
+import by.market.repository.extension.findDouble
+import by.market.repository.extension.findString
 import by.market.repository.system.DataTypeRepository
 import by.market.repository.system.EntityMetadataRepository
 import org.slf4j.LoggerFactory
@@ -71,10 +73,10 @@ open class CharacteristicMetadata(private val dataTypeRepository: DataTypeReposi
         val result: HashMap<String, IMetadataMapper> = HashMap()
 
         var stringMetadataMapper = StringMetadataMapper(productCharacteristicRepository, stringCharRep, mapEntityMetadata,
-                dataTypeRepository.findByName("STRING"))
+                dataTypeRepository.findString())
 
         var doubleMetadataMapper = DoubleMetadataMapper(productCharacteristicRepository, doubleCharRep, mapEntityMetadata,
-                dataTypeRepository.findByName("DOUBLE"))
+                dataTypeRepository.findDouble())
 
         result["Цвет"]                                  = stringMetadataMapper
         result["Артикул"]                               = stringMetadataMapper

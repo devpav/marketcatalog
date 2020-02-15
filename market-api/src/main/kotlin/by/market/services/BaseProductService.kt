@@ -1,5 +1,6 @@
 package by.market.services
 
+import by.market.core.Constant
 import by.market.domain.AbstractProduct
 import by.market.domain.characteristics.ProductCharacteristic
 import by.market.domain.characteristics.single.DoubleCharacteristic
@@ -91,11 +92,12 @@ abstract class BaseProductService<TEntity : AbstractProduct, TRepository : Abstr
                             val subqueryString = getSubqueryString(criteriaBuilder, createQuery, classValue, characteristic, root, it)
                             return criteriaBuilder.exists(subqueryString)
                         }
+
                         when (dataType.name) {
-                            "STRING" -> {
+                            Constant.DataType.String -> {
                                 predicates.add(getPredicateSubquery(StringCharacteristic::class.java))
                             }
-                            "DOUBLE" -> {
+                            Constant.DataType.Double -> {
                                 predicates.add(
                                         getPredicateSubquery(DoubleCharacteristic::class.java)
                                 )
