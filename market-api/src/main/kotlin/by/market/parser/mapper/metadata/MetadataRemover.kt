@@ -25,10 +25,10 @@ open class MetadataRemover(private val mapEntityMetadata: Map<KClass<out Abstrac
         if(product.id != null){
             val productId = product.id!!
 
-            if(!doubleCharRep.existsByProductRowIdAndEntityMetadata(productId, metadata))
+            if(doubleCharRep.existsByProductRowIdAndEntityMetadata(productId, metadata))
                 doubleCharRep.deleteAllByProductRowIdAndEntityMetadata(productId, metadata)
 
-            if(!stringCharRep.existsByProductRowIdAndEntityMetadata(productId, metadata))
+            if(stringCharRep.existsByProductRowIdAndEntityMetadata(productId, metadata))
                 stringCharRep.deleteAllByProductRowIdAndEntityMetadata(productId, metadata)
 
         }
