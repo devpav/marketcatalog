@@ -119,9 +119,7 @@ class ProductCharacteristicResource(facade: ProductCharacteristicFacade)
             }
         }
 
-        val result = (toUniversalCharacteristicFrontEnd(stringMap) + toUniversalCharacteristicFrontEnd(doubleMap))
-                .toMutableList()
-
+        val result = (toUniversalCharacteristicFrontEnd(stringMap) + toUniversalCharacteristicFrontEnd(doubleMap)).toMutableList()
         return ResponseEntity.ok(result)
     }
 
