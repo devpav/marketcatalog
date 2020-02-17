@@ -2,19 +2,10 @@ version: '2'
 
 services:
 
-  nginx:
-    extends:
-      file: nginx/nginx.yml
-      service: nginx
-    networks:
-      - vitmarketcatalog
-
   postgres:
     extends:
       file: postgres/postgres.yml
       service: postgres
-    depends_on:
-      - nginx
     volumes:
       - psql-volume:/var/lib/postgresql/data
     networks:
@@ -28,6 +19,15 @@ services:
       - backend-volume:/app/
     depends_on:
       - postgres
+    networks:
+      - vitmarketcatalog
+
+  nginx:
+    extends:
+      file: nginx/nginx.yml
+      service: nginx
+    depends_on:
+      - backend
     networks:
       - vitmarketcatalog
 

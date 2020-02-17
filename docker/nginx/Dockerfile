@@ -35,8 +35,8 @@ COPY --from=angular /usr/src/app/dist/${REPOSITORY_UI} /usr/share/nginx/html/
 
 RUN cd /usr/share/nginx/html/ && ls -a
 
-COPY devpav.ru.crt /etc/ssl/
-COPY devpav.ru.key /etc/ssl/
+COPY ./devpav.ru.crt /etc/ssl/
+COPY ./devpav.ru.key /etc/ssl/
 
 EXPOSE 80
 
