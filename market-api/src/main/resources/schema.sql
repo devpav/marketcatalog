@@ -31,7 +31,8 @@ create table tbx_s_category
     id                 UUID primary key,
     title              VARCHAR(256) NOT NULL,
     system_name        VARCHAR(256) NOT NULL,
-    id_parent_category UUID         NOT NULL REFERENCES tbx_s_category(id)
+    id_parent_category UUID         NOT NULL REFERENCES tbx_s_category(id),
+    img           VARCHAR(512)          NULL
 );
 
 create table tbx_ch_double_characteristic
