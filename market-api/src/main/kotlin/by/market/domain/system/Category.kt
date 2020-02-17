@@ -27,6 +27,11 @@ class Category : BaseEntity() {
         public get
         public set
 
+    @Column(name = "img")
+    var img: String? = null
+        public get
+        public set
+
     val isParent: Boolean
         get() = id == parentCategory?.id
 }
