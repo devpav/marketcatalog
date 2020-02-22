@@ -1,5 +1,6 @@
 package by.market.parser.mapper.metadata
 
+import arrow.core.Tuple4
 import by.market.core.Constant
 import by.market.domain.AbstractProduct
 import by.market.domain.product.ProductAccessory
@@ -13,6 +14,8 @@ import by.market.parser.mapper.metadata.database_mapper.StringMetadataMapper
 import by.market.repository.characteristic.ProductCharacteristicRepository
 import by.market.repository.characteristic.single.DoubleSingleCharacteristicRepository
 import by.market.repository.characteristic.single.StringSingleCharacteristicRepository
+import by.market.repository.extension.findDouble
+import by.market.repository.extension.findString
 import by.market.repository.system.DataTypeRepository
 import by.market.repository.system.EntityMetadataRepository
 import org.slf4j.LoggerFactory
@@ -28,11 +31,15 @@ open class CharacteristicMetadata(private val dataTypeRepository: DataTypeReposi
 
     private val map: HashMap<String, IMetadataMapper>
     private val remover: MetadataRemover
+    private val stringMetadataMapper: StringMetadataMapper
+    private val doubleMetadataMapper: DoubleMetadataMapper
 
     init {
         val metadata = createCharacteristicMetadata()
-        map = metadata.first
-        remover = metadata.second
+        map = metadata.a
+        remover = metadata.b
+        stringMetadataMapper = metadata.c
+        doubleMetadataMapper = metadata.d
     }
 
     fun <TProduct: AbstractProduct> handleCharacteristic(product: TProduct, characteristicName: String, value: String){
@@ -41,7 +48,7 @@ open class CharacteristicMetadata(private val dataTypeRepository: DataTypeReposi
             handler.mapToDatabaseEntity(product, characteristicName, value)
         }
         else{
-            logger.error("[handleCharacteristic] Not found characteristic mapper {}", characteristicName)
+            handleUnknownCharacteristic(product, characteristicName, value)
         }
     }
 
@@ -53,7 +60,19 @@ open class CharacteristicMetadata(private val dataTypeRepository: DataTypeReposi
             }
         }
         else{
-            logger.error("[handleCharacteristic] Not found characteristic mapper {}", characteristicName)
+            values.forEach {
+                handleUnknownCharacteristic(product, characteristicName, it)
+            }
+        }
+    }
+
+    private fun <TProduct: AbstractProduct> handleUnknownCharacteristic(product: TProduct, characteristicName: String, value: String) {
+        // Если на сайте появились новые характеристики, обрабатываем их в ручную
+        val doubleValue = value.toDoubleOrNull()
+        if(doubleValue != null){
+            doubleMetadataMapper.mapToDatabaseEntity(product, characteristicName, value)
+        } else {
+            stringMetadataMapper.mapToDatabaseEntity(product, characteristicName, value)
         }
     }
 
@@ -61,7 +80,7 @@ open class CharacteristicMetadata(private val dataTypeRepository: DataTypeReposi
         remover.remove(product)
     }
 
-    private fun createCharacteristicMetadata() : Pair<HashMap<String, IMetadataMapper>, MetadataRemover> {
+    private fun createCharacteristicMetadata() : Tuple4<HashMap<String, IMetadataMapper>, MetadataRemover, StringMetadataMapper, DoubleMetadataMapper> {
         val mapEntityMetadata: HashMap<KClass<out AbstractProduct>, EntityMetadata> = HashMap()
         mapEntityMetadata[ProductCornice::class] = entityMetadataRepository.findByTableName(Constant.EntityMetadata.Cornice)
         mapEntityMetadata[ProductRolstor::class] = entityMetadataRepository.findByTableName(Constant.EntityMetadata.Rolstor)
@@ -71,10 +90,10 @@ open class CharacteristicMetadata(private val dataTypeRepository: DataTypeReposi
         val result: HashMap<String, IMetadataMapper> = HashMap()
 
         var stringMetadataMapper = StringMetadataMapper(productCharacteristicRepository, stringCharRep, mapEntityMetadata,
-                dataTypeRepository.findByName("STRING"))
+                dataTypeRepository.findString())
 
         var doubleMetadataMapper = DoubleMetadataMapper(productCharacteristicRepository, doubleCharRep, mapEntityMetadata,
-                dataTypeRepository.findByName("DOUBLE"))
+                dataTypeRepository.findDouble())
 
         result["Цвет"]                                  = stringMetadataMapper
         result["Артикул"]                               = stringMetadataMapper
@@ -97,6 +116,6 @@ open class CharacteristicMetadata(private val dataTypeRepository: DataTypeReposi
         result["Ширина"]                                = doubleMetadataMapper
 
         val remover = MetadataRemover(mapEntityMetadata, doubleCharRep, stringCharRep, logger)
-        return Pair(result, remover)
+        return Tuple4(result, remover, stringMetadataMapper, doubleMetadataMapper)
     }
 }

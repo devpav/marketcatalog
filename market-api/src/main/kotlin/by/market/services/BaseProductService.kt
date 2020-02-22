@@ -1,5 +1,6 @@
 package by.market.services
 
+import by.market.core.Constant
 import by.market.domain.AbstractProduct
 import by.market.domain.characteristics.ProductCharacteristic
 import by.market.domain.characteristics.single.DoubleCharacteristic
@@ -11,6 +12,7 @@ import by.market.repository.characteristic.ProductCharacteristicRepository
 import by.market.repository.characteristic.single.DoubleSingleCharacteristicRepository
 import by.market.repository.characteristic.single.StringSingleCharacteristicRepository
 import by.market.repository.system.CategoryRepository
+import by.market.repository.system.EntityMetadataRepository
 import by.market.services.abstraction.IProductService
 import by.market.services.filter.model.FilterOperator
 import by.market.services.filter.model.ProductFilter
@@ -26,7 +28,9 @@ import javax.persistence.criteria.*
 
 abstract class BaseProductService<TEntity : AbstractProduct, TRepository : AbstractProductRepository<TEntity>>(rep: TRepository,
           protected val stringSingleCharacteristicRepository: StringSingleCharacteristicRepository,
-          protected val doubleSingleCharacteristicRepository: DoubleSingleCharacteristicRepository)
+          protected val doubleSingleCharacteristicRepository: DoubleSingleCharacteristicRepository,
+          private val entityMetadataRepository: EntityMetadataRepository,
+          private val tableName: String)
     : IProductService<TEntity>, BaseService<TEntity, TRepository>(rep) {
 
     @PersistenceContext
@@ -42,7 +46,7 @@ abstract class BaseProductService<TEntity : AbstractProduct, TRepository : Abstr
 
 
     private val lazyEntityMetadata: EntityMetadata by lazy {
-        getEntityMetadata()
+        entityMetadataRepository.findByTableName(tableName)
     }
 
     init {
@@ -66,9 +70,6 @@ abstract class BaseProductService<TEntity : AbstractProduct, TRepository : Abstr
         return stringSingleCharacteristicRepository.findByEntityMetadataAndProductRowId(lazyEntityMetadata, id)
     }
 
-    protected abstract fun getEntityMetadata(): EntityMetadata
-
-
     override fun findByFilter(filter: ProductFilter): List<TEntity> {
         val criteriaBuilder: CriteriaBuilder = entityManager.criteriaBuilder
         val createQuery: CriteriaQuery<TEntity> = criteriaBuilder.createQuery(classT)
@@ -91,11 +92,12 @@ abstract class BaseProductService<TEntity : AbstractProduct, TRepository : Abstr
                             val subqueryString = getSubqueryString(criteriaBuilder, createQuery, classValue, characteristic, root, it)
                             return criteriaBuilder.exists(subqueryString)
                         }
+
                         when (dataType.name) {
-                            "STRING" -> {
+                            Constant.DataType.String -> {
                                 predicates.add(getPredicateSubquery(StringCharacteristic::class.java))
                             }
-                            "DOUBLE" -> {
+                            Constant.DataType.Double -> {
                                 predicates.add(
                                         getPredicateSubquery(DoubleCharacteristic::class.java)
                                 )

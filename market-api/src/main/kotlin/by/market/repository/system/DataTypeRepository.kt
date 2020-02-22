@@ -6,7 +6,5 @@ import org.springframework.stereotype.Repository
 
 @Repository
 interface DataTypeRepository : BaseRepository<DataType> {
-
     fun findByName(name: String): DataType
-
 }

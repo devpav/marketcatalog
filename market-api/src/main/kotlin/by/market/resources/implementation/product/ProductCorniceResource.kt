@@ -6,6 +6,7 @@ import by.market.mapper.dto.product.ProductCorniceFrontEnd
 import by.market.mapper.dto.system.CategoryFrontEnd
 import by.market.resources.BaseProductResource
 import by.market.services.filter.model.ProductFilter
+import org.springframework.data.domain.Page
 import org.springframework.data.domain.Pageable
 import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.*
@@ -17,13 +18,13 @@ class ProductCorniceResource(facade: ProductCorniceFacade)
     : BaseProductResource<ProductCorniceFacade, ProductCorniceFrontEnd>(facade) {
 
     @GetMapping("/{id}")
-    override fun findById(@PathVariable("id") id: UUID): ResponseEntity<ProductCorniceFrontEnd> {
+    override fun findById(@PathVariable("id") id: UUID): ResponseEntity<Optional<ProductCorniceFrontEnd>> {
         return super.findById(id)
     }
 
 
     @GetMapping
-    override fun findAll(pageable: Pageable): ResponseEntity<MutableList<ProductCorniceFrontEnd>> {
+    override fun findAll(pageable: Pageable): ResponseEntity<Page<ProductCorniceFrontEnd>> {
         return super.findAll(pageable)
     }
 

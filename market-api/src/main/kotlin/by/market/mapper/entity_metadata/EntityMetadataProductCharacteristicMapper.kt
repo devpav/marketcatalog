@@ -5,10 +5,10 @@ import by.market.core.Constant
 import by.market.core.IBiMapper
 import by.market.domain.system.Category
 import by.market.domain.system.EntityMetadata
-import by.market.extension.findAccessory
-import by.market.extension.findCornice
-import by.market.extension.findJalousie
-import by.market.extension.findRolstor
+import by.market.repository.extension.findAccessory
+import by.market.repository.extension.findCornice
+import by.market.repository.extension.findJalousie
+import by.market.repository.extension.findRolstor
 import by.market.repository.system.CategoryRepository
 import by.market.repository.system.EntityMetadataRepository
 import org.springframework.stereotype.Component
@@ -19,16 +19,35 @@ class EntityMetadataProductCharacteristicMapper(private val categoryRep: Categor
     : IBiMapper<EntityMetadata, Category> {
     override fun fromTo(from: EntityMetadata): Option<Category> {
         return when(from.tableName) {
-            "accessory", "luversa", "grips_holders_hooks", "magnetic_clips"
-                -> Option.fromNullable(categoryRep.findBySystemName("accessory"))
-            "cornice", "metallic", "plastic_ceilings", "wall_metal_plastic",
-            "flexible", "accessories_for_ceiling", "metal_plastic_accessories", "accessories_for_metal"
-                -> Option.fromNullable(categoryRep.findBySystemName("cornice"))
-            "jalousie"
-                -> Option.fromNullable(categoryRep.findBySystemName("jalousie"))
-            "rolstor", "day_night", "standard", "in_box", "premium", "blackout"
-                -> Option.fromNullable(categoryRep.findBySystemName("rolstor"))
-            else -> Option.empty()
+            Constant.Category.Accessory,
+            Constant.Category.Luversa,
+            Constant.Category.GripsHoldersHooks,
+            Constant.Category.MagneticClips
+                -> Option.fromNullable(categoryRep.findAccessory())
+
+            Constant.Category.Cornice,
+            Constant.Category.Metallic,
+            Constant.Category.PlasticCeilings,
+            Constant.Category.WallMetalPlastic,
+            Constant.Category.Flexible,
+            Constant.Category.AccessoriesForCeiling,
+            Constant.Category.MetalPlasticAccessories,
+            Constant.Category.AccessoriesForMetal
+                -> Option.fromNullable(categoryRep.findCornice())
+
+            Constant.Category.Jalousie
+                -> Option.fromNullable(categoryRep.findJalousie())
+
+            Constant.Category.Rolstor,
+            Constant.Category.DayNight,
+            Constant.Category.Standard,
+            Constant.Category.InBox,
+            Constant.Category.Premium,
+            Constant.Category.Blackout
+                -> Option.fromNullable(categoryRep.findRolstor())
+
+            else
+                -> Option.empty()
         }
     }
 

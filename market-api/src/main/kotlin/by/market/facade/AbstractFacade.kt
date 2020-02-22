@@ -56,34 +56,6 @@ open class AbstractFacade<TService : IService<TEntity>, TDto : BaseFrontEndEntit
         return entityService.getOne(id)
     }
 
-    override fun <S : TDto?> save(entity: S): S {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
-    }
-
-    override fun <S : TDto?> saveAll(iterable: Iterable<S>): MutableList<S> {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
-    }
-
-    override fun <S : TDto?> saveAndFlush(entity: S): S {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
-    }
-
-    override fun deleteAll() = entityService.deleteAll()
-
-    override fun deleteAll(iterable: Iterable<TDto?>) {
-        return entityService.deleteAll(iterable.filterNotNull().map { mapper.from(it) })
-    }
-
-    override fun deleteById(id: UUID) = entityService.deleteById(id)
-
-    override fun delete(entity: TDto) = entityService.delete(mapper.from(entity))
-
-    override fun deleteInBatch(iterable: Iterable<TDto?>)  = entityService.deleteInBatch(iterable.filterNotNull().map{ mapper.from(it) })
-
-    override fun deleteAllInBatch() = entityService.deleteAllInBatch()
-
-    override fun flush() = entityService.flush()
-
     override fun <S : TDto?> exists(example: Example<S>): Boolean {
         TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
     }

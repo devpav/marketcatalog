@@ -1,4 +1,4 @@
-package by.market.extension
+package by.market.repository.extension
 
 import by.market.core.Constant
 import by.market.domain.system.EntityMetadata

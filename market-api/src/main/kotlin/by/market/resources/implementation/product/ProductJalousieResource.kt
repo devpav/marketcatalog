@@ -6,6 +6,7 @@ import by.market.mapper.dto.product.ProductJalousieFrontEnd
 import by.market.mapper.dto.system.CategoryFrontEnd
 import by.market.resources.BaseProductResource
 import by.market.services.filter.model.ProductFilter
+import org.springframework.data.domain.Page
 import org.springframework.data.domain.Pageable
 import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.*
@@ -17,13 +18,13 @@ class ProductJalousieResource(facade: ProductJalousieFacade)
     : BaseProductResource<ProductJalousieFacade, ProductJalousieFrontEnd>(facade) {
 
     @GetMapping("/{id}")
-    override fun findById(@PathVariable("id") id: UUID): ResponseEntity<ProductJalousieFrontEnd> {
+    override fun findById(@PathVariable("id") id: UUID): ResponseEntity<Optional<ProductJalousieFrontEnd>> {
         return super.findById(id)
     }
 
 
     @GetMapping
-    override fun findAll(pageable: Pageable): ResponseEntity<MutableList<ProductJalousieFrontEnd>> {
+    override fun findAll(pageable: Pageable): ResponseEntity<Page<ProductJalousieFrontEnd>> {
         return super.findAll(pageable)
     }
 

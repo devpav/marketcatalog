@@ -9,7 +9,16 @@ VALUES
     ('3247f7e1-2adf-4c23-9c60-6952c5740793', 'cornice', 'Корниз', 'a19e2196-9a8e-4a25-8e98-6d8eb578458f'),
     ('d4508d64-acf9-4aea-9edc-ddde1eaa6ba9', 'accessory', 'Аксессуар', 'a19e2196-9a8e-4a25-8e98-6d8eb578458f'),
     ('30b9c908-cbde-4511-bc67-6f9886e90861', 'jalousie', 'Жалюзи', 'a19e2196-9a8e-4a25-8e98-6d8eb578458f'),
-    ('57ef02b6-eed2-489d-a41b-584a5bdc970a', 'rolstor', 'Рольштора', 'a19e2196-9a8e-4a25-8e98-6d8eb578458f');
+    ('57ef02b6-eed2-489d-a41b-584a5bdc970a', 'rolstor', 'Рольштора', 'a19e2196-9a8e-4a25-8e98-6d8eb578458f'),
+
+    ('ae842f08-27b8-4d4a-9027-25883f352f9e', 'data_type', 'Тип данных', 'a2f67e2c-f430-42f1-84f0-c0bd459831ba'),
+    ('edcab99b-1fc6-4423-9f76-1218a98277b9', 'container', 'Контейнер', 'a2f67e2c-f430-42f1-84f0-c0bd459831ba'),
+    ('283de48b-c432-4314-9274-7d0b978248f6', 'category', 'Категория', 'a2f67e2c-f430-42f1-84f0-c0bd459831ba'),
+    ('35985b15-36a0-4324-8c92-dead84d1a6b3', 'entity_metadata', 'Метаданные сущности', 'a2f67e2c-f430-42f1-84f0-c0bd459831ba'),
+
+    ('8e7afb48-ee0b-4df7-8b14-80e42cb4e081', 'characteristic', 'Характеристика продукта', 'a531733a-7f3c-4001-9afa-77c5fbdfa7cf'),
+    ('c8d321e0-41fe-4cd2-a097-bc9a04582721', 'string_characteristic', 'Строковая характеристика', 'a531733a-7f3c-4001-9afa-77c5fbdfa7cf'),
+    ('383314ff-6cc2-44e1-84a6-9bb3e5612a77', 'double_characteristic', 'Числовая характеристика', 'a531733a-7f3c-4001-9afa-77c5fbdfa7cf');
 
 insert into tbx_s_data_type(id, name)
 VALUES
