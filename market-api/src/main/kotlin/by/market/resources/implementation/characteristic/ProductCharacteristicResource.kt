@@ -2,9 +2,9 @@ package by.market.resources.implementation.characteristic
 
 import by.market.core.DataType
 import by.market.core.ProductType
+import by.market.core.facade.characteristics.ProductCharacteristicFacade
 import by.market.domain.system.Category
 import by.market.domain.system.EntityMetadata
-import by.market.facade.characteristics.ProductCharacteristicFacade
 import by.market.mapper.dto.characteristics.ProductCharacteristicFrontEnd
 import by.market.mapper.dto.characteristics.UniversalCharacteristicFrontEnd
 import by.market.mapper.entity_metadata.EntityMetadataProductCharacteristicMapper

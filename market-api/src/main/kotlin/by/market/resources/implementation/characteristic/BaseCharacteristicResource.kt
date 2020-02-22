@@ -1,6 +1,6 @@
 package by.market.resources.implementation.characteristic
 
-import by.market.facade.Facade
+import by.market.core.facade.Facade
 import by.market.mapper.dto.BaseFrontEndEntity
 import by.market.resources.BaseMutableResource
 

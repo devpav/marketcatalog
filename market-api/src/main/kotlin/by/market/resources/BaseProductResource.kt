@@ -1,10 +1,10 @@
 package by.market.resources
 
-import by.market.facade.IProductFacade
+import by.market.ProductFilter
+import by.market.core.facade.IProductFacade
 import by.market.mapper.dto.AbstractFrontEndProduct
 import by.market.mapper.dto.characteristics.FrontEndCharacteristicPair
 import by.market.mapper.dto.system.CategoryFrontEnd
-import by.market.services.filter.model.ProductFilter
 import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.PathVariable

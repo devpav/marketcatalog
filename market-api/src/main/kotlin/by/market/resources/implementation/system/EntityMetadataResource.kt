@@ -1,6 +1,6 @@
 package by.market.resources.implementation.system
 
-import by.market.facade.system.EntityMetadataFacade
+import by.market.core.facade.system.EntityMetadataFacade
 import by.market.mapper.dto.system.EntityMetadataFrontEnd
 import by.market.resources.BaseMutableResource
 import org.springframework.web.bind.annotation.RequestMapping

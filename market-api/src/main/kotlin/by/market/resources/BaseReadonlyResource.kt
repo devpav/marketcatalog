@@ -1,7 +1,7 @@
 package by.market.resources
 
+import by.market.core.facade.Facade
 import by.market.domain.BaseEntity
-import by.market.facade.Facade
 import by.market.mapper.dto.BaseFrontEndEntity
 import org.springframework.data.domain.Example
 import org.springframework.data.domain.Page

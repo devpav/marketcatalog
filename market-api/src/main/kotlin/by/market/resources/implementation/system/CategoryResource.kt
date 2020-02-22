@@ -1,6 +1,6 @@
 package by.market.resources.implementation.system
 
-import by.market.facade.system.CategoryProductFacade
+import by.market.core.facade.system.CategoryProductFacade
 import by.market.mapper.dto.system.CategoryFrontEnd
 import by.market.resources.BaseMutableResource
 import org.springframework.data.domain.Page

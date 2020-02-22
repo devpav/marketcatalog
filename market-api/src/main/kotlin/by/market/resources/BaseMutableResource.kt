@@ -1,6 +1,6 @@
 package by.market.resources
 
-import by.market.facade.Facade
+import by.market.core.facade.Facade
 import by.market.mapper.dto.BaseFrontEndEntity
 import org.springframework.data.domain.Page
 import org.springframework.data.domain.Pageable
