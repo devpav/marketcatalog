@@ -2,8 +2,8 @@
 
 package product_listener
 
-import abstraction.IProductListener
 import org.jsoup.nodes.Document
+import parser.IProductListener
 
 open class EmptyProductListener<TItem> : IProductListener<TItem> {
   override fun onLoadDocument(doc: Document, pageNumber: UInt) {

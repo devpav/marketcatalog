@@ -1,7 +1,7 @@
 package product_listener
 
-import abstraction.IProductListener
 import org.jsoup.nodes.Document
+import parser.IProductListener
 
 class ChainProductListenerBuilder<T>{
 

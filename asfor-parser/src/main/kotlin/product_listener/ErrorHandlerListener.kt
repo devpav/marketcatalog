@@ -2,8 +2,8 @@
 
 package product_listener
 
-import abstraction.IProductListener
 import org.jsoup.nodes.Document
+import parser.IProductListener
 
 class ErrorHandlerListener<TItem>(private val listener: IProductListener<TItem>) : IProductListener<TItem> {
   override fun onLoadDocument(doc: Document, pageNumber: UInt) {
@@ -45,4 +45,5 @@ class ErrorHandlerListener<TItem>(private val listener: IProductListener<TItem>)
       println("Error 'onEndError' - $e")
     }
   }
+
 }

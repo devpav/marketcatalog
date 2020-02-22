@@ -1,9 +1,0 @@
-package by.market.services.characteristic.single
-
-import by.market.domain.characteristics.single.DoubleCharacteristic
-import by.market.repository.characteristic.single.DoubleSingleCharacteristicRepository
-import by.market.services.characteristic.BaseSingleCharacteristicService
-import org.springframework.stereotype.Service
-
-@Service
-class DoubleSingleCharacteristicService(repository: DoubleSingleCharacteristicRepository) : BaseSingleCharacteristicService<DoubleCharacteristic, DoubleSingleCharacteristicRepository>(repository)

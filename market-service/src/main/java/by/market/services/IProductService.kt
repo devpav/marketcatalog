@@ -4,6 +4,7 @@ import by.market.ProductFilter
 import by.market.domain.characteristics.single.DoubleCharacteristic
 import by.market.domain.characteristics.single.StringCharacteristic
 import by.market.domain.system.Category
+import by.market.services.IService
 import java.util.*
 
 interface IProductService<TEntity> : IService<TEntity> {

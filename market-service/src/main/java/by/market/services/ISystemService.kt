@@ -1,4 +1,5 @@
 package by.market.services.abstraction
 
-interface ISystemService<TEntity> : IService<TEntity> {
-}
+import by.market.services.IService
+
+interface ISystemService<TEntity> : IService<TEntity>

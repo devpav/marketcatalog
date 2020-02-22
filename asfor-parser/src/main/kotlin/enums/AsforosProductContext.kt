@@ -1,7 +1,7 @@
 package enums
 
-import abstraction.IParserContext
 import dal.ProductCategory
+import parser.IParserContext
 
 enum class AsforosProductContext(val categoriesArray: Array<ProductCategory>) : IParserContext {
   Cornice(arrayOf(
