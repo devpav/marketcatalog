@@ -5,6 +5,6 @@ import by.market.repository.product.ProductJalousieRepository
 import org.springframework.stereotype.Component
 
 @Component
-open class ProductJalousieMapper(rep: ProductJalousieRepository) : BaseParserMapper<ProductJalousie>(rep) {
+class ProductJalousieMapper(rep: ProductJalousieRepository) : BaseParserMapper<ProductJalousie>(rep) {
     override fun getEntity() = ProductJalousie()
 }

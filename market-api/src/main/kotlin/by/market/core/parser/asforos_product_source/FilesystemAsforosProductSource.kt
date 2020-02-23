@@ -1,11 +1,11 @@
 package by.market.core.parser.asforos_product_source
 
-import abstraction.IParserContext
 import by.market.core.IAsforosProductSource
 import com.fasterxml.jackson.databind.ObjectMapper
 import com.fasterxml.jackson.module.kotlin.readValue
 import javassist.NotFoundException
-import product.AsforosProduct
+import parser.AsforosProduct
+import parser.IParserContext
 import java.io.File
 import java.io.FileNotFoundException
 

@@ -6,7 +6,4 @@ import enums.AsforosProductContext
 import org.springframework.stereotype.Component
 
 @Component
-class JalousieEntitiesToDbEntity(mapper: ProductJalousieMapper)
-    : AsforosEntitiesToDbEntity<ProductJalousie>(AsforosProductContext.Jalosie,
-        mapper) {
-}
+class JalousieEntitiesToDbEntity(mapper: ProductJalousieMapper) : AsforosEntitiesToDbEntity<ProductJalousie>(AsforosProductContext.Jalosie, mapper)

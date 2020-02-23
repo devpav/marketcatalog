@@ -1,10 +1,10 @@
 package by.market.core.parser.asforos_product_source
 
-import abstraction.IParserContext
-import abstraction.IProductListener
 import by.market.core.IAsforosProductSource
+import parser.AsforosProduct
 import parser.AsforosProductParser
-import product.AsforosProduct
+import parser.IParserContext
+import parser.IProductListener
 import product_listener.EmptyProductListener
 
 class ParserAsforosProductSource(private val listener: IProductListener<AsforosProduct> = EmptyProductListener()) : IAsforosProductSource {

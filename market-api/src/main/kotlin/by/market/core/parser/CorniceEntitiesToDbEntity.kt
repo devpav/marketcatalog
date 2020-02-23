@@ -6,7 +6,4 @@ import enums.AsforosProductContext
 import org.springframework.stereotype.Component
 
 @Component
-class CorniceEntitiesToDbEntity(mapper: ProductCorniceMapper)
-    : AsforosEntitiesToDbEntity<ProductCornice>(AsforosProductContext.Cornice,
-        mapper) {
-}
+class CorniceEntitiesToDbEntity(mapper: ProductCorniceMapper) : AsforosEntitiesToDbEntity<ProductCornice>(AsforosProductContext.Cornice, mapper)

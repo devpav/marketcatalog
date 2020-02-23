@@ -5,7 +5,7 @@ import by.market.repository.product.ProductAccessoryRepository
 import org.springframework.stereotype.Component
 
 @Component
-open class ProductAccessoryMapper(rep: ProductAccessoryRepository) : BaseParserMapper<ProductAccessory>(rep) {
+class ProductAccessoryMapper(rep: ProductAccessoryRepository) : BaseParserMapper<ProductAccessory>(rep) {
 
     override fun getEntity() = ProductAccessory()
 

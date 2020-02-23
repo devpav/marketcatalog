@@ -1,13 +1,13 @@
 package by.market.core.parser
 
-import abstraction.IParserContext
 import by.market.core.IAsforosProductSource
 import by.market.core.IMapper
 import by.market.core.parser.asforos_product_source.ParserAsforosProductSource
 import by.market.domain.AbstractProduct
 import kotlinx.coroutines.runBlocking
 import org.slf4j.LoggerFactory
-import product.AsforosProduct
+import parser.AsforosProduct
+import parser.IParserContext
 
 open class AsforosEntitiesToDbEntity<TProduct: AbstractProduct>(private val context: IParserContext,
                                                                 private val mapper: IMapper<AsforosProduct, TProduct>) {

@@ -8,7 +8,7 @@ import by.market.repository.system.CategoryRepository
 import org.slf4j.LoggerFactory
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.transaction.annotation.Transactional
-import product.AsforosProduct
+import parser.AsforosProduct
 import javax.annotation.PostConstruct
 
 abstract class BaseParserMapper<TProduct: AbstractProduct>(

@@ -1,9 +1,9 @@
 package by.market.core.parser
 
-import abstraction.IProductListener
 import org.jsoup.nodes.Document
 import org.slf4j.Logger
-import product.AsforosProduct
+import parser.AsforosProduct
+import parser.IProductListener
 
 class LogListener(logger: Logger) : IProductListener<AsforosProduct> {
 
@@ -25,4 +25,5 @@ class LogListener(logger: Logger) : IProductListener<AsforosProduct> {
 
     override fun onLoadItem(doc: Document, item: AsforosProduct, pageNumber: UInt) {
     }
+
 }

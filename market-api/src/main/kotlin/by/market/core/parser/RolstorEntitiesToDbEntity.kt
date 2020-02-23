@@ -6,7 +6,4 @@ import enums.AsforosProductContext
 import org.springframework.stereotype.Component
 
 @Component
-class RolstorEntitiesToDbEntity(mapper: ProductRolstorMapper)
-    : AsforosEntitiesToDbEntity<ProductRolstor>(AsforosProductContext.Rolstor,
-        mapper) {
-}
+class RolstorEntitiesToDbEntity(mapper: ProductRolstorMapper) : AsforosEntitiesToDbEntity<ProductRolstor>(AsforosProductContext.Rolstor, mapper)

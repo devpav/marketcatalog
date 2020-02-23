@@ -5,7 +5,7 @@ import by.market.repository.product.ProductCorniceRepository
 import org.springframework.stereotype.Component
 
 @Component("productCorniceAsforMapper")
-open class ProductCorniceMapper(rep: ProductCorniceRepository) : BaseParserMapper<ProductCornice>(rep) {
+class ProductCorniceMapper(rep: ProductCorniceRepository) : BaseParserMapper<ProductCornice>(rep) {
 
     override fun getEntity() = ProductCornice()
 

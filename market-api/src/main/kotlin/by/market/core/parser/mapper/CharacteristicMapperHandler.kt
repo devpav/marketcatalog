@@ -10,7 +10,7 @@ import by.market.repository.system.EntityMetadataRepository
 import org.slf4j.LoggerFactory
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.stereotype.Component
-import product.AsforosProduct
+import parser.AsforosProduct
 import javax.annotation.PostConstruct
 
 @Component
