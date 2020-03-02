@@ -50,7 +50,13 @@ abstract class AbstractResource<TDTO>(protected val facade: Facade<TDTO>) : Muta
 
     @GetMapping("/{id}")
     override fun findById(@PathVariable("id") id: UUID): ResponseEntity<TDTO> {
-        return ResponseEntity.ok(facade.findById(id).orElse(null))
+        val entity = facade.findById(id)
+
+        if (!entity.isPresent) {
+            return ResponseEntity.notFound().build();
+        }
+
+        return ResponseEntity.ok(entity.get())
     }
 
     @GetMapping("/count")
