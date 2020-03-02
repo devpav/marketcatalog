@@ -2,16 +2,12 @@
 
 package parser
 
-import abstraction.IParserContext
-import abstraction.IProductListener
-import abstraction.IProductParser
 import dal.ProductCategory
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.async
 import org.jsoup.helper.HttpConnection
 import org.jsoup.nodes.Document
 import org.jsoup.nodes.Element
-import product.AsforosProduct
 import utility.mapAsync
 import utility.unwrapSync
 import java.util.concurrent.ConcurrentLinkedQueue

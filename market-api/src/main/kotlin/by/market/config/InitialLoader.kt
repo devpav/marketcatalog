@@ -1,9 +1,9 @@
 package by.market.config
 
-import by.market.parser.AccessoriesEntitiesToDbEntity
-import by.market.parser.CorniceEntitiesToDbEntity
-import by.market.parser.JalousieEntitiesToDbEntity
-import by.market.parser.RolstorEntitiesToDbEntity
+import by.market.core.parser.AccessoriesEntitiesToDbEntity
+import by.market.core.parser.CorniceEntitiesToDbEntity
+import by.market.core.parser.JalousieEntitiesToDbEntity
+import by.market.core.parser.RolstorEntitiesToDbEntity
 import kotlinx.coroutines.runBlocking
 import org.slf4j.LoggerFactory
 import org.springframework.boot.CommandLineRunner

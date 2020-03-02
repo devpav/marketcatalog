@@ -1,11 +1,11 @@
 package product_listener
 
-import abstraction.IProductListener
 import org.jsoup.nodes.Document
+import parser.IProductListener
 
-class CombineProductListener<TProduct>(private val first: IProductListener<TProduct>,
-                                       private val second: IProductListener<TProduct>)
-    : IProductListener<TProduct> {
+@ExperimentalUnsignedTypes
+class CombineProductListener<TProduct>(private val first: IProductListener<TProduct>, private val second: IProductListener<TProduct>) : IProductListener<TProduct> {
+
     override fun onLoadDocument(doc: Document, pageNumber: UInt) {
         first.onLoadDocument(doc, pageNumber)
         second.onLoadDocument(doc, pageNumber)
@@ -30,4 +30,5 @@ class CombineProductListener<TProduct>(private val first: IProductListener<TProd
         first.afterFillDetails(doc, product)
         second.afterFillDetails(doc, product)
     }
+
 }

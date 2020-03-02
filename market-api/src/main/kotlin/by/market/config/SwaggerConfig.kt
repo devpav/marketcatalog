@@ -16,7 +16,7 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2
 open class SwaggerConfig {
 
   @Bean
-  open fun productApi(): Docket? {
+  fun productApi(): Docket? {
     return Docket(DocumentationType.SWAGGER_2)
       .select()
       .apis(RequestHandlerSelectors.basePackage("by.market.resources"))
@@ -39,4 +39,5 @@ open class SwaggerConfig {
       .contact(Contact("Pavel Talaika", "https://github.com/devpav", "devpavdeveloper@gmail.com"))
       .build()
   }
+
 }

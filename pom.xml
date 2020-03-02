@@ -12,14 +12,26 @@
     <modules>
         <module>asfor-parser</module>
         <module>market-api</module>
+        <module>core</module>
+        <module>market-dto</module>
+        <module>market-facade</module>
+        <module>market-service</module>
+        <module>market-repository</module>
+        <module>market-mapper</module>
     </modules>
 
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.2.4.RELEASE</version>
+    </parent>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <kotlin.version>1.3.61</kotlin.version>
         <kotlin.test.version>3.4.1</kotlin.test.version>
+        <spring.version>2.2.4.RELEASE</spring.version>
     </properties>
 
     <dependencies>
@@ -47,6 +59,18 @@
             <groupId>org.jetbrains.kotlin</groupId>
             <artifactId>kotlin-test-junit</artifactId>
             <version>${kotlin.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.jetbrains.kotlin</groupId>
+            <artifactId>kotlin-test</artifactId>
+            <version>${kotlin.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <version>${spring.version}</version>
             <scope>test</scope>
         </dependency>
     </dependencies>
