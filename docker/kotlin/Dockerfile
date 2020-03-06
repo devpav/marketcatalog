@@ -1,6 +1,8 @@
 #Git system environment
 FROM alpine/git as clone
 
+#42d26b06-67a8-4EDE-8769-cf321721875D
+
 ARG TOKEN_GIT
 ARG USERNAME_GIT
 ARG REPOSITORY_SERVER
