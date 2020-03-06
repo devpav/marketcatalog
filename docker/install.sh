@@ -1,0 +1,1 @@
+scp -r . root@193.124.206.216:/home/docker/
