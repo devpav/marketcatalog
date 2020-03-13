@@ -9,23 +9,23 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>market-repository</artifactId>
+    <artifactId>market-domain</artifactId>
+
+    <properties>
+        <jackson.kotlin.version>2.10.0</jackson.kotlin.version>
+    </properties>
 
     <dependencies>
-        <dependency>
-            <groupId>by.market</groupId>
-            <artifactId>market-core</artifactId>
-            <version>${project.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>by.market</groupId>
-            <artifactId>market-domain</artifactId>
-            <version>${project.version}</version>
-        </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-jpa</artifactId>
             <version>${spring.version}</version>
         </dependency>
+        <dependency>
+            <groupId>com.fasterxml.jackson.module</groupId>
+            <artifactId>jackson-module-kotlin</artifactId>
+            <version>${jackson.kotlin.version}</version>
+        </dependency>
     </dependencies>
+
 </project>

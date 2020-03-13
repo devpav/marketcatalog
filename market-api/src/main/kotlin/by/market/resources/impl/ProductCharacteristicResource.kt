@@ -1,11 +1,11 @@
 package by.market.resources.impl
 
-import by.market.core.DataType
 import by.market.core.ProductType
 import by.market.domain.system.Category
 import by.market.domain.system.EntityMetadata
 import by.market.dto.characteristics.ProductCharacteristicDTO
 import by.market.dto.characteristics.UniversalCharacteristicDTO
+import by.market.dto.system.DataTypeDTO
 import by.market.facade.impl.ProductCharacteristicFacade
 import by.market.mapper.entity_metadata.EntityMetadataProductCharacteristicMapper
 import by.market.mapper.entity_metadata.EntityMetadataProductTypeMapper
@@ -135,24 +135,29 @@ class ProductCharacteristicResource(facade: ProductCharacteristicFacade) : Abstr
     private fun toUniversalCharacteristicFrontEnd(characteristic: HashMap<UUID, CharacteristicValue>): List<UniversalCharacteristicDTO> {
         return characteristic.map {
             val value = it.value
-            return@map UniversalCharacteristicDTO(value.characteristic.id,
-                    value.characteristic.title,
-                    value.characteristic.dataType,
-                    value.values)
+            return@map UniversalCharacteristicDTO(value.characteristic.id, value.characteristic.title, value.characteristic.dataType, value.values)
         }
     }
 
-    private fun buildStringCharacteristic(rows: List<UUID>, metadaa: EntityMetadata): List<Characteristic>{
-        return stringCharacteristicRep.findByProductRowIdInAndEntityMetadata(rows, metadaa)
-                .map { p -> Characteristic(p.productCharacteristic!!.id!!, p.productCharacteristic!!.title!!, DataType.String, p.value!!) }
+    private fun buildStringCharacteristic(rows: List<UUID>, metadata: EntityMetadata): List<Characteristic>{
+        return stringCharacteristicRep.findByProductRowIdInAndEntityMetadata(rows, metadata)
+                .map { p ->
+                    val dataTypeDTO = DataTypeDTO();
+                    dataTypeDTO.name = p.productCharacteristic!!.dataType!!.name
+                    return@map Characteristic(p.productCharacteristic!!.id!!, p.productCharacteristic!!.title!!, dataTypeDTO, p.value!!)
+                }
     }
 
-    private fun buildDoubleCharacteristic(rows: List<UUID>, metadaa: EntityMetadata): List<Characteristic>{
-        return doubleCharacteristicRep.findByProductRowIdInAndEntityMetadata(rows, metadaa)
-                .map { p -> Characteristic(p.productCharacteristic!!.id!!, p.productCharacteristic!!.title!!, DataType.Double, p.value!!.toString()) }
+    private fun buildDoubleCharacteristic(rows: List<UUID>, metadata: EntityMetadata): List<Characteristic>{
+        return doubleCharacteristicRep.findByProductRowIdInAndEntityMetadata(rows, metadata)
+                .map { p ->
+                    val dataTypeDTO = DataTypeDTO();
+                    dataTypeDTO.name = p.productCharacteristic!!.dataType!!.name
+                    return@map Characteristic(p.productCharacteristic!!.id!!, p.productCharacteristic!!.title!!, dataTypeDTO, p.value!!.toString())
+                }
     }
 
-    private data class Characteristic(val id: UUID, val title: String, val dataType: DataType, val value: String)
+    private data class Characteristic(val id: UUID, val title: String, val dataType: DataTypeDTO, val value: String)
 
     private data class CharacteristicValue(val characteristic: Characteristic, val values: HashSet<String>)
 

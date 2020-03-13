@@ -4,13 +4,9 @@ import by.market.domain.system.*
 import by.market.dto.system.CategoryDTO
 import by.market.dto.system.ContainerMetadataDTO
 import by.market.dto.system.DataTypeDTO
-import by.market.mapper.domain_dto_mapper.system.CategoryMapper
-import by.market.mapper.domain_dto_mapper.system.DataTypeMapper
-import by.market.mapper.domain_dto_mapper.system.EntityMetadataMapper
-import by.market.mapper.domain_dto_mapper.system.ProductTypeMapper
 import by.market.mapper.dto.system.EntityMetadataDTO
 import by.market.mapper.dto.system.ProductTypeDTO
-import by.market.mapper.system.ContainerMetadataMapper
+import by.market.mapper.system.*
 import by.market.services.impl.*
 import org.springframework.stereotype.Component
 

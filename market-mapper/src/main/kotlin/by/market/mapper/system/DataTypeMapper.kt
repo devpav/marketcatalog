@@ -1,4 +1,4 @@
-package by.market.mapper.domain_dto_mapper.system
+package by.market.mapper.system
 
 import by.market.domain.system.DataType
 import by.market.dto.system.DataTypeDTO

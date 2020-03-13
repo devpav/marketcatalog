@@ -11,11 +11,11 @@ import by.market.domain.product.ProductCornice
 import by.market.domain.product.ProductJalousie
 import by.market.domain.product.ProductRolstor
 import by.market.domain.system.EntityMetadata
+import by.market.extension.findDouble
+import by.market.extension.findString
 import by.market.repository.characteristic.ProductCharacteristicRepository
 import by.market.repository.characteristic.single.DoubleSingleCharacteristicRepository
 import by.market.repository.characteristic.single.StringSingleCharacteristicRepository
-import by.market.repository.extension.findDouble
-import by.market.repository.extension.findString
 import by.market.repository.system.DataTypeRepository
 import by.market.repository.system.EntityMetadataRepository
 import org.slf4j.LoggerFactory

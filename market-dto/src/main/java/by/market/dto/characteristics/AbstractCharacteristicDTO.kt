@@ -10,4 +10,5 @@ abstract class AbstractCharacteristicDTO<T> : BaseEntityDTO() {
     var productCharacteristicDTO: ProductCharacteristicDTO? = null
 
     var entityMetadata: EntityMetadataDTO? = null
+
 }
