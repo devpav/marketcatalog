@@ -1,4 +1,4 @@
-package by.market.mapper.domain_dto_mapper.product
+package by.market.mapper.product
 
 import by.market.domain.AbstractProduct
 import by.market.mapper.IMapstructMapper

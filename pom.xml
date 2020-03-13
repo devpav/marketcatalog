@@ -12,12 +12,13 @@
     <modules>
         <module>asfor-parser</module>
         <module>market-api</module>
-        <module>core</module>
+        <module>market-core</module>
         <module>market-dto</module>
         <module>market-facade</module>
         <module>market-service</module>
         <module>market-repository</module>
         <module>market-mapper</module>
+        <module>market-domain</module>
     </modules>
 
     <parent>

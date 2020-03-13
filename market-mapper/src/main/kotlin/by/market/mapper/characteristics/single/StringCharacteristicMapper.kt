@@ -1,4 +1,4 @@
-package by.market.mapper.domain_dto_mapper.characteristics.single
+package by.market.mapper.characteristics.single
 
 import by.market.domain.characteristics.single.StringCharacteristic
 import by.market.dto.characteristics.StringCharacteristicDTO

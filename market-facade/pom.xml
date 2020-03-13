@@ -15,22 +15,22 @@
         <dependency>
             <groupId>by.market</groupId>
             <artifactId>market-dto</artifactId>
-            <version>0.0.1</version>
+            <version>${project.version}</version>
         </dependency>
         <dependency>
             <groupId>by.market</groupId>
-            <artifactId>core</artifactId>
-            <version>0.0.1</version>
+            <artifactId>market-core</artifactId>
+            <version>${project.version}</version>
         </dependency>
         <dependency>
             <groupId>by.market</groupId>
             <artifactId>market-service</artifactId>
-            <version>0.0.1</version>
+            <version>${project.version}</version>
         </dependency>
         <dependency>
             <groupId>by.market</groupId>
             <artifactId>market-mapper</artifactId>
-            <version>0.0.1</version>
+            <version>${project.version}</version>
         </dependency>
     </dependencies>
 </project>

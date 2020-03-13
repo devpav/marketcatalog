@@ -8,10 +8,10 @@ import by.market.dto.product.ProductAccessoryDTO
 import by.market.dto.product.ProductCorniceDTO
 import by.market.dto.product.ProductJalousieDTO
 import by.market.dto.product.ProductRolstorDTO
-import by.market.mapper.domain_dto_mapper.product.ProductAccessoryMapper
-import by.market.mapper.domain_dto_mapper.product.ProductCorniceMapper
-import by.market.mapper.domain_dto_mapper.product.ProductJalosieMapper
-import by.market.mapper.domain_dto_mapper.product.ProductRolstorMapper
+import by.market.mapper.product.ProductAccessoryMapper
+import by.market.mapper.product.ProductCorniceMapper
+import by.market.mapper.product.ProductJalosieMapper
+import by.market.mapper.product.ProductRolstorMapper
 import by.market.services.impl.ProductAccessoryService
 import by.market.services.impl.ProductCorniceService
 import by.market.services.impl.ProductJalousieService
