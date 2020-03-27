@@ -17,7 +17,10 @@ open class BaseSystemCharacteristicService<TEntity: BaseEntity, TRepository: Bas
 
 @Service
 class CategoryService(repository: CategoryRepository) : BaseSystemCharacteristicService<Category, CategoryRepository>(repository){
+
     fun findAllByParentCategory(category: Category): List<Category> = rep.findAllByParentCategory(category)
+    fun countAllByParentCategory(category: Category): Long = rep.countAllByParentCategory(category)
+
 }
 
 @Service

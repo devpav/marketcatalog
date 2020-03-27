@@ -65,6 +65,7 @@ class AsforosProductParser() : IProductParser<AsforosProduct> {
   private fun openDocByUri(uri: String): Document
   {
     var connection = connectionPool.poll()
+
     if(connection == null){
       connection = HttpConnection()
       connection.timeout(10000 * 60)

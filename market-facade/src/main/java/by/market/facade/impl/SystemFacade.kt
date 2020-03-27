@@ -3,6 +3,7 @@ package by.market.facade.impl
 import by.market.domain.system.*
 import by.market.dto.system.CategoryDTO
 import by.market.dto.system.ContainerMetadataDTO
+import by.market.dto.system.ContentPage
 import by.market.dto.system.DataTypeDTO
 import by.market.mapper.dto.system.EntityMetadataDTO
 import by.market.mapper.dto.system.ProductTypeDTO
@@ -15,10 +16,17 @@ class CategoryProductFacade(
         categoryService: CategoryService,
         categoryMapper: CategoryMapper
 ) : BaseSystemFacade<CategoryDTO, Category, CategoryService>(categoryService, categoryMapper) {
-    fun findByParent(category: CategoryDTO): Collection<CategoryDTO> {
+
+    fun findByParent(category: CategoryDTO): ContentPage<CategoryDTO> {
         val databaseCategory = mapper.from(category)
-        return mapper.to(entityService.findAllByParentCategory(databaseCategory))
+
+        val findAllByParentCategory = entityService.findAllByParentCategory(databaseCategory)
+        val length = entityService.countAllByParentCategory(databaseCategory)
+
+        val collectionDTO = mapper.to(findAllByParentCategory).toMutableList()
+        return ContentPage(collectionDTO, length)
     }
+
 }
 
 

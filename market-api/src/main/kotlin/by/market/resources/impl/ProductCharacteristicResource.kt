@@ -2,6 +2,7 @@ package by.market.resources.impl
 
 import by.market.core.ProductType
 import by.market.domain.system.Category
+import by.market.domain.system.DataType
 import by.market.domain.system.EntityMetadata
 import by.market.dto.characteristics.ProductCharacteristicDTO
 import by.market.dto.characteristics.UniversalCharacteristicDTO
@@ -30,7 +31,7 @@ import kotlin.collections.HashSet
 
 @RestController
 @RequestMapping("/api/product-characteristic")
-class ProductCharacteristicResource(facade: ProductCharacteristicFacade) : AbstractResource<ProductCharacteristicDTO>(facade){
+class ProductCharacteristicResource(facade: ProductCharacteristicFacade) : AbstractResource<ProductCharacteristicDTO, ProductCharacteristicFacade>(facade){
 
     @Autowired
     private lateinit var stringCharacteristicRep: StringSingleCharacteristicRepository
@@ -93,13 +94,8 @@ class ProductCharacteristicResource(facade: ProductCharacteristicFacade) : Abstr
         val category = findCategory.parentCategory!!
 
         // Нужна родительская категория, чтобы определить тип сущности
-        var parentEntityMetadata = entityMetadataProductCharacteristicMapper.toFrom(category).orNull()
-        if(parentEntityMetadata == null)
-            return Optional.empty()
-
-        var parentProductType = entityMetadataProductTypeMapper.fromTo(parentEntityMetadata).orNull()
-        if(parentProductType == null)
-            return Optional.empty()
+        val parentEntityMetadata = entityMetadataProductCharacteristicMapper.toFrom(category).orNull() ?: return Optional.empty()
+        val parentProductType = entityMetadataProductTypeMapper.fromTo(parentEntityMetadata).orNull() ?: return Optional.empty()
 
         val doubleMap: HashMap<UUID, CharacteristicValue> = HashMap()
         val stringMap: HashMap<UUID, CharacteristicValue> = HashMap()
@@ -135,7 +131,7 @@ class ProductCharacteristicResource(facade: ProductCharacteristicFacade) : Abstr
     private fun toUniversalCharacteristicFrontEnd(characteristic: HashMap<UUID, CharacteristicValue>): List<UniversalCharacteristicDTO> {
         return characteristic.map {
             val value = it.value
-            return@map UniversalCharacteristicDTO(value.characteristic.id, value.characteristic.title, value.characteristic.dataType, value.values)
+            return@map UniversalCharacteristicDTO(value.characteristic.id, value.characteristic.title, value.characteristic.dataType!!.name!!, value.values)
         }
     }
 
@@ -144,21 +140,19 @@ class ProductCharacteristicResource(facade: ProductCharacteristicFacade) : Abstr
                 .map { p ->
                     val dataTypeDTO = DataTypeDTO();
                     dataTypeDTO.name = p.productCharacteristic!!.dataType!!.name
-                    return@map Characteristic(p.productCharacteristic!!.id!!, p.productCharacteristic!!.title!!, dataTypeDTO, p.value!!)
+                    return@map Characteristic(p.productCharacteristic!!.id!!, p.productCharacteristic!!.title!!, p.productCharacteristic!!.dataType, p.value!!)
                 }
     }
 
     private fun buildDoubleCharacteristic(rows: List<UUID>, metadata: EntityMetadata): List<Characteristic>{
         return doubleCharacteristicRep.findByProductRowIdInAndEntityMetadata(rows, metadata)
                 .map { p ->
-                    val dataTypeDTO = DataTypeDTO();
-                    dataTypeDTO.name = p.productCharacteristic!!.dataType!!.name
-                    return@map Characteristic(p.productCharacteristic!!.id!!, p.productCharacteristic!!.title!!, dataTypeDTO, p.value!!.toString())
+                    return@map Characteristic(p.productCharacteristic!!.id!!, p.productCharacteristic!!.title!!, p.productCharacteristic!!.dataType, p.value!!.toString())
                 }
     }
 
-    private data class Characteristic(val id: UUID, val title: String, val dataType: DataTypeDTO, val value: String)
+    private data class Characteristic(val id: UUID, val title: String, val dataType: DataType?, val value: String)
 
-    private data class CharacteristicValue(val characteristic: Characteristic, val values: HashSet<String>)
+    private data class CharacteristicValue(val  characteristic: Characteristic, val values: HashSet<String>)
 
 }

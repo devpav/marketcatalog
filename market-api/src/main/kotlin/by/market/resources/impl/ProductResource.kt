@@ -13,16 +13,16 @@ import org.springframework.web.bind.annotation.RestController
 
 @RestController
 @RequestMapping("/api/rolstor-product")
-class ProductRolstorResource(facade: ProductRolstorFacade) : BaseProductResource<ProductRolstorDTO>(facade)
+class ProductRolstorResource(facade: ProductRolstorFacade) : BaseProductResource<ProductRolstorDTO, ProductRolstorFacade>(facade)
 
 @RestController
 @RequestMapping("/api/jalousie-product")
-class ProductJalousieResource(facade: ProductJalousieFacade) : BaseProductResource<ProductJalousieDTO>(facade)
+class ProductJalousieResource(facade: ProductJalousieFacade) : BaseProductResource<ProductJalousieDTO, ProductJalousieFacade>(facade)
 
 @RestController
 @RequestMapping("/api/cornice-product")
-class ProductCorniceResource(facade: ProductCorniceFacade) : BaseProductResource<ProductCorniceDTO>(facade)
+class ProductCorniceResource(facade: ProductCorniceFacade) : BaseProductResource<ProductCorniceDTO, ProductCorniceFacade>(facade)
 
 @RestController
 @RequestMapping("/api/accessory-product")
-class ProductAccessoryResource(facade: ProductAccessoryFacade) : BaseProductResource<ProductAccessoryDTO>(facade)
+class ProductAccessoryResource(facade: ProductAccessoryFacade) : BaseProductResource<ProductAccessoryDTO, ProductAccessoryFacade>(facade)
