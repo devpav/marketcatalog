@@ -85,7 +85,7 @@ abstract class BaseProductFilterService<TEntity: BaseEntity> : BaseProductFilter
                 return@forEach
             }
 
-            val characteristicOptional = productCharacteristicRepository.findById(it.id_charact)
+            val characteristicOptional = productCharacteristicRepository.findById(it.characteristic)
 
             if (characteristicOptional.isPresent) {
                 return@forEach
