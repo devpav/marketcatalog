@@ -48,4 +48,5 @@ class ProjectMutableList<TFrom, TTo>(private val inner: MutableList<TFrom>,
 
     override fun subList(fromIndex: Int, toIndex: Int): MutableList<TTo>
             = ProjectMutableList(inner.subList(fromIndex, toIndex), mapperFromTo, mapperToFrom)
+
 }

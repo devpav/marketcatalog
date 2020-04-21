@@ -22,9 +22,10 @@ open class AbstractFacade<TService : IService<TEntity>, TDto : BaseEntityDTO, TE
     }
 
     override fun findAll(pageable: Pageable): ContentPage<TDto> {
-        val mappedCollection = entityService.findAll(pageable).map { mapper.to(it) }.content
+        val page  = entityService.findAll(pageable);
+        val mappedCollection = page.map { mapper.to(it) }.content
 
-        val length = entityService.count()
+        val length = page.totalElements
 
         return ContentPage(mappedCollection, length, pageable.pageNumber, pageable.pageSize)
     }

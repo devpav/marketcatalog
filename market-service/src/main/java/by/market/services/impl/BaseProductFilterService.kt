@@ -14,7 +14,6 @@ import by.market.services.BaseProductFilter
 import org.springframework.data.domain.Pageable
 import java.lang.reflect.ParameterizedType
 import java.util.*
-import javax.annotation.PostConstruct
 import javax.persistence.EntityManager
 import javax.persistence.PersistenceContext
 import javax.persistence.TypedQuery
@@ -25,10 +24,11 @@ abstract class BaseProductFilterService<TEntity: BaseEntity> : BaseProductFilter
     @PersistenceContext
     private lateinit var entityManager: EntityManager
 
-    private lateinit var criteriaBuilder: CriteriaBuilder
-    private lateinit var createQuery: CriteriaQuery<TEntity>
-    private lateinit var root: Root<TEntity>
-    private lateinit var classT: Class<TEntity>
+    private var criteriaBuilder: CriteriaBuilder
+    private var createQuery: CriteriaQuery<TEntity>
+    private var root: Root<TEntity>
+
+    private val classT: Class<TEntity>
 
     private lateinit var categoryRepository: CategoryRepository
     private lateinit var productCharacteristicRepository: ProductCharacteristicRepository
@@ -37,14 +37,12 @@ abstract class BaseProductFilterService<TEntity: BaseEntity> : BaseProductFilter
     init {
         val parameterizedType = this.javaClass.genericSuperclass as ParameterizedType
         classT = parameterizedType.actualTypeArguments[0] as Class<TEntity>
-    }
 
-    @PostConstruct
-    fun init() {
         criteriaBuilder = entityManager.criteriaBuilder
         createQuery = criteriaBuilder.createQuery(classT)
         root = createQuery.from(classT)
     }
+
 
     override fun findByFilter(filter: ProductFilter, pageable: Pageable): MutableList<TEntity> {
         val predicates = collectPredicateByFilter(filter)
@@ -87,7 +85,7 @@ abstract class BaseProductFilterService<TEntity: BaseEntity> : BaseProductFilter
 
             val characteristicOptional = productCharacteristicRepository.findById(it.characteristic)
 
-            if (characteristicOptional.isPresent) {
+            if (!characteristicOptional.isPresent) {
                 return@forEach
             }
 
@@ -165,7 +163,9 @@ abstract class BaseProductFilterService<TEntity: BaseEntity> : BaseProductFilter
             }
         }
 
-        return subquery.select(from).where(equalFieldCharacteristic, equalFieldProductId, inValues)
+        return subquery
+                .select(from)
+                .where(equalFieldCharacteristic, equalFieldProductId, inValues)
     }
 
 

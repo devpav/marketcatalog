@@ -24,4 +24,5 @@ open class AbstractProduct : BaseEntity() {
     var category: Category? = null
         public get
         public set
+
 }

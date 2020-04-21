@@ -17,6 +17,7 @@ import kotlinx.coroutines.async
 import kotlinx.coroutines.runBlocking
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.data.domain.Pageable
+import java.util.*
 
 open class BaseProductFacade<TDto : AbstractProductDTO, TEntity : AbstractProduct>(entityService: IProductService<TEntity>,
                                                                                    mapper: IMapstructMapper<TDto, TEntity>)
@@ -26,20 +27,18 @@ open class BaseProductFacade<TDto : AbstractProductDTO, TEntity : AbstractProduc
     private lateinit var categoryMapper: IMapstructMapper<CategoryDTO, Category>
 
 
-    override fun findByCategory(category: CategoryDTO): ContentPage<TDto> {
-        val databaseCategory = categoryMapper.from(category)
+    override fun findByCategory(category: String, pageable: Pageable): ContentPage<TDto> {
+        val page = entityService.findByCategory(UUID.fromString(category), pageable);
 
-        val entitiesByCategory = entityService.findByCategory(databaseCategory)
-        val length = entityService.countByCategory(databaseCategory)
+        val toMutableList = mapper.to(page.content).toMutableList()
 
-        val toMutableList = mapper.to(entitiesByCategory).toMutableList()
-
-        return ContentPage(toMutableList, length)
+        return ContentPage(toMutableList, page.totalElements, pageable.pageNumber, pageable.pageSize)
     }
 
     override fun findCharacteristicByProduct(dto: TDto): CharacteristicPairDTO {
         return runBlocking {
             val doubleCharacteristicTask = async { buildCharacteristicMap(entityService.findDoubleCharacteristicById(dto.id!!)) }
+
             val stringCharacteristicTask = async { buildCharacteristicMap(entityService.findStringCharacteristicById(dto.id!!)) }
 
             val doubleRes = doubleCharacteristicTask.await()

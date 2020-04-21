@@ -6,16 +6,16 @@
 
     <groupId>by.market</groupId>
     <artifactId>market-catalog</artifactId>
-    <version>0.0.1</version>
+    <version>1.0.0</version>
     <packaging>pom</packaging>
 
     <modules>
         <module>asfor-parser</module>
-        <module>market-api</module>
         <module>market-core</module>
+        <module>market-api</module>
         <module>market-dto</module>
-        <module>market-facade</module>
         <module>market-service</module>
+        <module>market-facade</module>
         <module>market-repository</module>
         <module>market-mapper</module>
         <module>market-domain</module>

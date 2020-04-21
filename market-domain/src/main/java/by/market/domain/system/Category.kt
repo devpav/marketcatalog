@@ -34,4 +34,5 @@ class Category : BaseEntity() {
 
     val isParent: Boolean
         get() = id == parentCategory?.id
+
 }

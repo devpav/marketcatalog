@@ -10,4 +10,7 @@ class CategoryDTO : BaseEntityDTO() {
     var systemName: String? = null;
 
     var parent: UUID? = null
+
+    var img: String? = null
+
 }

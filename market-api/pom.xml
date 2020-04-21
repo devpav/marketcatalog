@@ -5,7 +5,7 @@
     <parent>
         <groupId>by.market</groupId>
         <artifactId>market-catalog</artifactId>
-        <version>0.0.1</version>
+        <version>1.0.0</version>
     </parent>
 
     <packaging>jar</packaging>
@@ -31,6 +31,11 @@
         <dependency>
             <groupId>by.market</groupId>
             <artifactId>market-core</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>by.market</groupId>
+            <artifactId>market-domain</artifactId>
             <version>${project.version}</version>
         </dependency>
         <dependency>

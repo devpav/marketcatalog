@@ -10,19 +10,19 @@ import org.springframework.data.domain.Pageable
 import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.PostMapping
+import org.springframework.web.bind.annotation.RequestParam
 
 open class BaseProductResource<TDto: AbstractProductDTO, TProductFacade: IProductFacade<TDto>>(protected val productFacade: TProductFacade)
     : AbstractResource<TDto, TProductFacade>(productFacade) {
 
     @GetMapping("/category")
-    open fun findByCategory(category: CategoryDTO): ResponseEntity<ContentPage<TDto>> {
-        return ResponseEntity.ok(productFacade.findByCategory(category))
+    open fun findByCategory(@RequestParam("id") category: String, pageable: Pageable): ResponseEntity<ContentPage<TDto>> {
+        return ResponseEntity.ok(productFacade.findByCategory(category, pageable))
     }
 
     @GetMapping("/categories")
     open fun findByCategories(categories: List<CategoryDTO>): ResponseEntity<MutableList<ContentPage<TDto>>> {
-        val res = categories.mapNotNull { findByCategory(it).body }.toMutableList()
-        return ResponseEntity.ok(res)
+        return ResponseEntity.ok(null)
     }
 
     @GetMapping("/characteristic")

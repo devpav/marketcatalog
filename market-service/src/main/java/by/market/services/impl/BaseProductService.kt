@@ -14,6 +14,7 @@ import by.market.repository.system.CategoryRepository
 import by.market.repository.system.EntityMetadataRepository
 import by.market.services.abstraction.IProductService
 import org.springframework.beans.factory.annotation.Autowired
+import org.springframework.data.domain.Page
 import org.springframework.data.domain.Pageable
 import java.lang.reflect.ParameterizedType
 import java.util.*
@@ -59,12 +60,8 @@ abstract class BaseProductService<TEntity : AbstractProduct, TRepository : Abstr
     }
 
 
-    override fun findByCategory(category: Category, pageable: Pageable): MutableList<TEntity> {
-        return rep.findByCategory(category, pageable)
-    }
-
-    override fun findByCategory(category: Category): List<TEntity> {
-        return rep.findByCategory(category)
+    override fun findByCategory(category: UUID, pageable: Pageable): Page<TEntity> {
+        return rep.findByCategory_Id(category, pageable)
     }
 
     override fun countByCategory(category: Category): Long {

@@ -7,11 +7,15 @@ import by.market.mapper.MapperConfig
 import org.mapstruct.InheritInverseConfiguration
 import org.mapstruct.Mapper
 import org.mapstruct.Mapping
+import org.mapstruct.Mappings
 
 @Mapper(config = MapperConfig::class)
 interface CategoryMapper : IMapstructMapper<CategoryDTO, Category> {
 
-    @Mapping(source = "parentCategory.id", target = "parent")
+    @Mappings(value = [
+        Mapping(source = "parentCategory.id", target = "parent"),
+        Mapping(source = "img", target = "img")
+    ])
     override fun to(e: Category): CategoryDTO
 
     @InheritInverseConfiguration
