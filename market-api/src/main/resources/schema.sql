@@ -1,11 +1,11 @@
-create table tbx_s_container
+create table if not exists tbx_s_container
 (
     id          UUID primary key,
     description TEXT        NOT NULL,
     system_name VARCHAR(20) NOT NULL
 );
 
-create table tbx_s_entity_metadata
+create table if not exists tbx_s_entity_metadata
 (
     id           UUID primary key,
     table_name   VARCHAR(50)    NOT NULL,
@@ -13,20 +13,20 @@ create table tbx_s_entity_metadata
     id_container UUID           NOT NULL REFERENCES tbx_s_container(id)
 );
 
-create table tbx_s_data_type
+create table if not exists tbx_s_data_type
 (
     id          UUID primary key,
     name        VARCHAR(36) NOT NULL
 );
 
-create table tbx_ch_characteristic
+create table if not exists tbx_ch_characteristic
 (
     id            UUID primary key,
     title         VARCHAR(100),
     id_data_type  UUID NOT NULL REFERENCES tbx_s_data_type(id)
 );
 
-create table tbx_s_category
+create table if not exists tbx_s_category
 (
     id                 UUID primary key,
     title              VARCHAR(256) NOT NULL,
@@ -35,7 +35,7 @@ create table tbx_s_category
     img           VARCHAR(512)          NULL
 );
 
-create table tbx_ch_double_characteristic
+create table if not exists tbx_ch_double_characteristic
 (
     id                          UUID primary key,
     value                       DECIMAL(19, 4) NOT NULL,
@@ -44,7 +44,7 @@ create table tbx_ch_double_characteristic
     id_product_row              UUID NOT NULL
 );
 
-create table tbx_ch_string_characteristic
+create table if not exists tbx_ch_string_characteristic
 (
     id                          UUID primary key,
     value                       TEXT NOT NULL,
@@ -53,7 +53,7 @@ create table tbx_ch_string_characteristic
     id_product_row              UUID NOT NULL
 );
 
-create table tbx_p_accessory
+create table if not exists tbx_p_accessory
 (
     id                          UUID primary key,
     title                       VARCHAR(256) NOT NULL,
@@ -61,7 +61,7 @@ create table tbx_p_accessory
     id_category                 UUID NOT NULL REFERENCES tbx_s_category(id)
 );
 
-create table tbx_p_jalousie
+create table if not exists tbx_p_jalousie
 (
     id                          UUID primary key,
     title                       VARCHAR(256) NOT NULL,
@@ -69,7 +69,7 @@ create table tbx_p_jalousie
     id_category                 UUID NOT NULL REFERENCES tbx_s_category(id)
 );
 
-create table tbx_p_cornice
+create table if not exists tbx_p_cornice
 (
     id                          UUID primary key,
     title                       VARCHAR(256) NOT NULL,
@@ -77,7 +77,7 @@ create table tbx_p_cornice
     id_category                 UUID REFERENCES tbx_s_category(id)
 );
 
-create table tbx_p_rolstor
+create table if not exists tbx_p_rolstor
 (
     id                          UUID primary key,
     title                       VARCHAR(256) NOT NULL,

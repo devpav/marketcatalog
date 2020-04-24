@@ -89,10 +89,10 @@ open class CharacteristicMetadata(private val dataTypeRepository: DataTypeReposi
 
         val result: HashMap<String, IMetadataMapper> = HashMap()
 
-        var stringMetadataMapper = StringMetadataMapper(productCharacteristicRepository, stringCharRep, mapEntityMetadata,
+        val stringMetadataMapper = StringMetadataMapper(productCharacteristicRepository, stringCharRep, mapEntityMetadata,
                 dataTypeRepository.findString())
 
-        var doubleMetadataMapper = DoubleMetadataMapper(productCharacteristicRepository, doubleCharRep, mapEntityMetadata,
+        val doubleMetadataMapper = DoubleMetadataMapper(productCharacteristicRepository, doubleCharRep, mapEntityMetadata,
                 dataTypeRepository.findDouble())
 
         result["Цвет"]                                  = stringMetadataMapper

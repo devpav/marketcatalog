@@ -14,6 +14,7 @@ import by.market.services.BaseProductFilter
 import org.springframework.data.domain.Pageable
 import java.lang.reflect.ParameterizedType
 import java.util.*
+import javax.annotation.PostConstruct
 import javax.persistence.EntityManager
 import javax.persistence.PersistenceContext
 import javax.persistence.TypedQuery
@@ -24,9 +25,9 @@ abstract class BaseProductFilterService<TEntity: BaseEntity> : BaseProductFilter
     @PersistenceContext
     private lateinit var entityManager: EntityManager
 
-    private var criteriaBuilder: CriteriaBuilder
-    private var createQuery: CriteriaQuery<TEntity>
-    private var root: Root<TEntity>
+    private lateinit var criteriaBuilder: CriteriaBuilder
+    private lateinit var createQuery: CriteriaQuery<TEntity>
+    private lateinit var root: Root<TEntity>
 
     private val classT: Class<TEntity>
 
@@ -37,7 +38,10 @@ abstract class BaseProductFilterService<TEntity: BaseEntity> : BaseProductFilter
     init {
         val parameterizedType = this.javaClass.genericSuperclass as ParameterizedType
         classT = parameterizedType.actualTypeArguments[0] as Class<TEntity>
+    }
 
+    @PostConstruct
+    fun init() {
         criteriaBuilder = entityManager.criteriaBuilder
         createQuery = criteriaBuilder.createQuery(classT)
         root = createQuery.from(classT)

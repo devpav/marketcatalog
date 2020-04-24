@@ -5,8 +5,11 @@ spring:
     username: dev
     password: dev
     platform: h2
-    data: classpath:data.sql
+
     initialization-mode: always
+    data: classpath:data.sql
+    schema: classpath:schema.sql
+
     tomcat:
       initial-size: 1000
       max-wait: 20000
@@ -14,6 +17,8 @@ spring:
       max-age: 50
       max-idle: 25
       default-auto-commit: true
+
+
 
   jpa:
     database-platform: org.hibernate.dialect.H2Dialect

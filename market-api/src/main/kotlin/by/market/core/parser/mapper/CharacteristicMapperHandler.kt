@@ -43,10 +43,9 @@ class CharacteristicMapperHandler {
 
     fun <TProduct: AbstractProduct> handle(isNewProduct: Boolean, product: TProduct, parserProduct: AsforosProduct) {
         if(!isNewProduct) {
-            // Удалять необходимо до вставок!!!
             try {
                 characteristicMetadata.deleteCharacteristics(product)
-            }catch (e: Exception){
+            } catch (e: Exception) {
                 logger.error("Error when deleteCharacteristics for Product [${product.id}, ${product.title}]", e)
             }
         }

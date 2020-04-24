@@ -1,3 +1,4 @@
+
 insert into tbx_s_container(id, description, system_name)
 VALUES
     ('a19e2196-9a8e-4a25-8e98-6d8eb578458f', 'Продукт', 'p'),

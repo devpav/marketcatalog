@@ -25,6 +25,7 @@ class CharacteristicMapperHandlerTest {
 
     @Test
     @DisplayName("Проверка на загрузку данных с asforos")
+    @org.junit.Ignore()
     fun handle() {
         val asforosProduct = AsforosProduct()
         asforosProduct.title = "title product"
