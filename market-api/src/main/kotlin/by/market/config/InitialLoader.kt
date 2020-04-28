@@ -20,7 +20,7 @@ class InitialLoader(private val jalousieSync: JalousieEntitiesToDbEntity,
     private val log = LoggerFactory.getLogger(InitialLoader::class.java)
 
     override fun run(vararg args: String?) {
-        if (env.activeProfiles.any{ it == "prod" || it == "local" || it == "dev" }) {
+        if (env.activeProfiles.any{ it == "prod" || it == "local" }) {
             log.warn("Start ApplicationRunner with args: ", args)
             runBlocking {
 
@@ -39,7 +39,7 @@ class InitialLoader(private val jalousieSync: JalousieEntitiesToDbEntity,
                         }
             }
             log.warn("Data was loaded")
-        }else{
+        } else {
             log.warn("Skip initialization database")
         }
     }

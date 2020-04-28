@@ -66,7 +66,7 @@ class ProductCharacteristicResource(facade: ProductCharacteristicFacade) : Abstr
     }
 
     @GetMapping("/filter")
-    fun filter(id: String): ResponseEntity<MutableList<UniversalCharacteristicDTO>> {
+    fun filter(id: String): ResponseEntity<FilterCategory> {
         val findCategoryId = UUID.fromString(id)
         val categoryNullable = categoryRepository.findById(findCategoryId)
         if(!categoryNullable.isPresent || categoryNullable.get().parentCategory == null)
@@ -74,12 +74,12 @@ class ProductCharacteristicResource(facade: ProductCharacteristicFacade) : Abstr
 
         val findCategory = categoryNullable.get()
 
-        val res = cachedFilter(findCategory).orElse(mutableListOf())
+        val res = cachedFilter(findCategory).orElse(null)
         return ResponseEntity.ok(res)
     }
 
     @org.springframework.cache.annotation.Cacheable(value = ["characteristics"], key = "#findCategory")
-    protected open fun cachedFilter(findCategory: Category): Optional<MutableList<UniversalCharacteristicDTO>> {
+    protected fun cachedFilter(findCategory: Category): Optional<FilterCategory> {
         val categoriesForFound = categoryRepository.findAllByParentCategory(findCategory)
                 .map { it.id }
                 .mapNotNull { it!! }
@@ -93,8 +93,8 @@ class ProductCharacteristicResource(facade: ProductCharacteristicFacade) : Abstr
 
         val category = findCategory.parentCategory!!
 
-        // Нужна родительская категория, чтобы определить тип сущности
         val parentEntityMetadata = entityMetadataProductCharacteristicMapper.toFrom(category).orNull() ?: return Optional.empty()
+
         val parentProductType = entityMetadataProductTypeMapper.fromTo(parentEntityMetadata).orNull() ?: return Optional.empty()
 
         val doubleMap: HashMap<UUID, CharacteristicValue> = HashMap()
@@ -124,9 +124,15 @@ class ProductCharacteristicResource(facade: ProductCharacteristicFacade) : Abstr
             }
         }
 
-        val result = (toUniversalCharacteristicFrontEnd(stringMap) + toUniversalCharacteristicFrontEnd(doubleMap)).toMutableList()
-        return Optional.of(result)
+        val result = (toUniversalCharacteristicFrontEnd(stringMap) + toUniversalCharacteristicFrontEnd(doubleMap))
+                .toMutableList()
+
+
+
+        return Optional.of(FilterCategory(category.id, result));
     }
+
+    class FilterCategory(val id: UUID?, val filter: MutableList<UniversalCharacteristicDTO>);
 
     private fun toUniversalCharacteristicFrontEnd(characteristic: HashMap<UUID, CharacteristicValue>): List<UniversalCharacteristicDTO> {
         return characteristic.map {
