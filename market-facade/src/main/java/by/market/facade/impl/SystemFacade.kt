@@ -1,14 +1,22 @@
 package by.market.facade.impl
 
-import by.market.domain.system.*
+import by.market.domain.system.Category
+import by.market.domain.system.ContainerMetadata
+import by.market.domain.system.DataType
+import by.market.domain.system.EntityMetadata
 import by.market.dto.system.CategoryDTO
 import by.market.dto.system.ContainerMetadataDTO
 import by.market.dto.system.ContentPage
 import by.market.dto.system.DataTypeDTO
 import by.market.mapper.dto.system.EntityMetadataDTO
-import by.market.mapper.dto.system.ProductTypeDTO
-import by.market.mapper.system.*
-import by.market.services.impl.*
+import by.market.mapper.system.CategoryMapper
+import by.market.mapper.system.ContainerMetadataMapper
+import by.market.mapper.system.DataTypeMapper
+import by.market.mapper.system.EntityMetadataMapper
+import by.market.services.impl.CategoryService
+import by.market.services.impl.ContainerMetadataService
+import by.market.services.impl.DataTypeService
+import by.market.services.impl.EntityMetadataService
 import org.springframework.stereotype.Component
 
 @Component
@@ -36,20 +44,11 @@ class ContainerMetadataFacade(
         containerMetadataMapper: ContainerMetadataMapper
 ): BaseSystemFacade<ContainerMetadataDTO, ContainerMetadata, ContainerMetadataService>(containerMetadataService, containerMetadataMapper)
 
-
-@Component
-class ProductTypeFacade(
-        productTypeService: ProductTypeService,
-        productTypeMapper: ProductTypeMapper
-) : BaseSystemFacade<ProductTypeDTO, ProductType, ProductTypeService>(productTypeService, productTypeMapper)
-
-
 @Component
 class EntityMetadataFacade(
         entityMetadataService: EntityMetadataService,
         entityMetadataMapper: EntityMetadataMapper
 ) : BaseSystemFacade<EntityMetadataDTO, EntityMetadata, EntityMetadataService>(entityMetadataService, entityMetadataMapper)
-
 
 @Component
 class DataTypeFacade(

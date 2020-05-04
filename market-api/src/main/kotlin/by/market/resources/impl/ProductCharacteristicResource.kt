@@ -1,6 +1,5 @@
 package by.market.resources.impl
 
-import by.market.core.ProductType
 import by.market.domain.system.Category
 import by.market.domain.system.DataType
 import by.market.domain.system.EntityMetadata
@@ -12,10 +11,7 @@ import by.market.mapper.entity_metadata.EntityMetadataProductCharacteristicMappe
 import by.market.mapper.entity_metadata.EntityMetadataProductTypeMapper
 import by.market.repository.characteristic.single.DoubleSingleCharacteristicRepository
 import by.market.repository.characteristic.single.StringSingleCharacteristicRepository
-import by.market.repository.product.ProductAccessoryRepository
-import by.market.repository.product.ProductCorniceRepository
-import by.market.repository.product.ProductJalousieRepository
-import by.market.repository.product.ProductRolstorRepository
+import by.market.repository.product.ProductRepository
 import by.market.repository.system.CategoryRepository
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.async
@@ -24,6 +20,7 @@ import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.RequestMapping
+import org.springframework.web.bind.annotation.RequestParam
 import org.springframework.web.bind.annotation.RestController
 import java.util.*
 import kotlin.collections.HashMap
@@ -33,24 +30,13 @@ import kotlin.collections.HashSet
 @RequestMapping("/api/product-characteristic")
 class ProductCharacteristicResource(facade: ProductCharacteristicFacade) : AbstractResource<ProductCharacteristicDTO, ProductCharacteristicFacade>(facade){
 
-    @Autowired
-    private lateinit var stringCharacteristicRep: StringSingleCharacteristicRepository
-    @Autowired
-    private lateinit var doubleCharacteristicRep: DoubleSingleCharacteristicRepository
-    @Autowired
-    private lateinit var accessoryRepository: ProductAccessoryRepository
-    @Autowired
-    private lateinit var corniceRepository: ProductCorniceRepository
-    @Autowired
-    private lateinit var jalousieRepository: ProductJalousieRepository
-    @Autowired
-    private lateinit var rolstorRepository: ProductRolstorRepository
-    @Autowired
-    private lateinit var entityMetadataProductTypeMapper: EntityMetadataProductTypeMapper
-    @Autowired
-    private lateinit var entityMetadataProductCharacteristicMapper: EntityMetadataProductCharacteristicMapper
-    @Autowired
-    private lateinit var categoryRepository: CategoryRepository
+    @Autowired private lateinit var stringCharacteristicRep: StringSingleCharacteristicRepository
+    @Autowired private lateinit var doubleCharacteristicRep: DoubleSingleCharacteristicRepository
+    @Autowired private lateinit var repository: ProductRepository
+    @Autowired private lateinit var entityMetadataProductTypeMapper: EntityMetadataProductTypeMapper
+    @Autowired private lateinit var entityMetadataProductCharacteristicMapper: EntityMetadataProductCharacteristicMapper
+    @Autowired private lateinit var categoryRepository: CategoryRepository
+
 
     private fun fillCharacteristicMap(map: HashMap<UUID, CharacteristicValue>, characteristic: List<Characteristic>) {
         characteristic.forEach { sc ->
@@ -66,9 +52,9 @@ class ProductCharacteristicResource(facade: ProductCharacteristicFacade) : Abstr
     }
 
     @GetMapping("/filter")
-    fun filter(id: String): ResponseEntity<FilterCategory> {
-        val findCategoryId = UUID.fromString(id)
-        val categoryNullable = categoryRepository.findById(findCategoryId)
+    fun filter(@RequestParam("id") id: UUID): ResponseEntity<FilterCategory> {
+        val categoryNullable: Optional<Category> = categoryRepository.findById(id)
+
         if(!categoryNullable.isPresent || categoryNullable.get().parentCategory == null)
             return ResponseEntity.of(Optional.empty())
 
@@ -93,19 +79,16 @@ class ProductCharacteristicResource(facade: ProductCharacteristicFacade) : Abstr
 
         val category = findCategory.parentCategory!!
 
-        val parentEntityMetadata = entityMetadataProductCharacteristicMapper.toFrom(category).orNull() ?: return Optional.empty()
+        val parentEntityMetadata = entityMetadataProductCharacteristicMapper.toFrom(category).orNull()
+                ?: return Optional.empty()
 
-        val parentProductType = entityMetadataProductTypeMapper.fromTo(parentEntityMetadata).orNull() ?: return Optional.empty()
+        val parentProductType = entityMetadataProductTypeMapper.fromTo(parentEntityMetadata).orNull()
+                ?: return Optional.empty()
 
         val doubleMap: HashMap<UUID, CharacteristicValue> = HashMap()
         val stringMap: HashMap<UUID, CharacteristicValue> = HashMap()
 
-        val entityIds = when(parentProductType) {
-            ProductType.Accessories  -> accessoryRepository.getAllIdsByCategoryIds(categoriesForFound)
-            ProductType.Cornice      -> corniceRepository.getAllIdsByCategoryIds(categoriesForFound)
-            ProductType.Jalousie     -> jalousieRepository.getAllIdsByCategoryIds(categoriesForFound)
-            ProductType.Rolstor      -> rolstorRepository.getAllIdsByCategoryIds(categoriesForFound)
-        }
+        val entityIds = mutableListOf<UUID>()
 
         GlobalScope.run {
             val stringAsync = async {
@@ -127,9 +110,7 @@ class ProductCharacteristicResource(facade: ProductCharacteristicFacade) : Abstr
         val result = (toUniversalCharacteristicFrontEnd(stringMap) + toUniversalCharacteristicFrontEnd(doubleMap))
                 .toMutableList()
 
-
-
-        return Optional.of(FilterCategory(category.id, result));
+        return Optional.of(FilterCategory(findCategory.id, result));
     }
 
     class FilterCategory(val id: UUID?, val filter: MutableList<UniversalCharacteristicDTO>);
@@ -145,15 +126,17 @@ class ProductCharacteristicResource(facade: ProductCharacteristicFacade) : Abstr
         return stringCharacteristicRep.findByProductRowIdInAndEntityMetadata(rows, metadata)
                 .map { p ->
                     val dataTypeDTO = DataTypeDTO();
-                    dataTypeDTO.name = p.productCharacteristic!!.dataType!!.name
-                    return@map Characteristic(p.productCharacteristic!!.id!!, p.productCharacteristic!!.title!!, p.productCharacteristic!!.dataType, p.value!!)
+                    val characteristic = p.characteristic ?: return mutableListOf()
+                    val dataType = characteristic.dataType ?: return mutableListOf()
+                    dataTypeDTO.name = dataType.name
+                    return@map Characteristic(characteristic.id!!, characteristic.title!!, dataType, p.value!!)
                 }
     }
 
     private fun buildDoubleCharacteristic(rows: List<UUID>, metadata: EntityMetadata): List<Characteristic>{
         return doubleCharacteristicRep.findByProductRowIdInAndEntityMetadata(rows, metadata)
                 .map { p ->
-                    return@map Characteristic(p.productCharacteristic!!.id!!, p.productCharacteristic!!.title!!, p.productCharacteristic!!.dataType, p.value!!.toString())
+                    return@map Characteristic(p.characteristic!!.id!!, p.characteristic!!.title!!, p.characteristic!!.dataType, p.value!!.toString())
                 }
     }
 

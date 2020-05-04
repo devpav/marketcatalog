@@ -9,15 +9,15 @@ import javax.persistence.Table
 * tbx_s_container (table system)
 * */
 @Entity
-@Table(name = "tbx_s_container")
+@Table(name = "TBX_S_CONTAINER")
 class ContainerMetadata : BaseEntity() {
 
-    @Column(name = "description")
+    @Column(name = "DESCRIPTION")
     var description: String? = null
         public get
         public set
 
-    @Column(name = "system_name")
+    @Column(name = "SYSTEM_NAME")
     var systemName: String? = null
         public get
         public set

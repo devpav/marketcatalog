@@ -4,9 +4,11 @@ import by.market.dto.system.CategoryDTO
 import by.market.dto.system.ContainerMetadataDTO
 import by.market.dto.system.ContentPage
 import by.market.dto.system.DataTypeDTO
-import by.market.facade.impl.*
+import by.market.facade.impl.CategoryProductFacade
+import by.market.facade.impl.ContainerMetadataFacade
+import by.market.facade.impl.DataTypeFacade
+import by.market.facade.impl.EntityMetadataFacade
 import by.market.mapper.dto.system.EntityMetadataDTO
-import by.market.mapper.dto.system.ProductTypeDTO
 import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.RequestMapping
@@ -34,6 +36,3 @@ class DataTypeResource(facade: DataTypeFacade): AbstractResource<DataTypeDTO, Da
 @RequestMapping("/api/entity-metadata")
 class EntityMetadataResource(service: EntityMetadataFacade) : AbstractResource<EntityMetadataDTO, EntityMetadataFacade>(service)
 
-@RestController
-@RequestMapping("/api/product-type")
-class ProductTypeResource(facade: ProductTypeFacade) : AbstractResource<ProductTypeDTO, ProductTypeFacade>(facade)

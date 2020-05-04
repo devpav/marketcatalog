@@ -13,8 +13,8 @@ import by.market.repository.system.EntityMetadataRepository
 import org.springframework.stereotype.Component
 
 @Component
-class EntityMetadataProductTypeMapper(private val entityMetadataRepository: EntityMetadataRepository)
-    : IBiMapper<EntityMetadata, ProductType> {
+class EntityMetadataProductTypeMapper(private val entityMetadataRepository: EntityMetadataRepository) : IBiMapper<EntityMetadata, ProductType> {
+
     override fun fromTo(from: EntityMetadata): Option<ProductType> {
         return when(from.tableName) {
             Constant.EntityMetadata.Accessory -> Option.just(ProductType.Accessories)

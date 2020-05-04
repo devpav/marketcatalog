@@ -15,6 +15,8 @@ open class BaseService<TEntity: BaseEntity, TRepository: BaseRepository<TEntity>
 
     override fun findById(id: UUID): Optional<TEntity> = rep.findById(id)
 
+    override fun getReference(id: UUID): TEntity = rep.getOne(id)
+
     override fun save(entity: TEntity): TEntity {
         entity.id ?: throw RuntimeException("Entity ID mustn't be is null")
 
@@ -40,5 +42,7 @@ open class BaseService<TEntity: BaseEntity, TRepository: BaseRepository<TEntity>
     override fun existsById(id: UUID): Boolean = rep.existsById(id)
 
     override fun count(): Long = rep.count()
+
+
 
 }

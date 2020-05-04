@@ -1,35 +1,26 @@
 package by.market.domain.characteristics
 
 import by.market.domain.BaseEntity
+import by.market.domain.Product
 import by.market.domain.system.EntityMetadata
-import java.util.*
-import javax.persistence.Column
-import javax.persistence.JoinColumn
-import javax.persistence.ManyToOne
-import javax.persistence.MappedSuperclass
+import javax.persistence.*
 
 @MappedSuperclass
 abstract class AbstractCharacteristic<T> : BaseEntity() {
 
-    @Column(name = "value")
+    @Column(name = "VALUE")
     var value: T? = null
-        public get
-        public set
 
     @ManyToOne
-    @JoinColumn(name = "id_product_characteristic")
-    var productCharacteristic: ProductCharacteristic? = null
-        public get
-        public set
+    @JoinColumn(name = "FK_CHARACTERISTIC")
+    var characteristic: Characteristic? = null
 
     @ManyToOne
-    @JoinColumn(name = "id_entity_metadata")
+    @JoinColumn(name = "FK_ENTITY_METADATA")
     var entityMetadata: EntityMetadata? = null
-        public get
-        public set
 
-    @Column(name = "id_product_row")
-    var productRowId: UUID? = null
-        public get
-        public set
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "FK_PRODUCT")
+    var product: Product? = null
+
 }

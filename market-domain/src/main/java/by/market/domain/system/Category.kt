@@ -5,32 +5,24 @@ import com.fasterxml.jackson.annotation.JsonBackReference
 import javax.persistence.*
 
 @Entity
-@Table(name = "tbx_s_category", indexes = [
-    Index(name = "index_s_system_name_category", columnList = "system_name")
+@Table(name = "TBX_S_CATEGORY", indexes = [
+    Index(name = "index_s_system_name_category", columnList = "SYSTEM_NAME")
 ])
 class Category : BaseEntity() {
 
-    @Column(name = "title")
+    @Column(name = "TITLE")
     var title: String? = null
-        public get
-        public set
 
-    @Column(name = "system_name")
+    @Column(name = "SYSTEM_NAME")
     var systemName: String? = null
-        public get
-        public set
 
     @ManyToOne
-    @JoinColumn(name = "id_parent_category")
+    @JoinColumn(name = "FK_PARENT_CATEGORY")
     @JsonBackReference("category_child")
     var parentCategory: Category? = null
-        public get
-        public set
 
-    @Column(name = "img")
+    @Column(name = "IMAGE_VALUE")
     var img: String? = null
-        public get
-        public set
 
     val isParent: Boolean
         get() = id == parentCategory?.id

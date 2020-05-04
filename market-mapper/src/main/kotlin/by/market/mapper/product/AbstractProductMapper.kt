@@ -1,11 +1,11 @@
 package by.market.mapper.product
 
-import by.market.domain.AbstractProduct
+import by.market.domain.Product
 import by.market.mapper.IMapstructMapper
 import by.market.mapper.dto.BaseEntityDTO
 import org.mapstruct.Mapping
 
-interface AbstractProductMapper<DTO: BaseEntityDTO, T: AbstractProduct>: IMapstructMapper<DTO, T> {
+interface AbstractProductMapper<DTO: BaseEntityDTO, T: Product>: IMapstructMapper<DTO, T> {
 
     override fun to(e: T): DTO
 

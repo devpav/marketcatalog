@@ -1,5 +1,3 @@
-package by.market.services.abstraction
-
-import by.market.services.IService
+package by.market.services
 
 interface ISystemService<TEntity> : IService<TEntity>
