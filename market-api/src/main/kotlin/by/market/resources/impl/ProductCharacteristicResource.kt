@@ -1,5 +1,6 @@
 package by.market.resources.impl
 
+import by.market.domain.characteristics.AbstractCharacteristic
 import by.market.domain.system.Category
 import by.market.domain.system.DataType
 import by.market.domain.system.EntityMetadata
@@ -39,8 +40,8 @@ class ProductCharacteristicResource(facade: ProductCharacteristicFacade) : Abstr
     @Autowired private lateinit var productCharacteristicValueFacade: ProductCharacteristicValueFacade
 
     @PostMapping("/value")
-    public fun saveCharacteristicValue(@RequestBody abstractCharacteristicDTO: AbstractCharacteristicDTO<Any>) {
-        productCharacteristicValueFacade.save(abstractCharacteristicDTO)
+    public fun saveCharacteristicValue(@RequestBody abstractCharacteristicDTO: AbstractCharacteristicDTO<Any>): ResponseEntity<AbstractCharacteristic<Any>?> {
+        return ResponseEntity.ok(productCharacteristicValueFacade.save(abstractCharacteristicDTO)!!)
     }
 
     private fun fillCharacteristicMap(map: HashMap<UUID, CharacteristicValue>, characteristic: List<Characteristic>) {

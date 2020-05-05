@@ -19,7 +19,7 @@ open class ProductValueService(private val productCharacteristicService: Product
                                private val stringSingleCharacteristicService: StringSingleCharacteristicService) {
 
     @Transactional
-    open fun save(entity: AbstractCharacteristic<Any>): AbstractCharacteristic<Any> {
+    open fun save(entity: AbstractCharacteristic<Any>): AbstractCharacteristic<Any>? {
         val product = entity.product
 
         product ?: throw RequestInNotValidException("Entity must contain a product is not null")
@@ -48,25 +48,38 @@ open class ProductValueService(private val productCharacteristicService: Product
                 val entityMetadataDouble =
                         entityMetadataService.findByTableName(Constant.EntityMetadata.DoubleCharacteristic)
 
-                val valueDoubleUnion = buildValueUnion<Double, DoubleCharacteristic>(entity.value as Double, characteristic,
+                val valueDoubleUnion = buildValueUnion(entity.value as Double, characteristic,
                         entityMetadataDouble, product)
 
-                return doubleSingleCharacteristicService.save(valueDoubleUnion) as AbstractCharacteristic<Any>
+                valueDoubleUnion.product
+
+                val doubleObject: DoubleCharacteristic = DoubleCharacteristic()
+
+                doubleObject.id = valueDoubleUnion.id
+                doubleObject.product = valueDoubleUnion.product
+                doubleObject.value = valueDoubleUnion.value
+                doubleObject.entityMetadata = valueDoubleUnion.entityMetadata
+                doubleObject.characteristic = valueDoubleUnion.characteristic
+
+
+
+                return doubleSingleCharacteristicService.save(doubleObject) as AbstractCharacteristic<Any>
             }
             Constant.DataType.String -> {
                 val entityMetadataString =
                         entityMetadataService.findByTableName(Constant.EntityMetadata.StringCharacteristic)
 
-                val valueStringUnion: StringCharacteristic =
+                val valueStringUnion =
                         buildValueUnion(entity.value as String, characteristic, entityMetadataString, product)
 
-                return stringSingleCharacteristicService.save(valueStringUnion) as AbstractCharacteristic<Any>
+                var stringCharacteristic = stringSingleCharacteristicService.save(valueStringUnion as StringCharacteristic)
+                return null
             }
             else -> throw EntityNotFoundException("Entity Metadata with table name [${dataType.name}] not found")
         }
     }
 
-    private fun <T, E : AbstractCharacteristic<in T>> buildValueUnion(value: T, characteristic: Characteristic, entityMetadata: EntityMetadata?, product: Product): E {
+    private fun <T> buildValueUnion(value: T, characteristic: Characteristic, entityMetadata: EntityMetadata?, product: Product): AbstractCharacteristic<T> {
         val abstractCharacteristic: AbstractCharacteristic<T> = AbstractCharacteristic()
 
         abstractCharacteristic.value = value
@@ -74,7 +87,7 @@ open class ProductValueService(private val productCharacteristicService: Product
         abstractCharacteristic.entityMetadata = entityMetadata
         abstractCharacteristic.product = product
 
-        return abstractCharacteristic as E
+        return abstractCharacteristic
 
     }
 
