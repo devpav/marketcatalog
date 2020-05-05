@@ -1,6 +1,7 @@
 package by.market.domain.system
 
 import by.market.domain.BaseEntity
+import by.market.domain.Product
 import com.fasterxml.jackson.annotation.JsonBackReference
 import javax.persistence.*
 
@@ -16,13 +17,16 @@ class Category : BaseEntity() {
     @Column(name = "SYSTEM_NAME")
     var systemName: String? = null
 
+    @Column(name = "IMAGE_VALUE")
+    var image: String? = null
+
+    @OneToMany(mappedBy = "category", targetEntity = Product::class, fetch = FetchType.LAZY)
+    var products: Set<Product> = HashSet()
+
     @ManyToOne
     @JoinColumn(name = "FK_PARENT_CATEGORY")
     @JsonBackReference("category_child")
     var parentCategory: Category? = null
-
-    @Column(name = "IMAGE_VALUE")
-    var img: String? = null
 
     val isParent: Boolean
         get() = id == parentCategory?.id

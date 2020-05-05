@@ -3,12 +3,14 @@ package by.market.domain
 import by.market.domain.characteristics.single.DoubleCharacteristic
 import by.market.domain.characteristics.single.StringCharacteristic
 import by.market.domain.system.Category
+import com.fasterxml.jackson.annotation.JsonBackReference
 import javax.persistence.*
 
 @Entity
-@Table(indexes = [
-    Index(name = "index_p_title", columnList = "title")
-])
+@Table(name = "TBX_P_PRODUCT",
+        indexes = [
+            Index(name = "index_p_title", columnList = "TITLE")
+        ])
 open class Product : BaseEntity() {
 
     @Column(name = "PRICE_VALUE")
@@ -24,12 +26,12 @@ open class Product : BaseEntity() {
     @JoinColumn(name = "FK_CATEGORY")
     var category: Category? = null
 
-    @OneToMany(fetch = FetchType.LAZY)
-    @JoinColumn(name = "FK_PRODUCT")
-    var doubleCharacteristics: Set<DoubleCharacteristic> = HashSet()
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "product")
+    @JsonBackReference("product_double_characteristics")
+    var characteristicDoubles: Set<DoubleCharacteristic> = HashSet()
 
-    @OneToMany(fetch = FetchType.LAZY)
-    @JoinColumn(name = "FK_PRODUCT")
-    var stringCharacteristics: Set<StringCharacteristic> = HashSet()
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "product")
+    @JsonBackReference("product_string_characteristics")
+    var characteristicStrings: Set<StringCharacteristic> = HashSet()
 
 }

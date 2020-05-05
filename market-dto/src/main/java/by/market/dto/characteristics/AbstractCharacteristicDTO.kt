@@ -1,7 +1,7 @@
 package by.market.dto.characteristics
 
+import by.market.dto.system.EntityMetadataDTO
 import by.market.mapper.dto.BaseEntityDTO
-import by.market.mapper.dto.system.EntityMetadataDTO
 
 abstract class AbstractCharacteristicDTO<T> : BaseEntityDTO() {
 

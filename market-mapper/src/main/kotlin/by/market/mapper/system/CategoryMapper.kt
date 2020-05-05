@@ -14,7 +14,7 @@ interface CategoryMapper : IMapstructMapper<CategoryDTO, Category> {
 
     @Mappings(value = [
         Mapping(source = "parentCategory.id", target = "parent"),
-        Mapping(source = "img", target = "img")
+        Mapping(source = "image", target = "image")
     ])
     override fun to(e: Category): CategoryDTO
 

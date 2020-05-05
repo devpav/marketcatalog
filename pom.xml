@@ -19,6 +19,7 @@
         <module>market-repository</module>
         <module>market-mapper</module>
         <module>market-domain</module>
+        <module>market-liquibase</module>
     </modules>
 
     <parent>

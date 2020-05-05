@@ -18,8 +18,6 @@ open class BaseService<TEntity: BaseEntity, TRepository: BaseRepository<TEntity>
     override fun getReference(id: UUID): TEntity = rep.getOne(id)
 
     override fun save(entity: TEntity): TEntity {
-        entity.id ?: throw RuntimeException("Entity ID mustn't be is null")
-
         return rep.save(entity)
     }
 

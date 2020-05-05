@@ -13,6 +13,7 @@ import by.market.repository.characteristic.single.DoubleSingleCharacteristicRepo
 import by.market.repository.characteristic.single.StringSingleCharacteristicRepository
 import by.market.repository.product.ProductRepository
 import by.market.repository.system.CategoryRepository
+import by.market.services.impl.ProductService
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.async
 import kotlinx.coroutines.runBlocking
@@ -36,6 +37,8 @@ class ProductCharacteristicResource(facade: ProductCharacteristicFacade) : Abstr
     @Autowired private lateinit var entityMetadataProductTypeMapper: EntityMetadataProductTypeMapper
     @Autowired private lateinit var entityMetadataProductCharacteristicMapper: EntityMetadataProductCharacteristicMapper
     @Autowired private lateinit var categoryRepository: CategoryRepository
+
+    @Autowired private lateinit var productService: ProductService
 
 
     private fun fillCharacteristicMap(map: HashMap<UUID, CharacteristicValue>, characteristic: List<Characteristic>) {
@@ -123,7 +126,8 @@ class ProductCharacteristicResource(facade: ProductCharacteristicFacade) : Abstr
     }
 
     private fun buildStringCharacteristic(rows: List<UUID>, metadata: EntityMetadata): List<Characteristic>{
-        return stringCharacteristicRep.findByProductRowIdInAndEntityMetadata(rows, metadata)
+        val products = rows.map { productService.getReference(it) }.toMutableList()
+        return stringCharacteristicRep.findByProductInAndEntityMetadata(products, metadata)
                 .map { p ->
                     val dataTypeDTO = DataTypeDTO();
                     val characteristic = p.characteristic ?: return mutableListOf()
@@ -134,7 +138,8 @@ class ProductCharacteristicResource(facade: ProductCharacteristicFacade) : Abstr
     }
 
     private fun buildDoubleCharacteristic(rows: List<UUID>, metadata: EntityMetadata): List<Characteristic>{
-        return doubleCharacteristicRep.findByProductRowIdInAndEntityMetadata(rows, metadata)
+        val products = rows.map { productService.getReference(it) }.toMutableList()
+        return doubleCharacteristicRep.findByProductInAndEntityMetadata(products, metadata)
                 .map { p ->
                     return@map Characteristic(p.characteristic!!.id!!, p.characteristic!!.title!!, p.characteristic!!.dataType, p.value!!.toString())
                 }

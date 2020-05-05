@@ -11,6 +11,6 @@ class CategoryDTO : BaseEntityDTO() {
 
     var parent: UUID? = null
 
-    var img: String? = null
+    var image: String? = null
 
 }

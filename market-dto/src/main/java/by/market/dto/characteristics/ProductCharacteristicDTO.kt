@@ -8,4 +8,5 @@ class ProductCharacteristicDTO : BaseEntityDTO() {
     var title: String? = null
 
     var dataType: DataTypeDTO? = null
+
 }

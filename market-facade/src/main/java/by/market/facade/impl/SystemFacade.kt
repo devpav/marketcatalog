@@ -4,11 +4,7 @@ import by.market.domain.system.Category
 import by.market.domain.system.ContainerMetadata
 import by.market.domain.system.DataType
 import by.market.domain.system.EntityMetadata
-import by.market.dto.system.CategoryDTO
-import by.market.dto.system.ContainerMetadataDTO
-import by.market.dto.system.ContentPage
-import by.market.dto.system.DataTypeDTO
-import by.market.mapper.dto.system.EntityMetadataDTO
+import by.market.dto.system.*
 import by.market.mapper.system.CategoryMapper
 import by.market.mapper.system.ContainerMetadataMapper
 import by.market.mapper.system.DataTypeMapper
