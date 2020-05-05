@@ -54,5 +54,11 @@ class DataTypeService(repository: DataTypeRepository)
 
 @Service
 class EntityMetadataService(repository: EntityMetadataRepository)
-    : BaseSystemCharacteristicService<EntityMetadata, EntityMetadataRepository>(repository)
+    : BaseSystemCharacteristicService<EntityMetadata, EntityMetadataRepository>(repository) {
+
+    fun findByTableName(tableName: String): EntityMetadata? {
+        return rep.findByTableName(tableName)
+    }
+
+}
 

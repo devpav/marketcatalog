@@ -15,7 +15,13 @@ open class BaseService<TEntity: BaseEntity, TRepository: BaseRepository<TEntity>
 
     override fun findById(id: UUID): Optional<TEntity> = rep.findById(id)
 
-    override fun getReference(id: UUID): TEntity = rep.getOne(id)
+    override fun getReference(id: UUID): TEntity? {
+        return try {
+            rep.getOne(id)
+        } catch (ex: Exception) {
+            null
+        }
+    }
 
     override fun save(entity: TEntity): TEntity {
         return rep.save(entity)
@@ -25,7 +31,7 @@ open class BaseService<TEntity: BaseEntity, TRepository: BaseRepository<TEntity>
         val existsInvalidEntity: Boolean = iterable.any { it.id != null }
 
         if (existsInvalidEntity) {
-            throw RuntimeException("List exists entities are already in database")
+            throw RuntimeException("List exists entities are already in by.market.exception.database")
         }
 
         return rep.saveAll(iterable)

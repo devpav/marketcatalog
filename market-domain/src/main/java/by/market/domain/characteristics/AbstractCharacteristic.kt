@@ -6,7 +6,7 @@ import by.market.domain.system.EntityMetadata
 import javax.persistence.*
 
 @MappedSuperclass
-abstract class AbstractCharacteristic<T> : BaseEntity() {
+open class AbstractCharacteristic<T> : BaseEntity() {
 
     @Column(name = "VALUE")
     var value: T? = null

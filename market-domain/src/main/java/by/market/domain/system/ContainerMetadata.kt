@@ -7,9 +7,7 @@ import javax.persistence.Entity
 import javax.persistence.OneToMany
 import javax.persistence.Table
 
-/*
-* tbx_s_container (table system)
-* */
+
 @Entity
 @Table(name = "TBX_S_CONTAINER_METADATA")
 class ContainerMetadata : BaseEntity() {

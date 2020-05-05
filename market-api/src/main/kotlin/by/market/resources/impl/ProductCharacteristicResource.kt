@@ -3,15 +3,16 @@ package by.market.resources.impl
 import by.market.domain.system.Category
 import by.market.domain.system.DataType
 import by.market.domain.system.EntityMetadata
+import by.market.dto.characteristics.AbstractCharacteristicDTO
 import by.market.dto.characteristics.ProductCharacteristicDTO
 import by.market.dto.characteristics.UniversalCharacteristicDTO
 import by.market.dto.system.DataTypeDTO
 import by.market.facade.impl.ProductCharacteristicFacade
+import by.market.facade.impl.ProductCharacteristicValueFacade
 import by.market.mapper.entity_metadata.EntityMetadataProductCharacteristicMapper
 import by.market.mapper.entity_metadata.EntityMetadataProductTypeMapper
 import by.market.repository.characteristic.single.DoubleSingleCharacteristicRepository
 import by.market.repository.characteristic.single.StringSingleCharacteristicRepository
-import by.market.repository.product.ProductRepository
 import by.market.repository.system.CategoryRepository
 import by.market.services.impl.ProductService
 import kotlinx.coroutines.GlobalScope
@@ -19,10 +20,7 @@ import kotlinx.coroutines.async
 import kotlinx.coroutines.runBlocking
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.http.ResponseEntity
-import org.springframework.web.bind.annotation.GetMapping
-import org.springframework.web.bind.annotation.RequestMapping
-import org.springframework.web.bind.annotation.RequestParam
-import org.springframework.web.bind.annotation.RestController
+import org.springframework.web.bind.annotation.*
 import java.util.*
 import kotlin.collections.HashMap
 import kotlin.collections.HashSet
@@ -33,13 +31,17 @@ class ProductCharacteristicResource(facade: ProductCharacteristicFacade) : Abstr
 
     @Autowired private lateinit var stringCharacteristicRep: StringSingleCharacteristicRepository
     @Autowired private lateinit var doubleCharacteristicRep: DoubleSingleCharacteristicRepository
-    @Autowired private lateinit var repository: ProductRepository
     @Autowired private lateinit var entityMetadataProductTypeMapper: EntityMetadataProductTypeMapper
     @Autowired private lateinit var entityMetadataProductCharacteristicMapper: EntityMetadataProductCharacteristicMapper
     @Autowired private lateinit var categoryRepository: CategoryRepository
 
     @Autowired private lateinit var productService: ProductService
+    @Autowired private lateinit var productCharacteristicValueFacade: ProductCharacteristicValueFacade
 
+    @PostMapping("/value")
+    public fun saveCharacteristicValue(@RequestBody abstractCharacteristicDTO: AbstractCharacteristicDTO<Any>) {
+        productCharacteristicValueFacade.save(abstractCharacteristicDTO)
+    }
 
     private fun fillCharacteristicMap(map: HashMap<UUID, CharacteristicValue>, characteristic: List<Characteristic>) {
         characteristic.forEach { sc ->
@@ -126,7 +128,7 @@ class ProductCharacteristicResource(facade: ProductCharacteristicFacade) : Abstr
     }
 
     private fun buildStringCharacteristic(rows: List<UUID>, metadata: EntityMetadata): List<Characteristic>{
-        val products = rows.map { productService.getReference(it) }.toMutableList()
+        val products = rows.mapNotNull { productService.getReference(it) }.toMutableList()
         return stringCharacteristicRep.findByProductInAndEntityMetadata(products, metadata)
                 .map { p ->
                     val dataTypeDTO = DataTypeDTO();
@@ -138,7 +140,7 @@ class ProductCharacteristicResource(facade: ProductCharacteristicFacade) : Abstr
     }
 
     private fun buildDoubleCharacteristic(rows: List<UUID>, metadata: EntityMetadata): List<Characteristic>{
-        val products = rows.map { productService.getReference(it) }.toMutableList()
+        val products = rows.mapNotNull { productService.getReference(it) }.toMutableList()
         return doubleCharacteristicRep.findByProductInAndEntityMetadata(products, metadata)
                 .map { p ->
                     return@map Characteristic(p.characteristic!!.id!!, p.characteristic!!.title!!, p.characteristic!!.dataType, p.value!!.toString())

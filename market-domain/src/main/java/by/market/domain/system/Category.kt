@@ -9,6 +9,7 @@ import javax.persistence.*
 @Table(name = "TBX_S_CATEGORY", indexes = [
     Index(name = "index_s_system_name_category", columnList = "SYSTEM_NAME")
 ])
+@Cacheable
 class Category : BaseEntity() {
 
     @Column(name = "TITLE")

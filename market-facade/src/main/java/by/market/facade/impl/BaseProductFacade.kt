@@ -30,7 +30,7 @@ open class BaseProductFacade<TDto : AbstractProductDTO, TEntity : Product>(entit
     private lateinit var categoryService: CategoryService
 
     override fun findByCategory(category: UUID, pageable: Pageable): ContentPage<TDto> {
-        var referenceCategory = categoryService.getReference(category)
+        val referenceCategory = categoryService.getReference(category)
 
         val page = entityService.findAllByCategory(referenceCategory, pageable);
 
@@ -41,9 +41,13 @@ open class BaseProductFacade<TDto : AbstractProductDTO, TEntity : Product>(entit
 
     override fun findCharacteristicByProduct(dto: TDto): CharacteristicPairDTO {
         return runBlocking {
-            val doubleCharacteristicTask = async { buildCharacteristicMap(entityService.findDoubleCharacteristicById(dto.id!!)) }
+            val doubleCharacteristicTask = async {
+                buildCharacteristicMap(entityService.findDoubleCharacteristicById(dto.id!!))
+            }
 
-            val stringCharacteristicTask = async { buildCharacteristicMap(entityService.findStringCharacteristicById(dto.id!!)) }
+            val stringCharacteristicTask = async {
+                buildCharacteristicMap(entityService.findStringCharacteristicById(dto.id!!))
+            }
 
             val doubleRes = doubleCharacteristicTask.await()
             val stringRes = stringCharacteristicTask.await()

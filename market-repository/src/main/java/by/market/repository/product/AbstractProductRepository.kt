@@ -10,6 +10,6 @@ import org.springframework.data.repository.NoRepositoryBean
 @NoRepositoryBean
 interface AbstractProductRepository<TEntity : Product> : BaseRepository<TEntity> {
 
-    fun findAllByCategory(category: Category, pageable: Pageable): Page<TEntity>
+    fun findAllByCategory(category: Category?, pageable: Pageable): Page<TEntity>
 
 }

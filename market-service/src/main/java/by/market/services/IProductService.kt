@@ -19,6 +19,6 @@ interface IProductService<TEntity: Product> : IService<TEntity> {
 
     fun countByFilter(filter: ProductFilter, category: UUID): Long
 
-    fun findAllByCategory(category: Category, pageable: Pageable): Page<TEntity>
+    fun findAllByCategory(category: Category?, pageable: Pageable): Page<TEntity>
 
 }

@@ -12,7 +12,7 @@ interface IService<TEntity> {
 
     fun findById(id: UUID): Optional<TEntity>
 
-    fun getReference(id: UUID): TEntity
+    fun getReference(id: UUID): TEntity?
 
     fun saveAll(iterable: Iterable<TEntity>): MutableList<TEntity>
 

@@ -12,7 +12,7 @@ interface AbstractSingleCharacteristicRepository<TEntity: AbstractCharacteristic
 
     fun existsByProductAndEntityMetadata(product: Product, metadata: EntityMetadata): Boolean
 
-    fun findByEntityMetadataAndProduct(metadata: EntityMetadata, product: Product): List<TEntity>
+    fun findByEntityMetadataAndProduct(metadata: EntityMetadata, product: Product?): List<TEntity>
 
     fun findByProductInAndEntityMetadata(ids: List<Product>, metadata: EntityMetadata): List<TEntity>
 
