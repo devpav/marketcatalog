@@ -1,14 +1,14 @@
 package by.market.facade
 
-import by.market.dto.system.ContentPage
+import org.springframework.data.domain.Page
 import org.springframework.data.domain.Pageable
 import java.util.*
 
 interface Facade<DTO> {
 
-    fun findAll(): ContentPage<DTO>
+    fun findAll(): MutableList<DTO>
 
-    fun findAll(pageable: Pageable): ContentPage<DTO>
+    fun findAll(pageable: Pageable): Page<DTO>
 
     fun findById(id: UUID): Optional<DTO>
 

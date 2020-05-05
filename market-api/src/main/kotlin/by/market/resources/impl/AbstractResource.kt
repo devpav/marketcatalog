@@ -1,9 +1,9 @@
 package by.market.resources.impl
 
-import by.market.dto.system.ContentPage
 import by.market.facade.Facade
 import by.market.resources.IReadonlyResource
 import by.market.resources.MutableResource
+import org.springframework.data.domain.Page
 import org.springframework.data.domain.Pageable
 import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.*
@@ -12,7 +12,12 @@ import java.util.*
 abstract class AbstractResource<TDTO, TFacade: Facade<TDTO>>(protected val facade: TFacade) : MutableResource<TDTO>, IReadonlyResource<TDTO> {
 
     @GetMapping
-    override fun findAll(pageable: Pageable): ResponseEntity<ContentPage<TDTO>> {
+    override fun findAll(): ResponseEntity<MutableList<TDTO>> {
+        return ResponseEntity.ok(facade.findAll())
+    }
+
+    @GetMapping("/page")
+    override fun findPage(pageable: Pageable): ResponseEntity<Page<TDTO>> {
         return ResponseEntity.ok(facade.findAll(pageable))
     }
 

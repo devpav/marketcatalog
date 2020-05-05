@@ -1,11 +1,11 @@
 package by.market.facade.impl
 
 import by.market.domain.BaseEntity
-import by.market.dto.system.ContentPage
 import by.market.facade.Facade
 import by.market.mapper.IMapstructMapper
 import by.market.mapper.dto.BaseEntityDTO
 import by.market.services.IService
+import org.springframework.data.domain.Page
 import org.springframework.data.domain.Pageable
 import java.util.*
 
@@ -13,21 +13,16 @@ open class AbstractFacade<TService : IService<TEntity>, TDto : BaseEntityDTO, TE
         protected val entityService: TService,
         protected val mapper: IMapstructMapper<TDto, TEntity>) : Facade<TDto> {
 
-    override fun findAll(): ContentPage<TDto> {
+    override fun findAll(): MutableList<TDto> {
         val mappedCollection = mapper.to(entityService.findAll()).toMutableList()
 
-        val length = entityService.count()
-
-        return ContentPage(mappedCollection, length)
+        return mappedCollection
     }
 
-    override fun findAll(pageable: Pageable): ContentPage<TDto> {
+    override fun findAll(pageable: Pageable): Page<TDto> {
         val page  = entityService.findAll(pageable);
-        val mappedCollection = page.map { mapper.to(it) }.content
 
-        val length = page.totalElements
-
-        return ContentPage(mappedCollection, length, pageable.pageNumber, pageable.pageSize)
+        return page.map { mapper.to(it) }
     }
 
     override fun findById(id: UUID): Optional<TDto> {
