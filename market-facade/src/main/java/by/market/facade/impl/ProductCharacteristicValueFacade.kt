@@ -14,7 +14,7 @@ class ProductCharacteristicValueFacade(private val productValueService: ProductV
     private lateinit var abstractCharacteristicValueMapper: AbstractCharacteristicValueMapper;
 
     public fun save(entity: AbstractCharacteristicDTO<Any>): AbstractCharacteristic<Any> {
-        val abstractCharacteristic = abstractCharacteristicValueMapper.to(entity)
+        val abstractCharacteristic = abstractCharacteristicValueMapper.to(entity)!!
         return productValueService.save(abstractCharacteristic)
     }
 

@@ -7,6 +7,9 @@ import org.springframework.stereotype.Repository
 
 @Repository
 interface ProductCharacteristicRepository : BaseRepository<Characteristic> {
+
     fun existsByTitleAndDataType(title: String, dataType: DataType): Boolean
-    fun findByTitleAndDataType(title: String, dataType: DataType): Characteristic
+
+    fun findByTitleAndDataType(title: String, dataType: DataType): Characteristic?
+
 }

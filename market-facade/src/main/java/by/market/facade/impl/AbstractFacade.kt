@@ -1,9 +1,9 @@
 package by.market.facade.impl
 
 import by.market.domain.BaseEntity
+import by.market.dto.BaseEntityDTO
 import by.market.facade.Facade
 import by.market.mapper.IMapstructMapper
-import by.market.mapper.dto.BaseEntityDTO
 import by.market.services.IService
 import org.springframework.data.domain.Page
 import org.springframework.data.domain.Pageable
@@ -14,7 +14,7 @@ open class AbstractFacade<TService : IService<TEntity>, TDto : BaseEntityDTO, TE
         protected val mapper: IMapstructMapper<TDto, TEntity>) : Facade<TDto> {
 
     override fun findAll(): MutableList<TDto> {
-        val mappedCollection = mapper.to(entityService.findAll()).toMutableList()
+        val mappedCollection = mapper.to(entityService.findAll())!!.toMutableList()
 
         return mappedCollection
     }
@@ -36,9 +36,9 @@ open class AbstractFacade<TService : IService<TEntity>, TDto : BaseEntityDTO, TE
     override fun save(entity: TDto): TDto {
         return mapper.to(
                 entityService.save(
-                        mapper.from(entity)
+                        mapper.from(entity)!!
                 )
-        )
+        )!!
     }
 
     override fun deleteById(id: UUID) {

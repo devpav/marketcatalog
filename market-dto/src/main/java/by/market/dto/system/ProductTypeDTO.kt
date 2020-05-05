@@ -1,7 +1,9 @@
-package by.market.mapper.dto.system
+package by.market.dto.system
 
-import by.market.mapper.dto.BaseEntityDTO
+import by.market.dto.BaseEntityDTO
 
 class ProductTypeDTO : BaseEntityDTO() {
+
     private var title: String? = null
+
 }

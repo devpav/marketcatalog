@@ -1,6 +1,6 @@
 package by.market.dto.system
 
-import by.market.mapper.dto.BaseEntityDTO
+import by.market.dto.BaseEntityDTO
 
 class EntityMetadataDTO : BaseEntityDTO() {
 
@@ -8,6 +8,6 @@ class EntityMetadataDTO : BaseEntityDTO() {
 
     var description: String? = null
 
-    var containerDTO: ContainerMetadataDTO? = null
+    var container: ContainerMetadataDTO? = null
 
 }

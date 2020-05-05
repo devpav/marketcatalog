@@ -16,8 +16,12 @@ open class ProductCharacteristicService(repository: ProductCharacteristicReposit
     override fun save(entity: Characteristic): Characteristic {
         val dataTypeId = entity.dataType?.id
 
-        if (entity.title.isNullOrEmpty())
+        val title = entity.title
+
+        if (title.isNullOrEmpty())
             throw RequestInNotValidException("Title of characteristic mustn't be is NULL or EMPTY")
+
+        entity.title = title.trim()
 
         dataTypeId ?: throw RequestInNotValidException("Data type and its ID mustn't be is NULL")
 
@@ -25,9 +29,11 @@ open class ProductCharacteristicService(repository: ProductCharacteristicReposit
 
         referenceDataType ?: throw EntityNotFoundException("Data type with ID [${dataTypeId}] not found")
 
+        val characteristicTitle: Characteristic? = rep.findByTitleAndDataType(entity.title!!, referenceDataType)
+
         entity.dataType = referenceDataType
 
-        return super.save(entity)
+        return characteristicTitle ?: super.save(entity)
     }
 
 }

@@ -1,7 +1,7 @@
 package by.market.dto.characteristics
 
+import by.market.dto.BaseEntityDTO
 import by.market.dto.system.DataTypeDTO
-import by.market.mapper.dto.BaseEntityDTO
 
 class ProductCharacteristicDTO : BaseEntityDTO() {
 

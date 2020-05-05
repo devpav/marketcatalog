@@ -5,13 +5,13 @@ import by.market.domain.Product
 import by.market.domain.characteristics.AbstractCharacteristic
 import by.market.domain.characteristics.Characteristic
 import by.market.domain.system.Category
+import by.market.dto.AbstractProductDTO
 import by.market.dto.characteristics.CharacteristicDescriptionDTO
 import by.market.dto.characteristics.CharacteristicPairDTO
 import by.market.dto.system.CategoryDTO
 import by.market.dto.system.ContentPage
 import by.market.facade.IProductFacade
 import by.market.mapper.IMapstructMapper
-import by.market.mapper.dto.AbstractProductDTO
 import by.market.services.IProductService
 import by.market.services.impl.CategoryService
 import kotlinx.coroutines.async
@@ -85,7 +85,7 @@ open class BaseProductFacade<TDto : AbstractProductDTO, TEntity : Product>(entit
     override fun findByFilter(productFilter: ProductFilter, category: UUID, pageable: Pageable): ContentPage<TDto> {
         val entitiesByFilter = this.entityService.findByFilter(productFilter, category, pageable)
 
-        val dtosByFilter = entitiesByFilter.map { mapper.to(it) }.toMutableList()
+        val dtosByFilter = entitiesByFilter.map { mapper.to(it)!! }.toMutableList()
 
         return ContentPage(dtosByFilter, entityService.countByFilter(productFilter, category), pageable.pageNumber, pageable.pageSize)
     }

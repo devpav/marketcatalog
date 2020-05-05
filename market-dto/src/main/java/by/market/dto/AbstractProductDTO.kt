@@ -1,4 +1,6 @@
-package by.market.mapper.dto
+package by.market.dto
+
+import java.util.*
 
 
 open class AbstractProductDTO : BaseEntityDTO() {
@@ -8,5 +10,7 @@ open class AbstractProductDTO : BaseEntityDTO() {
     var title: String? = null
 
     var image: String? = null
+
+    var category: UUID? = null
 
 }

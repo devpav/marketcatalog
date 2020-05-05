@@ -1,6 +1,6 @@
 package by.market.dto.system
 
-import by.market.mapper.dto.BaseEntityDTO
+import by.market.dto.BaseEntityDTO
 import java.util.*
 
 class CategoryDTO : BaseEntityDTO() {

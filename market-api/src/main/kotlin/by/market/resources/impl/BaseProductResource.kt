@@ -1,11 +1,11 @@
 package by.market.resources.impl
 
 import by.market.core.ProductFilter
+import by.market.dto.AbstractProductDTO
 import by.market.dto.characteristics.CharacteristicPairDTO
 import by.market.dto.system.CategoryDTO
 import by.market.dto.system.ContentPage
 import by.market.facade.IProductFacade
-import by.market.mapper.dto.AbstractProductDTO
 import org.springframework.data.domain.Page
 import org.springframework.data.domain.Pageable
 import org.springframework.http.ResponseEntity
