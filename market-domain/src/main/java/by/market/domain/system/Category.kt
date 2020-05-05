@@ -24,6 +24,9 @@ class Category : BaseEntity() {
     @OneToMany(mappedBy = "category", targetEntity = Product::class, fetch = FetchType.LAZY)
     var products: Set<Product> = HashSet()
 
+    @OneToMany(mappedBy = "parentCategory", fetch = FetchType.LAZY)
+    var subCategories: Set<Category> = HashSet()
+
     @ManyToOne
     @JoinColumn(name = "FK_PARENT_CATEGORY")
     @JsonBackReference("category_child")

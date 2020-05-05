@@ -77,7 +77,7 @@
         </dependency>
         <dependency>
             <groupId>${project.groupId}</groupId>
-            <artifactId>liquibase</artifactId>
+            <artifactId>market-liquibase</artifactId>
             <version>${project.version}</version>
         </dependency>
     </dependencies>

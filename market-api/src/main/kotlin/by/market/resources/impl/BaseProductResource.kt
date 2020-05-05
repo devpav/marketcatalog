@@ -24,7 +24,7 @@ open class BaseProductResource<TDto: AbstractProductDTO, TProductFacade: IProduc
     }
 
     @GetMapping("/categories")
-    open fun findByCategories(categories: List<CategoryDTO>): ResponseEntity<MutableList<ContentPage<TDto>>> {
+    open fun findByCategories(categories: List<CategoryDTO>): ResponseEntity<Nothing?> {
         return ResponseEntity.ok(null)
     }
 
