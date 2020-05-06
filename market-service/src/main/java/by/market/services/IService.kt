@@ -14,18 +14,8 @@ interface IService<TEntity> {
 
     fun getReference(id: UUID): TEntity?
 
-    fun saveAll(iterable: Iterable<TEntity>): MutableList<TEntity>
-
     fun save(entity: TEntity): TEntity
 
     fun deleteById(id: UUID): Unit
-
-    fun deleteAll(iterable: Iterable<TEntity?>): Unit
-
-    fun deleteAll(): Unit
-
-    fun existsById(id: UUID): Boolean
-
-    fun count(): Long
 
 }

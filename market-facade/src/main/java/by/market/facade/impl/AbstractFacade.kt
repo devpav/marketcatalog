@@ -14,9 +14,7 @@ open class AbstractFacade<TService : IService<TEntity>, TDto : BaseEntityDTO, TE
         protected val mapper: IMapstructMapper<TDto, TEntity>) : Facade<TDto> {
 
     override fun findAll(): MutableList<TDto> {
-        val mappedCollection = mapper.to(entityService.findAll())!!.toMutableList()
-
-        return mappedCollection
+        return mapper.to(entityService.findAll()).toMutableList()
     }
 
     override fun findAll(pageable: Pageable): Page<TDto> {
@@ -29,37 +27,14 @@ open class AbstractFacade<TService : IService<TEntity>, TDto : BaseEntityDTO, TE
         return entityService.findById(id).map { mapper.to(it) }
     }
 
-    override fun saveAll(iterable: Iterable<TDto>): MutableList<TDto> {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
-    }
-
     override fun save(entity: TDto): TDto {
-        return mapper.to(
-                entityService.save(
-                        mapper.from(entity)!!
-                )
-        )!!
+        val mappedEntity = mapper.from(entity)
+        val savedEntity = entityService.save(mappedEntity)
+        return mapper.to(savedEntity)
     }
 
     override fun deleteById(id: UUID) {
         entityService.deleteById(id)
     }
-
-    override fun deleteAll(iterable: Iterable<TDto?>) {
-        entityService.deleteAll(iterable.mapNotNull { mapper.from(it!!) })
-    }
-
-    override fun deleteAll() {
-        entityService.deleteAll()
-    }
-
-    override fun existsById(id: UUID): Boolean {
-        return entityService.existsById(id)
-    }
-
-    override fun count(): Long {
-        return entityService.count()
-    }
-
 
 }

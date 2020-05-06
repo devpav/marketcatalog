@@ -27,26 +27,6 @@ open class BaseService<TEntity: BaseEntity, TRepository: BaseRepository<TEntity>
         return rep.save(entity)
     }
 
-    override fun saveAll(iterable: Iterable<TEntity>): MutableList<TEntity> {
-        val existsInvalidEntity: Boolean = iterable.any { it.id != null }
-
-        if (existsInvalidEntity) {
-            throw RuntimeException("List exists entities are already in by.market.exception.database")
-        }
-
-        return rep.saveAll(iterable)
-    }
-
-    override fun deleteAll(): Unit = rep.deleteAll()
-
-    override fun deleteAll(iterable: Iterable<TEntity?>): Unit = rep.deleteAll(iterable)
-
     override fun deleteById(id: UUID): Unit = rep.deleteById(id)
-
-    override fun existsById(id: UUID): Boolean = rep.existsById(id)
-
-    override fun count(): Long = rep.count()
-
-
 
 }

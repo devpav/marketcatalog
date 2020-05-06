@@ -17,9 +17,7 @@ abstract class AbstractResource<TDTO, TFacade: Facade<TDTO>>(protected val facad
     }
 
     @GetMapping("/page")
-    override fun findPage(pageable: Pageable): ResponseEntity<Page<TDTO>> {
-        return ResponseEntity.ok(facade.findAll(pageable))
-    }
+    override fun findPage(pageable: Pageable): ResponseEntity<Page<TDTO>> = ResponseEntity.ok(facade.findAll(pageable))
 
     @GetMapping("/{id}")
     override fun findById(@PathVariable("id") id: UUID): ResponseEntity<TDTO> {
@@ -32,34 +30,9 @@ abstract class AbstractResource<TDTO, TFacade: Facade<TDTO>>(protected val facad
         return ResponseEntity.ok(entity.get())
     }
 
-    @GetMapping("/count")
-    override fun count(): ResponseEntity<Long> {
-        return ResponseEntity.ok(facade.count())
-    }
-
     @PostMapping
     override fun save(@RequestBody entity: TDTO): ResponseEntity<TDTO> {
         return ResponseEntity.ok(facade.save(entity))
-    }
-
-    @PostMapping("/array")
-    override fun saveAll(@RequestBody iterable: Iterable<TDTO>): ResponseEntity<MutableList<TDTO>> {
-        return ResponseEntity.ok(facade.saveAll(iterable))
-    }
-
-    @DeleteMapping("/all")
-    override fun deleteAll(): ResponseEntity<Unit> {
-        facade.deleteAll()
-
-        return ResponseEntity.ok().build()
-    }
-
-    @DeleteMapping("/iterate")
-    override fun deleteAll(@RequestBody iterable: Iterable<TDTO?>): ResponseEntity<Unit> {
-
-        facade.deleteAll(iterable)
-
-        return ResponseEntity.ok().build()
     }
 
     @DeleteMapping("/{id}")

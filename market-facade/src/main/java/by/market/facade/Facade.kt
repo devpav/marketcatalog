@@ -12,18 +12,8 @@ interface Facade<DTO> {
 
     fun findById(id: UUID): Optional<DTO>
 
-    fun saveAll(iterable: Iterable<DTO>): MutableList<DTO>
-
     fun save(entity: DTO): DTO
 
     fun deleteById(id: UUID): Unit
-
-    fun deleteAll(iterable: Iterable<DTO?>): Unit
-
-    fun deleteAll(): Unit
-
-    fun existsById(id: UUID): Boolean
-
-    fun count(): Long
 
 }

@@ -12,6 +12,4 @@ interface IReadonlyResource<TDTO> {
 
     fun findById(id: UUID): ResponseEntity<TDTO>
 
-    fun count(): ResponseEntity<Long>
-
 }
