@@ -1,5 +1,6 @@
 package by.market.resources.impl
 
+import by.market.dto.TreeCategoryDTO
 import by.market.dto.system.*
 import by.market.facade.impl.CategoryProductFacade
 import by.market.facade.impl.ContainerMetadataFacade
@@ -17,6 +18,9 @@ class CategoryResource(facade: CategoryProductFacade) : AbstractResource<Categor
     @GetMapping("/parent")
     fun findByParent(categoryDTO: CategoryDTO): ResponseEntity<ContentPage<CategoryDTO>>
             = ResponseEntity.ok(facade.findByParent(categoryDTO))
+
+    @GetMapping("/tree")
+    fun findTreeCategory(): ResponseEntity<MutableList<TreeCategoryDTO>> = ResponseEntity.ok(facade.findTreeCategories())
 
 }
 

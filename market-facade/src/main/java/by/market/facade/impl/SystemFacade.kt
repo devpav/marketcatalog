@@ -4,15 +4,14 @@ import by.market.domain.system.Category
 import by.market.domain.system.ContainerMetadata
 import by.market.domain.system.DataType
 import by.market.domain.system.EntityMetadata
+import by.market.dto.TreeCategoryDTO
 import by.market.dto.system.*
-import by.market.mapper.system.CategoryMapper
-import by.market.mapper.system.ContainerMetadataMapper
-import by.market.mapper.system.DataTypeMapper
-import by.market.mapper.system.EntityMetadataMapper
+import by.market.mapper.*
 import by.market.services.impl.CategoryService
 import by.market.services.impl.ContainerMetadataService
 import by.market.services.impl.DataTypeService
 import by.market.services.impl.EntityMetadataService
+import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.stereotype.Component
 
 @Component
@@ -21,16 +20,22 @@ class CategoryProductFacade(
         categoryMapper: CategoryMapper
 ) : BaseSystemFacade<CategoryDTO, Category, CategoryService>(categoryService, categoryMapper) {
 
+    @Autowired
+    private lateinit var treeCategoryMapper: TreeCategoryMapper
+
     fun findByParent(category: CategoryDTO): ContentPage<CategoryDTO> {
-        val databaseCategory = mapper.from(category)!!
+        val databaseCategory = mapper.fromMap(category)
 
         val findAllByParentCategory = entityService.findAllByParentCategory(databaseCategory)
         val length = entityService.countAllByParentCategory(databaseCategory)
 
-        val collectionDTO = mapper.to(findAllByParentCategory)!!.toMutableList()
+        val collectionDTO = mapper.toMap(findAllByParentCategory).toMutableList()
         return ContentPage(collectionDTO, length)
     }
 
+    fun findTreeCategories(): MutableList<TreeCategoryDTO> {
+        return treeCategoryMapper.toMap(entityService.findTreeCategory()).toMutableList()
+    }
 }
 
 

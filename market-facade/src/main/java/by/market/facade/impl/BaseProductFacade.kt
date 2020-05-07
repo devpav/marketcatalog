@@ -11,7 +11,7 @@ import by.market.dto.characteristics.CharacteristicPairDTO
 import by.market.dto.system.CategoryDTO
 import by.market.dto.system.ContentPage
 import by.market.facade.IProductFacade
-import by.market.mapper.IMapstructMapper
+import by.market.mapper.MapstructMapper
 import by.market.services.IProductService
 import by.market.services.impl.CategoryService
 import kotlinx.coroutines.async
@@ -21,11 +21,11 @@ import org.springframework.data.domain.Page
 import org.springframework.data.domain.Pageable
 import java.util.*
 
-open class BaseProductFacade<TDto : AbstractProductDTO, TEntity : Product>(entityService: IProductService<TEntity>, mapper: IMapstructMapper<TDto, TEntity>)
+open class BaseProductFacade<TDto : AbstractProductDTO, TEntity : Product>(entityService: IProductService<TEntity>, mapper: MapstructMapper<TDto, TEntity>)
     : IProductFacade<TDto>, AbstractFacade<IProductService<TEntity>, TDto, TEntity>(entityService, mapper) {
 
     @Autowired
-    private lateinit var categoryMapper: IMapstructMapper<CategoryDTO, Category>
+    private lateinit var categoryMapper: MapstructMapper<CategoryDTO, Category>
 
     @Autowired
     private lateinit var categoryService: CategoryService
@@ -35,7 +35,7 @@ open class BaseProductFacade<TDto : AbstractProductDTO, TEntity : Product>(entit
 
         val page = entityService.findAllByCategory(referenceCategory, pageable);
 
-        return page.map { mapper.to(it) }
+        return page.map { mapper.toMap(it) }
     }
 
     override fun findCharacteristicByProduct(product: TDto): CharacteristicPairDTO {
@@ -85,7 +85,7 @@ open class BaseProductFacade<TDto : AbstractProductDTO, TEntity : Product>(entit
     override fun findByFilter(productFilter: ProductFilter, category: UUID, pageable: Pageable): ContentPage<TDto> {
         val entitiesByFilter = this.entityService.findByFilter(productFilter, category, pageable)
 
-        val dtosByFilter = entitiesByFilter.map { mapper.to(it)!! }.toMutableList()
+        val dtosByFilter = entitiesByFilter.map { mapper.toMap(it) }.toMutableList()
 
         return ContentPage(dtosByFilter, entityService.countByFilter(productFilter, category), pageable.pageNumber, pageable.pageSize)
     }

@@ -2,7 +2,7 @@ package by.market.facade.impl
 
 import by.market.domain.Product
 import by.market.dto.product.ProductDTO
-import by.market.mapper.product.ProductMapper
+import by.market.mapper.ProductMapper
 import by.market.services.impl.ProductService
 import org.springframework.stereotype.Component
 

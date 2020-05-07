@@ -15,17 +15,14 @@ open class BaseService<TEntity: BaseEntity, TRepository: BaseRepository<TEntity>
 
     override fun findById(id: UUID): Optional<TEntity> = rep.findById(id)
 
-    override fun getReference(id: UUID): TEntity? {
-        return try {
+    override fun getReference(id: UUID): TEntity? =
+        try {
             rep.getOne(id)
         } catch (ex: Exception) {
             null
         }
-    }
 
-    override fun save(entity: TEntity): TEntity {
-        return rep.save(entity)
-    }
+    override fun save(entity: TEntity): TEntity = rep.save(entity)
 
     override fun deleteById(id: UUID): Unit = rep.deleteById(id)
 
