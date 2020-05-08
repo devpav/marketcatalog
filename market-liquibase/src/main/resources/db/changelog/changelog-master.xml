@@ -6,7 +6,7 @@
                    http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
 
     <!--Schema ChangeSets-->
-    <include file="classpath:/db/changelog/changeSets/schema/schema.xml"/>
+    <includeAll path="classpath:/db/changelog/changeSets/schema/*.xml"/>
 
     <!--DATA load ChangeSets-->
     <includeAll path="classpath:/db/changelog/changeSets/data/*.xml"/>

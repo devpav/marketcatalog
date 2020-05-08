@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+
+
+    <changeSet author="devpav" id="20200508_2253">
+        <preConditions>
+            <not>
+                <tableExists schemaName="PUBLIC" tableName="TBX_RB_UNIT"/>
+            </not>
+        </preConditions>
+        <createTable schemaName="PUBLIC" tableName="TBX_RB_UNIT">
+            <column name="ID" type="UUID">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="VALUE" type="VARCHAR(255)"/>
+            <column name="DESCRIPTION" type="CLOB"/>
+            <column name="FK_UNIT_GROUP" type="UUID"/>
+        </createTable>
+        <rollback>
+            <dropTable tableName="TBX_RB_UNIT"/>
+        </rollback>
+    </changeSet>
+
+
+    <changeSet author="devpav" id="20200508_2258">
+        <addForeignKeyConstraint
+                baseTableSchemaName="PUBLIC"
+                baseTableName="TBX_RB_UNIT"
+                baseColumnNames="FK_UNIT_GROUP"
+                constraintName="FK_UNIT_GROUP_d45514c90bfd4327ac708bd38dc5f1f0"
+                referencedTableSchemaName="PUBLIC"
+                referencedTableName="TBX_RB_UNIT"
+                referencedColumnNames="ID"/>
+        <rollback>
+            <dropForeignKeyConstraint baseTableName="TBX_RB_UNIT" baseTableSchemaName="PUBLIC"
+                                      constraintName="FK_UNIT_GROUP_d45514c90bfd4327ac708bd38dc5f1f0"/>
+        </rollback>
+    </changeSet>
+</databaseChangeLog>

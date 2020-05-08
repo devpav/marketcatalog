@@ -11,5 +11,7 @@ logging:
 spring:
   jpa:
     show-sql: true
+    hibernate:
+      ddl-auto: none
   liquibase:
     enabled: false
