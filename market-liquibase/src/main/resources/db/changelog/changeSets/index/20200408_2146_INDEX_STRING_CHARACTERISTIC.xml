@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+
+    <changeSet author="devpav" id="20200408_2146">
+        <createIndex schemaName="PUBLIC" unique="false" tableName="TBX_CH_STRING_CHARACTERISTIC"
+                     indexName="ind_string_characteristic_id_entity_metadata_id_product_row_idx">
+            <column name="FK_ENTITY_METADATA"/>
+            <column name="FK_PRODUCT"/>
+        </createIndex>
+        <rollback>
+            <dropIndex schemaName="PUBLIC" tableName="TBX_CH_STRING_CHARACTERISTIC"
+                       indexName="ind_string_characteristic_id_entity_metadata_id_product_row_idx"/>
+        </rollback>
+    </changeSet>
+
+</databaseChangeLog>
