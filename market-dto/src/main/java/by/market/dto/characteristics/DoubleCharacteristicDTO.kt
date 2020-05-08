@@ -1,5 +1,3 @@
-package by.market.mapper.dto.characteristics.single
-
-import by.market.dto.characteristics.AbstractSingleCharacteristicDTO
+package by.market.dto.characteristics
 
 class DoubleCharacteristicDTO : AbstractSingleCharacteristicDTO<Double>()

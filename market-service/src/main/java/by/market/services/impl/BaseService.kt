@@ -15,30 +15,15 @@ open class BaseService<TEntity: BaseEntity, TRepository: BaseRepository<TEntity>
 
     override fun findById(id: UUID): Optional<TEntity> = rep.findById(id)
 
-    override fun save(entity: TEntity): TEntity {
-        entity.id ?: throw RuntimeException("Entity ID mustn't be is null")
-
-        return rep.save(entity)
-    }
-
-    override fun saveAll(iterable: Iterable<TEntity>): MutableList<TEntity> {
-        val existsInvalidEntity: Boolean = iterable.any { it.id != null }
-
-        if (existsInvalidEntity) {
-            throw RuntimeException("List exists entities are already in database")
+    override fun getReference(id: UUID): TEntity? =
+        try {
+            rep.getOne(id)
+        } catch (ex: Exception) {
+            null
         }
 
-        return rep.saveAll(iterable)
-    }
-
-    override fun deleteAll(): Unit = rep.deleteAll()
-
-    override fun deleteAll(iterable: Iterable<TEntity?>): Unit = rep.deleteAll(iterable)
+    override fun save(entity: TEntity): TEntity = rep.save(entity)
 
     override fun deleteById(id: UUID): Unit = rep.deleteById(id)
-
-    override fun existsById(id: UUID): Boolean = rep.existsById(id)
-
-    override fun count(): Long = rep.count()
 
 }

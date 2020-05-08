@@ -1,45 +1,52 @@
 package by.market.facade.impl
 
 import by.market.core.ProductFilter
-import by.market.domain.AbstractProduct
+import by.market.domain.Product
 import by.market.domain.characteristics.AbstractCharacteristic
-import by.market.domain.characteristics.ProductCharacteristic
+import by.market.domain.characteristics.Characteristic
 import by.market.domain.system.Category
+import by.market.dto.AbstractProductDTO
 import by.market.dto.characteristics.CharacteristicDescriptionDTO
 import by.market.dto.characteristics.CharacteristicPairDTO
 import by.market.dto.system.CategoryDTO
 import by.market.dto.system.ContentPage
 import by.market.facade.IProductFacade
-import by.market.mapper.IMapstructMapper
-import by.market.mapper.dto.AbstractProductDTO
-import by.market.services.abstraction.IProductService
+import by.market.mapper.MapstructMapper
+import by.market.services.IProductService
+import by.market.services.impl.CategoryService
 import kotlinx.coroutines.async
 import kotlinx.coroutines.runBlocking
 import org.springframework.beans.factory.annotation.Autowired
+import org.springframework.data.domain.Page
 import org.springframework.data.domain.Pageable
 import java.util.*
 
-open class BaseProductFacade<TDto : AbstractProductDTO, TEntity : AbstractProduct>(entityService: IProductService<TEntity>,
-                                                                                   mapper: IMapstructMapper<TDto, TEntity>)
+open class BaseProductFacade<TDto : AbstractProductDTO, TEntity : Product>(entityService: IProductService<TEntity>, mapper: MapstructMapper<TDto, TEntity>)
     : IProductFacade<TDto>, AbstractFacade<IProductService<TEntity>, TDto, TEntity>(entityService, mapper) {
 
     @Autowired
-    private lateinit var categoryMapper: IMapstructMapper<CategoryDTO, Category>
+    private lateinit var categoryMapper: MapstructMapper<CategoryDTO, Category>
 
+    @Autowired
+    private lateinit var categoryService: CategoryService
 
-    override fun findByCategory(category: String, pageable: Pageable): ContentPage<TDto> {
-        val page = entityService.findByCategory(UUID.fromString(category), pageable);
+    override fun findByCategory(category: UUID, pageable: Pageable): Page<TDto> {
+        val referenceCategory = categoryService.getReference(category)
 
-        val toMutableList = mapper.to(page.content).toMutableList()
+        val page = entityService.findAllByCategory(referenceCategory, pageable);
 
-        return ContentPage(toMutableList, page.totalElements, pageable.pageNumber, pageable.pageSize)
+        return page.map { mapper.toMap(it) }
     }
 
-    override fun findCharacteristicByProduct(dto: TDto): CharacteristicPairDTO {
+    override fun findCharacteristicByProduct(product: TDto): CharacteristicPairDTO {
         return runBlocking {
-            val doubleCharacteristicTask = async { buildCharacteristicMap(entityService.findDoubleCharacteristicById(dto.id!!)) }
+            val doubleCharacteristicTask = async {
+                buildCharacteristicMap(entityService.findDoubleCharacteristicById(product.id!!))
+            }
 
-            val stringCharacteristicTask = async { buildCharacteristicMap(entityService.findStringCharacteristicById(dto.id!!)) }
+            val stringCharacteristicTask = async {
+                buildCharacteristicMap(entityService.findStringCharacteristicById(product.id!!))
+            }
 
             val doubleRes = doubleCharacteristicTask.await()
             val stringRes = stringCharacteristicTask.await()
@@ -59,14 +66,14 @@ open class BaseProductFacade<TDto : AbstractProductDTO, TEntity : AbstractProduc
         }
     }
 
-    private fun <TVal, TCharacteristic: AbstractCharacteristic<TVal>> buildCharacteristicMap(characteristic: List<TCharacteristic>): Map<ProductCharacteristic, MutableList<TCharacteristic>> {
-        val resMap = mutableMapOf<ProductCharacteristic, MutableList<TCharacteristic>>()
+    private fun <TVal, TCharacteristic: AbstractCharacteristic<TVal>> buildCharacteristicMap(characteristic: List<TCharacteristic>): Map<Characteristic, MutableList<TCharacteristic>> {
+        val resMap = mutableMapOf<Characteristic, MutableList<TCharacteristic>>()
         characteristic.forEach {
-            var characteristicMetadata = resMap[it.productCharacteristic]
+            var characteristicMetadata = resMap[it.characteristic]
 
             if(characteristicMetadata == null){
                 characteristicMetadata = mutableListOf()
-                resMap[it.productCharacteristic!!] = characteristicMetadata
+                resMap[it.characteristic!!] = characteristicMetadata
             }
 
             characteristicMetadata.add(it)
@@ -75,11 +82,12 @@ open class BaseProductFacade<TDto : AbstractProductDTO, TEntity : AbstractProduc
         return resMap
     }
 
-    override fun findByFilter(productFilter: ProductFilter, pageable: Pageable): ContentPage<TDto> {
-        val toMutableList = this.entityService.findByFilter(productFilter, pageable)
-                .map { mapper.to(it) }
-                .toMutableList()
+    override fun findByFilter(productFilter: ProductFilter, category: UUID, pageable: Pageable): ContentPage<TDto> {
+        val entitiesByFilter = this.entityService.findByFilter(productFilter, category, pageable)
 
-        return ContentPage(toMutableList, entityService.countByFilter(productFilter), pageable.pageNumber, pageable.pageSize)
+        val dtosByFilter = entitiesByFilter.map { mapper.toMap(it) }.toMutableList()
+
+        return ContentPage(dtosByFilter, entityService.countByFilter(productFilter, category), pageable.pageNumber, pageable.pageSize)
     }
+
 }

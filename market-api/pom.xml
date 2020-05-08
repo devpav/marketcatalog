@@ -35,6 +35,11 @@
         </dependency>
         <dependency>
             <groupId>by.market</groupId>
+            <artifactId>market-exception</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>by.market</groupId>
             <artifactId>market-domain</artifactId>
             <version>${project.version}</version>
         </dependency>
@@ -54,10 +59,6 @@
             <version>${project.version}</version>
         </dependency>
         <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
-        </dependency>
-        <dependency>
             <groupId>io.springfox</groupId>
             <artifactId>springfox-swagger2</artifactId>
             <version>${swagger.version}</version>
@@ -75,8 +76,9 @@
             <version>2.3.0</version>
         </dependency>
         <dependency>
-            <groupId>org.postgresql</groupId>
-            <artifactId>postgresql</artifactId>
+            <groupId>${project.groupId}</groupId>
+            <artifactId>market-liquibase</artifactId>
+            <version>${project.version}</version>
         </dependency>
     </dependencies>
 
@@ -181,7 +183,22 @@
             </dependencies>
         </profile>
         <profile>
+            <id>local</id>
+            <dependencies>
+                <dependency>
+                    <groupId>org.postgresql</groupId>
+                    <artifactId>postgresql</artifactId>
+                </dependency>
+            </dependencies>
+        </profile>
+        <profile>
             <id>prod</id>
+            <dependencies>
+                <dependency>
+                    <groupId>org.postgresql</groupId>
+                    <artifactId>postgresql</artifactId>
+                </dependency>
+            </dependencies>
         </profile>
     </profiles>
 </project>

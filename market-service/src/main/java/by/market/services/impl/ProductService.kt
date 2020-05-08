@@ -1,42 +1,46 @@
-@file:Suppress("ConvertSecondaryConstructorToPrimary")
-
 package by.market.services.impl
 
-import by.market.core.Constant
-import by.market.domain.product.ProductAccessory
-import by.market.domain.product.ProductCornice
-import by.market.domain.product.ProductJalousie
-import by.market.domain.product.ProductRolstor
-import by.market.repository.product.ProductAccessoryRepository
-import by.market.repository.product.ProductCorniceRepository
-import by.market.repository.product.ProductJalousieRepository
-import by.market.repository.product.ProductRolstorRepository
+import by.market.core.ProductFilter
+import by.market.domain.Product
+import by.market.domain.characteristics.single.DoubleCharacteristic
+import by.market.domain.characteristics.single.StringCharacteristic
+import by.market.domain.system.EntityMetadata
+import by.market.repository.characteristic.single.DoubleSingleCharacteristicRepository
+import by.market.repository.characteristic.single.StringSingleCharacteristicRepository
+import by.market.repository.product.ProductRepository
+import by.market.repository.system.EntityMetadataRepository
+import org.springframework.beans.factory.annotation.Autowired
+import org.springframework.data.domain.Pageable
 import org.springframework.stereotype.Service
+import org.springframework.transaction.annotation.Transactional
+import java.util.*
+
 
 @Service
-class ProductAccessoryService : BaseProductService<ProductAccessory, ProductAccessoryRepository> {
+open class ProductService(rep: ProductRepository) : BaseProductService<Product, ProductRepository>(rep) {
 
-    constructor(repository: ProductAccessoryRepository) : super(repository, Constant.EntityMetadata.Accessory)
+    @Autowired private lateinit var stringSingleCharacteristicRepository: StringSingleCharacteristicRepository
+    @Autowired private lateinit var doubleSingleCharacteristicRepository: DoubleSingleCharacteristicRepository
+    @Autowired private lateinit var entityMetadataRepository: EntityMetadataRepository
+    @Autowired private lateinit var baseProductFilterService: BaseProductFilterService<Product>;
 
-}
 
-@Service
-class ProductCorniceService : BaseProductService<ProductCornice, ProductCorniceRepository> {
+    private val lazyEntityMetadata: EntityMetadata by lazy {
+        entityMetadataRepository.findByTableName("product")
+    }
 
-    constructor(repository: ProductCorniceRepository) : super(repository, Constant.EntityMetadata.Cornice)
+    @Transactional(readOnly = true)
+    override fun findDoubleCharacteristicById(id: UUID): List<DoubleCharacteristic> =
+        doubleSingleCharacteristicRepository.findByEntityMetadataAndProduct(lazyEntityMetadata, getReference(id))
 
-}
+    override fun findStringCharacteristicById(id: UUID): List<StringCharacteristic> =
+        stringSingleCharacteristicRepository.findByEntityMetadataAndProduct(lazyEntityMetadata, getReference(id))
 
-@Service
-class ProductJalousieService : BaseProductService<ProductJalousie, ProductJalousieRepository> {
+    override fun findByFilter(filter: ProductFilter, category: UUID, pageable: Pageable): List<Product> =
+        baseProductFilterService.findByFilter(filter, category, pageable)
 
-    constructor(repository: ProductJalousieRepository) : super(repository, Constant.EntityMetadata.Jalousie)
+    override fun countByFilter(filter: ProductFilter, category: UUID): Long =
+        baseProductFilterService.countByFilter(filter, category)
 
-}
-
-@Service
-class ProductRolstorService : BaseProductService<ProductRolstor, ProductRolstorRepository> {
-
-    constructor(repository: ProductRolstorRepository) : super(repository, Constant.EntityMetadata.Rolstor)
 
 }

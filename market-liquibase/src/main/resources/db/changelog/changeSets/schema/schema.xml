@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+
+    <changeSet author="devpav" id="20200404_1840">
+        <createTable schemaName="PUBLIC" tableName="TBX_S_CATEGORY">
+            <column name="ID" type="UUID">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="TITLE" type="VARCHAR(255)"/>
+            <column name="SYSTEM_NAME" type="VARCHAR(255)"/>
+            <column name="IMAGE_VALUE" type="CLOB"/>
+            <column name="FK_PARENT_CATEGORY" type="UUID"/>
+        </createTable>
+        <rollback>
+            <dropTable tableName="TBX_S_CATEGORY"/>
+        </rollback>
+    </changeSet>
+
+    <changeSet author="devpav" id="20200404_2028">
+        <createTable schemaName="PUBLIC" tableName="TBX_CH_CHARACTERISTIC">
+            <column name="ID" type="UUID">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="TITLE" type="VARCHAR(255)"/>
+            <column name="FK_DATA_TYPE" type="UUID"/>
+        </createTable>
+        <rollback>
+            <dropTable tableName="TBX_CH_CHARACTERISTIC"/>
+        </rollback>
+    </changeSet>
+
+    <changeSet author="devpav" id="20200404_1841">
+        <createTable schemaName="PUBLIC" tableName="TBX_S_CONTAINER_METADATA">
+            <column name="ID" type="UUID">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="DESCRIPTION" type="VARCHAR(255)"/>
+            <column name="SYSTEM_NAME" type="VARCHAR(255)"/>
+        </createTable>
+        <rollback>
+            <dropTable tableName="TBX_S_CONTAINER_METADATA"/>
+        </rollback>
+    </changeSet>
+
+    <changeSet author="devpav" id="20200404_1813">
+        <createTable schemaName="PUBLIC" tableName="TBX_S_DATA_TYPE">
+            <column name="ID" type="UUID">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="NAME" type="VARCHAR(255)"/>
+        </createTable>
+        <rollback>
+            <dropTable tableName="TBX_S_DATA_TYPE"/>
+        </rollback>
+    </changeSet>
+
+    <changeSet author="devpav" id="20200404_1850">
+        <createTable schemaName="PUBLIC" tableName="TBX_S_ENTITY_METADATA">
+            <column name="ID" type="UUID">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="TABLE_NAME" type="VARCHAR(255)"/>
+            <column name="DESCRIPTION" type="CLOB"/>
+            <column name="FK_CONTAINER" type="UUID"/>
+        </createTable>
+        <rollback>
+            <dropTable tableName="TBX_S_ENTITY_METADATA"/>
+        </rollback>
+    </changeSet>
+
+    <changeSet author="devpav" id="20200404_2029">
+        <createTable schemaName="PUBLIC" tableName="TBX_P_PRODUCT">
+            <column name="ID" type="UUID">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="PRICE_VALUE" type="INT"/>
+            <column name="TITLE" type="VARCHAR(255)"/>
+            <column name="IMAGE" type="CLOB"/>
+            <column name="FK_CATEGORY" type="UUID"/>
+        </createTable>
+        <rollback>
+            <dropTable tableName="TBX_P_PRODUCT"/>
+        </rollback>
+    </changeSet>
+
+    <changeSet author="devpav" id="20200404_2044">
+        <createTable schemaName="PUBLIC" tableName="TBX_CH_STRING_CHARACTERISTIC">
+            <column name="ID" type="UUID">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="VALUE" type="VARCHAR(255)"/>
+            <column name="FK_PRODUCT" type="UUID"/>
+            <column name="FK_CHARACTERISTIC" type="UUID"/>
+            <column name="FK_ENTITY_METADATA" type="UUID"/>
+        </createTable>
+        <rollback>
+            <dropTable tableName="TBX_CH_STRING_CHARACTERISTIC"/>
+        </rollback>
+    </changeSet>
+
+    <changeSet author="devpav" id="20200404_1833">
+        <createTable schemaName="PUBLIC" tableName="TBX_CH_DOUBLE_CHARACTERISTIC">
+            <column name="ID" type="UUID">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="VALUE" type="DOUBLE"/>
+            <column name="FK_PRODUCT" type="UUID"/>
+            <column name="FK_CHARACTERISTIC" type="UUID"/>
+            <column name="FK_ENTITY_METADATA" type="UUID"/>
+        </createTable>
+        <rollback>
+            <dropTable tableName="TBX_CH_DOUBLE_CHARACTERISTIC"/>
+        </rollback>
+    </changeSet>
+
+    <changeSet author="devpav" id="20200404_2038">
+        <addForeignKeyConstraint
+                baseTableSchemaName="PUBLIC"
+                baseTableName="TBX_CH_STRING_CHARACTERISTIC"
+                baseColumnNames="FK_PRODUCT"
+                constraintName="FK_PRODUCT_1111c652ad6e4615a18e3fcf11c3d69f"
+                referencedTableSchemaName="PUBLIC"
+                referencedTableName="TBX_P_PRODUCT"
+                referencedColumnNames="ID"/>
+
+        <addForeignKeyConstraint
+                baseTableSchemaName="PUBLIC"
+                baseTableName="TBX_CH_STRING_CHARACTERISTIC"
+                baseColumnNames="FK_CHARACTERISTIC"
+                constraintName="FK_CHARACTERISTIC_7fcaea3b2ab54426b5bd22e2b50f7faf"
+                referencedTableSchemaName="PUBLIC"
+                referencedTableName="TBX_CH_CHARACTERISTIC"
+                referencedColumnNames="ID"/>
+
+        <addForeignKeyConstraint
+                baseTableSchemaName="PUBLIC"
+                baseTableName="TBX_CH_STRING_CHARACTERISTIC"
+                baseColumnNames="FK_ENTITY_METADATA"
+                constraintName="FK_ENTITY_METADATA_0c0018feb76c486c8ea15a05135f38fe"
+                referencedTableSchemaName="PUBLIC"
+                referencedTableName="TBX_S_ENTITY_METADATA"
+                referencedColumnNames="ID"/>
+
+        <addForeignKeyConstraint
+                baseTableSchemaName="PUBLIC"
+                baseTableName="TBX_CH_DOUBLE_CHARACTERISTIC"
+                baseColumnNames="FK_PRODUCT"
+                constraintName="FK_PRODUCT_e06de8c8e0b149498d8ac3d5552daa43"
+                referencedTableSchemaName="PUBLIC"
+                referencedTableName="TBX_P_PRODUCT"
+                referencedColumnNames="ID"/>
+
+        <addForeignKeyConstraint
+                baseTableSchemaName="PUBLIC"
+                baseTableName="TBX_CH_DOUBLE_CHARACTERISTIC"
+                baseColumnNames="FK_CHARACTERISTIC"
+                constraintName="FK_CHARACTERISTIC_efcbcd70d3b34650b77c86d029739564"
+                referencedTableSchemaName="PUBLIC"
+                referencedTableName="TBX_CH_CHARACTERISTIC"
+                referencedColumnNames="ID"/>
+
+        <addForeignKeyConstraint
+                baseTableSchemaName="PUBLIC"
+                baseTableName="TBX_CH_DOUBLE_CHARACTERISTIC"
+                baseColumnNames="FK_ENTITY_METADATA"
+                constraintName="FK_ENTITY_METADATA_8783f3d2d57b405e922e1e6908603a16"
+                referencedTableSchemaName="PUBLIC"
+                referencedTableName="TBX_S_ENTITY_METADATA"
+                referencedColumnNames="ID"/>
+
+        <addForeignKeyConstraint
+                baseTableSchemaName="PUBLIC"
+                baseTableName="TBX_CH_CHARACTERISTIC"
+                baseColumnNames="FK_DATA_TYPE"
+                constraintName="FK_DATA_TYPE_db5e72f1c0bc4fb08a8006ffc95cf15c"
+                referencedTableSchemaName="PUBLIC"
+                referencedTableName="TBX_S_DATA_TYPE"
+                referencedColumnNames="ID"/>
+
+        <addForeignKeyConstraint
+                baseTableSchemaName="PUBLIC"
+                baseTableName="TBX_S_CATEGORY"
+                baseColumnNames="FK_PARENT_CATEGORY"
+                constraintName="FK_PARENT_CATEGORY_65d3d2ba2680474e8a2aac1027beebe3"
+                referencedTableSchemaName="PUBLIC"
+                referencedTableName="TBX_S_CATEGORY"
+                referencedColumnNames="ID"/>
+
+        <addForeignKeyConstraint
+                baseTableSchemaName="PUBLIC"
+                baseTableName="TBX_P_PRODUCT"
+                baseColumnNames="FK_CATEGORY"
+                constraintName="FK_CATEGORY_ff9a41b26d4f45fd9a909082d950c888"
+                referencedTableSchemaName="PUBLIC"
+                referencedTableName="TBX_S_CATEGORY"
+                referencedColumnNames="ID"/>
+
+        <addForeignKeyConstraint
+                baseTableSchemaName="PUBLIC"
+                baseTableName="TBX_S_ENTITY_METADATA"
+                baseColumnNames="FK_CONTAINER"
+                constraintName="FK_CONTAINER_CATEGORY_cf1e593d4df04261b2ed019ca3915c41"
+                referencedTableSchemaName="PUBLIC"
+                referencedTableName="TBX_S_CONTAINER_METADATA"
+                referencedColumnNames="ID"/>
+    </changeSet>
+</databaseChangeLog>

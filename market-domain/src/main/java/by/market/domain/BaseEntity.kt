@@ -18,8 +18,7 @@ open class BaseEntity {
     @Column(name = "id", nullable = false, unique = true)
     @JsonDeserialize(using = DeserializerUUID::class)
     var id: UUID? = null
-        public get
-        public set
+
 
     override fun equals(other: Any?): Boolean {
         if (this === other) return true

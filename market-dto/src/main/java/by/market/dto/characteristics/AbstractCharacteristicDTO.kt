@@ -1,14 +1,14 @@
 package by.market.dto.characteristics
 
-import by.market.mapper.dto.BaseEntityDTO
-import by.market.mapper.dto.system.EntityMetadataDTO
+import by.market.dto.BaseEntityDTO
+import java.util.*
 
-abstract class AbstractCharacteristicDTO<T> : BaseEntityDTO() {
+open class AbstractCharacteristicDTO<T> : BaseEntityDTO() {
 
     var value: T? = null
 
-    var productCharacteristicDTO: ProductCharacteristicDTO? = null
+    var characteristic: UUID? = null
 
-    var entityMetadata: EntityMetadataDTO? = null
+    var product: UUID? = null
 
 }

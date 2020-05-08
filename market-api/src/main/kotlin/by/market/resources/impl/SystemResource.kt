@@ -1,12 +1,11 @@
 package by.market.resources.impl
 
-import by.market.dto.system.CategoryDTO
-import by.market.dto.system.ContainerMetadataDTO
-import by.market.dto.system.ContentPage
-import by.market.dto.system.DataTypeDTO
-import by.market.facade.impl.*
-import by.market.mapper.dto.system.EntityMetadataDTO
-import by.market.mapper.dto.system.ProductTypeDTO
+import by.market.dto.TreeCategoryDTO
+import by.market.dto.system.*
+import by.market.facade.impl.CategoryProductFacade
+import by.market.facade.impl.ContainerMetadataFacade
+import by.market.facade.impl.DataTypeFacade
+import by.market.facade.impl.EntityMetadataFacade
 import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.RequestMapping
@@ -19,6 +18,9 @@ class CategoryResource(facade: CategoryProductFacade) : AbstractResource<Categor
     @GetMapping("/parent")
     fun findByParent(categoryDTO: CategoryDTO): ResponseEntity<ContentPage<CategoryDTO>>
             = ResponseEntity.ok(facade.findByParent(categoryDTO))
+
+    @GetMapping("/tree")
+    fun findTreeCategory(): ResponseEntity<MutableList<TreeCategoryDTO>> = ResponseEntity.ok(facade.findTreeCategories())
 
 }
 
@@ -34,6 +36,3 @@ class DataTypeResource(facade: DataTypeFacade): AbstractResource<DataTypeDTO, Da
 @RequestMapping("/api/entity-metadata")
 class EntityMetadataResource(service: EntityMetadataFacade) : AbstractResource<EntityMetadataDTO, EntityMetadataFacade>(service)
 
-@RestController
-@RequestMapping("/api/product-type")
-class ProductTypeResource(facade: ProductTypeFacade) : AbstractResource<ProductTypeDTO, ProductTypeFacade>(facade)

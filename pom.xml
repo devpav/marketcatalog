@@ -19,6 +19,8 @@
         <module>market-repository</module>
         <module>market-mapper</module>
         <module>market-domain</module>
+        <module>market-liquibase</module>
+        <module>market-exception</module>
     </modules>
 
     <parent>
@@ -73,6 +75,11 @@
             <artifactId>spring-boot-starter-test</artifactId>
             <version>${spring.version}</version>
             <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+            <version>${spring.version}</version>
         </dependency>
     </dependencies>
 
