@@ -4,14 +4,17 @@ import by.market.core.Constant
 import by.market.core.FilterOperator
 import by.market.core.ProductFilter
 import by.market.core.ProductFilterItem
-import by.market.domain.BaseEntity
-import by.market.domain.characteristics.ProductCharacteristic
+import by.market.domain.Product
+import by.market.domain.characteristics.Characteristic
 import by.market.domain.characteristics.single.DoubleCharacteristic
 import by.market.domain.characteristics.single.StringCharacteristic
+import by.market.domain.system.Category
 import by.market.repository.characteristic.ProductCharacteristicRepository
 import by.market.repository.system.CategoryRepository
 import by.market.services.BaseProductFilter
+import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.data.domain.Pageable
+import org.springframework.transaction.annotation.Transactional
 import java.lang.reflect.ParameterizedType
 import java.util.*
 import javax.annotation.PostConstruct
@@ -20,67 +23,74 @@ import javax.persistence.PersistenceContext
 import javax.persistence.TypedQuery
 import javax.persistence.criteria.*
 
-abstract class BaseProductFilterService<TEntity: BaseEntity> : BaseProductFilter<TEntity> {
+abstract class BaseProductFilterService<TEntity: Product> : BaseProductFilter<TEntity> {
 
-    @PersistenceContext
-    private lateinit var entityManager: EntityManager
+    @PersistenceContext private lateinit var entityManager: EntityManager
 
     private lateinit var criteriaBuilder: CriteriaBuilder
     private lateinit var createQuery: CriteriaQuery<TEntity>
     private lateinit var root: Root<TEntity>
 
-    private val classT: Class<TEntity>
+    private lateinit var classT: Class<TEntity>
 
-    private lateinit var categoryRepository: CategoryRepository
-    private lateinit var productCharacteristicRepository: ProductCharacteristicRepository
+    @Autowired private lateinit var categoryService: CategoryService
+
+    @Autowired private lateinit var categoryRepository: CategoryRepository
+
+    @Autowired private lateinit var productCharacteristicRepository: ProductCharacteristicRepository
 
 
-    init {
+    @PostConstruct fun init() {
         val parameterizedType = this.javaClass.genericSuperclass as ParameterizedType
-        classT = parameterizedType.actualTypeArguments[0] as Class<TEntity>
-    }
+        this.classT = parameterizedType.actualTypeArguments[0] as Class<TEntity>
 
-    @PostConstruct
-    fun init() {
         criteriaBuilder = entityManager.criteriaBuilder
         createQuery = criteriaBuilder.createQuery(classT)
         root = createQuery.from(classT)
     }
 
 
-    override fun findByFilter(filter: ProductFilter, pageable: Pageable): MutableList<TEntity> {
-        val predicates = collectPredicateByFilter(filter)
+    @Transactional(readOnly = true)
+    override fun findByFilter(filter: ProductFilter, category: UUID, pageable: Pageable): MutableList<TEntity> {
+        val predicates = collectPredicateByFilter(filter, category)
 
-        val query = createQuery
-                .select(root)
+        val query = createQuery.select(root)
                 .where(*predicates.toTypedArray())
 
         val result: TypedQuery<TEntity> = entityManager.createQuery(query)
 
-        result.firstResult = pageable.pageNumber
-        result.maxResults = pageable.pageSize.coerceAtLeast(5)
+        result.firstResult = pageable.offset.toInt()
+        result.maxResults = pageable.pageSize
 
         return result.resultList
     }
 
-    override fun countByFilter(filter: ProductFilter): Long {
-        val predicates = collectPredicateByFilter(filter)
-        val criteria: CriteriaQuery<Long> = criteriaBuilder.createQuery(Long::class.java)
+    override fun countByFilter(filter: ProductFilter, category: UUID): Long {
+        val predicates = collectPredicateByFilter(filter, category)
 
-        val query = criteria.select(criteriaBuilder.count(root))
+        val criteriaQuery: CriteriaQuery<Long> = criteriaBuilder.createQuery(Long::class.java)
+
+        val select = criteriaQuery.select(criteriaBuilder.count(criteriaQuery.from(classT)))
                 .where(*predicates.toTypedArray())
 
-        val result: TypedQuery<Long> = entityManager.createQuery(query)
-
-        return result.singleResult
+        return entityManager.createQuery(select).singleResult
     }
 
-    private fun collectPredicateByFilter(filter: ProductFilter): MutableList<Predicate> {
+
+    private fun collectPredicateByFilter(filter: ProductFilter, category: UUID): MutableList<Predicate> {
         val predicates: MutableList<Predicate> = mutableListOf()
 
-        val category = categoryRepository.getOne(UUID.fromString(filter.category))
+        val entityCategory = categoryRepository.getOne(category) ?: return mutableListOf()
 
-        predicates.add(criteriaBuilder.equal(root.get<Any>("category"), category))
+        val rootCategory = categoryService.findRootCategory(entityCategory.id!!) ?: return mutableListOf()
+
+        val categories = categoryService.findAllByParentCategory(rootCategory)
+
+        val mutableListOf = mutableListOf(*categories.toTypedArray())
+
+        mutableListOf.add(rootCategory)
+
+        predicates.add(root.get<Category>("category").`in`(categories))
 
         filter.filters.forEach {
             if (it.value.isEmpty()) {
@@ -117,13 +127,12 @@ abstract class BaseProductFilterService<TEntity: BaseEntity> : BaseProductFilter
         return predicates
     }
 
-
-    private fun <T> getSubqueryString(classQuery: Class<T>, productCharacteristic: ProductCharacteristic?, filter: ProductFilterItem): Subquery<T>? {
+    private fun <T> getSubqueryString(classQuery: Class<T>, characteristic: Characteristic?, filter: ProductFilterItem): Subquery<T>? {
         val subquery = createQuery.subquery(classQuery);
         val from = subquery.from(classQuery)
 
-        val fieldCharacteristic = from.get<Any>("productCharacteristic")
-        val equalFieldCharacteristic = criteriaBuilder.equal(fieldCharacteristic, productCharacteristic)
+        val fieldCharacteristic = from.get<Characteristic>("productCharacteristic")
+        val equalFieldCharacteristic = criteriaBuilder.equal(fieldCharacteristic, characteristic)
 
         val fieldProductId = from.get<Any>("productRowId")
         val equalFieldProductId = criteriaBuilder.equal(fieldProductId, root.get<Any>("id"))
@@ -161,7 +170,7 @@ abstract class BaseProductFilterService<TEntity: BaseEntity> : BaseProductFilter
                             fromDouble = toDouble.also { toDouble = fromDouble }
                         }
 
-                        inValues = criteriaBuilder.between(from.get<Double>("value"), fromDouble, toDouble)
+                        inValues = criteriaBuilder.between(from.get("value"), fromDouble, toDouble)
                     }
                 }
             }

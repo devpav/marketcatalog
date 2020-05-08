@@ -12,4 +12,6 @@ interface CategoryRepository : BaseRepository<Category> {
 
     fun countAllByParentCategory(category: Category): Long
 
+    fun findAllByParentCategoryIsNull(): MutableList<Category>
+
 }

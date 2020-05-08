@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+
+    <changeSet author="devpav" id="20200405_1636">
+        <insert tableName="TBX_S_ENTITY_METADATA">
+            <column name="ID" value="ae842f08-27b8-4d4a-9027-25883f352f9e"/>
+            <column name="TABLE_NAME" value="data_type"/>
+            <column name="DESCRIPTION" value="Тип данных"/>
+            <column name="FK_CONTAINER" value="825faa65-9f1f-4ed1-94dc-58d97754e328"/>
+        </insert>
+        <insert tableName="TBX_S_ENTITY_METADATA">
+            <column name="ID" value="edcab99b-1fc6-4423-9f76-1218a98277b9"/>
+            <column name="TABLE_NAME" value="container"/>
+            <column name="DESCRIPTION" value="Контейнер"/>
+            <column name="FK_CONTAINER" value="825faa65-9f1f-4ed1-94dc-58d97754e328"/>
+        </insert>
+        <insert tableName="TBX_S_ENTITY_METADATA">
+            <column name="ID" value="283de48b-c432-4314-9274-7d0b978248f6"/>
+            <column name="TABLE_NAME" value="category"/>
+            <column name="DESCRIPTION" value="Категория"/>
+            <column name="FK_CONTAINER" value="825faa65-9f1f-4ed1-94dc-58d97754e328"/>
+        </insert>
+        <insert tableName="TBX_S_ENTITY_METADATA">
+            <column name="ID" value="35985b15-36a0-4324-8c92-dead84d1a6b3"/>
+            <column name="TABLE_NAME" value="entity_metadata"/>
+            <column name="DESCRIPTION" value="Метаданные сущности"/>
+            <column name="FK_CONTAINER" value="825faa65-9f1f-4ed1-94dc-58d97754e328"/>
+        </insert>
+        <insert tableName="TBX_S_ENTITY_METADATA">
+            <column name="ID" value="8e7afb48-ee0b-4df7-8b14-80e42cb4e081"/>
+            <column name="TABLE_NAME" value="characteristic"/>
+            <column name="DESCRIPTION" value="Характеристика продукта"/>
+            <column name="FK_CONTAINER" value="4b4f01af-4e88-4a5f-b2f8-c151f977fb0c"/>
+        </insert>
+        <insert tableName="TBX_S_ENTITY_METADATA">
+            <column name="ID" value="c8d321e0-41fe-4cd2-a097-bc9a04582721"/>
+            <column name="TABLE_NAME" value="string_characteristic"/>
+            <column name="DESCRIPTION" value="Строковая характеристика"/>
+            <column name="FK_CONTAINER" value="4b4f01af-4e88-4a5f-b2f8-c151f977fb0c"/>
+        </insert>
+        <insert tableName="TBX_S_ENTITY_METADATA">
+            <column name="ID" value="383314ff-6cc2-44e1-84a6-9bb3e5612a77"/>
+            <column name="TABLE_NAME" value="double_characteristic"/>
+            <column name="DESCRIPTION" value="Числовая характеристика"/>
+            <column name="FK_CONTAINER" value="4b4f01af-4e88-4a5f-b2f8-c151f977fb0c"/>
+        </insert>
+        <insert tableName="TBX_S_ENTITY_METADATA">
+            <column name="ID" value="57ef02b6-eed2-489d-a41b-584a5bdc970a"/>
+            <column name="TABLE_NAME" value="product"/>
+            <column name="DESCRIPTION" value="Продукты"/>
+            <column name="FK_CONTAINER" value="25529bd7-7663-4998-9a04-90696481b12f"/>
+        </insert>
+
+        <rollback>
+            <delete tableName="TBX_S_ENTITY_METADATA">
+                <where>
+                    ID IN (
+                        'ae842f08-27b8-4d4a-9027-25883f352f9e',
+                        'edcab99b-1fc6-4423-9f76-1218a98277b9',
+                        '283de48b-c432-4314-9274-7d0b978248f6',
+                        '35985b15-36a0-4324-8c92-dead84d1a6b3',
+                        '8e7afb48-ee0b-4df7-8b14-80e42cb4e081',
+                        'c8d321e0-41fe-4cd2-a097-bc9a04582721',
+                        '383314ff-6cc2-44e1-84a6-9bb3e5612a77'
+                    )
+                </where>
+            </delete>
+        </rollback>
+    </changeSet>
+
+</databaseChangeLog>

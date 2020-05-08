@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+
+    <changeSet author="devpav" id="20200405_1721">
+        <createIndex schemaName="PUBLIC" unique="false" tableName="TBX_CH_CHARACTERISTIC" indexName="ind_tbx_ch_characteristic_title">
+            <column name="TITLE"/>
+        </createIndex>
+        <rollback>
+            <dropIndex schemaName="PUBLIC" tableName="TBX_CH_CHARACTERISTIC" indexName="ind_tbx_ch_characteristic_title"/>
+        </rollback>
+    </changeSet>
+
+</databaseChangeLog>

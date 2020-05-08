@@ -1,6 +1,5 @@
-package by.market.mapper.dto
+package by.market.dto
 
 import java.util.*
 
-open class BaseEntityDTO(var id: UUID? = null) {
-}
+open class BaseEntityDTO(var id: UUID? = null)

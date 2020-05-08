@@ -6,5 +6,7 @@ import org.springframework.stereotype.Repository
 
 @Repository
 interface EntityMetadataRepository : BaseRepository<EntityMetadata> {
+
     fun findByTableName(tableName: String): EntityMetadata
+
 }
