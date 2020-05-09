@@ -8,7 +8,7 @@ import org.mapstruct.Mapping;
 import org.mapstruct.Mappings;
 
 @Mapper(config = MapperConfiguration.class)
-interface UnitEntityMapper extends MapstructMapper<UnitEntityDTO, UnitEntity> {
+public interface UnitEntityMapper extends MapstructMapper<UnitEntityDTO, UnitEntity> {
 
     @Mappings({
             @Mapping(source = "unitGroup.id", target = "unitGroup")
