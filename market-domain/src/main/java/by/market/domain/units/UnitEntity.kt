@@ -13,11 +13,11 @@ class UnitEntity : BaseEntity() {
     @Column(name = "DESCRIPTION")
     var description: String? = null
 
-    @OneToMany(mappedBy = "group")
+    @OneToMany(mappedBy = "unitGroup", fetch = FetchType.LAZY)
     var groups: MutableList<UnitEntity>? = mutableListOf()
 
     @ManyToOne
     @JoinColumn(name = "FK_UNIT_GROUP")
-    var group: UnitEntity? = null
+    var unitGroup: UnitEntity? = null
 
 }
