@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+
+    <changeSet author="devpav" id="20200408_2306">
+        <insert schemaName="PUBLIC" tableName="TBX_S_CONTAINER_METADATA">
+            <column name="ID" value="36642cd8-c479-42bf-985c-cc78f7feacc6"/>
+            <column name="DESCRIPTION" value="Справочник"/>
+            <column name="SYSTEM_NAME" value="rb"/>
+        </insert>
+
+        <rollback>
+            <delete tableName="TBX_S_CONTAINER_METADATA" schemaName="PUBLIC">
+                <where> ID IN ( '36642cd8-c479-42bf-985c-cc78f7feacc6' ) </where>
+            </delete>
+        </rollback>
+    </changeSet>
+
+</databaseChangeLog>

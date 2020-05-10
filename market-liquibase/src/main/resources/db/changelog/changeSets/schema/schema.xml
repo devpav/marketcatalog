@@ -1,7 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<databaseChangeLog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+<databaseChangeLog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                   http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
 
     <changeSet author="devpav" id="20200404_1840">
+        <preConditions>
+            <not>
+                <tableExists tableName="TBX_S_CATEGORY"/>
+            </not>
+        </preConditions>
         <createTable schemaName="PUBLIC" tableName="TBX_S_CATEGORY">
             <column name="ID" type="UUID">
                 <constraints primaryKey="true"/>
@@ -17,6 +25,11 @@
     </changeSet>
 
     <changeSet author="devpav" id="20200404_2028">
+        <preConditions>
+            <not>
+                <tableExists tableName="TBX_CH_CHARACTERISTIC"/>
+            </not>
+        </preConditions>
         <createTable schemaName="PUBLIC" tableName="TBX_CH_CHARACTERISTIC">
             <column name="ID" type="UUID">
                 <constraints primaryKey="true"/>
@@ -30,6 +43,11 @@
     </changeSet>
 
     <changeSet author="devpav" id="20200404_1841">
+        <preConditions>
+            <not>
+                <tableExists tableName="TBX_S_CONTAINER_METADATA"/>
+            </not>
+        </preConditions>
         <createTable schemaName="PUBLIC" tableName="TBX_S_CONTAINER_METADATA">
             <column name="ID" type="UUID">
                 <constraints primaryKey="true"/>
@@ -43,6 +61,11 @@
     </changeSet>
 
     <changeSet author="devpav" id="20200404_1813">
+        <preConditions>
+            <not>
+                <tableExists tableName="TBX_S_DATA_TYPE"/>
+            </not>
+        </preConditions>
         <createTable schemaName="PUBLIC" tableName="TBX_S_DATA_TYPE">
             <column name="ID" type="UUID">
                 <constraints primaryKey="true"/>
@@ -55,6 +78,11 @@
     </changeSet>
 
     <changeSet author="devpav" id="20200404_1850">
+        <preConditions>
+            <not>
+                <tableExists tableName="TBX_S_ENTITY_METADATA"/>
+            </not>
+        </preConditions>
         <createTable schemaName="PUBLIC" tableName="TBX_S_ENTITY_METADATA">
             <column name="ID" type="UUID">
                 <constraints primaryKey="true"/>
@@ -69,6 +97,11 @@
     </changeSet>
 
     <changeSet author="devpav" id="20200404_2029">
+        <preConditions>
+            <not>
+                <tableExists tableName="TBX_P_PRODUCT"/>
+            </not>
+        </preConditions>
         <createTable schemaName="PUBLIC" tableName="TBX_P_PRODUCT">
             <column name="ID" type="UUID">
                 <constraints primaryKey="true"/>
@@ -84,6 +117,11 @@
     </changeSet>
 
     <changeSet author="devpav" id="20200404_2044">
+        <preConditions>
+            <not>
+                <tableExists tableName="TBX_CH_STRING_CHARACTERISTIC"/>
+            </not>
+        </preConditions>
         <createTable schemaName="PUBLIC" tableName="TBX_CH_STRING_CHARACTERISTIC">
             <column name="ID" type="UUID">
                 <constraints primaryKey="true"/>
@@ -99,6 +137,11 @@
     </changeSet>
 
     <changeSet author="devpav" id="20200404_1833">
+        <preConditions>
+            <not>
+                <tableExists tableName="TBX_CH_DOUBLE_CHARACTERISTIC"/>
+            </not>
+        </preConditions>
         <createTable schemaName="PUBLIC" tableName="TBX_CH_DOUBLE_CHARACTERISTIC">
             <column name="ID" type="UUID">
                 <constraints primaryKey="true"/>
