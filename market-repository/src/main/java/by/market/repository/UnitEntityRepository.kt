@@ -8,4 +8,6 @@ interface UnitEntityRepository : BaseRepository<UnitEntity> {
 
     fun findByValue(value: String?): UnitEntity?
 
+    fun findByUnitGroupIsNull(): MutableList<UnitEntity>?
+
 }

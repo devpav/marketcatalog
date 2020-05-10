@@ -2,10 +2,11 @@ package by.market.dto
 
 import java.util.*
 
-class UnitEntityDTO : BaseEntityDTO() {
+class TreeUnitDTO {
 
+    var id: UUID? = null
     var value: String? = null
-    var unitGroup: UUID? = null
     var description: String? = null
+    var subunits: List<TreeUnitDTO> = mutableListOf()
 
 }
