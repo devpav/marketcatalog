@@ -1,6 +1,7 @@
 package by.market.resources.impl
 
 import by.market.exception.database.EntityNotFoundException
+import by.market.exception.database.RequestInNotValidException
 import by.market.facade.Facade
 import by.market.resources.IReadonlyResource
 import by.market.resources.MutableResource
@@ -33,6 +34,10 @@ abstract class AbstractResource<TDTO, TFacade: Facade<TDTO>>(protected val facad
 
     @PostMapping
     override fun save(@RequestBody entity: TDTO): ResponseEntity<TDTO> {
+        if (entity == null) {
+            throw RequestInNotValidException("Entity mustn't is NULL")
+        }
+
         return ResponseEntity.ok(facade.save(entity))
     }
 
