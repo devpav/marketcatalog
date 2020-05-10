@@ -5,5 +5,5 @@ import java.util.*
 class UnitEntityDTO (
         var value: String? = null,
         var unitGroup: UUID? = null,
-        var descriptrion: String? = null
+        var description: String? = null
 ): BaseEntityDTO()

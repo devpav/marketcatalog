@@ -1,5 +1,6 @@
 package by.market.resources.impl
 
+import by.market.exception.database.EntityNotFoundException
 import by.market.facade.Facade
 import by.market.resources.IReadonlyResource
 import by.market.resources.MutableResource
@@ -24,7 +25,7 @@ abstract class AbstractResource<TDTO, TFacade: Facade<TDTO>>(protected val facad
         val entity = facade.findById(id)
 
         if (!entity.isPresent) {
-            return ResponseEntity.notFound().build();
+            throw EntityNotFoundException("Entity not found with id [${id}]");
         }
 
         return ResponseEntity.ok(entity.get())
