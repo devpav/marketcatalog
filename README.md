@@ -67,7 +67,7 @@
   ./docker/system.local.down.bat
 ```
 
-### Liquibase [Version control for your database]
+### Liquibase (Version control for your database)
 
 Миграция и версионирование базы данных выражено в модуле **market-liquibase**
 
