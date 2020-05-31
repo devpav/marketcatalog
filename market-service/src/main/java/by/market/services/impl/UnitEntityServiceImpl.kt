@@ -23,6 +23,10 @@ open class UnitEntityServiceImpl(unitEntityRepository: UnitEntityRepository) : B
             rootGroups.mapNotNull { getRecursionTree(it) }.toMutableList()
     }
 
+    override fun findGroupUnits(): MutableList<UnitEntity> {
+        return rep.findByUnitGroupIsNull() ?: mutableListOf()
+    }
+
     private fun getRecursionTree(treeUnit: UnitEntity): TreeUnit? {
         val unitEntity = rep.findById(treeUnit.id!!)
 

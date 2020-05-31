@@ -37,4 +37,9 @@ class UnitEntityFacadeImpl(service: UnitEntityService, mapper: UnitEntityMapper)
         return unitEntityTreeMapper.toMap(unitsTree).toMutableList()
     }
 
+    override fun findGroups(): MutableList<UnitEntityDTO> {
+        val findGroupUnits = entityService.findGroupUnits()
+        return mapper.toMap(findGroupUnits).toMutableList()
+    }
+
 }

@@ -24,6 +24,10 @@ open class BaseService<TEntity: BaseEntity, TRepository: BaseRepository<TEntity>
 
     override fun save(entity: TEntity): TEntity = rep.save(entity)
 
-    override fun deleteById(id: UUID): Unit = rep.deleteById(id)
+    override fun delete(id: UUID): Unit = rep.deleteById(id)
+
+    override fun delete(ids: MutableList<UUID>): Unit {
+        ids.forEach(this::delete)
+    }
 
 }

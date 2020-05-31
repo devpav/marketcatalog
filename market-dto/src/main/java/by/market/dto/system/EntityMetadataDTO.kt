@@ -1,6 +1,7 @@
 package by.market.dto.system
 
 import by.market.dto.BaseEntityDTO
+import java.util.*
 
 class EntityMetadataDTO : BaseEntityDTO() {
 
@@ -8,6 +9,6 @@ class EntityMetadataDTO : BaseEntityDTO() {
 
     var description: String? = null
 
-    var container: ContainerMetadataDTO? = null
+    var container: UUID? = null
 
 }

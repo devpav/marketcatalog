@@ -15,7 +15,6 @@ spring:
       max-age: 50
       max-idle: 25
       default-auto-commit: true
-
   jpa:
     database-platform: org.hibernate.dialect.H2Dialect
     properties:
@@ -29,6 +28,9 @@ spring:
 
   profiles:
     active: dev
+  liquibase:
+    enabled: true
+    change-log: classpath:/db/changelog/changelog-master.xml
 
 logging:
   level:

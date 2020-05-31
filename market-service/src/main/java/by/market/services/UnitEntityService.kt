@@ -9,4 +9,6 @@ interface UnitEntityService : IService<UnitEntity> {
 
     fun findUnitsTree(): MutableList<TreeUnit>
 
+    fun findGroupUnits(): MutableList<UnitEntity>
+
 }

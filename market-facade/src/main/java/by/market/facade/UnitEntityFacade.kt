@@ -9,4 +9,6 @@ interface UnitEntityFacade : Facade<UnitEntityDTO> {
 
     fun findUnitsTree(): MutableList<TreeUnitDTO>
 
+    fun findGroups(): MutableList<UnitEntityDTO>
+
 }

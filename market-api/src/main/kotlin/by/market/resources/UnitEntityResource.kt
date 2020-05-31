@@ -10,4 +10,6 @@ interface UnitEntityResource : MutableResource<UnitEntityDTO>, IReadonlyResource
 
     fun findUnitsTree(): ResponseEntity<MutableList<TreeUnitDTO>>
 
+    fun findGroups(): ResponseEntity<MutableList<UnitEntityDTO>>
+
 }
