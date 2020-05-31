@@ -9,4 +9,6 @@ interface MutableResource<TDTO> : IReadonlyResource<TDTO> {
 
     fun delete(id: UUID): ResponseEntity<Unit>
 
+    fun deleteList(id: MutableList<UUID>): ResponseEntity<Unit>
+
 }

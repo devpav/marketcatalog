@@ -14,6 +14,8 @@ interface Facade<DTO> {
 
     fun save(entity: DTO): DTO
 
-    fun deleteById(id: UUID): Unit
+    fun delete(id: UUID): Unit
+
+    fun delete(ids: MutableList<UUID>): Unit
 
 }

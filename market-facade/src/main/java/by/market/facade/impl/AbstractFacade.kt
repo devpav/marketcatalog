@@ -33,8 +33,12 @@ open class AbstractFacade<TService : IService<TEntity>, TDto : BaseEntityDTO, TE
         return mapper.toMap(savedEntity)
     }
 
-    override fun deleteById(id: UUID) {
-        entityService.deleteById(id)
+    override fun delete(id: UUID) {
+        entityService.delete(id)
+    }
+
+    override fun delete(ids: MutableList<UUID>) {
+        ids.forEach( this::delete )
     }
 
 }

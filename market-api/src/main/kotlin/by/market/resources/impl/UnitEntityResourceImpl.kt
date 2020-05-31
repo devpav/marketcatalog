@@ -22,4 +22,8 @@ open class UnitEntityResourceImpl(facade: UnitEntityFacade) : AbstractResource<U
     override fun findUnitsTree(): ResponseEntity<MutableList<TreeUnitDTO>> =
             ResponseEntity.ok(facade.findUnitsTree())
 
+    @GetMapping("/groups")
+    override fun findGroups(): ResponseEntity<MutableList<UnitEntityDTO>> =
+            ResponseEntity.ok(facade.findGroups())
+
 }

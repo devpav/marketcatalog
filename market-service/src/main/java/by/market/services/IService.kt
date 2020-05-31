@@ -16,6 +16,8 @@ interface IService<TEntity> {
 
     fun save(entity: TEntity): TEntity
 
-    fun deleteById(id: UUID): Unit
+    fun delete(id: UUID): Unit
+
+    fun delete(ids: MutableList<UUID>): Unit
 
 }

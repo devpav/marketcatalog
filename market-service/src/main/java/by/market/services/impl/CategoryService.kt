@@ -8,11 +8,25 @@ import org.springframework.transaction.annotation.Transactional
 import java.util.*
 
 @Service
-open class CategoryService(val repository: CategoryRepository) : BaseSystemCharacteristicService<Category, CategoryRepository>(repository){
+open class CategoryService(val repository: CategoryRepository) : BaseSystemCharacteristicService<Category, CategoryRepository>(repository) {
 
     fun findAllByParentCategory(category: Category): List<Category> = rep.findAllByParentCategory(category)
 
     fun countAllByParentCategory(category: Category): Long = rep.countAllByParentCategory(category)
+
+    @Transactional
+    override fun save(entity: Category): Category {
+        entity.subCategories = mutableSetOf()
+
+        val parentCategory = entity.parentCategory
+
+        if (parentCategory !== null) {
+            entity.parentCategory =
+                    if (parentCategory.id == null) null else rep.getOne(parentCategory.id!!)
+        }
+
+        return rep.save(entity)
+    }
 
     fun findRootCategory(idCategory: UUID): Category? {
         val category = rep.findById(idCategory)
@@ -43,7 +57,7 @@ open class CategoryService(val repository: CategoryRepository) : BaseSystemChara
 
         val foundOptionalCategory = repository.findById(id)
 
-        if ( !foundOptionalCategory.isPresent ) {
+        if (!foundOptionalCategory.isPresent) {
             return null
         }
 
